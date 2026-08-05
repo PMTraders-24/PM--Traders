@@ -1,0 +1,12 @@
+PM TRADERS STORE V2
+Upload these 4 website files to the root of your GitHub repository:
+index.html
+style.css
+products.js
+app.js
+
+Features: product catalogue, search, categories, shopping cart, checkout form, delivery rules and WhatsApp ordering.
+
+Delivery: R30 Richards Bay/surrounding; R60 outside Richards Bay and Empangeni; collection Richards Bay/Empangeni; free delivery over R1,500.
+
+Payment gateway is NOT connected yet. Do not put passwords, PINs, card details or secret API keys in these public files.
