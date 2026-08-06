@@ -4,7 +4,7 @@ const PRODUCTS = [
     name: "8 inch SDD weave Human Hair",
     price: 850,
     category: "Weave",
-    image: "8 inch SDD Weave"
+    image: "8 Inch Super Double Drawn.webp"
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ const PRODUCTS = [
     name: "20 Inch Weave Jurly Curls",
     price: 970,
     category: "Weave",
-    image: "8 inch SDD pixey curly.jpg"
+    image: "20 inch Curly Curls.jpeg"
   },
   {
     id: 5,
