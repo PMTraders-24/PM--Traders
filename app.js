@@ -1,1 +1,165 @@
-const Z=n=>new Intl.NumberFormat('en-ZA',{style:'currency',currency:'ZAR',maximumFractionDigits:0}).format(n);let cart=JSON.parse(localStorage.getItem('pmCart')||'[]');const grid=document.querySelector('#grid'),cat=document.querySelector('#cat'),search=document.querySelector('#search');[...new Set(PRODUCTS.map(p=>p.category))].forEach(c=>cat.insertAdjacentHTML('beforeend',`<option>${c}</option>`));function render(){let q=search.value.toLowerCase(),c=cat.value;grid.innerHTML=PRODUCTS.filter(p=>(c==='all'||p.category===c)&&p.name.toLowerCase().includes(q)).map(p=>`<article class="card"><div class="art">${p.icon}</div><div class="body"><span class="tag">${p.category}</span><h3>${p.name}</h3><div class="price">${Z(p.price)}</div><button class="add" onclick="add(${p.id})">Add to cart</button></div></article>`).join('')}function save(){localStorage.setItem('pmCart',JSON.stringify(cart));renderCart()}function add(id){let x=cart.find(i=>i.id===id);x?x.q++:cart.push({id,q:1});save();openCart()}function renderCart(){document.querySelector('#count').textContent=cart.reduce((s,i)=>s+i.q,0);let s=cart.reduce((t,i)=>t+PRODUCTS.find(p=>p.id===i.id).price*i.q,0);document.querySelector('#sub').textContent=Z(s);document.querySelector('#items').innerHTML=cart.length?cart.map(i=>{let p=PRODUCTS.find(p=>p.id===i.id);return `<div class="item"><img src="${p.image}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover;">b>${p.name}</b><br>${i.q} × ${Z(p.price)} <button onclick="removeItem(${p.id})">Remove</button></div>`}).join(''):'<p style="padding:20px">Your cart is empty.</p>'}function removeItem(id){cart=cart.filter(i=>i.id!==id);save()}function openCart(){document.querySelector('#cart').classList.add('open');document.querySelector('#shade').style.display='block'}function closeCart(){document.querySelector('#cart').classList.remove('open');document.querySelector('#shade').style.display='none'}document.querySelector('#cartBtn').onclick=openCart;document.querySelector('#close').onclick=closeCart;document.querySelector('#shade').onclick=closeCart;search.oninput=render;cat.onchange=render;document.querySelector('#checkout').onclick=()=>{if(!cart.length)return alert('Your cart is empty.');closeCart();document.querySelector('#modal').classList.add('show');updateTotal()};document.querySelector('#x').onclick=()=>document.querySelector('#modal').classList.remove('show');function updateTotal(){let s=cart.reduce((t,i)=>t+PRODUCTS.find(p=>p.id===i.id).price*i.q,0),d=s>=1500||document.querySelector('#deliveryOpt').value==='collection'?0:document.querySelector('#deliveryOpt').value==='outside'?60:30;document.querySelector('#total').textContent=Z(s+d)}document.querySelector('#deliveryOpt').onchange=updateTotal;document.querySelector('#form').onsubmit=e=>{e.preventDefault();let f=new FormData(e.target),s=cart.reduce((t,i)=>t+PRODUCTS.find(p=>p.id===i.id).price*i.q,0),d=s>=1500||f.get('delivery')==='collection'?0:f.get('delivery')==='outside'?60:30,lines=cart.map(i=>{let p=PRODUCTS.find(p=>p.id===i.id);return `• ${p.name} x${i.q} — ${Z(p.price*i.q)}`}).join('%0A'),msg=`*PM TRADERS ORDER*%0A%0A${lines}%0A%0A*Subtotal:* ${Z(s)}%0A*Delivery:* ${d?Z(d):'Free / Collection'}%0A*Total:* ${Z(s+d)}%0A%0A*Customer:* ${encodeURIComponent(f.get('name'))}%0A*Phone:* ${encodeURIComponent(f.get('phone'))}%0A*Email:* ${encodeURIComponent(f.get('email'))}%0A*Address:* ${encodeURIComponent(f.get('address'))}`;window.open(`https://wa.me/27842748559?text=${msg}`,'_blank');cart=[];save();document.querySelector('#modal').classList.remove('show')};render();renderCart();
+const Z=n=>new Intl.NumberFormat('en-ZA',{style:'currency',currency:'ZAR',maximumFractionDigits:0}).format(n);
+
+let cart=JSON.parse(localStorage.getItem('pmCart')||'[]');
+
+const grid=document.querySelector('#grid');
+const cat=document.querySelector('#cat');
+const search=document.querySelector('#search');
+
+[...new Set(PRODUCTS.map(p=>p.category))].forEach(c=>{
+  cat.insertAdjacentHTML('beforeend',`<option>${c}</option>`);
+});
+
+function render(){
+  let q=search.value.toLowerCase();
+  let c=cat.value;
+
+  grid.innerHTML=PRODUCTS
+    .filter(p=>(c==='all'||p.category===c)&&p.name.toLowerCase().includes(q))
+    .map(p=>`
+      <article class="card">
+        <div class="art">
+          <img src="${p.image}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="body">
+          <span class="tag">${p.category}</span>
+          <h3>${p.name}</h3>
+          <div class="price">${Z(p.price)}</div>
+          <button class="add" onclick="add(${p.id})">Add to cart</button>
+        </div>
+      </article>
+    `).join('');
+}
+
+function save(){
+  localStorage.setItem('pmCart',JSON.stringify(cart));
+  renderCart();
+}
+
+function add(id){
+  let x=cart.find(i=>i.id===id);
+  x?x.q++:cart.push({id,q:1});
+  save();
+  openCart();
+}
+
+function renderCart(){
+  document.querySelector('#count').textContent=cart.reduce((s,i)=>s+i.q,0);
+
+  let s=cart.reduce(
+    (t,i)=>t+PRODUCTS.find(p=>p.id===i.id).price*i.q,
+    0
+  );
+
+  document.querySelector('#sub').textContent=Z(s);
+
+  document.querySelector('#items').innerHTML=cart.length
+    ?cart.map(i=>{
+      let p=PRODUCTS.find(p=>p.id===i.id);
+      return `
+        <div class="item">
+          <img src="${p.image}" alt="${p.name}" style="width:70px;height:70px;object-fit:cover;">
+          <b>${p.name}</b><br>
+          ${i.q} × ${Z(p.price)}
+          <button onclick="removeItem(${p.id})">Remove</button>
+        </div>
+      `;
+    }).join('')
+    :'<p style="padding:20px">Your cart is empty.</p>';
+}
+
+function removeItem(id){
+  cart=cart.filter(i=>i.id!==id);
+  save();
+}
+
+function openCart(){
+  document.querySelector('#cart').classList.add('open');
+  document.querySelector('#shade').style.display='block';
+}
+
+function closeCart(){
+  document.querySelector('#cart').classList.remove('open');
+  document.querySelector('#shade').style.display='none';
+}
+
+document.querySelector('#cartBtn').onclick=openCart;
+document.querySelector('#close').onclick=closeCart;
+document.querySelector('#shade').onclick=closeCart;
+
+search.oninput=render;
+cat.onchange=render;
+
+document.querySelector('#checkout').onclick=()=>{
+  if(!cart.length)return alert('Your cart is empty.');
+  closeCart();
+  document.querySelector('#modal').classList.add('show');
+  updateTotal();
+};
+
+document.querySelector('#x').onclick=()=>{
+  document.querySelector('#modal').classList.remove('show');
+};
+
+function updateTotal(){
+  let s=cart.reduce(
+    (t,i)=>t+PRODUCTS.find(p=>p.id===i.id).price*i.q,
+    0
+  );
+
+  let d=
+    s>=1500||document.querySelector('#deliveryOpt').value==='collection'
+    ?0
+    :document.querySelector('#deliveryOpt').value==='outside'
+    ?60
+    :30;
+
+  document.querySelector('#total').textContent=Z(s+d);
+}
+
+document.querySelector('#deliveryOpt').onchange=updateTotal;
+
+document.querySelector('#form').onsubmit=e=>{
+  e.preventDefault();
+
+  let f=new FormData(e.target);
+
+  let s=cart.reduce(
+    (t,i)=>t+PRODUCTS.find(p=>p.id===i.id).price*i.q,
+    0
+  );
+
+  let d=
+    s>=1500||f.get('delivery')==='collection'
+    ?0
+    :f.get('delivery')==='outside'
+    ?60
+    :30;
+
+  let lines=cart.map(i=>{
+    let p=PRODUCTS.find(p=>p.id===i.id);
+    return `• ${p.name} x${i.q} — ${Z(p.price*i.q)}`;
+  }).join('%0A');
+
+  let msg=
+    `*PM TRADERS ORDER*%0A%0A${lines}%0A%0A`+
+    `*Subtotal:* ${Z(s)}%0A`+
+    `*Delivery:* ${d?Z(d):'Free / Collection'}%0A`+
+    `*Total:* ${Z(s+d)}%0A%0A`+
+    `*Customer:* ${encodeURIComponent(f.get('name'))}%0A`+
+    `*Phone:* ${encodeURIComponent(f.get('phone'))}%0A`+
+    `*Email:* ${encodeURIComponent(f.get('email'))}%0A`+
+    `*Address:* ${encodeURIComponent(f.get('address'))}`;
+
+  window.open(
+    `https://wa.me/27842748559?text=${msg}`,
+    '_blank'
+  );
+
+  cart=[];
+  save();
+  document.querySelector('#modal').classList.remove('show');
+};
+
+render();
+renderCart();
