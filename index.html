@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>PM Traders | Online Store</title>
-
-<meta name="description" content="PM Traders — smartphones, human hair, fashion, gadgets and accessories.">
-
-<style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>PM Traders | Online Store</title><meta name="description" content="PM Traders — smartphones, human hair, fashion, gadgets and accessories."><style>
 * {
   box-sizing: border-box;
 }
@@ -26,9 +19,16 @@ body {
 
 button,
 input,
-select {
+select,
+textarea {
   font: inherit;
 }
+
+button {
+  cursor: pointer;
+}
+
+/* TOP BAR */
 
 .topbar {
   background: #111;
@@ -39,23 +39,25 @@ select {
   font-weight: 700;
 }
 
+/* HEADER */
+
 header {
   background: white;
   min-height: 72px;
   padding: 12px 6%;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   border-bottom: 1px solid #ddd;
+  gap: 15px;
 }
 
 .logo {
   display: flex;
   align-items: center;
   gap: 10px;
-
+  color: #111;
+  text-decoration: none;
   font-size: 18px;
   font-weight: 900;
 }
@@ -63,14 +65,11 @@ header {
 .logoBox {
   width: 43px;
   height: 43px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   background: #111;
   color: white;
-
   border-radius: 10px;
 }
 
@@ -89,14 +88,10 @@ nav a {
 .cartButton {
   background: #111;
   color: white;
-
   border: 0;
   border-radius: 9px;
-
   padding: 11px 16px;
-
   font-weight: 800;
-  cursor: pointer;
 }
 
 /* HERO */
@@ -104,14 +99,10 @@ nav a {
 .hero {
   background: #111;
   color: white;
-
   min-height: 500px;
-
   padding: 70px 7%;
-
   display: grid;
   grid-template-columns: 1.2fr .8fr;
-
   align-items: center;
   gap: 40px;
 }
@@ -125,13 +116,9 @@ nav a {
 
 .hero h1 {
   max-width: 750px;
-
   margin: 18px 0;
-
   font-size: clamp(45px, 7vw, 82px);
-
   line-height: .95;
-
   letter-spacing: -4px;
 }
 
@@ -141,57 +128,40 @@ nav a {
 
 .hero p {
   max-width: 590px;
-
   color: #ccc;
-
   font-size: 18px;
-
   line-height: 1.6;
 }
 
 .shopButton {
   display: inline-block;
-
   margin-top: 15px;
-
   padding: 14px 23px;
-
   background: white;
   color: #111;
-
   border-radius: 9px;
-
   text-decoration: none;
-
   font-weight: 900;
 }
 
 .heroVisual {
   min-height: 320px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
-  position: relative;
 }
 
 .pmCircle {
   width: 250px;
   height: 250px;
-
   border-radius: 50%;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   background: white;
   color: #111;
-
   font-size: 75px;
   font-weight: 900;
-
   box-shadow: 0 20px 70px rgba(255,255,255,.12);
 }
 
@@ -199,25 +169,18 @@ nav a {
 
 .categories {
   background: white;
-
   padding: 35px 6%;
-
   display: flex;
   justify-content: center;
   gap: 12px;
-
   flex-wrap: wrap;
 }
 
 .category {
   padding: 13px 20px;
-
   border: 1px solid #ddd;
-
   border-radius: 50px;
-
   background: white;
-
   font-weight: 800;
 }
 
@@ -225,33 +188,25 @@ nav a {
 
 .shop {
   max-width: 1500px;
-
   margin: auto;
-
   padding: 75px 5%;
 }
 
 .sectionTitle {
   text-align: center;
-
   margin-bottom: 35px;
 }
 
 .sectionTitle small {
   color: #777;
-
   font-size: 11px;
-
   font-weight: 900;
-
   letter-spacing: 2px;
 }
 
 .sectionTitle h2 {
   margin: 8px 0;
-
   font-size: 45px;
-
   letter-spacing: -2px;
 }
 
@@ -259,30 +214,22 @@ nav a {
   color: #777;
 }
 
-/* SEARCH */
+/* FILTERS */
 
 .filters {
   display: flex;
-
   justify-content: center;
-
   gap: 10px;
-
   margin-bottom: 35px;
 }
 
 .filters input,
 .filters select {
   height: 48px;
-
   padding: 0 15px;
-
   background: white;
-
   border: 1px solid #ddd;
-
   border-radius: 9px;
-
   outline: none;
 }
 
@@ -294,42 +241,36 @@ nav a {
 
 #grid {
   display: grid;
-
   grid-template-columns: repeat(4, minmax(0, 1fr));
-
   gap: 22px;
 }
 
 .card {
   background: white;
-
   border: 1px solid #ddd;
-
   border-radius: 15px;
-
   overflow: hidden;
-
   box-shadow: 0 5px 20px rgba(0,0,0,.05);
+  transition: transform .2s, box-shadow .2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,.10);
 }
 
 .card .art {
   height: 310px;
-
   padding: 8px;
-
   background: #fafafa;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 }
 
 .card .art img {
   width: 100%;
   height: 100%;
-
   object-fit: contain;
 }
 
@@ -339,91 +280,77 @@ nav a {
 
 .card .tag {
   display: inline-block;
-
   padding: 5px 9px;
-
   background: #eee;
-
   border-radius: 20px;
-
   font-size: 9px;
-
   font-weight: 900;
 }
 
 .card h3 {
   min-height: 45px;
-
   font-size: 16px;
+  margin-bottom: 8px;
 }
 
 .card .price {
   font-size: 21px;
-
   font-weight: 900;
-
   margin: 12px 0;
 }
 
 .card .add {
   width: 100%;
-
   padding: 13px;
-
   border: 0;
-
   border-radius: 8px;
-
   background: #111;
-
   color: white;
-
   font-weight: 800;
+}
 
-  cursor: pointer;
+.card .add:hover {
+  background: #333;
+}
+
+.noProducts {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 50px;
+  background: white;
+  border-radius: 15px;
 }
 
 /* DELIVERY */
 
 .delivery {
   padding: 75px 7%;
-
   background: #111;
-
   color: white;
 }
 
 .delivery h2 {
   font-size: 45px;
-
   letter-spacing: -2px;
 }
 
 .deliveryGrid {
   display: grid;
-
   grid-template-columns: repeat(4, 1fr);
-
   gap: 15px;
 }
 
 .deliveryBox {
   padding: 25px;
-
   border: 1px solid #333;
-
   border-radius: 12px;
-
   background: #181818;
-
   color: #ccc;
 }
 
 .deliveryBox strong {
   display: block;
-
   margin-bottom: 8px;
-
   color: white;
 }
 
@@ -431,27 +358,18 @@ nav a {
 
 .contact {
   background: white;
-
   padding: 75px 7%;
-
   text-align: center;
 }
 
 .whatsapp {
   display: inline-block;
-
   margin-top: 15px;
-
   padding: 14px 22px;
-
   background: #111;
-
   color: white;
-
   border-radius: 9px;
-
   text-decoration: none;
-
   font-weight: 900;
 }
 
@@ -459,52 +377,40 @@ nav a {
 
 footer {
   padding: 35px 6%;
-
   background: #080808;
-
   color: #aaa;
-
   display: flex;
-
   justify-content: space-between;
-
   gap: 20px;
-
   flex-wrap: wrap;
+}
+
+/* CART SHADE */
+
+#shade {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  display: none;
+  z-index: 999;
+}
+
+#shade.show {
+  display: block;
 }
 
 /* CART */
 
-#shade {
-  position: fixed;
-
-  inset: 0;
-
-  background: rgba(0,0,0,.55);
-
-  display: none;
-
-  z-index: 999;
-}
-
 #cart {
   position: fixed;
-
   top: 0;
   right: -450px;
-
   width: min(430px, 94vw);
-
   height: 100vh;
-
   background: white;
-
   z-index: 1000;
-
   padding: 25px;
-
   overflow-y: auto;
-
   transition: right .3s;
 }
 
@@ -514,51 +420,74 @@ footer {
 
 .cartHead {
   display: flex;
-
   justify-content: space-between;
-
+  align-items: center;
   border-bottom: 1px solid #ddd;
-
   padding-bottom: 15px;
 }
 
 #close,
 #x {
   border: 0;
-
   background: #eee;
-
   border-radius: 50%;
-
   width: 38px;
   height: 38px;
-
-  cursor: pointer;
+  font-size: 22px;
 }
 
 .item {
   padding: 15px 0;
-
   border-bottom: 1px solid #eee;
+}
+
+.itemTop {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.itemName {
+  font-weight: 800;
+}
+
+.itemPrice {
+  font-weight: 900;
+}
+
+.qty {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.qty button {
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: 6px;
+  background: #eee;
+}
+
+.remove {
+  color: #b00020;
+  border: 0;
+  background: transparent;
+  font-size: 12px;
+  margin-top: 8px;
 }
 
 /* MODAL */
 
 #modal {
   position: fixed;
-
   inset: 0;
-
   z-index: 1100;
-
   background: rgba(0,0,0,.6);
-
   display: none;
-
   align-items: center;
-
   justify-content: center;
-
   padding: 20px;
 }
 
@@ -568,23 +497,22 @@ footer {
 
 .modalBox {
   width: min(520px, 100%);
-
   max-height: 90vh;
-
   overflow-y: auto;
-
   background: white;
-
   border-radius: 15px;
-
   padding: 30px;
-
   position: relative;
+}
+
+#x {
+  position: absolute;
+  right: 20px;
+  top: 20px;
 }
 
 #form {
   display: grid;
-
   gap: 12px;
 }
 
@@ -592,32 +520,37 @@ footer {
 #form select,
 #form textarea {
   width: 100%;
-
   padding: 13px;
-
   border: 1px solid #ddd;
-
   border-radius: 8px;
+  outline: none;
 }
 
 #form textarea {
   min-height: 100px;
+  resize: vertical;
 }
 
 .full {
   width: 100%;
-
   padding: 13px;
-
   border: 0;
-
   border-radius: 8px;
-
   background: #111;
-
   color: white;
-
   font-weight: 800;
+}
+
+.orderSummary {
+  background: #f4f5f6;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.deliveryNotice {
+  font-size: 13px;
+  color: #666;
 }
 
 /* MOBILE */
@@ -630,9 +563,7 @@ footer {
 
   .hero {
     grid-template-columns: 1fr;
-
     text-align: center;
-
     padding: 60px 5%;
   }
 
@@ -660,8 +591,13 @@ footer {
     padding: 10px 4%;
   }
 
-  .brand {
+  .logo {
     font-size: 14px;
+  }
+
+  .logoBox {
+    width: 38px;
+    height: 38px;
   }
 
   .hero {
@@ -670,14 +606,12 @@ footer {
 
   .hero h1 {
     font-size: 48px;
-
     letter-spacing: -3px;
   }
 
   .pmCircle {
     width: 180px;
     height: 180px;
-
     font-size: 55px;
   }
 
@@ -687,7 +621,6 @@ footer {
 
   .category {
     font-size: 12px;
-
     padding: 10px 14px;
   }
 
@@ -710,7 +643,6 @@ footer {
 
   #grid {
     grid-template-columns: repeat(2, 1fr);
-
     gap: 10px;
   }
 
@@ -740,285 +672,518 @@ footer {
 
   footer {
     text-align: center;
-
     justify-content: center;
   }
 }
-</style>
-</head>
-
-<body>
-
-<div class="topbar">
+</style></head><body><!-- TOP BAR --><div class="topbar">
 🚚 Nationwide delivery • Free delivery over R1,500
-</div>
-
-<header>
-
-<a href="#" class="logo">
+</div><!-- HEADER --><header><a href="#home" class="logo">
 <span class="logoBox">PM</span>
 <span>PM TRADERS</span>
-</a>
-
-<nav>
+</a><nav>
 <a href="#home">Home</a>
 <a href="#shop">Shop</a>
 <a href="#delivery">Delivery</a>
 <a href="#contact">Contact</a>
-</nav>
-
-<button id="cartBtn" class="cartButton">
+</nav><button id="cartBtn" class="cartButton">
 🛒 Cart <span id="count">0</span>
-</button>
-
-</header>
-
-<section class="hero" id="home">
-
-<div>
-
-<small>PM TRADERS • ONLINE STORE</small>
+</button></header><!-- HERO --><section class="hero" id="home"><div><small>PM TRADERS • ONLINE STORE</small>
 
 <h1>
 Shop smart.<br>
 <span>Shop PM Traders.</span>
-</h1>
-
-<p>
+</h1><p>
 Quality smartphones, human hair, fashion,
 gadgets and accessories — all in one trusted store.
-</p>
-
-<a href="#shop" class="shopButton">
+</p><a href="#shop" class="shopButton">
 Shop now →
-</a>
-
-</div>
-
-<div class="heroVisual">
-
+</a></div><div class="heroVisual">
 <div class="pmCircle">
 PM
 </div>
-
-</div>
-
-</section>
-
-<section class="categories">
-
-<div class="category"> images.jpeg Tech </div>
+</div></section><!-- CATEGORIES --><section class="categories"><div class="category">📱 Tech</div>
 <div class="category">💇 Hair</div>
 <div class="category">👗 Fashion</div>
-<div class="category">🎧 Accessories</div>
+<div class="category">🎧 Accessories</div></section><!-- SHOP --><section class="shop" id="shop"><div class="sectionTitle"><small>SHOP PM TRADERS</small>
 
-</section>
-
-<section class="shop" id="shop">
-
-<div class="sectionTitle">
-
-<small>SHOP PM TRADERS</small>
-
-<h2>Featured Products</h2>
-
-<p>
+<h2>Featured Products</h2><p>
 Browse our latest products and add your favourites to your cart.
-</p>
-
-</div>
-
-<div class="filters">
-
-<input
+</p></div><div class="filters"><input
 id="search"
 type="search"
 placeholder="Search products..."
->
+
+«»
 
 <select id="cat">
-
-<option value="all">
-All categories
-</option>
-
-</select>
-
-</div>
-
-<div id="grid"></div>
-
-</section>
-
-<section class="delivery" id="delivery">
-
-<small>DELIVERY & COLLECTION</small>
+<option value="all">All categories</option>
+<option value="Tech">Tech</option>
+<option value="Hair">Hair</option>
+<option value="Fashion">Fashion</option>
+<option value="Accessories">Accessories</option>
+</select></div><div id="grid"></div></section><!-- DELIVERY --><section class="delivery" id="delivery"><small>DELIVERY & COLLECTION</small>
 
 <h2>
 We make getting your order easy.
-</h2>
-
-<div class="deliveryGrid">
-
-<div class="deliveryBox">
+</h2><div class="deliveryGrid"><div class="deliveryBox">
 <strong>📍 Richards Bay</strong>
 R30 delivery around Richards Bay and surrounding areas.
-</div>
-
-<div class="deliveryBox">
+</div><div class="deliveryBox">
 <strong>🚚 Outside Richards Bay</strong>
 R60 delivery outside Richards Bay and Empangeni.
-</div>
-
-<div class="deliveryBox">
+</div><div class="deliveryBox">
 <strong>🎁 Orders over R1,500</strong>
 Enjoy free delivery when your order reaches R1,500 or more.
-</div>
-
-<div class="deliveryBox">
+</div><div class="deliveryBox">
 <strong>📦 Collection</strong>
 Collection available around Richards Bay and Empangeni.
-</div>
-
-</div>
-
-</section>
-
-<section class="contact" id="contact">
-
-<h2>Need help with your order?</h2>
-
-<p>
+</div></div></section><!-- CONTACT --><section class="contact" id="contact"><h2>Need help with your order?</h2><p>
 Chat directly with PM Traders on WhatsApp.
-</p>
-
-<a
+</p><a
 class="whatsapp"
 href="https://wa.me/27842748559"
 target="_blank"
->
+
+«»
+
 WhatsApp PM Traders →
 </a>
 
-</section>
-
-<footer>
-
-<strong>PM TRADERS</strong>
+<p style="margin-top:25px;color:#777;">
+📧 Info@PM-Traders.co.za
+</p></section><!-- FOOTER --><footer><strong>PM TRADERS</strong>
 
 <span>
 © 2026 PM Traders • Quality products. Trusted service.
-</span>
-
-</footer>
-
-<div id="shade"></div>
-
-<aside id="cart">
-
-<div class="cartHead">
-
-<h2>Your Cart</h2>
-
-<button id="close">
+</span></footer><!-- CART SHADE --><div id="shade"></div><!-- CART --><aside id="cart"><div class="cartHead"><h2>Your Cart</h2><button id="close">
 ×
-</button>
-
-</div>
-
-<div id="items"></div>
-
-<div>
-
-<strong>
+</button></div><div id="items"></div><div style="margin-top:20px;"><strong>
 Subtotal: <span id="sub">R0</span>
-</strong>
-
-<button
+</strong><button
 id="checkout"
 class="full"
 style="margin-top:15px"
->
+
+«»
+
 Checkout →
 </button>
 
-</div>
-
-</aside>
-
-<div id="modal">
-
-<div class="modalBox">
-
-<button id="x">
+</div></aside><!-- CHECKOUT MODAL --><div id="modal"><div class="modalBox"><button id="x">
 ×
-</button>
-
-<h2>Complete your order</h2>
-
-<form id="form">
-
-<input
+</button><h2>Complete your order</h2><p style="color:#777;font-size:14px;">
+Enter your details and your order will be prepared for WhatsApp.
+</p><form id="form"><input
 name="name"
 placeholder="Full name"
 required
->
+
+«»
 
 <input
 name="phone"
 placeholder="Phone / WhatsApp number"
 required
->
+
+«»
 
 <input
 name="email"
 type="email"
 placeholder="Email address"
->
+
+«»
 
 <select
 id="deliveryOpt"
 name="delivery"
 required
->
+
+«»
 
 <option value="local">
 Richards Bay / surrounding — R30
-</option>
-
-<option value="outside">
+</option><option value="outside">
 Outside Richards Bay / Empangeni — R60
-</option>
-
-<option value="collection">
+</option><option value="collection">
 Collection — Free
-</option>
-
-</select>
-
-<textarea
+</option></select><textarea
 name="address"
 placeholder="Delivery address / collection details"
 required
-></textarea>
-
-<p>
-<strong>Total:</strong>
+></textarea><div class="orderSummary"><strong>Order total:</strong>
 <span id="total">R0</span>
-</p>
 
-<button class="full" type="submit">
+<p class="deliveryNotice" id="deliveryText">
+Delivery fee will be calculated automatically.
+</p></div><button class="full" type="submit">
 Place order on WhatsApp →
-</button>
+</button></form></div></div><script>
 
-</form>
+/* =========================================
+   PM TRADERS PRODUCTS
+========================================= */
 
-</div>
+const products = [
 
-</div>
+  {
+    id: 1,
+    name: "iPhone 13 Pro Max",
+    price: 7500,
+    category: "Tech",
+    image: "images/iphone-13-pro-max.jpg"
+  },
 
-<script src="products.js"></script>
-<script src="app.js"></script>
+  {
+    id: 2,
+    name: "iPhone 17 Pro Max",
+    price: 24000,
+    category: "Tech",
+    image: "images/iphone-17-pro-max.jpg"
+  },
 
-</body>
-</html>
+  {
+    id: 3,
+    name: "8 Inch Weave DD",
+    price: 850,
+    category: "Hair",
+    image: "images/8-inch-weave-dd.jpg"
+  },
+
+  {
+    id: 4,
+    name: "20 Inch Weave Jurly Curls",
+    price: 970,
+    category: "Hair",
+    image: "images/20-inch-weave-jurly-curls.jpg"
+  },
+
+  {
+    id: 5,
+    name: "Fashion Dress",
+    price: 230,
+    category: "Fashion",
+    image: "images/fashion-dress.jpg"
+  },
+
+  {
+    id: 6,
+    name: "Cellphone Accessories",
+    price: 150,
+    category: "Accessories",
+    image: "images/accessories.jpg"
+  }
+
+];
+
+
+/* =========================================
+   CART
+========================================= */
+
+let cart = [];
+
+
+/* =========================================
+   ELEMENTS
+========================================= */
+
+const grid = document.getElementById("grid");
+const search = document.getElementById("search");
+const cat = document.getElementById("cat");
+
+const cartBtn = document.getElementById("cartBtn");
+const cartBox = document.getElementById("cart");
+const closeBtn = document.getElementById("close");
+const shade = document.getElementById("shade");
+
+const itemsBox = document.getElementById("items");
+const count = document.getElementById("count");
+const subtotal = document.getElementById("sub");
+
+const checkout = document.getElementById("checkout");
+
+const modal = document.getElementById("modal");
+const closeModal = document.getElementById("x");
+
+const form = document.getElementById("form");
+const deliveryOpt = document.getElementById("deliveryOpt");
+
+const total = document.getElementById("total");
+const deliveryText = document.getElementById("deliveryText");
+
+
+/* =========================================
+   CURRENCY
+========================================= */
+
+function money(amount) {
+  return "R" + Number(amount).toLocaleString("en-ZA");
+}
+
+
+/* =========================================
+   DISPLAY PRODUCTS
+========================================= */
+
+function displayProducts() {
+
+  const term = search.value.toLowerCase().trim();
+  const category = cat.value;
+
+  const filtered = products.filter(product => {
+
+    const matchesSearch =
+      product.name.toLowerCase().includes(term);
+
+    const matchesCategory =
+      category === "all" ||
+      product.category === category;
+
+    return matchesSearch && matchesCategory;
+
+  });
+
+  grid.innerHTML = "";
+
+  if (filtered.length === 0) {
+
+    grid.innerHTML = `
+      <div class="noProducts">
+        <h3>No products found</h3>
+        <p>Try another search or category.</p>
+      </div>
+    `;
+
+    return;
+  }
+
+  filtered.forEach(product => {
+
+    const card = document.createElement("article");
+
+    card.className = "card";
+
+    card.innerHTML = `
+
+      <div class="art">
+
+        <img
+          src="${product.image}"
+          alt="${product.name}"
+          onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=&quot;font-size:50px;&quot;>📦</div>';"
+        >
+
+      </div>
+
+      <div class="body">
+
+        <span class="tag">
+          ${product.category}
+        </span>
+
+        <h3>
+          ${product.name}
+        </h3>
+
+        <div class="price">
+          ${money(product.price)}
+        </div>
+
+        <button
+          class="add"
+          onclick="addToCart(${product.id})"
+        >
+          Add to Cart
+        </button>
+
+      </div>
+
+    `;
+
+    grid.appendChild(card);
+
+  });
+
+}
+
+
+/* =========================================
+   ADD TO CART
+========================================= */
+
+function addToCart(id) {
+
+  const existing = cart.find(item => item.id === id);
+
+  if (existing) {
+
+    existing.qty++;
+
+  } else {
+
+    const product = products.find(item => item.id === id);
+
+    cart.push({
+      ...product,
+      qty: 1
+    });
+
+  }
+
+  updateCart();
+
+  openCart();
+
+}
+
+
+/* =========================================
+   UPDATE CART
+========================================= */
+
+function updateCart() {
+
+  itemsBox.innerHTML = "";
+
+  let sub = 0;
+  let itemCount = 0;
+
+  cart.forEach(item => {
+
+    sub += item.price * item.qty;
+
+    itemCount += item.qty;
+
+    const div = document.createElement("div");
+
+    div.className = "item";
+
+    div.innerHTML = `
+
+      <div class="itemTop">
+
+        <span class="itemName">
+          ${item.name}
+        </span>
+
+        <span class="itemPrice">
+          ${money(item.price * item.qty)}
+        </span>
+
+      </div>
+
+      <div class="qty">
+
+        <button onclick="changeQty(${item.id}, -1)">
+          −
+        </button>
+
+        <strong>${item.qty}</strong>
+
+        <button onclick="changeQty(${item.id}, 1)">
+          +
+        </button>
+
+      </div>
+
+      <button
+        class="remove"
+        onclick="removeFromCart(${item.id})"
+      >
+        Remove
+      </button>
+
+    `;
+
+    itemsBox.appendChild(div);
+
+  });
+
+  if (cart.length === 0) {
+
+    itemsBox.innerHTML = `
+      <div style="text-align:center;padding:40px 10px;color:#777;">
+        <div style="font-size:45px;">🛒</div>
+        <h3>Your cart is empty</h3>
+        <p>Add products to continue.</p>
+      </div>
+    `;
+
+  }
+
+  count.textContent = itemCount;
+
+  subtotal.textContent = money(sub);
+
+}
+
+
+/* =========================================
+   CHANGE QUANTITY
+========================================= */
+
+function changeQty(id, amount) {
+
+  const item = cart.find(product => product.id === id);
+
+  if (!item) return;
+
+  item.qty += amount;
+
+  if (item.qty <= 0) {
+
+    cart = cart.filter(product => product.id !== id);
+
+  }
+
+  updateCart();
+
+}
+
+
+/* =========================================
+   REMOVE
+========================================= */
+
+function removeFromCart(id) {
+
+  cart = cart.filter(product => product.id !== id);
+
+  updateCart();
+
+}
+
+
+/* =========================================
+   CART OPEN/CLOSE
+========================================= */
+
+function openCart() {
+
+  cartBox.classList.add("open");
+
+  shade.classList.add("show");
+
+}
+
+function closeCart() {
+
+  cartBox.classList.remove("open");
+
+  shade.classList.remove("show");
+
+}
+
+cartBtn.addEventListener("click", openCart);
+
+closeBtn.addEventListener("click", closeCart);
+
+shade.addEventListener("click", closeCart);
+
+
+/* =========================================
+   CHECKOUT
+========================================= */
+
+checkout.addEventListe
