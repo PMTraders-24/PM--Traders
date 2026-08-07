@@ -78,10 +78,10 @@ font-weight:800;
 font-size:14px
 }
 
-.headerActions{
+.headerButtons{
 display:flex;
-align-items:center;
-gap:8px
+gap:8px;
+align-items:center
 }
 
 .cartButton,
@@ -96,34 +96,15 @@ font-weight:800
 
 .menuButton{display:none}
 
-/* MOBILE NAV */
-
-.mobileNav{
-display:none;
-background:#fff;
-padding:15px 5%;
-border-bottom:1px solid #ddd
-}
-
-.mobileNav.show{display:block}
-
-.mobileNav a{
-display:block;
-padding:12px 0;
-color:#111;
-text-decoration:none;
-font-weight:800
-}
-
 /* HERO */
 
 .hero{
 background:#111;
 color:#fff;
-min-height:540px;
+min-height:530px;
 padding:70px 7%;
 display:grid;
-grid-template-columns:1.15fr .85fr;
+grid-template-columns:1.2fr .8fr;
 align-items:center;
 gap:40px
 }
@@ -137,7 +118,7 @@ letter-spacing:2px
 
 .hero h1{
 margin:18px 0;
-font-size:clamp(48px,7vw,82px);
+font-size:clamp(45px,7vw,82px);
 line-height:.95;
 letter-spacing:-4px
 }
@@ -145,7 +126,7 @@ letter-spacing:-4px
 .hero h1 span{color:#aaa}
 
 .hero p{
-max-width:600px;
+max-width:590px;
 color:#ccc;
 font-size:18px;
 line-height:1.6
@@ -173,7 +154,7 @@ color:#111
 }
 
 .outlineButton{
-border:1px solid #666;
+border:1px solid #555;
 color:#fff
 }
 
@@ -184,17 +165,17 @@ align-items:center
 }
 
 .pmCircle{
-width:280px;
-height:280px;
+width:270px;
+height:270px;
 border-radius:50%;
 background:#fff;
 color:#111;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:82px;
+font-size:80px;
 font-weight:900;
-box-shadow:0 20px 80px rgba(255,255,255,.15)
+box-shadow:0 20px 70px rgba(255,255,255,.12)
 }
 
 /* TRUST */
@@ -225,7 +206,12 @@ font-size:13px;
 color:#777
 }
 
-/* GENERAL */
+/* CATEGORIES */
+
+.categories{
+background:#fff;
+padding:65px 6%
+}
 
 .sectionTitle{
 text-align:center;
@@ -246,13 +232,6 @@ letter-spacing:-2px
 }
 
 .sectionTitle p{color:#777}
-
-/* CATEGORIES */
-
-.categories{
-background:#fff;
-padding:70px 6%
-}
 
 .categoryGrid{
 max-width:1100px;
@@ -335,181 +314,43 @@ box-shadow:0 15px 35px rgba(0,0,0,.12)
 
 .productImage{
 height:290px;
-background:#f2f2f2;
+background:#fafafa;
 display:flex;
 align-items:center;
 justify-content:center;
-overflow:hidden;
-position:relative
+overflow:hidden
 }
 
-/* SELF-CONTAINED PRODUCT VISUALS */
+/*
+   These product visuals are built into the page.
+   No external image files are required.
+*/
 
-.visual{
+.productVisual{
 width:100%;
 height:100%;
 display:flex;
 align-items:center;
 justify-content:center;
-position:relative
+font-size:90px;
+background:linear-gradient(135deg,#f7f7f7,#e8e8e8)
 }
-
-/* PHONE */
 
 .phone{
-width:120px;
-height:225px;
-background:#151515;
-border:5px solid #333;
-border-radius:22px;
-position:relative;
-box-shadow:0 15px 30px rgba(0,0,0,.25)
+font-size:145px
 }
 
-.phoneScreen{
-position:absolute;
-inset:9px;
-border-radius:15px;
-background:linear-gradient(145deg,#111,#555);
-display:flex;
-align-items:center;
-justify-content:center;
-color:#fff;
-font-size:22px;
-font-weight:900
+.hair{
+font-size:125px
 }
 
-.camera{
-position:absolute;
-top:12px;
-left:12px;
-width:35px;
-height:35px;
-border-radius:10px;
-background:#222
+.fashion{
+font-size:125px
 }
 
-.camera:before,
-.camera:after{
-content:"";
-position:absolute;
-width:10px;
-height:10px;
-background:#777;
-border-radius:50%
+.accessory{
+font-size:125px
 }
-
-.camera:before{
-top:5px;
-left:5px
-}
-
-.camera:after{
-bottom:5px;
-right:5px
-}
-
-/* HAIR */
-
-.hairVisual{
-width:180px;
-height:210px;
-position:relative
-}
-
-.hairTop{
-position:absolute;
-top:10px;
-left:25px;
-width:130px;
-height:80px;
-border-radius:50% 50% 45% 45%;
-background:#151515
-}
-
-.hairStrand{
-position:absolute;
-top:60px;
-width:45px;
-height:130px;
-border-radius:50%;
-background:#202020
-}
-
-.hairStrand.one{left:20px;transform:rotate(12deg)}
-.hairStrand.two{left:55px;transform:rotate(-3deg)}
-.hairStrand.three{left:90px;transform:rotate(5deg)}
-.hairStrand.four{left:125px;transform:rotate(-12deg)}
-
-/* DRESS */
-
-.dressVisual{
-position:relative;
-width:160px;
-height:230px
-}
-
-.dressTop{
-position:absolute;
-top:15px;
-left:55px;
-width:50px;
-height:60px;
-border-radius:20px 20px 10px 10px;
-background:#222
-}
-
-.dressBody{
-position:absolute;
-top:60px;
-left:20px;
-width:120px;
-height:150px;
-background:#111;
-clip-path:polygon(30% 0,70% 0,100% 100%,0 100%)
-}
-
-.dressBelt{
-position:absolute;
-top:80px;
-left:40px;
-width:80px;
-height:8px;
-background:#777
-}
-
-/* ACCESSORIES */
-
-.accessoryVisual{
-width:190px;
-height:190px;
-position:relative
-}
-
-.headphone{
-position:absolute;
-width:130px;
-height:130px;
-border:15px solid #222;
-border-bottom:0;
-border-radius:70px 70px 0 0;
-left:30px;
-top:25px
-}
-
-.ear{
-position:absolute;
-width:35px;
-height:65px;
-background:#111;
-border-radius:12px;
-top:105px
-}
-
-.ear.left{left:20px}
-.ear.right{right:20px}
-
-/* PRODUCT BODY */
 
 .productBody{
 padding:18px
@@ -563,12 +404,10 @@ color:#111
 }
 
 .noProducts{
-grid-column:1/-1;
 text-align:center;
-background:#fff;
-padding:45px;
-border-radius:15px;
-color:#777
+padding:50px;
+color:#777;
+display:none
 }
 
 /* PROMO */
@@ -585,7 +424,9 @@ justify-content:space-between;
 gap:20px
 }
 
-.promo h2{margin:0 0 8px}
+.promo h2{
+margin:0 0 8px
+}
 
 .promo p{
 color:#bbb;
@@ -654,7 +495,9 @@ border-radius:15px;
 padding:30px
 }
 
-.whyBox span{font-size:32px}
+.whyBox span{
+font-size:32px
+}
 
 .whyBox p{
 color:#777;
@@ -701,7 +544,9 @@ display:none;
 z-index:900
 }
 
-#shade.show{display:block}
+#shade.show{
+display:block
+}
 
 #cartPanel{
 position:fixed;
@@ -716,7 +561,9 @@ overflow-y:auto;
 transition:right .3s
 }
 
-#cartPanel.open{right:0}
+#cartPanel.open{
+right:0
+}
 
 .cartHead{
 display:flex;
@@ -745,9 +592,13 @@ justify-content:space-between;
 gap:10px
 }
 
-.cartItemName{font-weight:800}
+.cartItemName{
+font-weight:800
+}
 
-.cartItemPrice{font-weight:900}
+.cartItemPrice{
+font-weight:900
+}
 
 .quantity{
 display:flex;
@@ -783,6 +634,12 @@ font-weight:900;
 margin-top:12px
 }
 
+.emptyCart{
+text-align:center;
+padding:50px 10px;
+color:#777
+}
+
 /* MODALS */
 
 .modal{
@@ -796,7 +653,9 @@ justify-content:center;
 padding:20px
 }
 
-.modal.show{display:flex}
+.modal.show{
+display:flex
+}
 
 .modalBox{
 width:min(520px,100%);
@@ -806,4 +665,886 @@ background:#fff;
 border-radius:15px;
 padding:30px;
 position:relative
-}  
+}
+
+.modalClose{
+position:absolute;
+right:20px;
+top:20px;
+width:38px;
+height:38px;
+border:0;
+border-radius:50%;
+background:#eee;
+font-size:20px
+}
+
+#checkoutForm{
+display:grid;
+gap:12px
+}
+
+#checkoutForm input,
+#checkoutForm select,
+#checkoutForm textarea{
+width:100%;
+padding:13px;
+border:1px solid #ddd;
+border-radius:8px
+}
+
+#checkoutForm textarea{
+min-height:100px
+}
+
+.orderSummary{
+background:#f5f5f5;
+padding:15px;
+border-radius:10px;
+margin:15px 0
+}
+
+/* MOBILE */
+
+@media(max-width:1050px){
+
+#productGrid{
+grid-template-columns:repeat(3,1fr)
+}
+
+.deliveryGrid{
+grid-template-columns:repeat(2,1fr)
+}
+
+}
+
+@media(max-width:800px){
+
+nav{
+display:none
+}
+
+.menuButton{
+display:block
+}
+
+.hero{
+grid-template-columns:1fr;
+text-align:center
+}
+
+.hero p{
+margin-left:auto;
+margin-right:auto
+}
+
+.heroButtons{
+justify-content:center
+}
+
+.trust{
+grid-template-columns:repeat(2,1fr)
+}
+
+.trustBox{
+border-bottom:1px solid #eee;
+border-right:0
+}
+
+.categoryGrid{
+grid-template-columns:repeat(2,1fr)
+}
+
+.whyGrid{
+grid-template-columns:1fr
+}
+
+.promo{
+flex-direction:column;
+align-items:flex-start
+}
+
+}
+
+@media(max-width:600px){
+
+header{
+padding:10px 4%
+}
+
+.logo{
+font-size:14px
+}
+
+.logoBox{
+width:38px;
+height:38px
+}
+
+.hero{
+min-height:600px;
+padding:60px 5%
+}
+
+.hero h1{
+font-size:48px;
+letter-spacing:-3px
+}
+
+.pmCircle{
+width:190px;
+height:190px;
+font-size:55px
+}
+
+.shop,
+.categories,
+.delivery,
+.why,
+.contact{
+padding-left:5%;
+padding-right:5%
+}
+
+.sectionTitle h2{
+font-size:34px
+}
+
+.filters{
+flex-direction:column
+}
+
+.filters input,
+.filters select{
+width:100%
+}
+
+#productGrid{
+grid-template-columns:repeat(2,1fr);
+gap:10px
+}
+
+.productImage{
+height:190px
+}
+
+.productVisual{
+font-size:70px
+}
+
+.phone{
+font-size:100px
+}
+
+.productBody{
+padding:12px
+}
+
+.productBody h3{
+font-size:13px
+}
+
+.price{
+font-size:17px
+}
+
+.productButtons{
+grid-template-columns:1fr
+}
+
+.deliveryGrid{
+grid-template-columns:1fr
+}
+
+.delivery h2{
+font-size:34px
+}
+
+.promo{
+margin-left:4%;
+margin-right:4%;
+padding:30px 20px
+}
+
+footer{
+text-align:center;
+justify-content:center
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+🚚 Nationwide delivery • 🎁 FREE delivery on orders over R1,500
+</div>
+
+<header>
+
+<a href="#home" class="logo">
+<span class="logoBox">PM</span>
+<span>PM TRADERS</span>
+</a>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#categories">Categories</a>
+<a href="#shop">Shop</a>
+<a href="#delivery">Delivery</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<div class="headerButtons">
+
+<button class="menuButton" onclick="toggleMenu()">
+☰
+</button>
+
+<button class="cartButton" onclick="openCart()">
+🛒 Cart <span id="cartCount">0</span>
+</button>
+
+</div>
+
+</header>
+
+<section class="hero" id="home">
+
+<div>
+
+<small>PM TRADERS • ONLINE STORE</small>
+
+<h1>
+Shop smart.<br>
+<span>Shop PM Traders.</span>
+</h1>
+
+<p>
+Quality smartphones, human hair, fashion,
+gadgets and accessories — all in one trusted store.
+</p>
+
+<div class="heroButtons">
+
+<a href="#shop" class="shopButton">
+Shop now →
+</a>
+
+<a href="#categories" class="outlineButton">
+Browse categories
+</a>
+
+</div>
+
+</div>
+
+<div class="heroVisual">
+
+<div class="pmCircle">
+PM
+</div>
+
+</div>
+
+</section>
+
+<section class="trust">
+
+<div class="trustBox">
+<strong>🚚 Nationwide</strong>
+<span>Delivery across South Africa</span>
+</div>
+
+<div class="trustBox">
+<strong>🎁 R1,500+</strong>
+<span>Free delivery</span>
+</div>
+
+<div class="trustBox">
+<strong>📦 Collection</strong>
+<span>Richards Bay & Empangeni</span>
+</div>
+
+<div class="trustBox">
+<strong>💬 WhatsApp</strong>
+<span>Easy order support</span>
+</div>
+
+</section>
+
+<section class="categories" id="categories">
+
+<div class="sectionTitle">
+
+<small>SHOP BY CATEGORY</small>
+
+<h2>Find what you need.</h2>
+
+<p>
+Browse our main product categories.
+</p>
+
+</div>
+
+<div class="categoryGrid">
+
+<button class="category" onclick="filterCategory('Tech')">
+<span class="categoryIcon">📱</span>
+Smartphones & Tech
+</button>
+
+<button class="category" onclick="filterCategory('Hair')">
+<span class="categoryIcon">💇</span>
+Human Hair
+</button>
+
+<button class="category" onclick="filterCategory('Fashion')">
+<span class="categoryIcon">👗</span>
+Fashion
+</button>
+
+<button class="category" onclick="filterCategory('Accessories')">
+<span class="categoryIcon">🎧</span>
+Accessories
+</button>
+
+</div>
+
+</section>
+
+<section class="shop" id="shop">
+
+<div class="sectionTitle">
+
+<small>PM TRADERS SHOP</small>
+
+<h2>Featured Products</h2>
+
+<p>
+Choose your favourite products and add them to your cart.
+</p>
+
+</div>
+
+<div class="filters">
+
+<input
+id="search"
+type="search"
+placeholder="🔎 Search products..."
+oninput="filterProducts()"
+>
+
+<select id="categoryFilter" onchange="filterProducts()">
+
+<option value="all">
+All categories
+</option>
+
+<option value="Tech">
+📱 Tech
+</option>
+
+<option value="Hair">
+💇 Hair
+</option>
+
+<option value="Fashion">
+👗 Fashion
+</option>
+
+<option value="Accessories">
+🎧 Accessories
+</option>
+
+</select>
+
+</div>
+
+<div id="productGrid">
+
+<!-- PRODUCT 1 -->
+
+<article class="productCard" data-name="iphone 13 pro max" data-category="Tech">
+
+<div class="productImage">
+
+<div class="productVisual">
+<span class="phone">📱</span>
+</div>
+
+</div>
+
+<div class="productBody">
+
+<span class="tag">TECH</span>
+
+<h3>iPhone 13 Pro Max</h3>
+
+<div class="price">
+R7,500
+</div>
+
+<div class="productButtons">
+
+<button class="viewButton"
+onclick="showProduct('iPhone 13 Pro Max',7500,'Tech','📱')">
+View
+</button>
+
+<button class="addButton"
+onclick="addProduct('iPhone 13 Pro Max',7500)">
+Add to Cart
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+<!-- PRODUCT 2 -->
+
+<article class="productCard" data-name="iphone 17 pro max" data-category="Tech">
+
+<div class="productImage">
+
+<div class="productVisual">
+<span class="phone">📱</span>
+</div>
+
+</div>
+
+<div class="productBody">
+
+<span class="tag">TECH</span>
+
+<h3>iPhone 17 Pro Max</h3>
+
+<div class="price">
+R24,000
+</div>
+
+<div class="productButtons">
+
+<button class="viewButton"
+onclick="showProduct('iPhone 17 Pro Max',24000,'Tech','📱')">
+View
+</button>
+
+<button class="addButton"
+onclick="addProduct('iPhone 17 Pro Max',24000)">
+Add to Cart
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+<!-- PRODUCT 3 -->
+
+<article class="productCard" data-name="8 inch weave dd" data-category="Hair">
+
+<div class="productImage">
+
+<div class="productVisual">
+<span class="hair">💇</span>
+</div>
+
+</div>
+
+<div class="productBody">
+
+<span class="tag">HAIR</span>
+
+<h3>8 Inch Weave DD</h3>
+
+<div class="price">
+R850
+</div>
+
+<div class="productButtons">
+
+<button class="viewButton"
+onclick="showProduct('8 Inch Weave DD',850,'Hair','💇')">
+View
+</button>
+
+<button class="addButton"
+onclick="addProduct('8 Inch Weave DD',850)">
+Add to Cart
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+<!-- PRODUCT 4 -->
+
+<article class="productCard" data-name="20 inch weave jurly curls" data-category="Hair">
+
+<div class="productImage">
+
+<div class="productVisual">
+<span class="hair">💇</span>
+</div>
+
+</div>
+
+<div class="productBody">
+
+<span class="tag">HAIR</span>
+
+<h3>20 Inch Weave Jurly Curls</h3>
+
+<div class="price">
+R970
+</div>
+
+<div class="productButtons">
+
+<button class="viewButton"
+onclick="showProduct('20 Inch Weave Jurly Curls',970,'Hair','💇')">
+View
+</button>
+
+<button class="addButton"
+onclick="addProduct('20 Inch Weave Jurly Curls',970)">
+Add to Cart
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+<!-- PRODUCT 5 -->
+
+<article class="productCard" data-name="fashion dress" data-category="Fashion">
+
+<div class="productImage">
+
+<div class="productVisual">
+<span class="fashion">👗</span>
+</div>
+
+</div>
+
+<div class="productBody">
+
+<span class="tag">FASHION</span>
+
+<h3>Fashion Dress</h3>
+
+<div class="price">
+R230
+</div>
+
+<div class="productButtons">
+
+<button class="viewButton"
+onclick="showProduct('Fashion Dress',230,'Fashion','👗')">
+View
+</button>
+
+<button class="addButton"
+onclick="addProduct('Fashion Dress',230)">
+Add to Cart
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+<!-- PRODUCT 6 -->
+
+<article class="productCard" data-name="cellphone accessories" data-category="Accessories">
+
+<div class="productImage">
+
+<div class="productVisual">
+<span class="accessory">🎧</span>
+</div>
+
+</div>
+
+<div class="productBody">
+
+<span class="tag">ACCESSORIES</span>
+
+<h3>Cellphone Accessories</h3>
+
+<div class="price">
+R150
+</div>
+
+<div class="productButtons">
+
+<button class="viewButton"
+onclick="showProduct('Cellphone Accessories',150,'Accessories','🎧')">
+View
+</button>
+
+<button class="addButton"
+onclick="addProduct('Cellphone Accessories',150)">
+Add to Cart
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+</div>
+
+<div id="noProducts" class="noProducts">
+<h3>No products found.</h3>
+<p>Try another search or category.</p>
+</div>
+
+</section>
+
+<section class="promo">
+
+<div>
+
+<h2>
+Free delivery when you spend R1,500+
+</h2>
+
+<p>
+Shop more and save on delivery with PM Traders.
+</p>
+
+</div>
+
+<a href="#shop">
+Shop now →
+</a>
+
+</section>
+
+<section class="delivery" id="delivery">
+
+<small>DELIVERY & COLLECTION</small>
+
+<h2>
+Getting your PM Traders order is simple.
+</h2>
+
+<div class="deliveryGrid">
+
+<div class="deliveryBox">
+<strong>📍 Richards Bay</strong>
+R30 delivery around Richards Bay and surrounding areas.
+</div>
+
+<div class="deliveryBox">
+<strong>🚚 Outside Richards Bay</strong>
+R60 delivery outside Richards Bay and Empangeni.
+</div>
+
+<div class="deliveryBox">
+<strong>🎁 R1,500+</strong>
+Free delivery when your order reaches R1,500 or more.
+</div>
+
+<div class="deliveryBox">
+<strong>📦 Collection</strong>
+Collection available around Richards Bay and Empangeni.
+</div>
+
+</div>
+
+</section>
+
+<section class="why">
+
+<div class="sectionTitle">
+
+<small>WHY PM TRADERS?</small>
+
+<h2>Shop with confidence.</h2>
+
+</div>
+
+<div class="whyGrid">
+
+<div class="whyBox">
+
+<span>🛍️</span>
+
+<h3>Quality Products</h3>
+
+<p>
+Smartphones, hair, fashion and accessories in one convenient store.
+</p>
+
+</div>
+
+<div class="whyBox">
+
+<span>🚚</span>
+
+<h3>Easy Delivery</h3>
+
+<p>
+Choose delivery or collection depending on what works best for you.
+</p>
+
+</div>
+
+<div class="whyBox">
+
+<span>💬</span>
+
+<h3>WhatsApp Support</h3>
+
+<p>
+Place your order directly through WhatsApp and communicate with PM Traders easily.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="contact" id="contact">
+
+<div class="sectionTitle">
+
+<small>CONTACT PM TRADERS</small>
+
+<h2>Need help with your order?</h2>
+
+<p>
+Chat directly with PM Traders on WhatsApp.
+</p>
+
+<a
+class="whatsapp"
+href="https://wa.me/27842748559"
+target="_blank">
+💬 WhatsApp PM Traders →
+</a>
+
+<p style="color:#777;margin-top:25px">
+📧 Info@PM-Traders.co.za
+</p>
+
+</div>
+
+</section>
+
+<footer>
+
+<strong>PM TRADERS</strong>
+
+<span>
+© 2026 PM Traders • Quality products. Trusted service.
+</span>
+
+</footer>
+
+<!-- CART -->
+
+<div id="shade" onclick="closeCart()"></div>
+
+<aside id="cartPanel">
+
+<div class="cartHead">
+
+<h2>Your Cart</h2>
+
+<button class="closeButton" onclick="closeCart()">
+×
+</button>
+
+</div>
+
+<div id="cartItems"></div>
+
+<div style="padding-top:20px">
+
+<strong>
+Subtotal:
+<span id="cartSubtotal">R0</span>
+</strong>
+
+<button class="fullButton" onclick="openCheckout()">
+Checkout →
+</button>
+
+</div>
+
+</aside>
+
+<!-- PRODUCT MODAL -->
+
+<div class="modal" id="productModal">
+
+<div class="modalBox">
+
+<button class="modalClose" onclick="closeProductModal()">
+×
+</button>
+
+<div id="modalIcon"
+style="font-size:90px;text-align:center;margin:20px 0">
+📱
+</div>
+
+<h2 id="modalName"></h2>
+
+<p id="modalCategory" style="color:#777"></p>
+
+<h2 id="modalPrice"></h2>
+
+<button class="fullButton" id="modalAdd">
+Add to Cart →
+</button>
+
+</div>
+
+</div>
+
+<!-- CHECKOUT -->
+
+<div class="modal" id="checkoutModal">
+
+<div class="modalBox">
+
+<button class="modalClose" onclick="closeCheckout()">
+×
+</button>
+
+<h2>Complete your order</h2>
+
+<form id="checkoutForm">
+
+<input
+name="name"
+placeholder="Full name"
+required
+>
+
+<input
+name="phone"
+placeholder="Phone / WhatsApp number"
+required
+>
+
+<input
+name="email"
+type="e
