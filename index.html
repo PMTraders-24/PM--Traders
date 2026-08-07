@@ -71,47 +71,13 @@ font-weight:800;
 font-size:14px
 }
 
-.headerActions{
-display:flex;
-gap:8px;
-align-items:center
-}
-
-.cartButton,
-.menuButton{
+.cartButton{
 background:#111;
 color:#fff;
 border:0;
 border-radius:9px;
-padding:11px 15px;
+padding:11px 16px;
 font-weight:800
-}
-
-.menuButton{display:none}
-
-/* MOBILE NAV */
-
-.mobileNav{
-display:none;
-position:fixed;
-top:72px;
-left:0;
-right:0;
-background:#fff;
-z-index:499;
-padding:20px;
-box-shadow:0 10px 30px rgba(0,0,0,.15)
-}
-
-.mobileNav.open{display:block}
-
-.mobileNav a{
-display:block;
-padding:14px 5px;
-color:#111;
-font-weight:800;
-text-decoration:none;
-border-bottom:1px solid #eee
 }
 
 /* HERO */
@@ -157,8 +123,7 @@ flex-wrap:wrap;
 margin-top:20px
 }
 
-.shopButton,
-.outlineButton{
+.shopButton,.outlineButton{
 display:inline-block;
 padding:14px 22px;
 border-radius:9px;
@@ -192,8 +157,7 @@ display:flex;
 align-items:center;
 justify-content:center;
 font-size:80px;
-font-weight:900;
-box-shadow:0 20px 70px rgba(255,255,255,.12)
+font-weight:900
 }
 
 /* TRUST */
@@ -224,7 +188,12 @@ font-size:13px;
 color:#777
 }
 
-/* SECTIONS */
+/* CATEGORIES */
+
+.categories{
+background:#fff;
+padding:60px 6%
+}
 
 .sectionTitle{
 text-align:center;
@@ -245,13 +214,6 @@ letter-spacing:-2px
 }
 
 .sectionTitle p{color:#777}
-
-/* CATEGORIES */
-
-.categories{
-background:#fff;
-padding:60px 6%
-}
 
 .categoryGrid{
 max-width:1100px;
@@ -310,7 +272,7 @@ outline:none
 
 .filters input{width:320px}
 
-/* PRODUCT GRID */
+/* PRODUCTS */
 
 #productGrid{
 display:grid;
@@ -332,24 +294,27 @@ transform:translateY(-4px);
 box-shadow:0 15px 35px rgba(0,0,0,.12)
 }
 
-.productImage{
-height:300px;
+/* IMAGE GALLERY */
+
+.gallery{
 background:#fafafa;
 position:relative;
+height:330px;
 display:flex;
 align-items:center;
 justify-content:center;
 overflow:hidden
 }
 
-.productImage img{
+.gallery img.mainImage{
 width:100%;
 height:100%;
 object-fit:contain;
-display:block
+display:block;
+padding:10px
 }
 
-.imageArrow{
+.galleryArrow{
 position:absolute;
 top:50%;
 transform:translateY(-50%);
@@ -357,31 +322,51 @@ width:38px;
 height:38px;
 border:0;
 border-radius:50%;
-background:rgba(0,0,0,.72);
+background:rgba(0,0,0,.75);
 color:#fff;
 font-size:22px;
-z-index:2
+z-index:5
 }
 
-.imageArrow.left{left:10px}
-.imageArrow.right{right:10px}
+.galleryArrow.left{left:10px}
+.galleryArrow.right{right:10px}
 
-.imageCounter{
+.galleryDots{
 position:absolute;
 bottom:10px;
-left:50%;
-transform:translateX(-50%);
-background:rgba(0,0,0,.7);
-color:#fff;
-font-size:11px;
-padding:5px 9px;
-border-radius:20px;
-z-index:2
+left:0;
+right:0;
+display:flex;
+justify-content:center;
+gap:6px;
+z-index:5
 }
 
-.noImage{
-font-size:60px;
-color:#ddd
+.galleryDot{
+width:8px;
+height:8px;
+border-radius:50%;
+background:#ccc;
+border:0;
+padding:0
+}
+
+.galleryDot.active{
+background:#111;
+transform:scale(1.25)
+}
+
+.photoCount{
+position:absolute;
+top:10px;
+right:10px;
+background:rgba(0,0,0,.75);
+color:#fff;
+padding:6px 9px;
+border-radius:20px;
+font-size:11px;
+font-weight:800;
+z-index:5
 }
 
 .productBody{
@@ -438,7 +423,9 @@ color:#111
 .noResults{
 grid-column:1/-1;
 text-align:center;
-padding:60px 20px;
+padding:50px;
+background:#fff;
+border-radius:15px;
 color:#777
 }
 
@@ -563,19 +550,17 @@ gap:20px;
 flex-wrap:wrap
 }
 
-/* OVERLAY */
+/* CART */
 
 #shade{
 position:fixed;
 inset:0;
-background:rgba(0,0,0,.65);
+background:rgba(0,0,0,.6);
 display:none;
 z-index:900
 }
 
 #shade.show{display:block}
-
-/* CART */
 
 #cartPanel{
 position:fixed;
@@ -599,8 +584,7 @@ border-bottom:1px solid #ddd;
 padding-bottom:15px
 }
 
-.closeButton,
-.modalClose{
+.closeButton{
 width:38px;
 height:38px;
 border:0;
@@ -664,7 +648,7 @@ margin-top:12px
 position:fixed;
 inset:0;
 z-index:1100;
-background:rgba(0,0,0,.7);
+background:rgba(0,0,0,.65);
 display:none;
 align-items:center;
 justify-content:center;
@@ -675,111 +659,62 @@ padding:20px
 
 .modalBox{
 width:min(650px,100%);
-max-height:92vh;
+max-height:90vh;
 overflow-y:auto;
 background:#fff;
-border-radius:18px;
-padding:25px;
+border-radius:15px;
+padding:30px;
 position:relative
 }
 
 .modalClose{
 position:absolute;
-right:18px;
-top:18px;
-z-index:5
+right:20px;
+top:20px;
+width:38px;
+height:38px;
+border:0;
+border-radius:50%;
+background:#eee;
+font-size:20px;
+z-index:10
 }
 
-/* PRODUCT GALLERY */
-
-.galleryMain{
-height:420px;
-background:#f7f7f7;
+.modalGallery{
+height:400px;
+background:#f5f5f5;
 border-radius:12px;
-position:relative;
 overflow:hidden;
-display:flex;
-align-items:center;
-justify-content:center
+position:relative;
+margin-bottom:20px
 }
 
-.galleryMain img{
+.modalGallery img{
 width:100%;
 height:100%;
 object-fit:contain
 }
 
-.galleryArrow{
-position:absolute;
-top:50%;
-transform:translateY(-50%);
-width:45px;
-height:45px;
-border:0;
-border-radius:50%;
-background:rgba(0,0,0,.75);
-color:#fff;
-font-size:25px;
-z-index:2
-}
-
-.galleryArrow.left{left:12px}
-.galleryArrow.right{right:12px}
-
-.galleryCounter{
-position:absolute;
-bottom:12px;
-left:50%;
-transform:translateX(-50%);
-background:rgba(0,0,0,.75);
-color:#fff;
-padding:6px 11px;
-border-radius:20px;
-font-size:12px
-}
-
-.thumbnails{
+.modalThumbs{
 display:flex;
 gap:8px;
 overflow-x:auto;
-padding:12px 0
+padding:8px 0
 }
 
-.thumbnail{
+.modalThumbs img{
 width:70px;
 height:70px;
-flex:0 0 70px;
+object-fit:cover;
 border:2px solid #ddd;
 border-radius:8px;
-background:#fafafa;
-overflow:hidden;
-padding:0
+cursor:pointer;
+flex-shrink:0
 }
 
-.thumbnail.active{
+.modalThumbs img.active{
 border-color:#111
 }
-
-.thumbnail img{
-width:100%;
-height:100%;
-object-fit:contain
-}
-
-.productModalInfo{
-padding-top:10px
-}
-
-.productModalInfo h2{
-margin:8px 0
-}
-
-.productDescription{
-color:#666;
-line-height:1.6
-}
-
-/* CHECKOUT */
 
 #checkoutForm{
 display:grid;
@@ -822,8 +757,6 @@ grid-template-columns:repeat(2,1fr)
 @media(max-width:800px){
 
 nav{display:none}
-
-.menuButton{display:block}
 
 .hero{
 grid-template-columns:1fr;
@@ -921,8 +854,8 @@ grid-template-columns:repeat(2,1fr);
 gap:10px
 }
 
-.productImage{
-height:205px
+.gallery{
+height:210px
 }
 
 .productBody{
@@ -955,25 +888,13 @@ margin-right:4%;
 padding:30px 20px
 }
 
-.galleryMain{
-height:330px
+.modalGallery{
+height:300px
 }
 
 footer{
 text-align:center;
 justify-content:center
-}
-
-}
-
-@media(max-width:400px){
-
-#productGrid{
-grid-template-columns:1fr
-}
-
-.productImage{
-height:280px
 }
 
 }
@@ -988,17 +909,9 @@ height:280px
 <a href="#shop">Shop</a>
 <a href="#delivery">Delivery</a>
 <a href="#contact">Contact</a>
-</nav><div class="headerActions">
-<button class="menuButton" id="menuButton">☰</button><button class="cartButton" id="cartButton">
+</nav><button class="cartButton" id="cartButton">
 🛒 Cart <span id="cartCount">0</span>
-</button>
-</div></header><div class="mobileNav" id="mobileNav">
-<a href="#home">Home</a>
-<a href="#categories">Categories</a>
-<a href="#shop">Shop</a>
-<a href="#delivery">Delivery</a>
-<a href="#contact">Contact</a>
-</div><section class="hero" id="home"><div><small>PM TRADERS • ONLINE STORE</small>
+</button></header><section class="hero" id="home"><div><small>PM TRADERS • ONLINE STORE</small>
 
 <h1>
 Shop smart.<br>
@@ -1111,34 +1024,18 @@ target="_blank"
 
 <span>
 © 2026 PM Traders • Quality products. Trusted service.
-</span></footer><div id="shade"></div><!-- CART --><aside id="cartPanel"><div class="cartHead"><h2>Your Cart</h2><button class="closeButton" id="closeCart">
+</span></footer><!-- CART --><div id="shade"></div><aside id="cartPanel"><div class="cartHead"><h2>Your Cart</h2><button class="closeButton" id="closeCart">
 ×
 </button></div><div id="cartItems"></div><div style="padding-top:20px"><strong>
 Subtotal:
 <span id="cartSubtotal">R0</span>
-</strong><p style="font-size:13px;color:#777">
-Delivery is calculated during checkout.
-</p><button class="fullButton" id="checkoutButton">
+</strong><button class="fullButton" id="checkoutButton">
 Checkout →
 </button></div></aside><!-- PRODUCT MODAL --><div class="modal" id="productModal"><div class="modalBox"><button class="modalClose" onclick="closeProductModal()">
 ×
-</button><div class="galleryMain"><button class="galleryArrow left" onclick="changeModalImage(-1)">
-‹
-</button><img id="modalImage" src="" alt="Product"><button class="galleryArrow right" onclick="changeModalImage(1)">
-›
-</button><div class="galleryCounter" id="galleryCounter">
-1 / 1
-</div></div><div class="thumbnails" id="modalThumbnails"></div><div class="productModalInfo"><span class="tag" id="modalCategory">
-PRODUCT
-</span><h2 id="modalName">
-Product
-</h2><h2 id="modalPrice">
-R0
-</h2><p class="productDescription" id="modalDescription">
-Quality product from PM Traders.
-</p><button class="fullButton" id="modalAdd">
+</button><div class="modalGallery"><img id="modalImage" src="" alt="Product"></div><div class="modalThumbs" id="modalThumbs"></div><h2 id="modalName"></h2><p id="modalCategory" style="color:#777"></p><h2 id="modalPrice"></h2><button class="fullButton" id="modalAdd">
 Add to Cart →
-</button></div></div></div><!-- CHECKOUT MODAL --><div class="modal" id="checkoutModal"><div class="modalBox"><button class="modalClose" onclick="closeCheckout()">
+</button></div></div><!-- CHECKOUT --><div class="modal" id="checkoutModal"><div class="modalBox"><button class="modalClose" onclick="closeCheckout()">
 ×
 </button><h2>Complete your order</h2><form id="checkoutForm"><input
 name="name"
@@ -1171,34 +1068,27 @@ Collection — Free
 name="address"
 placeholder="Delivery address / collection details"
 required
-></textarea><div class="orderSummary"><strong>Order:</strong>
+></textarea><div class="orderSummary"><strong>Order total:</strong>
 
-<div id="checkoutItems"></div><hr><strong>
-Subtotal: <span id="checkoutSubtotal">R0</span>
-</strong><br><strong>
-Delivery: <span id="checkoutDelivery">R30</span>
-</strong><br><br>
+<span id="checkoutTotal">R0</span>
 
-<strong>
-Total: <span id="checkoutTotal">R0</span>
-</strong></div><button class="fullButton" type="submit">
+</div><button class="fullButton" type="submit">
 Place order on WhatsApp →
 </button></form></div></div><script>
 
 /* =========================================================
    PM TRADERS PRODUCT DATABASE
-   Images load directly from the GitHub repository.
+   IMPORTANT:
+   Images are loaded directly from the GitHub repository.
    ========================================================= */
 
-const GH =
-"https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/";
+const GH = "https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/";
 
 /*
-  IMPORTANT:
-  The gallery system supports multiple images per product.
+   MULTI-IMAGE PRODUCTS
 
-  To add another image to a product later, simply add another
-  filename inside that product's images array.
+   You can add more pictures to any product by adding
+   another filename inside the images array.
 */
 
 const products = [
@@ -1208,8 +1098,6 @@ id:1,
 name:"iPhone 13 Pro Max",
 price:7500,
 category:"Tech",
-emoji:"📱",
-description:"iPhone 13 Pro Max available from PM Traders.",
 images:[
 "iPhone 13 Pro Max.jpeg"
 ]
@@ -1220,8 +1108,6 @@ id:2,
 name:"iPhone 17 Pro Max",
 price:24000,
 category:"Tech",
-emoji:"📱",
-description:"iPhone 17 Pro Max available from PM Traders.",
 images:[
 "iPhone 17 Pro Max.webp"
 ]
@@ -1229,5 +1115,183 @@ images:[
 
 {
 id:3,
+name:"8 Inch Super Double Drawn",
+price:850,
+category:"Hair",
+images:[
+"8 Inch Super Double Drawn.webp",
+"8 inch SDD Weave",
+"8 inch SDD pixey curly.jpg"
+]
+},
+
+{
+id:4,
 name:"20 Inch Curly Curls",
-price:9
+price:970,
+category:"Hair",
+images:[
+"20 inch Curly Curls.jpeg"
+]
+},
+
+{
+id:5,
+name:"Classic Caught",
+price:230,
+category:"Fashion",
+images:[
+"Classic Caught.jpg"
+]
+},
+
+{
+id:6,
+name:"Classic Ladies Dress",
+price:230,
+category:"Fashion",
+images:[
+"Classic Ladies Dress.jpg"
+]
+},
+
+{
+id:7,
+name:"Classic Rainbow Nation Dress",
+price:230,
+category:"Fashion",
+images:[
+"Classic Rainbow Nation Dress.jpg"
+]
+},
+
+{
+id:8,
+name:"Sky Blue Dress",
+price:230,
+category:"Fashion",
+images:[
+"Sky Blue Dress.jpg"
+]
+},
+
+{
+id:9,
+name:"Sleeveless Classic Attire",
+price:230,
+category:"Fashion",
+images:[
+"Sleeveless Classic Attire.jpg"
+]
+},
+
+{
+id:10,
+name:"Smart Casual Summer Two Piece",
+price:230,
+category:"Fashion",
+images:[
+"Smart Casual Summer Two piece.jpg"
+]
+},
+
+{
+id:11,
+name:"Smart Colour Dress",
+price:230,
+category:"Fashion",
+images:[
+"Smart Colour Dress.jpg"
+]
+},
+
+{
+id:12,
+name:"Smart Colour Full Dress",
+price:230,
+category:"Fashion",
+images:[
+"Smart Colour full dress.jpg"
+]
+},
+
+{
+id:13,
+name:"Smart Dress",
+price:230,
+category:"Fashion",
+images:[
+"Smart Dress.jpg"
+]
+},
+
+{
+id:14,
+name:"Cellphone Accessories",
+price:150,
+category:"Accessories",
+images:[
+"images.jpeg",
+"images (1).jpeg"
+]
+}
+
+];
+
+/* CART */
+
+let cart = [];
+
+let currentProduct = null;
+
+
+/* FORMAT MONEY */
+
+function money(value){
+
+return "R" + Number(value).toLocaleString("en-ZA");
+
+}
+
+
+/* IMAGE URL */
+
+function imageURL(filename){
+
+return GH + encodeURIComponent(filename);
+
+}
+
+
+/* PRODUCT CARD */
+
+function productCard(product){
+
+const image = imageURL(product.images[0]);
+
+const multiple = product.images.length > 1;
+
+return `
+
+<article
+class="productCard"
+data-name="${product.name.toLowerCase()}"
+data-category="${product.category}"
+>
+
+<div class="gallery">
+
+<img
+class="mainImage"
+id="image-${product.id}"
+src="${image}"
+alt="${product.name}"
+loading="lazy"
+onerror="imageError(this)"
+>
+
+${multiple ? `
+
+<button
+class="galleryArrow left"
+onclick="changeCardImage(${product
