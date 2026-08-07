@@ -1,387 +1,1024 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+<title>PM Traders | Online Store</title>
 
-  <meta
-    name="description"
-    content="PM Traders — Shop smartphones, human hair, fashion, gadgets and accessories."
-  >
+<meta name="description" content="PM Traders — smartphones, human hair, fashion, gadgets and accessories.">
 
-  <title>PM Traders | Online Store</title>
+<style>
+* {
+  box-sizing: border-box;
+}
 
-  <link rel="stylesheet" href="style.css">
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f5f6;
+  color: #111;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.topbar {
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 9px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+header {
+  background: white;
+  min-height: 72px;
+  padding: 12px 6%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #ddd;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.logoBox {
+  width: 43px;
+  height: 43px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #111;
+  color: white;
+
+  border-radius: 10px;
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.cartButton {
+  background: #111;
+  color: white;
+
+  border: 0;
+  border-radius: 9px;
+
+  padding: 11px 16px;
+
+  font-weight: 800;
+  cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+  background: #111;
+  color: white;
+
+  min-height: 500px;
+
+  padding: 70px 7%;
+
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+
+  align-items: center;
+  gap: 40px;
+}
+
+.hero small {
+  color: #aaa;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.hero h1 {
+  max-width: 750px;
+
+  margin: 18px 0;
+
+  font-size: clamp(45px, 7vw, 82px);
+
+  line-height: .95;
+
+  letter-spacing: -4px;
+}
+
+.hero h1 span {
+  color: #aaa;
+}
+
+.hero p {
+  max-width: 590px;
+
+  color: #ccc;
+
+  font-size: 18px;
+
+  line-height: 1.6;
+}
+
+.shopButton {
+  display: inline-block;
+
+  margin-top: 15px;
+
+  padding: 14px 23px;
+
+  background: white;
+  color: #111;
+
+  border-radius: 9px;
+
+  text-decoration: none;
+
+  font-weight: 900;
+}
+
+.heroVisual {
+  min-height: 320px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+}
+
+.pmCircle {
+  width: 250px;
+  height: 250px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: white;
+  color: #111;
+
+  font-size: 75px;
+  font-weight: 900;
+
+  box-shadow: 0 20px 70px rgba(255,255,255,.12);
+}
+
+/* CATEGORIES */
+
+.categories {
+  background: white;
+
+  padding: 35px 6%;
+
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+
+  flex-wrap: wrap;
+}
+
+.category {
+  padding: 13px 20px;
+
+  border: 1px solid #ddd;
+
+  border-radius: 50px;
+
+  background: white;
+
+  font-weight: 800;
+}
+
+/* SHOP */
+
+.shop {
+  max-width: 1500px;
+
+  margin: auto;
+
+  padding: 75px 5%;
+}
+
+.sectionTitle {
+  text-align: center;
+
+  margin-bottom: 35px;
+}
+
+.sectionTitle small {
+  color: #777;
+
+  font-size: 11px;
+
+  font-weight: 900;
+
+  letter-spacing: 2px;
+}
+
+.sectionTitle h2 {
+  margin: 8px 0;
+
+  font-size: 45px;
+
+  letter-spacing: -2px;
+}
+
+.sectionTitle p {
+  color: #777;
+}
+
+/* SEARCH */
+
+.filters {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  margin-bottom: 35px;
+}
+
+.filters input,
+.filters select {
+  height: 48px;
+
+  padding: 0 15px;
+
+  background: white;
+
+  border: 1px solid #ddd;
+
+  border-radius: 9px;
+
+  outline: none;
+}
+
+.filters input {
+  width: 300px;
+}
+
+/* PRODUCTS */
+
+#grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 22px;
+}
+
+.card {
+  background: white;
+
+  border: 1px solid #ddd;
+
+  border-radius: 15px;
+
+  overflow: hidden;
+
+  box-shadow: 0 5px 20px rgba(0,0,0,.05);
+}
+
+.card .art {
+  height: 310px;
+
+  padding: 8px;
+
+  background: #fafafa;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.card .art img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+.card .body {
+  padding: 18px;
+}
+
+.card .tag {
+  display: inline-block;
+
+  padding: 5px 9px;
+
+  background: #eee;
+
+  border-radius: 20px;
+
+  font-size: 9px;
+
+  font-weight: 900;
+}
+
+.card h3 {
+  min-height: 45px;
+
+  font-size: 16px;
+}
+
+.card .price {
+  font-size: 21px;
+
+  font-weight: 900;
+
+  margin: 12px 0;
+}
+
+.card .add {
+  width: 100%;
+
+  padding: 13px;
+
+  border: 0;
+
+  border-radius: 8px;
+
+  background: #111;
+
+  color: white;
+
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+/* DELIVERY */
+
+.delivery {
+  padding: 75px 7%;
+
+  background: #111;
+
+  color: white;
+}
+
+.delivery h2 {
+  font-size: 45px;
+
+  letter-spacing: -2px;
+}
+
+.deliveryGrid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 15px;
+}
+
+.deliveryBox {
+  padding: 25px;
+
+  border: 1px solid #333;
+
+  border-radius: 12px;
+
+  background: #181818;
+
+  color: #ccc;
+}
+
+.deliveryBox strong {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: white;
+}
+
+/* CONTACT */
+
+.contact {
+  background: white;
+
+  padding: 75px 7%;
+
+  text-align: center;
+}
+
+.whatsapp {
+  display: inline-block;
+
+  margin-top: 15px;
+
+  padding: 14px 22px;
+
+  background: #111;
+
+  color: white;
+
+  border-radius: 9px;
+
+  text-decoration: none;
+
+  font-weight: 900;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 35px 6%;
+
+  background: #080808;
+
+  color: #aaa;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  flex-wrap: wrap;
+}
+
+/* CART */
+
+#shade {
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(0,0,0,.55);
+
+  display: none;
+
+  z-index: 999;
+}
+
+#cart {
+  position: fixed;
+
+  top: 0;
+  right: -450px;
+
+  width: min(430px, 94vw);
+
+  height: 100vh;
+
+  background: white;
+
+  z-index: 1000;
+
+  padding: 25px;
+
+  overflow-y: auto;
+
+  transition: right .3s;
+}
+
+#cart.open {
+  right: 0;
+}
+
+.cartHead {
+  display: flex;
+
+  justify-content: space-between;
+
+  border-bottom: 1px solid #ddd;
+
+  padding-bottom: 15px;
+}
+
+#close,
+#x {
+  border: 0;
+
+  background: #eee;
+
+  border-radius: 50%;
+
+  width: 38px;
+  height: 38px;
+
+  cursor: pointer;
+}
+
+.item {
+  padding: 15px 0;
+
+  border-bottom: 1px solid #eee;
+}
+
+/* MODAL */
+
+#modal {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 1100;
+
+  background: rgba(0,0,0,.6);
+
+  display: none;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+}
+
+#modal.show {
+  display: flex;
+}
+
+.modalBox {
+  width: min(520px, 100%);
+
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  background: white;
+
+  border-radius: 15px;
+
+  padding: 30px;
+
+  position: relative;
+}
+
+#form {
+  display: grid;
+
+  gap: 12px;
+}
+
+#form input,
+#form select,
+#form textarea {
+  width: 100%;
+
+  padding: 13px;
+
+  border: 1px solid #ddd;
+
+  border-radius: 8px;
+}
+
+#form textarea {
+  min-height: 100px;
+}
+
+.full {
+  width: 100%;
+
+  padding: 13px;
+
+  border: 0;
+
+  border-radius: 8px;
+
+  background: #111;
+
+  color: white;
+
+  font-weight: 800;
+}
+
+/* MOBILE */
+
+@media(max-width:900px) {
+
+  nav {
+    display: none;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+
+    text-align: center;
+
+    padding: 60px 5%;
+  }
+
+  .hero p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .heroVisual {
+    min-height: 240px;
+  }
+
+  #grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .deliveryGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width:520px) {
+
+  header {
+    padding: 10px 4%;
+  }
+
+  .brand {
+    font-size: 14px;
+  }
+
+  .hero {
+    min-height: 580px;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+
+    letter-spacing: -3px;
+  }
+
+  .pmCircle {
+    width: 180px;
+    height: 180px;
+
+    font-size: 55px;
+  }
+
+  .categories {
+    padding: 25px 4%;
+  }
+
+  .category {
+    font-size: 12px;
+
+    padding: 10px 14px;
+  }
+
+  .shop {
+    padding: 55px 4%;
+  }
+
+  .sectionTitle h2 {
+    font-size: 34px;
+  }
+
+  .filters {
+    flex-direction: column;
+  }
+
+  .filters input,
+  .filters select {
+    width: 100%;
+  }
+
+  #grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 10px;
+  }
+
+  .card .art {
+    height: 210px;
+  }
+
+  .card .body {
+    padding: 12px;
+  }
+
+  .card h3 {
+    font-size: 13px;
+  }
+
+  .card .price {
+    font-size: 17px;
+  }
+
+  .deliveryGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .delivery h2 {
+    font-size: 35px;
+  }
+
+  footer {
+    text-align: center;
+
+    justify-content: center;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- TOP ANNOUNCEMENT -->
+<div class="topbar">
+🚚 Nationwide delivery • Free delivery over R1,500
+</div>
 
-  <div class="top">
-    🚚 Nationwide delivery available • Free delivery on orders over R1,500
-  </div>
+<header>
 
+<a href="#" class="logo">
+<span class="logoBox">PM</span>
+<span>PM TRADERS</span>
+</a>
 
-  <!-- HEADER -->
+<nav>
+<a href="#home">Home</a>
+<a href="#shop">Shop</a>
+<a href="#delivery">Delivery</a>
+<a href="#contact">Contact</a>
+</nav>
 
-  <header>
+<button id="cartBtn" class="cartButton">
+🛒 Cart <span id="count">0</span>
+</button>
 
-    <a href="#" class="brand">
-      <b>PM</b>
-      <span>PM TRADERS</span>
-    </a>
+</header>
 
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#shop">Shop</a>
-      <a href="#delivery">Delivery</a>
-      <a href="#contact">Contact</a>
-    </nav>
+<section class="hero" id="home">
 
-    <button id="cartBtn" type="button">
-      🛒 Cart
-      <span id="count">0</span>
-    </button>
+<div>
 
-  </header>
+<small>PM TRADERS • ONLINE STORE</small>
 
+<h1>
+Shop smart.<br>
+<span>Shop PM Traders.</span>
+</h1>
 
-  <!-- HERO -->
+<p>
+Quality smartphones, human hair, fashion,
+gadgets and accessories — all in one trusted store.
+</p>
 
-  <main id="home">
+<a href="#shop" class="shopButton">
+Shop now →
+</a>
 
-    <section class="hero">
+</div>
 
-      <div>
+<div class="heroVisual">
 
-        <small>PM TRADERS • ONLINE STORE</small>
+<div class="pmCircle">
+PM
+</div>
 
-        <h1>
-          Shop smart.<br>
-          <i>Shop PM Traders.</i>
-        </h1>
+</div>
 
-        <p>
-          Quality smartphones, human hair, fashion,
-          gadgets and accessories — all in one trusted store.
-        </p>
+</section>
 
-        <a class="btn" href="#shop">
-          Shop now →
-        </a>
+<section class="categories">
 
-      </div>
+<div class="category">📱 Tech</div>
+<div class="category">💇 Hair</div>
+<div class="category">👗 Fashion</div>
+<div class="category">🎧 Accessories</div>
 
+</section>
 
-      <div class="visual">
+<section class="shop" id="shop">
 
-        <strong>PM</strong>
+<div class="sectionTitle">
 
-        <span>📱 Tech</span>
-        <span>💇 Hair</span>
-        <span>👗 Fashion</span>
+<small>SHOP PM TRADERS</small>
 
-      </div>
+<h2>Featured Products</h2>
 
-    </section>
+<p>
+Browse our latest products and add your favourites to your cart.
+</p>
 
+</div>
 
-    <!-- SHOP -->
+<div class="filters">
 
-    <section class="shop" id="shop">
+<input
+id="search"
+type="search"
+placeholder="Search products..."
+>
 
-      <div class="heading">
+<select id="cat">
 
-        <div>
+<option value="all">
+All categories
+</option>
 
-          <small>SHOP PM TRADERS</small>
+</select>
 
-          <h2>Featured products</h2>
+</div>
 
-          <p>
-            Browse our latest products and add your
-            favourites to your cart.
-          </p>
+<div id="grid"></div>
 
-        </div>
+</section>
 
+<section class="delivery" id="delivery">
 
-        <div>
+<small>DELIVERY & COLLECTION</small>
 
-          <input
-            id="search"
-            type="search"
-            placeholder="Search products..."
-            aria-label="Search products"
-          >
+<h2>
+We make getting your order easy.
+</h2>
 
-          <select
-            id="cat"
-            aria-label="Product category"
-          >
-            <option value="all">
-              All categories
-            </option>
-          </select>
+<div class="deliveryGrid">
 
-        </div>
+<div class="deliveryBox">
+<strong>📍 Richards Bay</strong>
+R30 delivery around Richards Bay and surrounding areas.
+</div>
 
-      </div>
+<div class="deliveryBox">
+<strong>🚚 Outside Richards Bay</strong>
+R60 delivery outside Richards Bay and Empangeni.
+</div>
 
+<div class="deliveryBox">
+<strong>🎁 Orders over R1,500</strong>
+Enjoy free delivery when your order reaches R1,500 or more.
+</div>
 
-      <!-- PRODUCTS ARE INSERTED BY app.js -->
+<div class="deliveryBox">
+<strong>📦 Collection</strong>
+Collection available around Richards Bay and Empangeni.
+</div>
 
-      <div id="grid" class="grid"></div>
+</div>
 
-    </section>
+</section>
 
+<section class="contact" id="contact">
 
-    <!-- DELIVERY -->
+<h2>Need help with your order?</h2>
 
-    <section class="delivery" id="delivery">
+<p>
+Chat directly with PM Traders on WhatsApp.
+</p>
 
-      <small>PM TRADERS DELIVERY</small>
+<a
+class="whatsapp"
+href="https://wa.me/27842748559"
+target="_blank"
+>
+WhatsApp PM Traders →
+</a>
 
-      <h2>
-        Simple delivery.<br>
-        Easy collection.
-      </h2>
+</section>
 
+<footer>
 
-      <div class="deliveryGrid">
+<strong>PM TRADERS</strong>
 
-        <div>
-          <b>📍 Richards Bay</b>
-          <br>
-          R30 delivery around Richards Bay
-          and surrounding areas.
-        </div>
+<span>
+© 2026 PM Traders • Quality products. Trusted service.
+</span>
 
-        <div>
-          <b>🚚 Outside Richards Bay</b>
-          <br>
-          R60 delivery outside Richards Bay
-          and Empangeni.
-        </div>
+</footer>
 
-        <div>
-          <b>🎁 Free Delivery</b>
-          <br>
-          Spend R1,500 or more and delivery
-          is free.
-        </div>
+<div id="shade"></div>
 
-        <div>
-          <b>📦 Collection</b>
-          <br>
-          Collection available around
-          Richards Bay and Empangeni.
-        </div>
+<aside id="cart">
 
-      </div>
+<div class="cartHead">
 
-    </section>
+<h2>Your Cart</h2>
 
+<button id="close">
+×
+</button>
 
-    <!-- CONTACT -->
+</div>
 
-    <section class="contact" id="contact">
+<div id="items"></div>
 
-      <small>NEED HELP?</small>
+<div>
 
-      <h2>
-        Let's get your order sorted.
-      </h2>
+<strong>
+Subtotal: <span id="sub">R0</span>
+</strong>
 
-      <p>
-        Have a question about a product,
-        delivery or your order?
-        Contact PM Traders directly on WhatsApp.
-      </p>
+<button
+id="checkout"
+class="full"
+style="margin-top:15px"
+>
+Checkout →
+</button>
 
-      <a
-        class="btn"
-        href="https://wa.me/27842748559"
-        target="_blank"
-        rel="noopener"
-      >
-        WhatsApp PM Traders →
-      </a>
+</div>
 
-    </section>
+</aside>
 
-  </main>
+<div id="modal">
 
+<div class="modalBox">
 
-  <!-- FOOTER -->
+<button id="x">
+×
+</button>
 
-  <footer>
+<h2>Complete your order</h2>
 
-    <div>
-      <b>PM TRADERS</b>
-      <br>
-      Quality products. Trusted service.
-    </div>
+<form id="form">
 
-    <div>
-      © 2026 PM Traders
-    </div>
+<input
+name="name"
+placeholder="Full name"
+required
+>
 
-  </footer>
+<input
+name="phone"
+placeholder="Phone / WhatsApp number"
+required
+>
 
+<input
+name="email"
+type="email"
+placeholder="Email address"
+>
 
-  <!-- CART SHADE -->
+<select
+id="deliveryOpt"
+name="delivery"
+required
+>
 
-  <div id="shade"></div>
+<option value="local">
+Richards Bay / surrounding — R30
+</option>
 
+<option value="outside">
+Outside Richards Bay / Empangeni — R60
+</option>
 
-  <!-- CART -->
+<option value="collection">
+Collection — Free
+</option>
 
-  <aside id="cart">
+</select>
 
-    <div class="cartHead">
+<textarea
+name="address"
+placeholder="Delivery address / collection details"
+required
+></textarea>
 
-      <h2>Your Cart</h2>
+<p>
+<strong>Total:</strong>
+<span id="total">R0</span>
+</p>
 
-      <button
-        id="close"
-        type="button"
-        aria-label="Close cart"
-      >
-        ×
-      </button>
+<button class="full" type="submit">
+Place order on WhatsApp →
+</button>
 
-    </div>
+</form>
 
+</div>
 
-    <div id="items"></div>
+</div>
 
-
-    <div class="foot">
-
-      <strong>
-        Subtotal:
-        <span id="sub">R0</span>
-      </strong>
-
-      <button
-        id="checkout"
-        class="btn full"
-        type="button"
-      >
-        Checkout →
-      </button>
-
-    </div>
-
-  </aside>
-
-
-  <!-- CHECKOUT MODAL -->
-
-  <div id="modal">
-
-    <div class="modalBox">
-
-      <button
-        id="x"
-        type="button"
-        aria-label="Close checkout"
-      >
-        ×
-      </button>
-
-      <h2>Complete your order</h2>
-
-      <p>
-        Choose delivery or collection and
-        provide your contact details.
-      </p>
-
-
-      <form id="form">
-
-        <input
-          name="name"
-          type="text"
-          placeholder="Full name"
-          required
-        >
-
-        <input
-          name="phone"
-          type="tel"
-          placeholder="Phone / WhatsApp number"
-          required
-        >
-
-        <input
-          name="email"
-          type="email"
-          placeholder="Email address"
-        >
-
-
-        <select
-          id="deliveryOpt"
-          name="delivery"
-          required
-        >
-
-          <option value="local">
-            Richards Bay / surrounding — R30
-          </option>
-
-          <option value="outside">
-            Outside Richards Bay / Empangeni — R60
-          </option>
-
-          <option value="collection">
-            Collection — Free
-          </option>
-
-        </select>
-
-
-        <textarea
-          name="address"
-          placeholder="Delivery address / collection details"
-          required
-        ></textarea>
-
-
-        <p>
-          <strong>Total:</strong>
-          <span id="total">R0</span>
-        </p>
-
-
-        <button
-          class="btn full"
-          type="submit"
-        >
-          Place order on WhatsApp →
-        </button>
-
-      </form>
-
-    </div>
-
-  </div>
-
-
-  <!-- PRODUCT DATA FIRST -->
-
-  <script src="products.js"></script>
-
-  <!-- STORE FUNCTIONALITY -->
-
-  <script src="app.js"></script>
+<script src="products.js"></script>
+<script src="app.js"></script>
 
 </body>
 </html>
