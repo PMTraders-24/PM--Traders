@@ -1,945 +1,816 @@
 <!DOCTYPE html><html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>PM Traders | Online Store</title><meta name="description" content="PM Traders — smartphones, human hair, fashion, gadgets and accessories. Nationwide delivery across South Africa."><style>
-* {
-  box-sizing: border-box;
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>PM Traders | Online Store</title><meta name="description" content="PM Traders — smartphones, human hair, fashion, gadgets and accessories."><style>
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+background:#f5f5f5;
+color:#111
 }
 
-html {
-  scroll-behavior: smooth;
+button,input,select,textarea{font:inherit}
+
+button{cursor:pointer}
+
+.topbar{
+background:#111;
+color:#fff;
+text-align:center;
+padding:10px;
+font-size:12px;
+font-weight:800
 }
 
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f5f5f5;
-  color: #111;
+header{
+background:#fff;
+min-height:72px;
+padding:12px 6%;
+display:flex;
+align-items:center;
+justify-content:space-between;
+border-bottom:1px solid #ddd;
+position:sticky;
+top:0;
+z-index:500
 }
 
-button,
-input,
-select,
-textarea {
-  font: inherit;
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+font-size:18px;
+font-weight:900;
+text-decoration:none
 }
 
-button {
-  cursor: pointer;
+.logoBox{
+width:43px;
+height:43px;
+background:#111;
+color:#fff;
+border-radius:10px;
+display:flex;
+align-items:center;
+justify-content:center
 }
 
-a {
-  color: inherit;
+nav{
+display:flex;
+gap:25px
 }
 
-/* TOP BAR */
-
-.topbar {
-  background: #111;
-  color: #fff;
-  text-align: center;
-  padding: 10px 15px;
-  font-size: 12px;
-  font-weight: 800;
+nav a{
+color:#333;
+text-decoration:none;
+font-weight:800;
+font-size:14px
 }
 
-/* HEADER */
-
-header {
-  position: sticky;
-  top: 0;
-  z-index: 900;
-  min-height: 72px;
-  padding: 12px 6%;
-  background: #fff;
-  border-bottom: 1px solid #ddd;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+.cartButton{
+background:#111;
+color:#fff;
+border:0;
+border-radius:9px;
+padding:11px 16px;
+font-weight:800
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: 900;
-}
-
-.logoBox {
-  width: 44px;
-  height: 44px;
-  border-radius: 11px;
-  background: #111;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-nav {
-  display: flex;
-  gap: 25px;
-}
-
-nav a {
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 800;
-}
-
-nav a:hover {
-  opacity: .6;
-}
-
-.cartButton,
-.mobileMenuButton {
-  border: 0;
-  background: #111;
-  color: #fff;
-  border-radius: 9px;
-  padding: 11px 15px;
-  font-weight: 800;
-}
-
-.mobileMenuButton {
-  display: none;
-}
-
-/* MOBILE MENU */
-
-.mobileMenu {
-  display: none;
-  position: fixed;
-  top: 72px;
-  left: 0;
-  right: 0;
-  z-index: 899;
-  background: #fff;
-  padding: 15px 5%;
-  border-bottom: 1px solid #ddd;
-  box-shadow: 0 10px 25px rgba(0,0,0,.08);
-}
-
-.mobileMenu.show {
-  display: block;
-}
-
-.mobileMenu a {
-  display: block;
-  padding: 14px 0;
-  border-bottom: 1px solid #eee;
-  text-decoration: none;
-  font-weight: 800;
+.mobileMenuButton{
+display:none;
+background:#111;
+color:#fff;
+border:0;
+border-radius:9px;
+padding:10px 13px
 }
 
 /* HERO */
 
-.hero {
-  background: #111;
-  color: #fff;
-  min-height: 560px;
-  padding: 80px 7%;
-  display: grid;
-  grid-template-columns: 1.15fr .85fr;
-  align-items: center;
-  gap: 50px;
+.hero{
+background:#111;
+color:#fff;
+min-height:540px;
+padding:70px 7%;
+display:grid;
+grid-template-columns:1.2fr .8fr;
+align-items:center;
+gap:40px
 }
 
-.hero small {
-  color: #aaa;
-  font-size: 12px;
-  font-weight: 900;
-  letter-spacing: 2px;
+.hero small{
+color:#aaa;
+font-size:12px;
+font-weight:900;
+letter-spacing:2px
 }
 
-.hero h1 {
-  margin: 18px 0;
-  max-width: 780px;
-  font-size: clamp(48px, 7vw, 88px);
-  line-height: .93;
-  letter-spacing: -5px;
+.hero h1{
+margin:18px 0;
+font-size:clamp(45px,7vw,82px);
+line-height:.95;
+letter-spacing:-4px
 }
 
-.hero h1 span {
-  color: #999;
+.hero h1 span{color:#aaa}
+
+.hero p{
+max-width:590px;
+color:#ccc;
+font-size:18px;
+line-height:1.6
 }
 
-.hero p {
-  max-width: 610px;
-  color: #ccc;
-  font-size: 18px;
-  line-height: 1.7;
+.heroButtons{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+margin-top:20px
 }
 
-.heroButtons {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 25px;
+.shopButton,.outlineButton{
+display:inline-block;
+padding:14px 22px;
+border-radius:9px;
+text-decoration:none;
+font-weight:900
 }
 
-.shopButton,
-.outlineButton {
-  display: inline-block;
-  padding: 14px 22px;
-  border-radius: 9px;
-  text-decoration: none;
-  font-weight: 900;
+.shopButton{
+background:#fff;
+color:#111
 }
 
-.shopButton {
-  background: #fff;
-  color: #111;
+.outlineButton{
+border:1px solid #555;
+color:#fff
 }
 
-.outlineButton {
-  border: 1px solid #555;
-  color: #fff;
+.heroVisual{
+display:flex;
+justify-content:center;
+align-items:center
 }
 
-.heroVisual {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.heroCircle {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  background: #fff;
-  color: #111;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 85px;
-  font-weight: 900;
-  box-shadow: 0 25px 80px rgba(255,255,255,.12);
+.pmCircle{
+width:270px;
+height:270px;
+border-radius:50%;
+background:#fff;
+color:#111;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:80px;
+font-weight:900
 }
 
 /* TRUST */
 
-.trustStrip {
-  background: #fff;
-  padding: 22px 6%;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border-bottom: 1px solid #ddd;
+.trust{
+background:#fff;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+padding:22px 6%;
+border-bottom:1px solid #ddd
 }
 
-.trustItem {
-  text-align: center;
-  padding: 8px;
-  border-right: 1px solid #eee;
+.trustBox{
+text-align:center;
+padding:10px;
+border-right:1px solid #eee
 }
 
-.trustItem:last-child {
-  border-right: 0;
+.trustBox:last-child{border:0}
+
+.trustBox strong{
+display:block;
+margin-bottom:5px
 }
 
-.trustItem strong {
-  display: block;
-  margin-bottom: 5px;
-}
-
-.trustItem span {
-  color: #777;
-  font-size: 13px;
+.trustBox span{
+font-size:13px;
+color:#777
 }
 
 /* CATEGORIES */
 
-.categoriesSection {
-  background: #fff;
-  padding: 60px 6%;
+.categories{
+background:#fff;
+padding:60px 6%
 }
 
-.sectionHeading {
-  text-align: center;
-  margin-bottom: 30px;
+.sectionTitle{
+text-align:center;
+margin-bottom:35px
 }
 
-.sectionHeading small {
-  color: #777;
-  font-size: 11px;
-  letter-spacing: 2px;
-  font-weight: 900;
+.sectionTitle small{
+color:#777;
+font-size:11px;
+font-weight:900;
+letter-spacing:2px
 }
 
-.sectionHeading h2 {
-  margin: 8px 0;
-  font-size: 40px;
-  letter-spacing: -2px;
+.sectionTitle h2{
+margin:8px 0;
+font-size:42px;
+letter-spacing:-2px
 }
 
-.sectionHeading p {
-  color: #777;
+.sectionTitle p{color:#777}
+
+.categoryGrid{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px
 }
 
-.categoryGrid {
-  max-width: 1100px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
+.category{
+border:1px solid #ddd;
+background:#fafafa;
+border-radius:15px;
+padding:25px 15px;
+text-align:center;
+font-weight:900;
+transition:.2s
 }
 
-.categoryCard {
-  border: 1px solid #ddd;
-  border-radius: 15px;
-  background: #fafafa;
-  padding: 25px 15px;
-  text-align: center;
-  font-weight: 900;
-  transition: .2s;
+.category:hover{
+background:#111;
+color:#fff;
+transform:translateY(-3px)
 }
 
-.categoryCard:hover {
-  transform: translateY(-3px);
-  background: #111;
-  color: #fff;
-}
-
-.categoryIcon {
-  display: block;
-  font-size: 32px;
-  margin-bottom: 10px;
+.categoryIcon{
+display:block;
+font-size:32px;
+margin-bottom:10px
 }
 
 /* SHOP */
 
-.shop {
-  max-width: 1500px;
-  margin: auto;
-  padding: 75px 5%;
+.shop{
+max-width:1500px;
+margin:auto;
+padding:75px 5%
 }
 
-.filters {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 35px;
+.filters{
+display:flex;
+justify-content:center;
+gap:10px;
+margin-bottom:35px
 }
 
 .filters input,
-.filters select {
-  height: 48px;
-  padding: 0 15px;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 9px;
-  outline: none;
+.filters select{
+height:48px;
+padding:0 15px;
+background:#fff;
+border:1px solid #ddd;
+border-radius:9px;
+outline:none
 }
 
-.filters input {
-  width: 320px;
-}
+.filters input{width:320px}
 
 /* PRODUCTS */
 
-#grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 22px;
+#productGrid{
+display:grid;
+grid-template-columns:repeat(4,minmax(0,1fr));
+gap:22px
 }
 
-.card {
-  position: relative;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 5px 20px rgba(0,0,0,.05);
-  transition: transform .2s, box-shadow .2s;
+.productCard{
+background:#fff;
+border:1px solid #ddd;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 5px 20px rgba(0,0,0,.06);
+transition:.2s
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(0,0,0,.11);
+.productCard:hover{
+transform:translateY(-5px);
+box-shadow:0 15px 35px rgba(0,0,0,.12)
 }
 
-.productImage {
-  height: 290px;
-  background: #fafafa;
-  padding: 10px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.productImage{
+height:290px;
+background:#fafafa;
+padding:12px;
+display:flex;
+align-items:center;
+justify-content:center
 }
 
-.productImage img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+.productImage img{
+width:100%;
+height:100%;
+object-fit:contain
 }
 
-.badge {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  z-index: 2;
-  background: #111;
-  color: #fff;
-  padding: 7px 10px;
-  border-radius: 20px;
-  font-size: 10px;
-  font-weight: 900;
+.productImage .placeholder{
+font-size:65px;
+font-weight:900;
+color:#ddd
 }
 
-.cardBody {
-  padding: 18px;
+.productBody{padding:18px}
+
+.tag{
+display:inline-block;
+background:#eee;
+padding:5px 9px;
+border-radius:20px;
+font-size:9px;
+font-weight:900
 }
 
-.tag {
-  display: inline-block;
-  padding: 5px 9px;
-  background: #eee;
-  border-radius: 20px;
-  font-size: 9px;
-  font-weight: 900;
+.productBody h3{
+min-height:42px;
+font-size:16px;
+margin:12px 0
 }
 
-.card h3 {
-  min-height: 42px;
-  margin: 12px 0;
-  font-size: 16px;
+.price{
+font-size:21px;
+font-weight:900;
+margin:10px 0
 }
 
-.price {
-  font-size: 21px;
-  font-weight: 900;
-}
-
-.oldPrice {
-  margin-left: 7px;
-  color: #999;
-  font-size: 13px;
-  text-decoration: line-through;
-}
-
-.cardButtons {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  margin-top: 15px;
+.productButtons{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:8px;
+margin-top:15px
 }
 
 .addButton,
-.viewButton {
-  border: 0;
-  border-radius: 8px;
-  padding: 12px 7px;
-  font-size: 12px;
-  font-weight: 900;
+.viewButton{
+border:0;
+border-radius:8px;
+padding:12px 7px;
+font-size:12px;
+font-weight:900
 }
 
-.addButton {
-  background: #111;
-  color: #fff;
+.addButton{
+background:#111;
+color:#fff
 }
 
-.viewButton {
-  background: #eee;
-  color: #111;
+.viewButton{
+background:#eee;
+color:#111
 }
 
-.noProducts {
-  grid-column: 1 / -1;
-  text-align: center;
-  background: #fff;
-  padding: 55px 20px;
-  border-radius: 15px;
+.hiddenProduct{
+display:none
 }
 
 /* PROMO */
 
-.promo {
-  margin: 0 5% 70px;
-  padding: 45px;
-  background: #111;
-  color: #fff;
-  border-radius: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 25px;
+.promo{
+margin:0 5% 70px;
+padding:40px;
+background:#111;
+color:#fff;
+border-radius:18px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px
 }
 
-.promo h2 {
-  margin: 0 0 10px;
-  font-size: 32px;
+.promo h2{margin:0 0 8px}
+
+.promo p{
+color:#bbb;
+margin:0
 }
 
-.promo p {
-  color: #bbb;
-  margin: 0;
-}
-
-.promoButton {
-  white-space: nowrap;
-  padding: 13px 20px;
-  border-radius: 8px;
-  background: #fff;
-  color: #111;
-  text-decoration: none;
-  font-weight: 900;
+.promo a{
+background:#fff;
+color:#111;
+padding:13px 20px;
+border-radius:8px;
+text-decoration:none;
+font-weight:900;
+white-space:nowrap
 }
 
 /* DELIVERY */
 
-.delivery {
-  padding: 75px 7%;
-  background: #111;
-  color: #fff;
+.delivery{
+background:#111;
+color:#fff;
+padding:75px 7%
 }
 
-.delivery h2 {
-  max-width: 700px;
-  font-size: 45px;
-  letter-spacing: -2px;
+.delivery h2{
+font-size:45px;
+letter-spacing:-2px;
+max-width:700px
 }
 
-.deliveryGrid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
+.deliveryGrid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px
 }
 
-.deliveryBox {
-  padding: 25px;
-  border: 1px solid #333;
-  border-radius: 12px;
-  background: #181818;
-  color: #ccc;
+.deliveryBox{
+background:#181818;
+border:1px solid #333;
+border-radius:12px;
+padding:25px;
+color:#ccc
 }
 
-.deliveryBox strong {
-  display: block;
-  color: #fff;
-  margin-bottom: 8px;
+.deliveryBox strong{
+display:block;
+color:#fff;
+margin-bottom:8px
 }
 
 /* WHY */
 
-.why {
-  padding: 75px 7%;
-  background: #fff;
+.why{
+background:#fff;
+padding:75px 7%
 }
 
-.whyGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+.whyGrid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px
 }
 
-.whyBox {
-  padding: 30px;
-  border: 1px solid #ddd;
-  border-radius: 15px;
+.whyBox{
+border:1px solid #ddd;
+border-radius:15px;
+padding:30px
 }
 
-.whyBox span {
-  font-size: 32px;
-}
+.whyBox span{font-size:32px}
 
-.whyBox h3 {
-  margin-bottom: 8px;
-}
-
-.whyBox p {
-  color: #777;
-  line-height: 1.6;
+.whyBox p{
+color:#777;
+line-height:1.6
 }
 
 /* CONTACT */
 
-.contact {
-  background: #f5f5f5;
-  padding: 75px 7%;
-  text-align: center;
+.contact{
+text-align:center;
+padding:75px 7%;
+background:#f5f5f5
 }
 
-.whatsapp {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 14px 22px;
-  background: #111;
-  color: #fff;
-  border-radius: 9px;
-  text-decoration: none;
-  font-weight: 900;
+.whatsapp{
+display:inline-block;
+background:#111;
+color:#fff;
+padding:14px 22px;
+border-radius:9px;
+text-decoration:none;
+font-weight:900
 }
 
 /* FOOTER */
 
-footer {
-  background: #080808;
-  color: #aaa;
-  padding: 35px 6%;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
+footer{
+background:#080808;
+color:#aaa;
+padding:35px 6%;
+display:flex;
+justify-content:space-between;
+gap:20px;
+flex-wrap:wrap
 }
 
 /* CART */
 
-#shade {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.6);
-  display: none;
-  z-index: 999;
+#shade{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.6);
+display:none;
+z-index:900
 }
 
-#shade.show {
-  display: block;
+#shade.show{display:block}
+
+#cartPanel{
+position:fixed;
+top:0;
+right:-450px;
+width:min(430px,94vw);
+height:100vh;
+background:#fff;
+z-index:1000;
+padding:25px;
+overflow-y:auto;
+transition:right .3s
 }
 
-#cartPanel {
-  position: fixed;
-  top: 0;
-  right: -470px;
-  width: min(450px, 94vw);
-  height: 100vh;
-  background: #fff;
-  z-index: 1000;
-  padding: 25px;
-  overflow-y: auto;
-  transition: right .3s;
+#cartPanel.open{right:0}
+
+.cartHead{
+display:flex;
+justify-content:space-between;
+border-bottom:1px solid #ddd;
+padding-bottom:15px
 }
 
-#cartPanel.open {
-  right: 0;
+.closeButton{
+width:38px;
+height:38px;
+border:0;
+border-radius:50%;
+background:#eee;
+font-size:20px
 }
 
-.cartHead {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 15px;
+.cartItem{
+padding:15px 0;
+border-bottom:1px solid #eee
 }
 
-.closeButton {
-  width: 38px;
-  height: 38px;
-  border: 0;
-  border-radius: 50%;
-  background: #eee;
-  font-size: 22px;
+.cartItemTop{
+display:flex;
+justify-content:space-between;
+gap:10px
 }
 
-.cartItem {
-  padding: 15px 0;
-  border-bottom: 1px solid #eee;
+.cartItemName{font-weight:800}
+
+.cartItemPrice{font-weight:900}
+
+.quantity{
+display:flex;
+align-items:center;
+gap:8px;
+margin-top:10px
 }
 
-.cartItemTop {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
+.quantity button{
+width:30px;
+height:30px;
+border:0;
+border-radius:6px;
+background:#eee
 }
 
-.cartItemName {
-  font-weight: 800;
+.removeButton{
+border:0;
+background:transparent;
+color:#a00000;
+font-size:12px;
+padding:7px 0
 }
 
-.cartItemPrice {
-  font-weight: 900;
-}
-
-.quantity {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 10px;
-}
-
-.quantity button {
-  width: 30px;
-  height: 30px;
-  border: 0;
-  border-radius: 6px;
-  background: #eee;
-}
-
-.removeButton {
-  border: 0;
-  background: transparent;
-  color: #a00000;
-  padding: 7px 0;
-  font-size: 12px;
-}
-
-.cartSummary {
-  padding-top: 20px;
-}
-
-.cartTotal {
-  font-size: 20px;
-  font-weight: 900;
-}
-
-.fullButton {
-  width: 100%;
-  padding: 14px;
-  border: 0;
-  border-radius: 8px;
-  background: #111;
-  color: #fff;
-  font-weight: 900;
-  margin-top: 12px;
+.fullButton{
+width:100%;
+padding:14px;
+border:0;
+border-radius:8px;
+background:#111;
+color:#fff;
+font-weight:900;
+margin-top:12px
 }
 
 /* MODALS */
 
-.modal {
-  position: fixed;
-  inset: 0;
-  z-index: 1100;
-  background: rgba(0,0,0,.65);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
+.modal{
+position:fixed;
+inset:0;
+z-index:1100;
+background:rgba(0,0,0,.65);
+display:none;
+align-items:center;
+justify-content:center;
+padding:20px
 }
 
-.modal.show {
-  display: flex;
+.modal.show{display:flex}
+
+.modalBox{
+width:min(520px,100%);
+max-height:90vh;
+overflow-y:auto;
+background:#fff;
+border-radius:15px;
+padding:30px;
+position:relative
 }
 
-.modalBox {
-  position: relative;
-  width: min(550px, 100%);
-  max-height: 90vh;
-  overflow-y: auto;
-  background: #fff;
-  border-radius: 16px;
-  padding: 30px;
+.modalClose{
+position:absolute;
+right:20px;
+top:20px;
+width:38px;
+height:38px;
+border:0;
+border-radius:50%;
+background:#eee;
+font-size:20px
 }
 
-.modalClose {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  width: 38px;
-  height: 38px;
-  border: 0;
-  border-radius: 50%;
-  background: #eee;
-  font-size: 21px;
-}
-
-.productModalImage {
-  height: 300px;
-  background: #f7f7f7;
-  border-radius: 12px;
-  padding: 15px;
-  margin-bottom: 20px;
-}
-
-.productModalImage img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-#checkoutForm {
-  display: grid;
-  gap: 12px;
+#checkoutForm{
+display:grid;
+gap:12px
 }
 
 #checkoutForm input,
 #checkoutForm select,
-#checkoutForm textarea {
-  width: 100%;
-  padding: 13px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  outline: none;
+#checkoutForm textarea{
+width:100%;
+padding:13px;
+border:1px solid #ddd;
+border-radius:8px
 }
 
-#checkoutForm textarea {
-  min-height: 100px;
-  resize: vertical;
+#checkoutForm textarea{
+min-height:100px
 }
 
-.orderSummary {
-  background: #f5f5f5;
-  border-radius: 10px;
-  padding: 15px;
+.orderSummary{
+background:#f5f5f5;
+padding:15px;
+border-radius:10px
 }
 
-.deliveryText {
-  color: #777;
-  font-size: 13px;
+/* MOBILE */
+
+@media(max-width:1050px){
+
+#productGrid{
+grid-template-columns:repeat(3,1fr)
 }
 
-/* RESPONSIVE */
-
-@media(max-width:1050px) {
-
-  #grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .deliveryGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.deliveryGrid{
+grid-template-columns:repeat(2,1fr)
 }
 
-@media(max-width:800px) {
-
-  nav {
-    display: none;
-  }
-
-  .mobileMenuButton {
-    display: block;
-  }
-
-  .hero {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .hero p {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .heroButtons {
-    justify-content: center;
-  }
-
-  .trustStrip {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .trustItem {
-    border-right: 0;
-    border-bottom: 1px solid #eee;
-  }
-
-  .categoryGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .whyGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .promo {
-    flex-direction: column;
-    align-items: flex-start;
-  }
 }
 
-@media(max-width:600px) {
+@media(max-width:800px){
 
-  header {
-    padding: 10px 4%;
-  }
+nav{display:none}
 
-  .logo {
-    font-size: 14px;
-  }
+.mobileMenuButton{display:block}
 
-  .logoBox {
-    width: 38px;
-    height: 38px;
-  }
+header>div{
+display:flex;
+gap:8px
+}
 
-  .hero {
-    min-height: 620px;
-    padding: 60px 5%;
-  }
+.hero{
+grid-template-columns:1fr;
+text-align:center
+}
 
-  .hero h1 {
-    font-size: 49px;
-    letter-spacing: -3px;
-  }
+.hero p{
+margin-left:auto;
+margin-right:auto
+}
 
-  .heroCircle {
-    width: 190px;
-    height: 190px;
-    font-size: 55px;
-  }
+.heroButtons{
+justify-content:center
+}
 
-  .categoriesSection,
-  .shop,
-  .why,
-  .delivery,
-  .contact {
-    padding-left: 5%;
-    padding-right: 5%;
-  }
+.trust{
+grid-template-columns:repeat(2,1fr)
+}
 
-  .sectionHeading h2 {
-    font-size: 33px;
-  }
+.trustBox{
+border-bottom:1px solid #eee;
+border-right:0
+}
 
-  .filters {
-    flex-direction: column;
-  }
+.categoryGrid{
+grid-template-columns:repeat(2,1fr)
+}
 
-  .filters input,
-  .filters select {
-    width: 100%;
-  }
+.whyGrid{
+grid-template-columns:1fr
+}
 
-  #grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
+.promo{
+flex-direction:column;
+align-items:flex-start
+}
 
-  .productImage {
-    height: 200px;
-  }
+}
 
-  .cardBody {
-    padding: 12px;
-  }
+@media(max-width:600px){
 
-  .card h3 {
-    font-size: 13px;
-  }
+header{
+padding:10px 4%
+}
 
-  .price {
-    font-size: 17px;
-  }
+.logo{
+font-size:14px
+}
 
-  .cardButtons {
-    grid-template-columns: 1fr;
-  }
+.logoBox{
+width:38px;
+height:38px
+}
 
-  .promo {
-    margin-left: 4%;
-    margin-right: 4%;
-    padding: 30px 20px;
-  }
+.hero{
+min-height:600px;
+padding:60px 5%
+}
 
-  .promo h2 {
-    font-size: 25px;
-  }
+.hero h1{
+font-size:48px;
+letter-spacing:-3px
+}
 
-  .deliveryGrid {
-    grid-template-columns: 1fr;
-  }
+.pmCircle{
+width:190px;
+height:190px;
+font-size:55px
+}
 
-  .delivery h2 {
-    font-size: 34px;
-  }
+.shop,
+.categories,
+.delivery,
+.why,
+.contact{
+padding-left:5%;
+padding-right:5%
+}
 
-  footer {
-    text-align: center;
-    justify-content: center;
-  }
+.sectionTitle h2{
+font-size:34px
+}
+
+.filters{
+flex-direction:column
+}
+
+.filters input,
+.filters select{
+width:100%
+}
+
+#productGrid{
+grid-template-columns:repeat(2,1fr);
+gap:10px
+}
+
+.productImage{
+height:200px
+}
+
+.productBody{
+padding:12px
+}
+
+.productBody h3{
+font-size:13px
+}
+
+.price{
+font-size:17px
+}
+
+.productButtons{
+grid-template-columns:1fr
+}
+
+.deliveryGrid{
+grid-template-columns:1fr
+}
+
+.delivery h2{
+font-size:34px
+}
+
+.promo{
+margin-left:4%;
+margin-right:4%;
+padding:30px 20px
+}
+
+footer{
+text-align:center;
+justify-content:center
+}
+
 }
 </style></head><body><div class="topbar">
 🚚 Nationwide delivery • 🎁 FREE delivery on orders over R1,500
@@ -952,17 +823,11 @@ footer {
 <a href="#shop">Shop</a>
 <a href="#delivery">Delivery</a>
 <a href="#contact">Contact</a>
-</nav><div style="display:flex;gap:8px;align-items:center;"><button class="mobileMenuButton" id="menuButton">
-☰
-</button><button class="cartButton" id="cartButton">
+</nav><div style="display:flex;gap:8px;align-items:center"><button class="mobileMenuButton" id="menuButton">☰</button>
+
+<button class="cartButton" id="cartButton">
 🛒 Cart <span id="cartCount">0</span>
-</button></div></header><div class="mobileMenu" id="mobileMenu">
-<a href="#home">Home</a>
-<a href="#categories">Categories</a>
-<a href="#shop">Shop</a>
-<a href="#delivery">Delivery</a>
-<a href="#contact">Contact</a>
-</div><section class="hero" id="home"><div><small>PM TRADERS • ONLINE STORE</small>
+</button></div></header><section class="hero" id="home"><div><small>PM TRADERS • ONLINE STORE</small>
 
 <h1>
 Shop smart.<br>
@@ -970,41 +835,39 @@ Shop smart.<br>
 </h1><p>
 Quality smartphones, human hair, fashion,
 gadgets and accessories — all in one trusted store.
-</p><div class="heroButtons"><a class="shopButton" href="#shop">
+</p><div class="heroButtons"><a href="#shop" class="shopButton">
 Shop now →
-</a><a class="outlineButton" href="#categories">
+</a><a href="#categories" class="outlineButton">
 Browse categories
 </a></div></div><div class="heroVisual">
-<div class="heroCircle">
-PM
-</div>
-</div></section><section class="trustStrip"><div class="trustItem">
+<div class="pmCircle">PM</div>
+</div></section><section class="trust"><div class="trustBox">
 <strong>🚚 Nationwide</strong>
 <span>Delivery across South Africa</span>
-</div><div class="trustItem">
+</div><div class="trustBox">
 <strong>🎁 R1,500+</strong>
 <span>Free delivery</span>
-</div><div class="trustItem">
+</div><div class="trustBox">
 <strong>📦 Collection</strong>
 <span>Richards Bay & Empangeni</span>
-</div><div class="trustItem">
+</div><div class="trustBox">
 <strong>💬 WhatsApp</strong>
 <span>Easy order support</span>
-</div></section><section class="categoriesSection" id="categories"><div class="sectionHeading"><small>SHOP BY CATEGORY</small>
+</div></section><section class="categories" id="categories"><div class="sectionTitle"><small>SHOP BY CATEGORY</small>
 
-<h2>Find what you need.</h2><p>Browse our main product categories.</p></div><div class="categoryGrid"><button class="categoryCard" onclick="chooseCategory('Tech')">
+<h2>Find what you need.</h2><p>Browse our main product categories.</p></div><div class="categoryGrid"><button class="category" onclick="filterCategory('Tech')">
 <span class="categoryIcon">📱</span>
 Smartphones & Tech
-</button><button class="categoryCard" onclick="chooseCategory('Hair')">
+</button><button class="category" onclick="filterCategory('Hair')">
 <span class="categoryIcon">💇</span>
 Human Hair
-</button><button class="categoryCard" onclick="chooseCategory('Fashion')">
+</button><button class="category" onclick="filterCategory('Fashion')">
 <span class="categoryIcon">👗</span>
 Fashion
-</button><button class="categoryCard" onclick="chooseCategory('Accessories')">
+</button><button class="category" onclick="filterCategory('Accessories')">
 <span class="categoryIcon">🎧</span>
 Accessories
-</button></div></section><section class="shop" id="shop"><div class="sectionHeading"><small>PM TRADERS SHOP</small>
+</button></div></section><section class="shop" id="shop"><div class="sectionTitle"><small>PM TRADERS SHOP</small>
 
 <h2>Featured Products</h2><p>
 Choose your favourite products and add them to your cart.
@@ -1015,15 +878,211 @@ placeholder="🔎 Search products..."
 
 «»
 
-<select id="category"><option value="all">All categories</option>
+<select id="categoryFilter"><option value="all">All categories</option>
 <option value="Tech">📱 Tech</option>
 <option value="Hair">💇 Hair</option>
 <option value="Fashion">👗 Fashion</option>
-<option value="Accessories">🎧 Accessories</option></select></div><div id="grid"></div></section><section class="promo"><div><h2>Free delivery when you spend R1,500+</h2><p>
-Shop more and save on delivery with PM Traders.
-</p></div><a href="#shop" class="promoButton">
-Shop now →
-</a></section><section class="delivery" id="delivery"><small>DELIVERY & COLLECTION</small>
+<option value="Accessories">🎧 Accessories</option></select></div><div id="productGrid"><!-- PRODUCT 1 --><article
+class="productCard"
+data-name="iphone 13 pro max"
+data-category="Tech"
+><div class="productImage"><img
+src="images/iphone-13-pro-max.jpg"
+alt="iPhone 13 Pro Max"
+onerror="this.style.display='none';this.nextElementSibling.style.display='block';"
+
+«»
+
+<div class="placeholder" style="display:none">
+📱
+</div></div><div class="productBody"><span class="tag">TECH</span>
+
+<h3>iPhone 13 Pro Max</h3><div class="price">R7,500</div><div class="productButtons"><button
+class="viewButton"
+onclick="showProduct('iPhone 13 Pro Max','R7,500','Tech','images/iphone-13-pro-max.jpg')"
+
+«»
+
+View
+</button>
+
+<button
+class="addButton"
+onclick="addProduct('iPhone 13 Pro Max',7500)"
+
+«»
+
+Add to Cart
+</button>
+
+</div></div></article><!-- PRODUCT 2 --><article
+class="productCard"
+data-name="iphone 17 pro max"
+data-category="Tech"
+><div class="productImage"><img
+src="images/iphone-17-pro-max.jpg"
+alt="iPhone 17 Pro Max"
+onerror="this.style.display='none';this.nextElementSibling.style.display='block';"
+
+«»
+
+<div class="placeholder" style="display:none">
+📱
+</div></div><div class="productBody"><span class="tag">TECH</span>
+
+<h3>iPhone 17 Pro Max</h3><div class="price">R24,000</div><div class="productButtons"><button
+class="viewButton"
+onclick="showProduct('iPhone 17 Pro Max','R24,000','Tech','images/iphone-17-pro-max.jpg')"
+
+«»
+
+View
+</button>
+
+<button
+class="addButton"
+onclick="addProduct('iPhone 17 Pro Max',24000)"
+
+«»
+
+Add to Cart
+</button>
+
+</div></div></article><!-- PRODUCT 3 --><article
+class="productCard"
+data-name="8 inch weave dd"
+data-category="Hair"
+><div class="productImage"><img
+src="images/8-inch-weave-dd.jpg"
+alt="8 Inch Weave DD"
+onerror="this.style.display='none';this.nextElementSibling.style.display='block';"
+
+«»
+
+<div class="placeholder" style="display:none">
+💇
+</div></div><div class="productBody"><span class="tag">HAIR</span>
+
+<h3>8 Inch Weave DD</h3><div class="price">R850</div><div class="productButtons"><button
+class="viewButton"
+onclick="showProduct('8 Inch Weave DD','R850','Hair','images/8-inch-weave-dd.jpg')"
+
+«»
+
+View
+</button>
+
+<button
+class="addButton"
+onclick="addProduct('8 Inch Weave DD',850)"
+
+«»
+
+Add to Cart
+</button>
+
+</div></div></article><!-- PRODUCT 4 --><article
+class="productCard"
+data-name="20 inch weave jurly curls"
+data-category="Hair"
+><div class="productImage"><img
+src="images/20-inch-weave-jurly-curls.jpg"
+alt="20 Inch Weave Jurly Curls"
+onerror="this.style.display='none';this.nextElementSibling.style.display='block';"
+
+«»
+
+<div class="placeholder" style="display:none">
+💇
+</div></div><div class="productBody"><span class="tag">HAIR</span>
+
+<h3>20 Inch Weave Jurly Curls</h3><div class="price">R970</div><div class="productButtons"><button
+class="viewButton"
+onclick="showProduct('20 Inch Weave Jurly Curls','R970','Hair','images/20-inch-weave-jurly-curls.jpg')"
+
+«»
+
+View
+</button>
+
+<button
+class="addButton"
+onclick="addProduct('20 Inch Weave Jurly Curls',970)"
+
+«»
+
+Add to Cart
+</button>
+
+</div></div></article><!-- PRODUCT 5 --><article
+class="productCard"
+data-name="fashion dress"
+data-category="Fashion"
+><div class="productImage"><img
+src="images/fashion-dress.jpg"
+alt="Fashion Dress"
+onerror="this.style.display='none';this.nextElementSibling.style.display='block';"
+
+«»
+
+<div class="placeholder" style="display:none">
+👗
+</div></div><div class="productBody"><span class="tag">FASHION</span>
+
+<h3>Fashion Dress</h3><div class="price">R230</div><div class="productButtons"><button
+class="viewButton"
+onclick="showProduct('Fashion Dress','R230','Fashion','images/fashion-dress.jpg')"
+
+«»
+
+View
+</button>
+
+<button
+class="addButton"
+onclick="addProduct('Fashion Dress',230)"
+
+«»
+
+Add to Cart
+</button>
+
+</div></div></article><!-- PRODUCT 6 --><article
+class="productCard"
+data-name="cellphone accessories"
+data-category="Accessories"
+><div class="productImage"><img
+src="images/accessories.jpg"
+alt="Cellphone Accessories"
+onerror="this.style.display='none';this.nextElementSibling.style.display='block';"
+
+«»
+
+<div class="placeholder" style="display:none">
+🎧
+</div></div><div class="productBody"><span class="tag">ACCESSORIES</span>
+
+<h3>Cellphone Accessories</h3><div class="price">R150</div><div class="productButtons"><button
+class="viewButton"
+onclick="showProduct('Cellphone Accessories','R150','Accessories','images/accessories.jpg')"
+
+«»
+
+View
+</button>
+
+<button
+class="addButton"
+onclick="addProduct('Cellphone Accessories',150)"
+
+«»
+
+Add to Cart
+</button>
+
+</div></div></article></div></section><section class="promo"><div><h2>Free delivery when you spend R1,500+</h2><p>Shop more and save on delivery with PM Traders.</p></div><a href="#shop">Shop now →</a>
+
+</section><section class="delivery" id="delivery"><small>DELIVERY & COLLECTION</small>
 
 <h2>
 Getting your PM Traders order is simple.
@@ -1039,13 +1098,13 @@ Free delivery when your order reaches R1,500 or more.
 </div><div class="deliveryBox">
 <strong>📦 Collection</strong>
 Collection available around Richards Bay and Empangeni.
-</div></div></section><section class="why"><div class="sectionHeading"><small>WHY PM TRADERS?</small>
+</div></div></section><section class="why"><div class="sectionTitle"><small>WHY PM TRADERS?</small>
 
 <h2>Shop with confidence.</h2></div><div class="whyGrid"><div class="whyBox">
 <span>🛍️</span>
 <h3>Quality Products</h3>
 <p>
-We offer smartphones, hair, fashion and accessories in one convenient store.
+Smartphones, hair, fashion and accessories in one convenient store.
 </p>
 </div><div class="whyBox">
 <span>🚚</span>
@@ -1059,11 +1118,9 @@ Choose delivery or collection depending on what works best for you.
 <p>
 Place your order directly through WhatsApp and communicate with PM Traders easily.
 </p>
-</div></div></section><section class="contact" id="contact"><div class="sectionHeading"><small>CONTACT PM TRADERS</small>
+</div></div></section><section class="contact" id="contact"><div class="sectionTitle"><small>CONTACT PM TRADERS</small>
 
-<h2>Need help with your order?</h2><p>
-Chat directly with PM Traders on WhatsApp.
-</p><a
+<h2>Need help with your order?</h2><p>Chat directly with PM Traders on WhatsApp.</p><a
 class="whatsapp"
 href="https://wa.me/27842748559"
 target="_blank"
@@ -1073,7 +1130,7 @@ target="_blank"
 💬 WhatsApp PM Traders →
 </a>
 
-<p style="margin-top:25px;color:#777;">
+<p style="color:#777;margin-top:25px">
 📧 Info@PM-Traders.co.za
 </p></div></section><footer><strong>PM TRADERS</strong>
 
@@ -1081,29 +1138,18 @@ target="_blank"
 © 2026 PM Traders • Quality products. Trusted service.
 </span></footer><!-- CART --><div id="shade"></div><aside id="cartPanel"><div class="cartHead"><h2>Your Cart</h2><button class="closeButton" id="closeCart">
 ×
-</button></div><div id="cartItems"></div><div style="padding-top:20px;"><div class="cartTotal">
-Subtotal: <span id="cartSubtotal">R0</span>
-</div><p style="color:#777;font-size:13px;">
-Delivery is calculated during checkout.
-</p><button class="fullButton" id="checkoutButton">
+</button></div><div id="cartItems"></div><div style="padding-top:20px"><strong>
+Subtotal:
+<span id="cartSubtotal">R0</span>
+</strong><button class="fullButton" id="checkoutButton">
 Checkout →
-</button></div></aside><!-- PRODUCT DETAILS --><div class="modal" id="productModal"><div class="modalBox"><button class="modalClose" id="closeProduct">
+</button></div></aside><!-- PRODUCT MODAL --><div class="modal" id="productModal"><div class="modalBox"><button class="modalClose" onclick="closeProductModal()">
 ×
-</button><div class="productModalImage"><img id="modalProductImage" src="" alt="Product"></div><span class="tag" id="modalProductCategory">
-Product
-</span><h2 id="modalProductName">
-Product
-</h2><p id="modalProductDescription" style="color:#777;line-height:1.6;">
-Quality product from PM Traders.
-</p><div class="price" id="modalProductPrice">
-R0
-</div><button class="fullButton" id="modalAddButton">
+</button><h2 id="modalName"></h2><p id="modalCategory" style="color:#777"></p><h2 id="modalPrice"></h2><button class="fullButton" id="modalAdd">
 Add to Cart →
-</button></div></div><!-- CHECKOUT --><div class="modal" id="checkoutModal"><div class="modalBox"><button class="modalClose" id="closeCheckout">
+</button></div></div><!-- CHECKOUT MODAL --><div class="modal" id="checkoutModal"><div class="modalBox"><button class="modalClose" onclick="closeCheckout()">
 ×
-</button><h2>Complete your order</h2><p style="color:#777;font-size:14px;">
-Enter your details below. Your order will be sent to PM Traders via WhatsApp.
-</p><form id="checkoutForm"><input
+</button><h2>Complete your order</h2><form id="checkoutForm"><input
 name="name"
 placeholder="Full name"
 required
@@ -1121,29 +1167,4 @@ required
 name="email"
 type="email"
 placeholder="Email address"
-
-«»
-
-<select
-name="delivery"
-id="deliveryOption"
-required
-
-«»
-
-<option value="local">
-Richards Bay / surrounding — R30
-</option><option value="outside">
-Outside Richards Bay / Empangeni — R60
-</option><option value="collection">
-Collection — FREE
-</option></select><textarea
-name="address"
-placeholder="Delivery address / collection details"
-required
-></textarea><div class="orderSummary"><strong>
-Order total:
-<span id="checkoutTotal">R0</span>
-</strong><p class="deliveryText" id="deliveryMessage">
-Delivery fee will be calculated automatically.
-</p></div><button type="submit" class="fullButton"
+  
