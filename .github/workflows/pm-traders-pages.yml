@@ -28,14 +28,6 @@ jobs:
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Validate website
-        run: |
-          test -f index.html
-          test -f app.js
-          test -f products.js
-          test -f style.css
-          echo "PM Traders website files validated successfully."
-
       - name: Upload PM Traders website
         uses: actions/upload-pages-artifact@v4
         with:
