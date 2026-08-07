@@ -2,2187 +2,406 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PM Traders | Online Store</title><style>
+<title>PM Traders | Online Store</title>
+<meta name="description" content="PM Traders — smartphones, human hair, fashion, gadgets and accessories."><style>
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f5f5f5;color:#111}
+button,input,select{font:inherit}
+button{cursor:pointer}
 
-body{
-  margin:0;
-  font-family:Arial,Helvetica,sans-serif;
-  background:#f5f5f5;
-  color:#111;
-}
+.topbar{background:#111;color:#fff;text-align:center;padding:10px;font-size:12px;font-weight:800}
 
-.topbar{
-  background:#111;
-  color:#fff;
-  text-align:center;
-  padding:10px;
-  font-size:13px;
-  font-weight:bold;
-}
+header{background:#fff;min-height:70px;padding:10px 5%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ddd;position:sticky;top:0;z-index:500}
 
-header{
-  background:#fff;
-  padding:14px 5%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  border-bottom:1px solid #ddd;
-  position:sticky;
-  top:0;
-  z-index:20;
-}
+.logo{display:flex;align-items:center;gap:10px;color:#111;text-decoration:none;font-weight:900}
+.logoBox{width:42px;height:42px;background:#111;color:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center}
 
-.logo{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-weight:900;
-  font-size:18px;
-}
+nav{display:flex;gap:20px}
+nav a{color:#222;text-decoration:none;font-size:14px;font-weight:800}
 
-.logoBox{
-  width:42px;
-  height:42px;
-  background:#111;
-  color:#fff;
-  border-radius:10px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
+.cartButton{border:0;background:#111;color:#fff;padding:11px 15px;border-radius:9px;font-weight:800}
 
-.cart{
-  background:#111;
-  color:#fff;
-  border:0;
-  padding:11px 15px;
-  border-radius:8px;
-  font-weight:bold;
-}
-
-.hero{
-  background:#111;
-  color:#fff;
-  padding:70px 7%;
-  text-align:center;
-}
-
-.hero h1{
-  font-size:clamp(42px,7vw,75px);
-  margin:15px 0;
-  line-height:.95;
-}
-
+.hero{background:#111;color:#fff;min-height:500px;padding:70px 7%;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:30px}
+.hero small{color:#aaa;font-weight:900;letter-spacing:2px}
+.hero h1{font-size:clamp(45px,7vw,80px);line-height:.95;letter-spacing:-4px;margin:18px 0}
 .hero h1 span{color:#aaa}
+.hero p{max-width:600px;color:#ccc;font-size:18px;line-height:1.6}
 
-.hero p{
-  color:#ccc;
-  max-width:650px;
-  margin:20px auto;
-  font-size:18px;
-  line-height:1.6;
-}
+.heroButtons{display:flex;gap:10px;flex-wrap:wrap}
+.shopButton,.outlineButton{display:inline-block;padding:14px 22px;border-radius:9px;text-decoration:none;font-weight:900}
+.shopButton{background:#fff;color:#111}
+.outlineButton{border:1px solid #666;color:#fff}
 
-.shopBtn{
-  display:inline-block;
-  background:#fff;
-  color:#111;
-  padding:14px 22px;
-  border-radius:8px;
-  text-decoration:none;
-  font-weight:bold;
-}
+.heroVisual{display:flex;justify-content:center}
+.pmCircle{width:260px;height:260px;border-radius:50%;background:#fff;color:#111;display:flex;align-items:center;justify-content:center;font-size:75px;font-weight:900}
 
-.info{
-  background:#fff;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:1px;
-  border-bottom:1px solid #ddd;
-}
+.trust{background:#fff;display:grid;grid-template-columns:repeat(4,1fr);padding:20px 5%;border-bottom:1px solid #ddd}
+.trustBox{text-align:center;padding:10px;border-right:1px solid #eee}
+.trustBox:last-child{border:0}
+.trustBox strong{display:block;margin-bottom:5px}
+.trustBox span{font-size:13px;color:#777}
 
-.info div{
-  padding:22px 10px;
-  text-align:center;
-}
+section{scroll-margin-top:80px}
 
-.info strong{
-  display:block;
-  margin-bottom:5px;
-}
+.categories{background:#fff;padding:60px 5%}
+.sectionTitle{text-align:center;margin-bottom:30px}
+.sectionTitle small{color:#777;font-size:11px;font-weight:900;letter-spacing:2px}
+.sectionTitle h2{font-size:40px;margin:8px 0;letter-spacing:-2px}
+.sectionTitle p{color:#777}
 
-.info span{
-  color:#777;
-  font-size:13px;
-}
+.categoryGrid{max-width:1100px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.category{border:1px solid #ddd;background:#fafafa;border-radius:15px;padding:25px 10px;text-align:center;font-weight:900}
+.categoryIcon{display:block;font-size:34px;margin-bottom:10px}
 
-section{
-  padding:60px 5%;
-}
+.shop{max-width:1500px;margin:auto;padding:70px 5%}
 
-.title{
-  text-align:center;
-  margin-bottom:35px;
-}
+.filters{display:flex;justify-content:center;gap:10px;margin-bottom:35px}
+.filters input,.filters select{height:48px;padding:0 15px;background:#fff;border:1px solid #ddd;border-radius:9px}
+.filters input{width:320px}
 
-.title h2{
-  font-size:38px;
-  margin:8px 0;
-}
+#productGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
 
-.title p{
-  color:#777;
-}
+.productCard{background:#fff;border:1px solid #ddd;border-radius:15px;overflow:hidden;box-shadow:0 5px 20px rgba(0,0,0,.06)}
 
-.categories{
-  background:#fff;
-}
+.productImage{height:290px;background:#fafafa;padding:12px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.productImage img{width:100%;height:100%;object-fit:contain}
 
-.categoryGrid{
-  max-width:1100px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:15px;
-}
+.productBody{padding:17px}
+.tag{display:inline-block;background:#eee;padding:5px 9px;border-radius:20px;font-size:9px;font-weight:900}
+.productBody h3{min-height:40px;font-size:16px;margin:12px 0}
+.price{font-size:21px;font-weight:900;margin:10px 0}
 
-.category{
-  background:#f7f7f7;
-  border:1px solid #ddd;
-  border-radius:14px;
-  padding:25px 10px;
-  text-align:center;
-  font-weight:bold;
-}
+.productButtons{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.addButton,.viewButton{border:0;border-radius:8px;padding:12px 5px;font-size:12px;font-weight:900}
+.addButton{background:#111;color:#fff}
+.viewButton{background:#eee;color:#111}
 
-.category span{
-  display:block;
-  font-size:35px;
-  margin-bottom:10px;
-}
+.promo{margin:0 5% 60px;padding:35px;background:#111;color:#fff;border-radius:18px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.promo h2{margin:0 0 8px}
+.promo p{color:#bbb}
+.promo a{background:#fff;color:#111;padding:13px 20px;border-radius:8px;text-decoration:none;font-weight:900}
 
-.shop{
-  max-width:1400px;
-  margin:auto;
-}
+.delivery{background:#111;color:#fff;padding:70px 7%}
+.delivery h2{font-size:44px;max-width:700px}
+.deliveryGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.deliveryBox{background:#181818;border:1px solid #333;border-radius:12px;padding:25px;color:#ccc}
+.deliveryBox strong{display:block;color:#fff;margin-bottom:8px}
 
-.products{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
-}
+.why{background:#fff;padding:70px 7%}
+.whyGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.whyBox{border:1px solid #ddd;border-radius:15px;padding:30px}
+.whyBox span{font-size:32px}
+.whyBox p{color:#777;line-height:1.6}
 
-.card{
-  background:#fff;
-  border:1px solid #ddd;
-  border-radius:15px;
-  overflow:hidden;
-  box-shadow:0 5px 20px rgba(0,0,0,.06);
-}
+.contact{text-align:center;padding:70px 5%}
+.whatsapp{display:inline-block;background:#111;color:#fff;padding:14px 22px;border-radius:9px;text-decoration:none;font-weight:900}
 
-.cardImage{
-  height:280px;
-  background:#fafafa;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:12px;
-}
+footer{background:#080808;color:#aaa;padding:30px 6%;display:flex;justify-content:space-between;flex-wrap:wrap;gap:15px}
 
-.cardImage img{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-}
+/* CART */
+#shade{position:fixed;inset:0;background:rgba(0,0,0,.65);display:none;z-index:900}
+#shade.show{display:block}
 
-.cardBody{
-  padding:18px;
-}
+#cartPanel{position:fixed;top:0;right:-450px;width:min(430px,94vw);height:100vh;background:#fff;z-index:1000;padding:25px;overflow-y:auto;transition:right .3s}
+#cartPanel.open{right:0}
 
-.tag{
-  font-size:10px;
-  font-weight:bold;
-  background:#eee;
-  padding:5px 8px;
-  border-radius:20px;
-}
+.cartHead{display:flex;justify-content:space-between;border-bottom:1px solid #ddd;padding-bottom:15px}
+.closeButton{width:38px;height:38px;border:0;border-radius:50%;background:#eee;font-size:20px}
 
-.card h3{
-  min-height:40px;
-  font-size:16px;
-  margin:12px 0;
-}
+.cartItem{padding:15px 0;border-bottom:1px solid #eee}
+.cartItemTop{display:flex;justify-content:space-between;gap:10px}
+.cartItemName{font-weight:800}
+.cartItemPrice{font-weight:900}
 
-.price{
-  font-size:21px;
-  font-weight:900;
-}
+.quantity{display:flex;align-items:center;gap:8px;margin-top:10px}
+.quantity button{width:30px;height:30px;border:0;border-radius:6px;background:#eee}
 
-.buttons{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:8px;
-  margin-top:15px;
-}
+.removeButton{border:0;background:none;color:#a00000;font-size:12px;padding:7px 0}
 
-.buttons button{
-  border:0;
-  padding:12px 5px;
-  border-radius:8px;
-  font-weight:bold;
-}
-
-.view{
-  background:#eee;
-}
-
-.add{
-  background:#111;
-  color:#fff;
-}
-
-.delivery{
-  background:#111;
-  color:#fff;
-}
-
-.deliveryGrid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:15px;
-}
-
-.deliveryBox{
-  background:#181818;
-  border:1px solid #333;
-  border-radius:12px;
-  padding:25px;
-  color:#ccc;
-}
-
-.deliveryBox strong{
-  display:block;
-  color:#fff;
-  margin-bottom:8px;
-}
-
-.contact{
-  text-align:center;
-}
-
-.whatsapp{
-  display:inline-block;
-  background:#111;
-  color:#fff;
-  padding:14px 22px;
-  border-radius:8px;
-  text-decoration:none;
-  font-weight:bold;
-}
-
-footer{
-  background:#080808;
-  color:#aaa;
-  padding:30px 5%;
-  text-align:center;
-}
+.fullButton{width:100%;padding:14px;border:0;border-radius:8px;background:#111;color:#fff;font-weight:900;margin-top:12px}
 
 /* GALLERY */
+.modal{position:fixed;inset:0;z-index:1100;background:rgba(0,0,0,.78);display:none;align-items:center;justify-content:center;padding:12px}
+.modal.show{display:flex}
 
-#gallery{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.8);
-  z-index:100;
-  align-items:center;
-  justify-content:center;
-  padding:15px;
+.modalBox{width:min(680px,100%);max-height:95vh;overflow-y:auto;background:#fff;border-radius:16px;padding:22px;position:relative}
+
+.modalClose{position:absolute;right:15px;top:15px;width:40px;height:40px;border:0;border-radius:50%;background:#eee;font-size:22px;z-index:10}
+
+.galleryMain{width:100%;height:420px;background:#f7f7f7;border-radius:12px;display:flex;align-items:center;justify-content:center;overflow:hidden;margin-top:35px}
+.galleryMain img{width:100%;height:100%;object-fit:contain}
+
+.galleryArrows{display:flex;justify-content:space-between;gap:10px;margin:12px 0}
+.galleryArrows button{border:0;background:#111;color:#fff;border-radius:8px;padding:11px 18px;font-weight:800}
+
+.thumbnails{display:flex;gap:8px;overflow-x:auto;padding:5px 0 12px}
+.thumbnail{width:75px;height:75px;min-width:75px;border:2px solid #ddd;border-radius:8px;background:#fafafa;padding:2px;overflow:hidden}
+.thumbnail.active{border-color:#111}
+.thumbnail img{width:100%;height:100%;object-fit:contain}
+
+.modalInfo{padding-top:5px}
+.modalInfo h2{margin:8px 0}
+.modalInfo p{color:#777}
+
+/* CHECKOUT */
+#checkoutModal .modalBox{max-width:520px}
+#checkoutForm{display:grid;gap:12px}
+#checkoutForm input,#checkoutForm textarea,#checkoutForm select{width:100%;padding:13px;border:1px solid #ddd;border-radius:8px}
+#checkoutForm textarea{min-height:90px}
+
+@media(max-width:1050px){
+#productGrid{grid-template-columns:repeat(3,1fr)}
+.deliveryGrid{grid-template-columns:repeat(2,1fr)}
 }
 
-#galleryBox{
-  background:#fff;
-  width:min(700px,100%);
-  max-height:95vh;
-  overflow:auto;
-  border-radius:15px;
-  padding:20px;
-  position:relative;
+@media(max-width:800px){
+nav{display:none}
+.hero{grid-template-columns:1fr;text-align:center}
+.hero p{margin:auto auto 20px}
+.heroButtons{justify-content:center}
+.trust{grid-template-columns:repeat(2,1fr)}
+.categoryGrid{grid-template-columns:repeat(2,1fr)}
+.whyGrid{grid-template-columns:1fr}
+.promo{flex-direction:column;align-items:flex-start}
 }
 
-.close{
-  position:absolute;
-  right:15px;
-  top:15px;
-  width:38px;
-  height:38px;
-  border:0;
-  border-radius:50%;
-  background:#eee;
-  font-size:20px;
-  z-index:5;
-}
-
-#mainImage{
-  width:100%;
-  height:450px;
-  object-fit:contain;
-  background:#f7f7f7;
-  border-radius:10px;
-  margin-top:35px;
-}
-
-.thumbs{
-  display:flex;
-  gap:8px;
-  overflow-x:auto;
-  padding:12px 0;
-}
-
-.thumb{
-  width:75px;
-  height:75px;
-  flex:0 0 75px;
-  border:2px solid #ddd;
-  border-radius:8px;
-  padding:2px;
-  background:#fff;
-}
-
-.thumb img{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-}
-
-.galleryButton{
-  background:#111;
-  color:#fff;
-  border:0;
-  padding:10px 18px;
-  border-radius:8px;
-  font-weight:bold;
-}
-
-@media(max-width:1000px){
-  .products{grid-template-columns:repeat(3,1fr)}
-  .deliveryGrid{grid-template-columns:repeat(2,1fr)}
-}
-
-@media(max-width:700px){
-  .info{grid-template-columns:repeat(2,1fr)}
-  .categoryGrid{grid-template-columns:repeat(2,1fr)}
-  .products{grid-template-columns:repeat(2,1fr);gap:10px}
-  .cardImage{height:210px}
-  .buttons{grid-template-columns:1fr}
-  .deliveryGrid{grid-template-columns:1fr}
-  #mainImage{height:330px}
-}
-
-@media(max-width:450px){
-  .hero{padding:55px 5%}
-  .hero h1{font-size:45px}
-  .cardBody{padding:12px}
-  .card h3{font-size:13px}
-  .price{font-size:17px}
+@media(max-width:600px){
+header{padding:10px 4%}
+.logo{font-size:14px}
+.logoBox{width:38px;height:38px}
+.hero{padding:55px 5%;min-height:580px}
+.hero h1{font-size:48px}
+.pmCircle{width:190px;height:190px;font-size:55px}
+.categories,.shop,.why,.contact{padding-left:5%;padding-right:5%}
+.sectionTitle h2{font-size:33px}
+.filters{flex-direction:column}
+.filters input,.filters select{width:100%}
+#productGrid{grid-template-columns:repeat(2,1fr);gap:10px}
+.productImage{height:200px}
+.productBody{padding:12px}
+.productBody h3{font-size:13px}
+.price{font-size:17px}
+.productButtons{grid-template-columns:1fr}
+.deliveryGrid{grid-template-columns:1fr}
+.delivery h2{font-size:34px}
+.promo{margin-left:4%;margin-right:4%;padding:28px 20px}
+.galleryMain{height:320px}
+footer{text-align:center;justify-content:center}
 }
 </style></head><body><div class="topbar">
 🚚 Nationwide delivery • 🎁 FREE delivery on orders over R1,500
 </div><header>
-  <div class="logo">
-    <span class="logoBox">PM</span>
-    <span>PM TRADERS</span>
-  </div>  <button class="cart">
-    🛒 Cart 0
-  </button>
-</header><section class="hero">
-  <div>
-    <small>PM TRADERS • ONLINE STORE</small><h1>
-  Shop smart.<br>
-  <span>Shop PM Traders.</span>
-</h1>
-
-<p>
-  Quality smartphones, human hair, fashion,
-  gadgets and accessories — all in one trusted store.
-</p>
-
-<a class="shopBtn" href="#shop">
-  Shop now →
-</a>
-
-  </div>
-</section><div class="info">  <div>
-    <strong>🚚 Nationwide</strong>
-    <span>Delivery across South Africa</span>
-  </div>  <div>
-    <strong>🎁 R1,500+</strong>
-    <span>Free delivery</span>
-  </div>  <div>
-    <strong>📦 Collection</strong>
-    <span>Richards Bay & Empangeni</span>
-  </div>  <div>
-    <strong>💬 WhatsApp</strong>
-    <span>Easy order support</span>
-  </div></div><section class="categories">  <div class="title">
-    <small>SHOP BY CATEGORY</small>
-    <h2>Find what you need.</h2>
-    <p>Browse our main product categories.</p>
-  </div>  <div class="categoryGrid"><div class="category">
-  <span>📱</span>
-  Smartphones & Tech
-</div>
-
-<div class="category">
-  <span>💇</span>
-  Human Hair
-</div>
-
-<div class="category">
-  <span>👗</span>
-  Fashion
-</div>
-
-<div class="category">
-  <span>🎧</span>
-  Accessories
-</div>
-
-  </div></section><section class="shop" id="shop">  <div class="title">
-    <small>PM TRADERS SHOP</small>
-    <h2>Featured Products</h2>
-    <p>Choose your favourite products.</p>
-  </div>  <div class="products"><!-- IPHONE 13 -->
-
-<div class="card">
-
-  <div class="cardImage">
-    <img src="https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/iPhone%2013%20Pro%20Max.jpeg"
-    alt="iPhone 13 Pro Max">
-  </div>
-
-  <div class="cardBody">
-
-    <span class="tag">TECH</span>
-
-    <h3>iPhone 13 Pro Max</h3>
-
-    <div class="price">R7,500</div>
-
-    <div class="buttons">
-
-      <button class="view"
-      onclick="openGallery(
-      'iPhone 13 Pro Max',
-      'R7,500',
-      [
-      'https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/iPhone%2013%20Pro%20Max.jpeg'
-      ])">
-      View
-      </button>
-
-      <button class="add">
-        Add to Cart
-      </button>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- IPHONE 17 -->
-
-<div class="card">
-
-  <div class="cardImage">
-    <img src="https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/iPhone%2017%20Pro%20Max.webp"
-    alt="iPhone 17 Pro Max">
-  </div>
-
-  <div class="cardBody">
-
-    <span class="tag">TECH</span>
-
-    <h3>iPhone 17 Pro Max</h3>
-
-    <div class="price">R24,000</div>
-
-    <div class="buttons">
-
-      <button class="view"
-      onclick="openGallery(
-      'iPhone 17 Pro Max',
-      'R24,000',
-      [
-      'https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/iPhone%2017%20Pro%20Max.webp'
-      ])">
-      View
-      </button>
-
-      <button class="add">
-        Add to Cart
-      </button>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- 20 INCH CURLY CURLS -->
-
-<div class="card">
-
-  <div class="cardImage">
-    <img src="https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/20%20inch%20Curly%20Curls.jpeg"
-    alt="20 Inch Curly Curls">
-  </div>
-
-  <div class="cardBody">
-
-    <span class="tag">HAIR</span>
-
-    <h3>20 Inch Curly Curls</h3>
-
-    <div class="price">R970</div>
-
-    <div class="buttons">
-
-      <button class="view"
-      onclick="openGallery(
-      '20 Inch Curly Curls',
-      'R970',
-      [
-      'https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/20%20inch%20Curly%20Curls.jpeg',
-      'https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/8%20Inch%20Super%20Double%20Drawn.webp'
-      ])">
-      View Gallery
-      </button>
-
-      <button class="add">
-        Add to Cart
-      </button>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- 8 INCH SDD -->
-
-<div class="card">
-
-  <div class="cardImage">
-    <img src="https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/8%20Inch%20Super%20Double%20Drawn.webp"
-    alt="8 Inch Super Double Drawn">
-  </div>
-
-  <div class="cardBody">
-
-    <span class="tag">HAIR</span>
-
-    <h3>8 Inch SDD Weave</h3>
-
-    <div class="price">R850</div>
-
-    <div class="buttons">
-
-      <button class="view"
-      onclick="openGallery(
-      '8 Inch SDD Weave',
-      'R850',
-      [
-      'https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/8%20Inch%20Super%20Double%20Drawn.webp',
-      'https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/8%20inch%20SDD%20pixey%20curly.jpg'
-      ])">
-      View Gallery
-      </button>
-
-      <button class="add">
-        Add to Cart
-      </button>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- CLASSIC CAUGHT -->
-
-<div class="card">
-
-  <div class="cardImage">
-    <img src="https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/Classic%20Caught.jpg"
-    alt="Classic Caught">
-  </div>
-
-  <div class="cardBody">
-
-    <span class="tag">FASHION</span>
-
-    <h3>Classic Caught</h3>
-
-    <div class="price">R230</div>
-
-    <div class="buttons">
-
-      <button class="view"
-      onclick="openGallery(
-      'Classic Caught',
-      'R230',
-      [
-      'https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/Classic%20Caught.jpg'
-      ])">
-      View
-      </button>
-
-      <button class="add">
-        Add to Cart
-      </button>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- CLASSIC LADIES DRESS -->
-
-<div class="card">
-
-  <div class="cardImage">
-    <img src="https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/Classic%20Ladies%20Dress.jpg"
-    alt="Classic Ladies Dress">
-  </div>
-
-  <div class="cardBody">
-
-    <span class="tag">FASHION</span>
-
-    <h3>Classic Ladies Dress</h3>
-
-    <div class="price">R230</div>
-
-    <div class="buttons">
-
-      <button class="view"
-      onclick="openGallery(
-      'Classic Ladies Dress',
-      'R230',
-      [
-      'https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/Classic%20Ladies%20Dress.jpg',
-      'https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/Classic%20Rainbow%20Nation%20Dress.jpg'
-      ])">
-      View Gallery
-      </button>
-
-      <button class="add">
-        Add to Cart
-      </button>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- RAINBOW NATION -->
-
-<div class="card">
-
-  <div class="cardImage">
-    <img src="https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/Classic%20Rainbow%20Nation%20Dress.jpg"
-    alt="Classic Rainbow Nation Dress">
-  </div>
-
-  <div class="cardBody">
-
-    <span class="tag">FASHION</span>
-
-    <h3>Classic Rainbow Nation Dress</h3>
-
-    <div class="price">R230</div>
-
-    <div class="buttons">
-
-      <button class="view"
-      onclick="openGallery(
-      'Classic Rainbow Nation Dress',
-      'R230',
-      [
-      'https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/Classic%20Rainbow%20Nation%20Dress.jpg'
-      ])">
-      View
-      </button>
-
-      <button class="add">
-        Add to Cart
-      </button>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- SKY BLUE -->
-
-<div class="card">
-
-  <div class="cardImage">
-    <img src="https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/Sky%20Blue%20Dress.jpg"
-    alt="Sky Blue Dress">
-  </div>
-
-  <div class="cardBody">
-
-    <span class="tag">FASHION</span>
-
-    <h3>Sky Blue Dress</h3>
-
-    <div class="price">R230</div>
-
-    <div class="buttons">
-
-      <button class="view"
-      onclick="openGallery(
-      'Sky Blue Dress',
-      'R230',
-      [
-      'https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/Sky%20Blue%20Dress.jpg'
-      ])">
-      View
-      </button>
-
-      <button class="add">
-        Add to Cart
-      </button>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- SLEEVELESS -->
-
-<div class="card">
-
-  <div class="cardImage">
-    <img src="https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/Sleeveless%20Classic%20Attire.jpg"
-    alt="Sleeveless Classic Attire">
-  </div>
-
-  <div class="cardBody">
-
-    <span class="tag">FASHION</span>
-
-    <h3>Sleeveless Classic Attire</h3>
-
-    <div class="price">R230</div>
-
-    <div class="buttons">
-
-      <button class="view"
-      onclick="openGallery(
-      'Sleeveless Classic Attire',
-      'R230',
-      [
-      'https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/Sleeveless%20Classic%20Attire.jpg'
-      ])">
-      View
-      </button>
-
-      <button class="add">
-        Add to Cart
-      </button>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- TWO PIECE -->
-
-<div class="card">
-
-  <div class="cardImage">
-    <img src="https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/Smart%20Casual%20Summer%20Two%20piece.jpg"
-    alt="Smart Casual Summer Two Piece">
-  </div>
-
-  <div class="cardBody">
-
-    <span class="tag">FASHION</span>
-
-    <h3>Smart Casual Summer Two Piece</h3>
-
-    <div class="price">R230</div>
-
-    <div class="buttons">
-
-      <button class="view"
-      onclick="openGallery(
-      'Smart Casual Summer Two Piece',
-      'R230',
-      [
-      'https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/Smart%20Casual%20Summer%20Two%20piece.jpg'
-      ])">
-      View
-      </button>
-
-      <button class="add">
-        Add to Cart
-      </button>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- SMART COLOUR DRESS -->
-
-<div class="card">
-
-  <div class="cardImage">
-    <img src="https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/Smart%20Colour%20Dress.jpg"
-    alt="Smart Colour Dress">
-  </div>
-
-  <div class="cardBody">
-
-    <span class="tag">FASHION</span>
-
-    <h3>Smart Colour Dress</h3>
-
-    <div class="price">R230</div>
-
-    <div class="buttons">
-
-      <button class="view"
-      onclick="openGallery(
-      'Smart Colour Dress',
-      'R230',
-      [
-      'https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/Smart%20Colour%20Dress.jpg'
-      ])">
-      View
-      </button>
-
-      <button class="add">
-        Add to Cart
-      </button>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- SMART COLOUR FULL DRESS -->
-
-<div class="card">
-
-  <div class="cardImage">
-    <img src="https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/Smart%20Colour%20full%20dress.jpg"
-    alt="Smart Colour Full Dress">
-  </div>
-
-  <div class="cardBody">
-
-    <span class="tag">FASHION</span>
-
-    <h3>Smart Colour Full Dress</h3>
-
-    <div class="price">R230</div>
-
-    <div class="buttons">
-
-      <button class="view"
-      onclick="openGallery(
-      'Smart Colour Full Dress',
-      'R230',
-      [
-      'https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/Smart%20Colour%20full%20dress.jpg'
-      ])">
-      View
-      </button>
-
-      <button class="add">
-        Add to Cart
-      </button>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- SMART DRESS -->
-
-<div class="card">
-
-  <div class="cardImage">
-    <img src="https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/Smart%20Dress.jpg"
-    alt="Smart Dress">
-  </div>
-
-  <div class="cardBody">
-
-    <span class="tag">FASHION</span>
-
-    <h3>Smart Dress</h3>
-
-    <div class="price">R230</div>
-
-    <div class="buttons">
-
-      <button class="view"
-      onclick="openGallery(
-      'Smart Dress',
-      'R230',
-      [
-      'https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/Smart%20Dress.jpg'
-      ])">
-      View
-      </button>
-
-      <button class="add">
-        Add to Cart
-      </button>
-
-    </div>
-
-  </div>
-
-</div>
-
-  </div>
-</section><section class="delivery">  <div class="title">
-    <h2>Delivery & Collection</h2>
-  </div>  <div class="deliveryGrid"><div class="deliveryBox">
-  <strong>📍 Richards Bay</strong>
-  R30 delivery around Richards Bay and surrounding areas.
-</div>
-
-<div class="deliveryBox">
-  <strong>🚚 Outside Richards Bay</strong>
-  R60 delivery outside Richards Bay and Empangeni.
-</div>
-
-<div class="deliveryBox">
-  <strong>🎁 R1,500+</strong>
-  Free delivery when your order reaches R1,500 or more.
-</div>
-
-<div class="deliveryBox">
-  <strong>📦 Collection</strong>
-  Collection available around Richards Bay and Empangeni.
-</div>
-
-  </div></section><section class="contact">  <div class="title">
-    <h2>Need help with your order?</h2>
-    <p>Chat directly with PM Traders on WhatsApp.</p>
-  </div><a class="whatsapp"
-href="https://wa.me/27842748559"
-target="_blank">
-💬 WhatsApp PM Traders →
-</a>
-
-  <p>📧 Info@PM-Traders.co.za</p></section><footer>
-  <strong>PM TRADERS</strong>
-  <p>© 2026 PM Traders • Quality products. Trusted service.</p>
-</footer><!-- GALLERY --><div id="gallery">  <div id="galleryBox"><button class="close" onclick="closeGallery()">×</button>
-
-<img id="mainImage" src="" alt="Product">
-
-<div class="thumbs" id="thumbs"></div>
-
-<h2 id="galleryName"></h2>
-
-<h3 id="galleryPrice"></h3>
-
-<button class="galleryButton" onclick="closeGallery()">
-  Close
+<a href="#home" class="logo">
+<span class="logoBox">PM</span>
+<span>PM TRADERS</span>
+</a><nav>
+<a href="#home">Home</a>
+<a href="#categories">Categories</a>
+<a href="#shop">Shop</a>
+<a href="#delivery">Delivery</a>
+<a href="#contact">Contact</a>
+</nav><button class="cartButton" onclick="openCart()">
+🛒 Cart <span id="cartCount">0</span>
 </button>
-
-  </div></div><script>
-
-var currentImages = [];
-var currentIndex = 0;
-
-function openGallery(name,price,images){
-
-  currentImages = images;
-  currentIndex = 0;
-
-  document.getElementById("galleryName").textContent = name;
-  document.getElementById("galleryPrice").textContent = price;
-
-  buildGallery();
-
-  document.getElementById("gallery").style.display = "flex";
-}
-
-function buildGallery(){
-
-  var main = document.getElementById("mainImage");
-  var thumbs = document.getElementById("thumbs");
-
-  main.src = currentImages[currentIndex];
-
-  thumbs.innerHTML = "";
-
-  currentImages.forEach(function(image,index){
-
-    var button = document.createElement("button");
-
-    button.className = "thumb";
-
-    button.innerHTML =
-      '<img src="' + image + '" alt="Product image">';
-
-    button.onclick = function(){
-
-      currentIndex = index;
-
-      main.src = currentImages[currentIndex];
-
-    };
-
-    thumbs.appendChild(button);
-
-  });
-
-}
-
-function closeGallery(){
-
-  document.getElementById("gallery").style.display = "none";
-
-}
-
-document.getElementById("gallery").addEventListener("click",function(event){
-
-  if(event.target === this){
-
-    closeGallery();
-
-  }
-
-});
-
-</script><script>
-/* PM TRADERS - PRODUCT GALLERY + CART */
-
-let cart = JSON.parse(localStorage.getItem("pmCart") || "[]");
-
-let galleryImages = [];
-let galleryIndex = 0;
-let currentGalleryProduct = null;
-
-/* -------------------------
-   PRODUCT GALLERY
-------------------------- */
-
-function showGallery(name, price, category, images) {
-    currentGalleryProduct = {
-        name: name,
-        price: price,
-        category: category
-    };
-
-    galleryImages = images || [];
-    galleryIndex = 0;
-
-    const modal = document.getElementById("productModal");
-
-    if (!modal) {
-        alert("Product gallery is not available.");
-        return;
-    }
-
-    document.getElementById("modalName").textContent = name;
-    document.getElementById("modalPrice").textContent = price;
-    document.getElementById("modalCategory").textContent = category;
-
-    renderGallery();
-
-    modal.classList.add("show");
-}
-
-function renderGallery() {
-    const main = document.getElementById("galleryMain");
-    const thumbs = document.getElementById("thumbnails");
-
-    if (!main || !thumbs) return;
-
-    if (!galleryImages.length) {
-        main.innerHTML = "<div style='font-size:60px'>📦</div>";
-        thumbs.innerHTML = "";
-        return;
-    }
-
-    main.innerHTML = `
-        <img
-            src="${galleryImages[galleryIndex]}"
-            alt="Product image"
-            onerror="this.onerror=null;this.src='';this.parentElement.innerHTML='<div style=&quot;font-size:60px&quot;>📦</div>';"
-        >
-    `;
-
-    thumbs.innerHTML = "";
-
-    galleryImages.forEach((image, index) => {
-        const button = document.createElement("button");
-        button.className = "thumbnail" + (index === galleryIndex ? " active" : "");
-
-        button.innerHTML = `
-            <img src="${image}" alt="Product photo ${index + 1}">
-        `;
-
-        button.onclick = function () {
-            galleryIndex = index;
-            renderGallery();
-        };
-
-        thumbs.appendChild(button);
-    });
-}
-
-function nextImage() {
-    if (!galleryImages.length) return;
-
-    galleryIndex++;
-
-    if (galleryIndex >= galleryImages.length) {
-        galleryIndex = 0;
-    }
-
-    renderGallery();
-}
-
-function previousImage() {
-    if (!galleryImages.length) return;
-
-    galleryIndex--;
-
-    if (galleryIndex < 0) {
-        galleryIndex = galleryImages.length - 1;
-    }
-
-    renderGallery();
-}
-
-function closeProductModal() {
-    const modal = document.getElementById("productModal");
-
-    if (modal) {
-        modal.classList.remove("show");
-    }
-}
-
-/* -------------------------
-   CART
-------------------------- */
-
-function addProduct(name, price) {
-
-    const existing = cart.find(item => item.name === name);
-
-    if (existing) {
-        existing.quantity++;
-    } else {
-        cart.push({
-            name: name,
-            price: price,
-            quantity: 1
-        });
-    }
-
-    saveCart();
-    updateCart();
-
-    alert(name + " added to your cart.");
-}
-
-function saveCart() {
-    localStorage.setItem("pmCart", JSON.stringify(cart));
-}
-
-function updateCart() {
-
-    const count = document.getElementById("cartCount");
-    const items = document.getElementById("cartItems");
-    const subtotal = document.getElementById("cartSubtotal");
-
-    let totalQuantity = 0;
-    let totalPrice = 0;
-
-    cart.forEach(item => {
-        totalQuantity += item.quantity;
-        totalPrice += item.price * item.quantity;
-    });
-
-    if (count) {
-        count.textContent = totalQuantity;
-    }
-
-    if (subtotal) {
-        subtotal.textContent =
-            "R" + totalPrice.toLocaleString("en-ZA");
-    }
-
-    if (!items) return;
-
-    if (cart.length === 0) {
-        items.innerHTML = `
-            <div style="text-align:center;padding:40px 10px;color:#777">
-                <div style="font-size:45px">🛒</div>
-                <h3>Your cart is empty</h3>
-                <p>Add products from the shop.</p>
-            </div>
-        `;
-        return;
-    }
-
-    items.innerHTML = cart.map((item, index) => `
-        <div class="cartItem">
-
-            <div class="cartItemTop">
-
-                <div class="cartItemName">
-                    ${item.name}
-                </div>
-
-                <div class="cartItemPrice">
-                    R${(item.price * item.quantity).toLocaleString("en-ZA")}
-                </div>
-
-            </div>
-
-            <div class="quantity">
-
-                <button onclick="changeQuantity(${index}, -1)">
-                    −
-                </button>
-
-                <strong>${item.quantity}</strong>
-
-                <button onclick="changeQuantity(${index}, 1)">
-                    +
-                </button>
-
-            </div>
-
-            <button
-                class="removeButton"
-                onclick="removeFromCart(${index})"
-            >
-                Remove
-            </button>
-
-        </div>
-    `).join("");
-}
-
-function changeQuantity(index, amount) {
-
-    if (!cart[index]) return;
-
-    cart[index].quantity += amount;
-
-    if (cart[index].quantity <= 0) {
-        cart.splice(index, 1);
-    }
-
-    saveCart();
-    updateCart();
-}
-
-function removeFromCart(index) {
-
-    cart.splice(index, 1);
-
-    saveCart();
-    updateCart();
-}
-
-function openCart() {
-
-    const panel = document.getElementById("cartPanel");
-    const shade = document.getElementById("shade");
-
-    if (panel) panel.classList.add("open");
-    if (shade) shade.classList.add("show");
-
-    updateCart();
-}
-
-function closeCart() {
-
-    const panel = document.getElementById("cartPanel");
-    const shade = document.getElementById("shade");
-
-    if (panel) panel.classList.remove("open");
-    if (shade) shade.classList.remove("show");
-}
-
-/* -------------------------
-   SEARCH + CATEGORY FILTER
-------------------------- */
-
-function filterProducts() {
-
-    const searchBox = document.getElementById("search");
-    const categoryBox = document.getElementById("categoryFilter");
-
-    const search = searchBox
-        ? searchBox.value.toLowerCase().trim()
-        : "";
-
-    const category = categoryBox
-        ? categoryBox.value
-        : "all";
-
-    const products = document.querySelectorAll(".productCard");
-
-    products.forEach(product => {
-
-        const name =
-            (product.dataset.name || "").toLowerCase();
-
-        const productCategory =
-            product.dataset.category || "";
-
-        const matchesSearch =
-            name.includes(search);
-
-        const matchesCategory =
-            category === "all" ||
-            productCategory === category;
-
-        product.style.display =
-            matchesSearch && matchesCategory
-                ? ""
-                : "none";
-    });
-}
-
-function filterCategory(category) {
-
-    const select = document.getElementById("categoryFilter");
-
-    if (select) {
-        select.value = category;
-    }
-
-    filterProducts();
-
-    const shop = document.getElementById("shop");
-
-    if (shop) {
-        shop.scrollIntoView({
-            behavior: "smooth"
-        });
-    }
-}
-
-/* -------------------------
-   CHECKOUT
-------------------------- */
-
-function openCheckout() {
-
-    if (cart.length === 0) {
-        alert("Your cart is empty.");
-        return;
-    }
-
-    closeCart();
-
-    const modal =
-        document.getElementById("checkoutModal");
-
-    if (modal) {
-        modal.classList.add("show");
-    }
-}
-
-function closeCheckout() {
-
-    const modal =
-        document.getElementById("checkoutModal");
-
-    if (modal) {
-        modal.classList.remove("show");
-    }
-}
-
-/* -------------------------
-   WHATSAPP ORDER
-------------------------- */
-
-function sendWhatsAppOrder() {
-
-    if (cart.length === 0) {
-        alert("Your cart is empty.");
-        return;
-    }
-
-    const form =
-        document.getElementById("checkoutForm");
-
-    if (!form) {
-        sendCartToWhatsApp();
-        return;
-    }
-
-    const formData = new FormData(form);
-
-    const name = formData.get("name") || "";
-    const phone = formData.get("phone") || "";
-    const email = formData.get("email") || "";
-
-    let message =
-        "Hello PM Traders 👋%0A%0A" +
-        "*NEW ORDER*%0A%0A";
-
-    message +=
-        "Customer: " +
-        encodeURIComponent(name) +
-        "%0A";
-
-    message +=
-        "Phone: " +
-        encodeURIComponent(phone) +
-        "%0A";
-
-    if (email) {
-        message +=
-            "Email: " +
-            encodeURIComponent(email) +
-            "%0A";
-    }
-
-    message += "%0A*Products:*%0A";
-
-    let total = 0;
-
-    cart.forEach(item => {
-
-        const itemTotal =
-            item.price * item.quantity;
-
-        total += itemTotal;
-
-        message +=
-            "• " +
-            encodeURIComponent(item.name) +
-            " x" +
-            item.quantity +
-            " — R" +
-            itemTotal.toLocaleString("en-ZA") +
-            "%0A";
-    });
-
-    message +=
-        "%0A*Subtotal: R" +
-        total.toLocaleString("en-ZA") +
-        "*";
-
-    const whatsapp =
-        "https://wa.me/27842748559?text=" +
-        message;
-
-    window.open(whatsapp, "_blank");
-}
-
-function sendCartToWhatsApp() {
-
-    let message =
-        "Hello PM Traders 👋%0A%0A" +
-        "*I would like to order:*%0A";
-
-    let total = 0;
-
-    cart.forEach(item => {
-
-        const itemTotal =
-            item.price * item.quantity;
-
-        total += itemTotal;
-
-        message +=
-            "• " +
-            encodeURIComponent(item.name) +
-            " x" +
-            item.quantity +
-            " — R" +
-            itemTotal.toLocaleString("en-ZA") +
-            "%0A";
-    });
-
-    message +=
-        "%0A*Subtotal: R" +
-        total.toLocaleString("en-ZA") +
-        "*";
-
-    window.open(
-        "https://wa.me/27842748559?text=" + message,
-        "_blank"
-    );
-}
-
-/* -------------------------
-   STARTUP
-------------------------- */
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    updateCart();
-
-    const search =
-        document.getElementById("search");
-
-    const category =
-        document.getElementById("categoryFilter");
-
-    if (search) {
-        search.addEventListener(
-            "input",
-            filterProducts
-        );
-    }
-
-    if (category) {
-        category.addEventListener(
-            "change",
-            filterProducts
-        );
-    }
-
-    const shade =
-        document.getElementById("shade");
-
-    if (shade) {
-        shade.addEventListener(
-            "click",
-            closeCart
-        );
-    }
-
-    const checkoutButton =
-        document.getElementById("checkoutButton");
-
-    if (checkoutButton) {
-        checkoutButton.onclick =
-            openCheckout;
-    }
-
-    const modalAdd =
-        document.getElementById("modalAdd");
-
-    if (modalAdd) {
-
-        modalAdd.onclick = function () {
-
-            if (!currentGalleryProduct) return;
-
-            const price =
-                Number(
-                    String(currentGalleryProduct.price)
-                    .replace(/[^\d]/g, "")
-                );
-
-            addProduct(
-                currentGalleryProduct.name,
-                price
-            );
-
-            closeProductModal();
-        };
-    }
-
-    /* Close modal when clicking outside */
-
-    document.querySelectorAll(".modal").forEach(modal => {
-
-        modal.addEventListener("click", function (event) {
-
-            if (event.target === modal) {
-                modal.classList.remove("show");
-            }
-
-        });
-
-    });
-
-});
-</script><script>
-/* PM TRADERS - PRODUCT GALLERY + CART */
-
-let cart = JSON.parse(localStorage.getItem("pmCart") || "[]");
-
-let galleryImages = [];
-let galleryIndex = 0;
-let currentGalleryProduct = null;
-
-/* -------------------------
-   PRODUCT GALLERY
-------------------------- */
-
-function showGallery(name, price, category, images) {
-    currentGalleryProduct = {
-        name: name,
-        price: price,
-        category: category
-    };
-
-    galleryImages = images || [];
-    galleryIndex = 0;
-
-    const modal = document.getElementById("productModal");
-
-    if (!modal) {
-        alert("Product gallery is not available.");
-        return;
-    }
-
-    document.getElementById("modalName").textContent = name;
-    document.getElementById("modalPrice").textContent = price;
-    document.getElementById("modalCategory").textContent = category;
-
-    renderGallery();
-
-    modal.classList.add("show");
-}
-
-function renderGallery() {
-    const main = document.getElementById("galleryMain");
-    const thumbs = document.getElementById("thumbnails");
-
-    if (!main || !thumbs) return;
-
-    if (!galleryImages.length) {
-        main.innerHTML = "<div style='font-size:60px'>📦</div>";
-        thumbs.innerHTML = "";
-        return;
-    }
-
-    main.innerHTML = `
-        <img
-            src="${galleryImages[galleryIndex]}"
-            alt="Product image"
-            onerror="this.onerror=null;this.src='';this.parentElement.innerHTML='<div style=&quot;font-size:60px&quot;>📦</div>';"
-        >
-    `;
-
-    thumbs.innerHTML = "";
-
-    galleryImages.forEach((image, index) => {
-        const button = document.createElement("button");
-        button.className = "thumbnail" + (index === galleryIndex ? " active" : "");
-
-        button.innerHTML = `
-            <img src="${image}" alt="Product photo ${index + 1}">
-        `;
-
-        button.onclick = function () {
-            galleryIndex = index;
-            renderGallery();
-        };
-
-        thumbs.appendChild(button);
-    });
-}
-
-function nextImage() {
-    if (!galleryImages.length) return;
-
-    galleryIndex++;
-
-    if (galleryIndex >= galleryImages.length) {
-        galleryIndex = 0;
-    }
-
-    renderGallery();
-}
-
-function previousImage() {
-    if (!galleryImages.length) return;
-
-    galleryIndex--;
-
-    if (galleryIndex < 0) {
-        galleryIndex = galleryImages.length - 1;
-    }
-
-    renderGallery();
-}
-
-function closeProductModal() {
-    const modal = document.getElementById("productModal");
-
-    if (modal) {
-        modal.classList.remove("show");
-    }
-}
-
-/* -------------------------
-   CART
-------------------------- */
-
-function addProduct(name, price) {
-
-    const existing = cart.find(item => item.name === name);
-
-    if (existing) {
-        existing.quantity++;
-    } else {
-        cart.push({
-            name: name,
-            price: price,
-            quantity: 1
-        });
-    }
-
-    saveCart();
-    updateCart();
-
-    alert(name + " added to your cart.");
-}
-
-function saveCart() {
-    localStorage.setItem("pmCart", JSON.stringify(cart));
-}
-
-function updateCart() {
-
-    const count = document.getElementById("cartCount");
-    const items = document.getElementById("cartItems");
-    const subtotal = document.getElementById("cartSubtotal");
-
-    let totalQuantity = 0;
-    let totalPrice = 0;
-
-    cart.forEach(item => {
-        totalQuantity += item.quantity;
-        totalPrice += item.price * item.quantity;
-    });
-
-    if (count) {
-        count.textContent = totalQuantity;
-    }
-
-    if (subtotal) {
-        subtotal.textContent =
-            "R" + totalPrice.toLocaleString("en-ZA");
-    }
-
-    if (!items) return;
-
-    if (cart.length === 0) {
-        items.innerHTML = `
-            <div style="text-align:center;padding:40px 10px;color:#777">
-                <div style="font-size:45px">🛒</div>
-                <h3>Your cart is empty</h3>
-                <p>Add products from the shop.</p>
-            </div>
-        `;
-        return;
-    }
-
-    items.innerHTML = cart.map((item, index) => `
-        <div class="cartItem">
-
-            <div class="cartItemTop">
-
-                <div class="cartItemName">
-                    ${item.name}
-                </div>
-
-                <div class="cartItemPrice">
-                    R${(item.price * item.quantity).toLocaleString("en-ZA")}
-                </div>
-
-            </div>
-
-            <div class="quantity">
-
-                <button onclick="changeQuantity(${index}, -1)">
-                    −
-                </button>
-
-                <strong>${item.quantity}</strong>
-
-                <button onclick="changeQuantity(${index}, 1)">
-                    +
-                </button>
-
-            </div>
-
-            <button
-                class="removeButton"
-                onclick="removeFromCart(${index})"
-            >
-                Remove
-            </button>
-
-        </div>
-    `).join("");
-}
-
-function changeQuantity(index, amount) {
-
-    if (!cart[index]) return;
-
-    cart[index].quantity += amount;
-
-    if (cart[index].quantity <= 0) {
-        cart.splice(index, 1);
-    }
-
-    saveCart();
-    updateCart();
-}
-
-function removeFromCart(index) {
-
-    cart.splice(index, 1);
-
-    saveCart();
-    updateCart();
-}
-
-function openCart() {
-
-    const panel = document.getElementById("cartPanel");
-    const shade = document.getElementById("shade");
-
-    if (panel) panel.classList.add("open");
-    if (shade) shade.classList.add("show");
-
-    updateCart();
-}
-
-function closeCart() {
-
-    const panel = document.getElementById("cartPanel");
-    const shade = document.getElementById("shade");
-
-    if (panel) panel.classList.remove("open");
-    if (shade) shade.classList.remove("show");
-}
-
-/* -------------------------
-   SEARCH + CATEGORY FILTER
-------------------------- */
-
-function filterProducts() {
-
-    const searchBox = document.getElementById("search");
-    const categoryBox = document.getElementById("categoryFilter");
-
-    const search = searchBox
-        ? searchBox.value.toLowerCase().trim()
-        : "";
-
-    const category = categoryBox
-        ? categoryBox.value
-        : "all";
-
-    const products = document.querySelectorAll(".productCard");
-
-    products.forEach(product => {
-
-        const name =
-            (product.dataset.name || "").toLowerCase();
-
-        const productCategory =
-            product.dataset.category || "";
-
-        const matchesSearch =
-            name.includes(search);
-
-        const matchesCategory =
-            category === "all" ||
-            productCategory === category;
-
-        product.style.display =
-            matchesSearch && matchesCategory
-                ? ""
-                : "none";
-    });
-}
-
-function filterCategory(category) {
-
-    const select = document.getElementById("categoryFilter");
-
-    if (select) {
-        select.value = category;
-    }
-
-    filterProducts();
-
-    const shop = document.getElementById("shop");
-
-    if (shop) {
-        shop.scrollIntoView({
-            behavior: "smooth"
-        });
-    }
-}
-
-/* -------------------------
-   CHECKOUT
-------------------------- */
-
-function openCheckout() {
-
-    if (cart.length === 0) {
-        alert("Your cart is empty.");
-        return;
-    }
-
-    closeCart();
-
-    const modal =
-        document.getElementById("checkoutModal");
-
-    if (modal) {
-        modal.classList.add("show");
-    }
-}
-
-function closeCheckout() {
-
-    const modal =
-        document.getElementById("checkoutModal");
-
-    if (modal) {
-        modal.classList.remove("show");
-    }
-}
-
-/* -------------------------
-   WHATSAPP ORDER
-------------------------- */
-
-function sendWhatsAppOrder() {
-
-    if (cart.length === 0) {
-        alert("Your cart is empty.");
-        return;
-    }
-
-    const form =
-        document.getElementById("checkoutForm");
-
-    if (!form) {
-        sendCartToWhatsApp();
-        return;
-    }
-
-    const formData = new FormData(form);
-
-    const name = formData.get("name") || "";
-    const phone = formData.get("phone") || "";
-    const email = formData.get("email") || "";
-
-    let message =
-        "Hello PM Traders 👋%0A%0A" +
-        "*NEW ORDER*%0A%0A";
-
-    message +=
-        "Customer: " +
-        encodeURIComponent(name) +
-        "%0A";
-
-    message +=
-        "Phone: " +
-        encodeURIComponent(phone) +
-        "%0A";
-
-    if (email) {
-        message +=
-            "Email: " +
-            encodeURIComponent(email) +
-            "%0A";
-    }
-
-    message += "%0A*Products:*%0A";
-
-    let total = 0;
-
-    cart.forEach(item => {
-
-        const itemTotal =
-            item.price * item.quantity;
-
-        total += itemTotal;
-
-        message +=
-            "• " +
-            encodeURIComponent(item.name) +
-            " x" +
-            item.quantity +
-            " — R" +
-            itemTotal.toLocaleString("en-ZA") +
-            "%0A";
-    });
-
-    message +=
-        "%0A*Subtotal: R" +
-        total.toLocaleString("en-ZA") +
-        "*";
-
-    const whatsapp =
-        "https://wa.me/27842748559?text=" +
-        message;
-
-    window.open(whatsapp, "_blank");
-}
-
-function sendCartToWhatsApp() {
-
-    let message =
-        "Hello PM Traders 👋%0A%0A" +
-        "*I would like to order:*%0A";
-
-    let total = 0;
-
-    cart.forEach(item => {
-
-        const itemTotal =
-            item.price * item.quantity;
-
-        total += itemTotal;
-
-        message +=
-            "• " +
-            encodeURIComponent(item.name) +
-            " x" +
-            item.quantity +
-            " — R" +
-            itemTotal.toLocaleString("en-ZA") +
-            "%0A";
-    });
-
-    message +=
-        "%0A*Subtotal: R" +
-        total.toLocaleString("en-ZA") +
-        "*";
-
-    window.open(
-        "https://wa.me/27842748559?text=" + message,
-        "_blank"
-    );
-}
-
-/* -------------------------
-   STARTUP
-------------------------- */
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    updateCart();
-
-    const search =
-        document.getElementById("search");
-
-    const category =
-        document.getElementById("categoryFilter");
-
-    if (search) {
-        search.addEventListener(
-            "input",
-            filterProducts
-        );
-    }
-
-    if (category) {
-        category.addEventListener(
-            "change",
-            filterProducts
-        );
-    }
-
-    const shade =
-        document.getElementById("shade");
-
-    if (shade) {
-        shade.addEventListener(
-            "click",
-            closeCart
-        );
-    }
-
-    const checkoutButton =
-        document.getElementById("checkoutButton");
-
-    if (checkoutButton) {
-        checkoutButton.onclick =
-            openCheckout;
-    }
-
-    const modalAdd =
-        document.getElementById("modalAdd");
-
-    if (modalAdd) {
-
-        modalAdd.onclick = function () {
-
-            if (!currentGalleryProduct) return;
-
-            const price =
-                Number(
-                    String(currentGalleryProduct.price)
-                    .replace(/[^\d]/g, "")
-                );
-
-            addProduct(
-                currentGalleryProduct.name,
-                price
-            );
-
-            closeProductModal();
-        };
-    }
-
-    /* Close modal when clicking outside */
-
-    document.querySelectorAll(".modal").forEach(modal => {
-
-        modal.addEventListener("click", function (event) {
-
-            if (event.target === modal) {
-                modal.classList.remove("show");
-            }
-
-        });
-
-    });
-
-});
-</script></body>
-  </html>
+</header><section class="hero" id="home">
+<div>
+<small>PM TRADERS • ONLINE STORE</small>
+<h1>Shop smart.<br><span>Shop PM Traders.</span></h1>
+<p>Quality smartphones, human hair, fashion, gadgets and accessories — all in one trusted store.</p><div class="heroButtons">
+<a href="#shop" class="shopButton">Shop now →</a>
+<a href="#categories" class="outlineButton">Browse categories</a>
+</div>
+</div><div class="heroVisual">
+<div class="pmCircle">PM</div>
+</div>
+</section><section class="trust">
+<div class="trustBox"><strong>🚚 Nationwide</strong><span>Delivery across South Africa</span></div>
+<div class="trustBox"><strong>🎁 R1,500+</strong><span>Free delivery</span></div>
+<div class="trustBox"><strong>📦 Collection</strong><span>Richards Bay & Empangeni</span></div>
+<div class="trustBox"><strong>💬 WhatsApp</strong><span>Easy order support</span></div>
+</section><section class="categories" id="categories">
+<div class="sectionTitle">
+<small>SHOP BY CATEGORY</small>
+<h2>Find what you need.</h2>
+<p>Browse our main product categories.</p>
+</div><div class="categoryGrid">
+<button class="category" onclick="filterCategory('Tech')"><span class="categoryIcon">📱</span>Smartphones & Tech</button>
+<button class="category" onclick="filterCategory('Hair')"><span class="categoryIcon">💇</span>Human Hair</button>
+<button class="category" onclick="filterCategory('Fashion')"><span class="categoryIcon">👗</span>Fashion</button>
+<button class="category" onclick="filterCategory('Accessories')"><span class="categoryIcon">🎧</span>Accessories</button>
+</div>
+</section><section class="shop" id="shop"><div class="sectionTitle">
+<small>PM TRADERS SHOP</small>
+<h2>Featured Products</h2>
+<p>Choose your favourite products and add them to your cart.</p>
+</div><div class="filters">
+<input id="search" type="search" placeholder="🔎 Search products..."><select id="categoryFilter">
+<option value="all">All categories</option>
+<option value="Tech">📱 Tech</option>
+<option value="Hair">💇 Hair</option>
+<option value="Fashion">👗 Fashion</option>
+<option value="Accessories">🎧 Accessories</option>
+</select>
+</div><div id="productGrid"><!-- IPHONE 13 --><article class="productCard" data-name="iphone 13 pro max" data-category="Tech">
+<div class="productImage">
+<img src="https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/iPhone%2013%20Pro%20Max.jpeg" alt="iPhone 13 Pro Max">
+</div>
+<div class="productBody">
+<span class="tag">TECH</span>
+<h3>iPhone 13 Pro Max</h3>
+<div class="price">R7,500</div>
+<div class="productButtons">
+<button class="viewButton" onclick="showGallery('iPhone 13 Pro Max',7500,'Tech',[
+'https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/iPhone%2013%20Pro%20Max.jpeg',
+'https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/images.jpeg'
+])">View</button>
+<button class="addButton" onclick="addProduct('iPhone 13 Pro Max',7500)">Add to Cart</button>
+</div>
+</div>
+</article><!-- IPHONE 17 --><article class="productCard" data-name="iphone 17 pro max" data-category="Tech">
+<div class="productImage">
+<img src="https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/iPhone%2017%20Pro%20Max.webp" alt="iPhone 17 Pro Max">
+</div>
+<div class="productBody">
+<span class="tag">TECH</span>
+<h3>iPhone 17 Pro Max</h3>
+<div class="price">R24,000</div>
+<div class="productButtons">
+<button class="viewButton" onclick="showGallery('iPhone 17 Pro Max',24000,'Tech',[
+'https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/iPhone%2017%20Pro%20Max.webp'
+])">View</button>
+<button class="addButton" onclick="addProduct('iPhone 17 Pro Max',24000)">Add to Cart</button>
+</div>
+</div>
+</article><!-- 20 INCH CURLY CURLS --><article class="productCard" data-name="20 inch curly curls" data-category="Hair">
+<div class="productImage">
+<img src="https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/20%20inch%20Curly%20Curls.jpeg" alt="20 Inch Curly Curls">
+</div>
+<div class="productBody">
+<span class="tag">HAIR</span>
+<h3>20 Inch Curly Curls</h3>
+<div class="price">R970</div>
+<div class="productButtons">
+<button class="viewButton" onclick="showGallery('20 Inch Curly Curls',970,'Hair',[
+'https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/20%20inch%20Curly%20Curls.jpeg',
+'https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/8%20Inch%20Super%20Double%20Drawn.webp'
+])">View</button>
+<button class="addButton" onclick="addProduct('20 Inch Curly Curls',970)">Add to Cart</button>
+</div>
+</div>
+</article><!-- 8 INCH SDD --><article class="productCard" data-name="8 inch sdd weave" data-category="Hair">
+<div class="productImage">
+<img src="https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/8%20Inch%20Super%20Double%20Drawn.webp" alt="8 Inch SDD Weave">
+</div>
+<div class="productBody">
+<span class="tag">HAIR</span>
+<h3>8 Inch SDD Weave</h3>
+<div class="price">R850</div>
+<div class="productButtons">
+<button class="viewButton" onclick="showGallery('8 Inch SDD Weave',850,'Hair',[
+'https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/8%20Inch%20Super%20Double%20Drawn.webp',
+'https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/8%20inch%20SDD%20pixey%20curly.jpg'
+])">View</button>
+<button class="addButton" onclick="addProduct('8 Inch SDD Weave',850)">Add to Cart</button>
+</div>
+</div>
+</article><!-- CLASSIC CAUGHT --><article class="productCard" data-name="classic caught" data-category="Fashion">
+<div class="productImage">
+<img src="https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/Classic%20Caught.jpg" alt="Classic Caught">
+</div>
+<div class="productBody">
+<span class="tag">FASHION</span>
+<h3>Classic Caught</h3>
+<div class="price">R230</div>
+<div class="productButtons">
+<button class="viewButton" onclick="showGallery('Classic Caught',230,'Fashion',[
+'https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/Classic%20Caught.jpg'
+])">View</button>
+<button class="addButton" onclick="addProduct('Classic Caught',230)">Add to Cart</button>
+</div>
+</div>
+</article><!-- CLASSIC LADIES DRESS --><article class="productCard" data-name="classic ladies dress" data-category="Fashion">
+<div class="productImage">
+<img src="https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/Classic%20Ladies%20Dress.jpg" alt="Classic Ladies Dress">
+</div>
+<div class="productBody">
+<span class="tag">FASHION</span>
+<h3>Classic Ladies Dress</h3>
+<div class="price">R230</div>
+<div class="productButtons">
+<button class="viewButton" onclick="showGallery('Classic Ladies Dress',230,'Fashion',[
+'https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/Classic%20Ladies%20Dress.jpg',
+'https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/Classic%20Rainbow%20Nation%20Dress.jpg'
+])">View</button>
+<button class="addButton" onclick="addProduct('Classic Ladies Dress',230)">Add to Cart</button>
+</div>
+</div>
+</article><!-- RAINBOW --><article class="productCard" data-name="classic rainbow nation dress" data-category="Fashion">
+<div class="productImage">
+<img src="https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/Classic%20Rainbow%20Nation%20Dress.jpg" alt="Classic Rainbow Nation Dress">
+</div>
+<div class="productBody">
+<span class="tag">FASHION</span>
+<h3>Classic Rainbow Nation Dress</h3>
+<div class="price">R230</div>
+<div class="productButtons">
+<button class="viewButton" onclick="showGallery('Classic Rainbow Nation Dress',230,'Fashion',[
+'https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/Classic%20Rainbow%20Nation%20Dress.jpg'
+])">View</button>
+<button class="addButton" onclick="addProduct('Classic Rainbow Nation Dress',230)">Add to Cart</button>
+</div>
+</div>
+</article><!-- SKY BLUE --><article class="productCard" data-name="sky blue dress" data-category="Fashion">
+<div class="productImage">
+<img src="https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/Sky%20Blue%20Dress.jpg" alt="Sky Blue Dress">
+</div>
+<div class="productBody">
+<span class="tag">FASHION</span>
+<h3>Sky Blue Dress</h3>
+<div class="price">R230</div>
+<div class="productButtons">
+<button class="viewButton" onclick="showGallery('Sky Blue Dress',230,'Fashion',[
+'https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/Sky%20Blue%20Dress.jpg'
+])">View</button>
+<button class="addButton" onclick="addProduct('Sky Blue Dress',230)">Add to Cart</button>
+</div>
+</div>
+</article><!-- SLEEVELESS --><article class="productCard" data-name="sleeveless classic attire" data-category="Fashion">
+<div class="productImage">
+<img src="https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/Sleeveless%20Classic%20Attire.jpg" alt="Sleeveless Classic Attire">
+</div>
+<div class="productBody">
+<span class="tag">FASHION</span>
+<h3>Sleeveless Classic Attire</h3>
+<div class="price">R230</div>
+<div class="productButtons">
+<button class="viewButton" onclick="showGallery('Sleeveless Classic Attire',230,'Fashion',[
+'https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/Sleeveless%20Classic%20Attire.jpg'
+])">View</button>
+<button class="addButton" onclick="addProduct('Sleeveless Classic Attire',230)">Add to Cart</button>
+</div>
+</div>
+</article><!-- TWO PIECE --><article class="productCard" data-name="smart casual summer two piece" data-category="Fashion">
+<div class="productImage">
+<img src="https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/Smart%20Casual%20Summer%20Two%20piece.jpg" alt="Smart Casual Summer Two Piece">
+</div>
+<div class="productBody">
+<span class="tag">FASHION</span>
+<h3>Smart Casual Summer Two Piece</h3>
+<div class="price">R230</div>
+<div class="productButtons">
+<button class="viewButton" onclick="showGallery('Smart Casual Summer Two Piece',230,'Fashion',[
+'https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/Smart%20Casual%20Summer%20Two%20piece.jpg'
+])">View</button>
+<button class="addButton" onclick="addProduct('Smart Casual Summer Two Piece',230)">Add to Cart</button>
+</div>
+</div>
+</article><!-- SMART COLOUR DRESS --><article class="productCard" data-name="smart colour dress" data-category="Fashion">
+<div class="productImage">
+<img src="https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/Smart%20Colour%20Dress.jpg" alt="Smart Colour Dress">
+</div>
+<div class="productBody">
+<span class="tag">FASHION</span>
+<h3>Smart Colour Dress</h3>
+<div class="price"
