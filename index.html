@@ -1,243 +1,371 @@
-<!doctype html>
-<html lang="en-ZA">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="PM Traders — Shop smartphones, human hair, fashion, gadgets and accessories."
+  >
 
   <title>PM Traders | Online Store</title>
-
-  <meta name="description" content="Shop smartphones, human hair, fashion, gadgets and accessories at PM Traders. Nationwide delivery across South Africa.">
 
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+  <!-- TOP ANNOUNCEMENT -->
+
   <div class="top">
-    🇿🇦 PM Traders — Quality products • Great value • Delivered across South Africa
+    🚚 Nationwide delivery available • Free delivery on orders over R1,500
   </div>
 
+
+  <!-- HEADER -->
+
   <header>
-    <a class="brand" href="#">
-      <b>PM</b> TRADERS
+
+    <a href="#" class="brand">
+      <b>PM</b>
+      <span>PM TRADERS</span>
     </a>
 
     <nav>
-      <a href="#products">Shop</a>
+      <a href="#home">Home</a>
+      <a href="#shop">Shop</a>
       <a href="#delivery">Delivery</a>
       <a href="#contact">Contact</a>
     </nav>
 
     <button id="cartBtn" type="button">
-      🛒 <span id="count">0</span>
+      🛒 Cart
+      <span id="count">0</span>
     </button>
+
   </header>
 
-  <section class="hero">
 
-    <div>
-      <small>PM TRADERS • ONLINE STORE</small>
+  <!-- HERO -->
 
-      <h1>
-        Shop smart.<br>
-        <i>Shop PM Traders.</i>
-      </h1>
+  <main id="home">
 
-      <p>
-        Quality smartphones, human hair, fashion, gadgets
-        and accessories — all in one trusted store.
-      </p>
-
-      <a class="btn" href="#products">
-        Shop now →
-      </a>
-    </div>
-
-    <div class="visual">
-      <strong>PM</strong>
-      <span>📱 Tech</span>
-      <span>💇 Hair</span>
-      <span>👗 Fashion</span>
-    </div>
-
-  </section>
-
-  <section id="products" class="shop">
-
-    <div class="heading">
+    <section class="hero">
 
       <div>
-        <small>SHOP PM TRADERS</small>
 
-        <h2>Featured products</h2>
+        <small>PM TRADERS • ONLINE STORE</small>
+
+        <h1>
+          Shop smart.<br>
+          <i>Shop PM Traders.</i>
+        </h1>
 
         <p>
-          Browse our latest products and add your favourites to your cart.
+          Quality smartphones, human hair, fashion,
+          gadgets and accessories — all in one trusted store.
         </p>
+
+        <a class="btn" href="#shop">
+          Shop now →
+        </a>
+
       </div>
 
-      <div>
-        <input
-          id="search"
-          type="search"
-          placeholder="Search products…"
-          aria-label="Search products"
-        >
 
-        <select id="cat" aria-label="Filter products">
-          <option value="all">All categories</option>
-        </select>
+      <div class="visual">
+
+        <strong>PM</strong>
+
+        <span>📱 Tech</span>
+        <span>💇 Hair</span>
+        <span>👗 Fashion</span>
+
       </div>
 
+    </section>
+
+
+    <!-- SHOP -->
+
+    <section class="shop" id="shop">
+
+      <div class="heading">
+
+        <div>
+
+          <small>SHOP PM TRADERS</small>
+
+          <h2>Featured products</h2>
+
+          <p>
+            Browse our latest products and add your
+            favourites to your cart.
+          </p>
+
+        </div>
+
+
+        <div>
+
+          <input
+            id="search"
+            type="search"
+            placeholder="Search products..."
+            aria-label="Search products"
+          >
+
+          <select
+            id="cat"
+            aria-label="Product category"
+          >
+            <option value="all">
+              All categories
+            </option>
+          </select>
+
+        </div>
+
+      </div>
+
+
+      <!-- PRODUCTS ARE INSERTED BY app.js -->
+
+      <div id="grid" class="grid"></div>
+
+    </section>
+
+
+    <!-- DELIVERY -->
+
+    <section class="delivery" id="delivery">
+
+      <small>PM TRADERS DELIVERY</small>
+
+      <h2>
+        Simple delivery.<br>
+        Easy collection.
+      </h2>
+
+
+      <div class="deliveryGrid">
+
+        <div>
+          <b>📍 Richards Bay</b>
+          <br>
+          R30 delivery around Richards Bay
+          and surrounding areas.
+        </div>
+
+        <div>
+          <b>🚚 Outside Richards Bay</b>
+          <br>
+          R60 delivery outside Richards Bay
+          and Empangeni.
+        </div>
+
+        <div>
+          <b>🎁 Free Delivery</b>
+          <br>
+          Spend R1,500 or more and delivery
+          is free.
+        </div>
+
+        <div>
+          <b>📦 Collection</b>
+          <br>
+          Collection available around
+          Richards Bay and Empangeni.
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="contact" id="contact">
+
+      <small>NEED HELP?</small>
+
+      <h2>
+        Let's get your order sorted.
+      </h2>
+
+      <p>
+        Have a question about a product,
+        delivery or your order?
+        Contact PM Traders directly on WhatsApp.
+      </p>
+
+      <a
+        class="btn"
+        href="https://wa.me/27842748559"
+        target="_blank"
+        rel="noopener"
+      >
+        WhatsApp PM Traders →
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div>
+      <b>PM TRADERS</b>
+      <br>
+      Quality products. Trusted service.
     </div>
 
-    <div id="grid" class="grid"></div>
-
-  </section>
-
-  <section id="delivery" class="delivery">
-
-    <small>DELIVERY & COLLECTION</small>
-
-    <h2>Simple delivery across South Africa.</h2>
-
-    <div class="deliveryGrid">
-
-      <div>
-        📍 <b>Richards Bay & surrounding</b><br>
-        R30 delivery
-      </div>
-
-      <div>
-        🚚 <b>Outside Richards Bay & Empangeni</b><br>
-        R60 delivery
-      </div>
-
-      <div>
-        🏪 <b>Collection</b><br>
-        Richards Bay & Empangeni
-      </div>
-
-      <div>
-        🎁 <b>Free delivery</b><br>
-        Orders over R1,500
-      </div>
-
+    <div>
+      © 2026 PM Traders
     </div>
 
-  </section>
+  </footer>
 
-  <section id="contact" class="contact">
 
-    <small>PM TRADERS</small>
+  <!-- CART SHADE -->
 
-    <h2>Need help?</h2>
+  <div id="shade"></div>
 
-    <p>
-      WhatsApp: +27 84 274 8559 · Info@PM-Traders.co.za
-    </p>
-
-    <a
-      class="btn"
-      href="https://wa.me/27842748559"
-      target="_blank"
-      rel="noopener"
-    >
-      WhatsApp us
-    </a>
-
-  </section>
 
   <!-- CART -->
+
   <aside id="cart">
 
     <div class="cartHead">
 
-      <h2>Your cart</h2>
+      <h2>Your Cart</h2>
 
-      <button id="close" type="button">×</button>
+      <button
+        id="close"
+        type="button"
+        aria-label="Close cart"
+      >
+        ×
+      </button>
 
     </div>
 
+
     <div id="items"></div>
+
 
     <div class="foot">
 
-      <b>
-        Subtotal: <span id="sub">R0</span>
-      </b>
+      <strong>
+        Subtotal:
+        <span id="sub">R0</span>
+      </strong>
 
-      <button class="btn full" id="checkout" type="button">
-        Checkout
+      <button
+        id="checkout"
+        class="btn full"
+        type="button"
+      >
+        Checkout →
       </button>
 
     </div>
 
   </aside>
 
-  <div id="shade"></div>
 
   <!-- CHECKOUT MODAL -->
+
   <div id="modal">
 
     <div class="modalBox">
 
-      <button id="x" type="button">×</button>
-
-      <small>CHECKOUT</small>
+      <button
+        id="x"
+        type="button"
+        aria-label="Close checkout"
+      >
+        ×
+      </button>
 
       <h2>Complete your order</h2>
+
+      <p>
+        Choose delivery or collection and
+        provide your contact details.
+      </p>
+
 
       <form id="form">
 
         <input
           name="name"
-          required
+          type="text"
           placeholder="Full name"
+          required
         >
 
         <input
           name="phone"
+          type="tel"
+          placeholder="Phone / WhatsApp number"
           required
-          placeholder="WhatsApp / phone"
         >
 
         <input
           name="email"
-          required
           type="email"
-          placeholder="Email"
+          placeholder="Email address"
         >
 
-        <select name="delivery" id="deliveryOpt">
 
-          <option value="richards">
-            R30 — Richards Bay & surrounding
+        <select
+          id="deliveryOpt"
+          name="delivery"
+          required
+        >
+
+          <option value="local">
+            Richards Bay / surrounding — R30
           </option>
 
           <option value="outside">
-            R60 — Outside Richards Bay & Empangeni
+            Outside Richards Bay / Empangeni — R60
           </option>
 
           <option value="collection">
-            Collection — Richards Bay / Empangeni
+            Collection — Free
           </option>
 
         </select>
 
+
         <textarea
           name="address"
+          placeholder="Delivery address / collection details"
           required
-          placeholder="Delivery / collection address"
         ></textarea>
 
-        <b>
-          Estimated total:
-          <span id="total">R0</span>
-        </b>
 
-        <button class="btn full" type="submit">
-          Place order via WhatsApp
+        <p>
+          <strong>Total:</strong>
+          <span id="total">R0</span>
+        </p>
+
+
+        <button
+          class="btn full"
+          type="submit"
+        >
+          Place order on WhatsApp →
         </button>
 
       </form>
@@ -246,21 +374,13 @@
 
   </div>
 
-  <footer>
 
-    <b>PM TRADERS</b>
-
-    <span>
-      Tech • Hair • Fashion • Accessories
-    </span>
-
-    <span>
-      © 2026 PM Traders • Richards Bay, KwaZulu-Natal
-    </span>
-
-  </footer>
+  <!-- PRODUCT DATA FIRST -->
 
   <script src="products.js"></script>
+
+  <!-- STORE FUNCTIONALITY -->
+
   <script src="app.js"></script>
 
 </body>
