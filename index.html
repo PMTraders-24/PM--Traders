@@ -1,12 +1,7 @@
 <!DOCTYPE html><html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>PM Traders | Shop Smart. Shop PM Traders.</title><meta name="description" content="PM Traders — smartphones, human hair, fashion, gadgets and accessories. Nationwide delivery across South Africa."><style>
-
-/* =====================================================
-   PM TRADERS — COMPLETE STORE UPGRADE
-===================================================== */
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>PM Traders | Online Store</title><meta name="description" content="PM Traders — smartphones, human hair, fashion, gadgets and accessories. Nationwide delivery across South Africa."><style>
 * {
   box-sizing: border-box;
 }
@@ -37,9 +32,7 @@ a {
   color: inherit;
 }
 
-/* =====================================================
-   TOP BAR
-===================================================== */
+/* TOP BAR */
 
 .topbar {
   background: #111;
@@ -50,9 +43,7 @@ a {
   font-weight: 800;
 }
 
-/* =====================================================
-   HEADER
-===================================================== */
+/* HEADER */
 
 header {
   position: sticky;
@@ -60,8 +51,8 @@ header {
   z-index: 900;
   min-height: 72px;
   padding: 12px 6%;
-  background: rgba(255,255,255,.97);
-  border-bottom: 1px solid #e5e5e5;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -86,12 +77,11 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 15px;
 }
 
 nav {
   display: flex;
-  gap: 26px;
+  gap: 25px;
 }
 
 nav a {
@@ -101,7 +91,7 @@ nav a {
 }
 
 nav a:hover {
-  opacity: .55;
+  opacity: .6;
 }
 
 .cartButton,
@@ -118,9 +108,7 @@ nav a:hover {
   display: none;
 }
 
-/* =====================================================
-   MOBILE MENU
-===================================================== */
+/* MOBILE MENU */
 
 .mobileMenu {
   display: none;
@@ -130,8 +118,8 @@ nav a:hover {
   right: 0;
   z-index: 899;
   background: #fff;
-  border-bottom: 1px solid #ddd;
   padding: 15px 5%;
+  border-bottom: 1px solid #ddd;
   box-shadow: 0 10px 25px rgba(0,0,0,.08);
 }
 
@@ -147,14 +135,12 @@ nav a:hover {
   font-weight: 800;
 }
 
-/* =====================================================
-   HERO
-===================================================== */
+/* HERO */
 
 .hero {
   background: #111;
   color: #fff;
-  min-height: 570px;
+  min-height: 560px;
   padding: 80px 7%;
   display: grid;
   grid-template-columns: 1.15fr .85fr;
@@ -221,22 +207,20 @@ nav a:hover {
 }
 
 .heroCircle {
-  width: 310px;
-  height: 310px;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
   background: #fff;
   color: #111;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 90px;
+  font-size: 85px;
   font-weight: 900;
   box-shadow: 0 25px 80px rgba(255,255,255,.12);
 }
 
-/* =====================================================
-   TRUST STRIP
-===================================================== */
+/* TRUST */
 
 .trustStrip {
   background: #fff;
@@ -266,9 +250,7 @@ nav a:hover {
   font-size: 13px;
 }
 
-/* =====================================================
-   CATEGORIES
-===================================================== */
+/* CATEGORIES */
 
 .categoriesSection {
   background: #fff;
@@ -327,9 +309,7 @@ nav a:hover {
   margin-bottom: 10px;
 }
 
-/* =====================================================
-   SHOP
-===================================================== */
+/* SHOP */
 
 .shop {
   max-width: 1500px;
@@ -358,9 +338,7 @@ nav a:hover {
   width: 320px;
 }
 
-/* =====================================================
-   PRODUCT GRID
-===================================================== */
+/* PRODUCTS */
 
 #grid {
   display: grid;
@@ -477,9 +455,7 @@ nav a:hover {
   border-radius: 15px;
 }
 
-/* =====================================================
-   PROMO
-===================================================== */
+/* PROMO */
 
 .promo {
   margin: 0 5% 70px;
@@ -513,9 +489,7 @@ nav a:hover {
   font-weight: 900;
 }
 
-/* =====================================================
-   DELIVERY
-===================================================== */
+/* DELIVERY */
 
 .delivery {
   padding: 75px 7%;
@@ -549,9 +523,7 @@ nav a:hover {
   margin-bottom: 8px;
 }
 
-/* =====================================================
-   WHY PM TRADERS
-===================================================== */
+/* WHY */
 
 .why {
   padding: 75px 7%;
@@ -583,9 +555,7 @@ nav a:hover {
   line-height: 1.6;
 }
 
-/* =====================================================
-   CONTACT
-===================================================== */
+/* CONTACT */
 
 .contact {
   background: #f5f5f5;
@@ -604,9 +574,7 @@ nav a:hover {
   font-weight: 900;
 }
 
-/* =====================================================
-   FOOTER
-===================================================== */
+/* FOOTER */
 
 footer {
   background: #080808;
@@ -618,9 +586,7 @@ footer {
   flex-wrap: wrap;
 }
 
-/* =====================================================
-   CART
-===================================================== */
+/* CART */
 
 #shade {
   position: fixed;
@@ -634,7 +600,7 @@ footer {
   display: block;
 }
 
-#cart {
+#cartPanel {
   position: fixed;
   top: 0;
   right: -470px;
@@ -647,7 +613,7 @@ footer {
   transition: right .3s;
 }
 
-#cart.open {
+#cartPanel.open {
   right: 0;
 }
 
@@ -730,9 +696,7 @@ footer {
   margin-top: 12px;
 }
 
-/* =====================================================
-   MODALS
-===================================================== */
+/* MODALS */
 
 .modal {
   position: fixed;
@@ -816,9 +780,7 @@ footer {
   font-size: 13px;
 }
 
-/* =====================================================
-   RESPONSIVE
-===================================================== */
+/* RESPONSIVE */
 
 @media(max-width:1050px) {
 
@@ -829,7 +791,6 @@ footer {
   .deliveryGrid {
     grid-template-columns: repeat(2, 1fr);
   }
-
 }
 
 @media(max-width:800px) {
@@ -877,7 +838,6 @@ footer {
     flex-direction: column;
     align-items: flex-start;
   }
-
 }
 
 @media(max-width:600px) {
@@ -909,14 +869,6 @@ footer {
     width: 190px;
     height: 190px;
     font-size: 55px;
-  }
-
-  .trustStrip {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .trustItem {
-    padding: 15px 5px;
   }
 
   .categoriesSection,
@@ -962,11 +914,6 @@ footer {
     font-size: 17px;
   }
 
-  .oldPrice {
-    display: block;
-    margin: 5px 0 0;
-  }
-
   .cardButtons {
     grid-template-columns: 1fr;
   }
@@ -993,39 +940,29 @@ footer {
     text-align: center;
     justify-content: center;
   }
-
 }
-
-</style></head><body><!-- =====================================================
-     TOP BAR
-===================================================== --><div class="topbar">
+</style></head><body><div class="topbar">
 🚚 Nationwide delivery • 🎁 FREE delivery on orders over R1,500
-</div><!-- =====================================================
-     HEADER
-===================================================== --><header><a href="#home" class="logo">
-  <span class="logoBox">PM</span>
-  <span>PM TRADERS</span>
+</div><header><a href="#home" class="logo">
+<span class="logoBox">PM</span>
+<span>PM TRADERS</span>
 </a><nav>
-  <a href="#home">Home</a>
-  <a href="#categories">Categories</a>
-  <a href="#shop">Shop</a>
-  <a href="#delivery">Delivery</a>
-  <a href="#contact">Contact</a>
-</nav><div style="display:flex;gap:8px;align-items:center;"><button class="mobileMenuButton" id="menuButton">
-☰
-</button><button class="cartButton" id="cartButton">
-🛒 Cart <span id="cartCount">0</span>
-</button></div></header><!-- =====================================================
-     MOBILE MENU
-===================================================== --><div class="mobileMenu" id="mobileMenu"><a href="#home">Home</a>
+<a href="#home">Home</a>
 <a href="#categories">Categories</a>
 <a href="#shop">Shop</a>
 <a href="#delivery">Delivery</a>
 <a href="#contact">Contact</a>
-
-</div><!-- =====================================================
-     HERO
-===================================================== --><section class="hero" id="home"><div><small>PM TRADERS • ONLINE STORE</small>
+</nav><div style="display:flex;gap:8px;align-items:center;"><button class="mobileMenuButton" id="menuButton">
+☰
+</button><button class="cartButton" id="cartButton">
+🛒 Cart <span id="cartCount">0</span>
+</button></div></header><div class="mobileMenu" id="mobileMenu">
+<a href="#home">Home</a>
+<a href="#categories">Categories</a>
+<a href="#shop">Shop</a>
+<a href="#delivery">Delivery</a>
+<a href="#contact">Contact</a>
+</div><section class="hero" id="home"><div><small>PM TRADERS • ONLINE STORE</small>
 
 <h1>
 Shop smart.<br>
@@ -1037,11 +974,11 @@ gadgets and accessories — all in one trusted store.
 Shop now →
 </a><a class="outlineButton" href="#categories">
 Browse categories
-</a></div></div><div class="heroVisual"><div class="heroCircle">
+</a></div></div><div class="heroVisual">
+<div class="heroCircle">
 PM
-</div></div></section><!-- =====================================================
-     TRUST STRIP
-===================================================== --><section class="trustStrip"><div class="trustItem">
+</div>
+</div></section><section class="trustStrip"><div class="trustItem">
 <strong>🚚 Nationwide</strong>
 <span>Delivery across South Africa</span>
 </div><div class="trustItem">
@@ -1053,9 +990,7 @@ PM
 </div><div class="trustItem">
 <strong>💬 WhatsApp</strong>
 <span>Easy order support</span>
-</div></section><!-- =====================================================
-     CATEGORIES
-===================================================== --><section class="categoriesSection" id="categories"><div class="sectionHeading"><small>SHOP BY CATEGORY</small>
+</div></section><section class="categoriesSection" id="categories"><div class="sectionHeading"><small>SHOP BY CATEGORY</small>
 
 <h2>Find what you need.</h2><p>Browse our main product categories.</p></div><div class="categoryGrid"><button class="categoryCard" onclick="chooseCategory('Tech')">
 <span class="categoryIcon">📱</span>
@@ -1069,9 +1004,7 @@ Fashion
 </button><button class="categoryCard" onclick="chooseCategory('Accessories')">
 <span class="categoryIcon">🎧</span>
 Accessories
-</button></div></section><!-- =====================================================
-     SHOP
-===================================================== --><section class="shop" id="shop"><div class="sectionHeading"><small>PM TRADERS SHOP</small>
+</button></div></section><section class="shop" id="shop"><div class="sectionHeading"><small>PM TRADERS SHOP</small>
 
 <h2>Featured Products</h2><p>
 Choose your favourite products and add them to your cart.
@@ -1082,38 +1015,135 @@ placeholder="🔎 Search products..."
 
 «»
 
-<select id="category"><option value="all">
-All categories
-</option><option value="Tech">
-📱 Tech
-</option><option value="Hair">
-💇 Hair
-</option><option value="Fashion">
-👗 Fashion
-</option><option value="Accessories">
-🎧 Accessories
-</option></select></div><div id="grid"></div></section><!-- =====================================================
-     PROMO
-===================================================== --><section class="promo"><div><h2>Free delivery when you spend R1,500+</h2><p>
+<select id="category"><option value="all">All categories</option>
+<option value="Tech">📱 Tech</option>
+<option value="Hair">💇 Hair</option>
+<option value="Fashion">👗 Fashion</option>
+<option value="Accessories">🎧 Accessories</option></select></div><div id="grid"></div></section><section class="promo"><div><h2>Free delivery when you spend R1,500+</h2><p>
 Shop more and save on delivery with PM Traders.
 </p></div><a href="#shop" class="promoButton">
 Shop now →
-</a></section><!-- =====================================================
-     DELIVERY
-===================================================== --><section class="delivery" id="delivery"><small>DELIVERY & COLLECTION</small>
+</a></section><section class="delivery" id="delivery"><small>DELIVERY & COLLECTION</small>
 
 <h2>
 Getting your PM Traders order is simple.
-</h2><div class="deliveryGrid"><div class="deliveryBox"><strong>📍 Richards Bay</strong>
-
+</h2><div class="deliveryGrid"><div class="deliveryBox">
+<strong>📍 Richards Bay</strong>
 R30 delivery around Richards Bay and surrounding areas.
-
-</div><div class="deliveryBox"><strong>🚚 Outside Richards Bay</strong>
-
+</div><div class="deliveryBox">
+<strong>🚚 Outside Richards Bay</strong>
 R60 delivery outside Richards Bay and Empangeni.
-
-</div><div class="deliveryBox"><strong>🎁 R1,500+</strong>
-
+</div><div class="deliveryBox">
+<strong>🎁 R1,500+</strong>
 Free delivery when your order reaches R1,500 or more.
+</div><div class="deliveryBox">
+<strong>📦 Collection</strong>
+Collection available around Richards Bay and Empangeni.
+</div></div></section><section class="why"><div class="sectionHeading"><small>WHY PM TRADERS?</small>
 
-</div><div class=
+<h2>Shop with confidence.</h2></div><div class="whyGrid"><div class="whyBox">
+<span>🛍️</span>
+<h3>Quality Products</h3>
+<p>
+We offer smartphones, hair, fashion and accessories in one convenient store.
+</p>
+</div><div class="whyBox">
+<span>🚚</span>
+<h3>Easy Delivery</h3>
+<p>
+Choose delivery or collection depending on what works best for you.
+</p>
+</div><div class="whyBox">
+<span>💬</span>
+<h3>WhatsApp Support</h3>
+<p>
+Place your order directly through WhatsApp and communicate with PM Traders easily.
+</p>
+</div></div></section><section class="contact" id="contact"><div class="sectionHeading"><small>CONTACT PM TRADERS</small>
+
+<h2>Need help with your order?</h2><p>
+Chat directly with PM Traders on WhatsApp.
+</p><a
+class="whatsapp"
+href="https://wa.me/27842748559"
+target="_blank"
+
+«»
+
+💬 WhatsApp PM Traders →
+</a>
+
+<p style="margin-top:25px;color:#777;">
+📧 Info@PM-Traders.co.za
+</p></div></section><footer><strong>PM TRADERS</strong>
+
+<span>
+© 2026 PM Traders • Quality products. Trusted service.
+</span></footer><!-- CART --><div id="shade"></div><aside id="cartPanel"><div class="cartHead"><h2>Your Cart</h2><button class="closeButton" id="closeCart">
+×
+</button></div><div id="cartItems"></div><div style="padding-top:20px;"><div class="cartTotal">
+Subtotal: <span id="cartSubtotal">R0</span>
+</div><p style="color:#777;font-size:13px;">
+Delivery is calculated during checkout.
+</p><button class="fullButton" id="checkoutButton">
+Checkout →
+</button></div></aside><!-- PRODUCT DETAILS --><div class="modal" id="productModal"><div class="modalBox"><button class="modalClose" id="closeProduct">
+×
+</button><div class="productModalImage"><img id="modalProductImage" src="" alt="Product"></div><span class="tag" id="modalProductCategory">
+Product
+</span><h2 id="modalProductName">
+Product
+</h2><p id="modalProductDescription" style="color:#777;line-height:1.6;">
+Quality product from PM Traders.
+</p><div class="price" id="modalProductPrice">
+R0
+</div><button class="fullButton" id="modalAddButton">
+Add to Cart →
+</button></div></div><!-- CHECKOUT --><div class="modal" id="checkoutModal"><div class="modalBox"><button class="modalClose" id="closeCheckout">
+×
+</button><h2>Complete your order</h2><p style="color:#777;font-size:14px;">
+Enter your details below. Your order will be sent to PM Traders via WhatsApp.
+</p><form id="checkoutForm"><input
+name="name"
+placeholder="Full name"
+required
+
+«»
+
+<input
+name="phone"
+placeholder="Phone / WhatsApp number"
+required
+
+«»
+
+<input
+name="email"
+type="email"
+placeholder="Email address"
+
+«»
+
+<select
+name="delivery"
+id="deliveryOption"
+required
+
+«»
+
+<option value="local">
+Richards Bay / surrounding — R30
+</option><option value="outside">
+Outside Richards Bay / Empangeni — R60
+</option><option value="collection">
+Collection — FREE
+</option></select><textarea
+name="address"
+placeholder="Delivery address / collection details"
+required
+></textarea><div class="orderSummary"><strong>
+Order total:
+<span id="checkoutTotal">R0</span>
+</strong><p class="deliveryText" id="deliveryMessage">
+Delivery fee will be calculated automatically.
+</p></div><button type="submit" class="fullButton"
