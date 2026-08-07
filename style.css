@@ -58,7 +58,6 @@ header {
   display: flex;
   align-items: center;
   gap: 9px;
-
   font-size: 19px;
   font-weight: 900;
   letter-spacing: 1px;
@@ -67,15 +66,12 @@ header {
 .brand b {
   width: 40px;
   height: 40px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   border-radius: 10px;
   background: #111;
   color: #fff;
-
   font-size: 15px;
 }
 
@@ -99,10 +95,8 @@ nav a:hover {
   border: 0;
   border-radius: 10px;
   padding: 11px 15px;
-
   background: #111;
   color: #fff;
-
   font-weight: 800;
   cursor: pointer;
 }
@@ -111,17 +105,13 @@ nav a:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   min-width: 20px;
   height: 20px;
-
   margin-left: 4px;
   padding: 0 5px;
-
   border-radius: 50px;
   background: #fff;
   color: #111;
-
   font-size: 11px;
 }
 
@@ -144,9 +134,7 @@ nav a:hover {
 .delivery small,
 .contact small {
   display: block;
-
   margin-bottom: 10px;
-
   color: #777;
   font-size: 11px;
   font-weight: 900;
@@ -156,7 +144,6 @@ nav a:hover {
 .hero h1 {
   max-width: 700px;
   margin: 0;
-
   font-size: clamp(42px, 6vw, 75px);
   line-height: .98;
   letter-spacing: -3px;
@@ -170,7 +157,6 @@ nav a:hover {
 .hero p {
   max-width: 570px;
   margin: 25px 0;
-
   color: #666;
   font-size: 17px;
 }
@@ -184,7 +170,6 @@ nav a:hover {
 .visual {
   position: relative;
   min-height: 350px;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -193,33 +178,23 @@ nav a:hover {
 .visual strong {
   width: 240px;
   height: 240px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   border-radius: 50%;
-
   background: #111;
   color: #fff;
-
   font-size: 75px;
   font-weight: 900;
-
   box-shadow: 0 25px 60px rgba(0,0,0,.18);
 }
 
 .visual span {
   position: absolute;
-
   padding: 9px 14px;
-
   border-radius: 50px;
-
   background: #fff;
-
   box-shadow: 0 8px 25px rgba(0,0,0,.12);
-
   font-size: 12px;
   font-weight: 800;
 }
@@ -251,7 +226,6 @@ nav a:hover {
   display: flex;
   align-items: end;
   justify-content: space-between;
-
   gap: 30px;
   margin-bottom: 35px;
 }
@@ -260,7 +234,6 @@ nav a:hover {
 .delivery h2,
 .contact h2 {
   margin: 0;
-
   font-size: clamp(30px, 4vw, 45px);
   line-height: 1.1;
   letter-spacing: -1px;
@@ -279,14 +252,10 @@ nav a:hover {
 #search,
 #cat {
   min-height: 45px;
-
   border: 1px solid #ddd;
   border-radius: 9px;
-
   background: #fff;
-
   padding: 0 13px;
-
   outline: none;
 }
 
@@ -316,7 +285,6 @@ nav a:hover {
   flex-direction: column;
 
   background: #fff;
-
   border: 1px solid #e5e5e5;
   border-radius: 15px;
 
@@ -330,37 +298,33 @@ nav a:hover {
   box-shadow: 0 15px 35px rgba(0,0,0,.10);
 }
 
-/* PRODUCT IMAGE AREA */
+/* LARGE PRODUCT IMAGE */
 
 .card .art {
   width: 100%;
-  height: 240px;
-
-  padding: 18px;
+  height: 310px;
+  padding: 8px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
   background: #f5f5f5;
-
   overflow: hidden;
 }
 
 .card .art img {
   width: 100%;
   height: 100%;
-
   display: block;
-
   object-fit: contain;
+  transform: scale(1.08);
 }
 
 /* PRODUCT INFORMATION */
 
 .card .body {
   min-height: 205px;
-
   padding: 18px;
 
   display: flex;
@@ -369,7 +333,6 @@ nav a:hover {
 
 .card .tag {
   width: fit-content;
-
   margin-bottom: 9px;
   padding: 4px 9px;
 
@@ -387,7 +350,6 @@ nav a:hover {
 
 .card h3 {
   min-height: 48px;
-
   margin: 0 0 10px;
 
   font-size: 16px;
@@ -396,7 +358,6 @@ nav a:hover {
 
 .card .price {
   margin: 0 0 15px;
-
   font-size: 20px;
   font-weight: 900;
 }
@@ -404,7 +365,6 @@ nav a:hover {
 .card .add {
   width: 100%;
   min-height: 44px;
-
   margin-top: auto;
 
   border: 0;
@@ -414,7 +374,6 @@ nav a:hover {
   color: #fff;
 
   font-weight: 800;
-
   cursor: pointer;
 }
 
@@ -426,7 +385,6 @@ nav a:hover {
 
 .delivery {
   padding: 70px 7%;
-
   background: #111;
   color: #fff;
 }
@@ -438,26 +396,21 @@ nav a:hover {
 .deliveryGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-
   gap: 15px;
   margin-top: 35px;
 }
 
 .deliveryGrid > div {
   padding: 22px;
-
   border: 1px solid #333;
   border-radius: 14px;
-
   background: #181818;
-
   color: #ddd;
 }
 
 .deliveryGrid b {
   display: inline-block;
   margin-bottom: 6px;
-
   color: #fff;
 }
 
@@ -465,17 +418,13 @@ nav a:hover {
 
 .contact {
   padding: 75px 7%;
-
   background: #fff;
-
   text-align: center;
 }
 
 .contact p {
   max-width: 600px;
-
   margin: 15px auto 25px;
-
   color: #666;
 }
 
@@ -483,11 +432,10 @@ nav a:hover {
   display: inline-flex;
 }
 
-/* GENERAL BUTTON */
+/* BUTTON */
 
 .btn {
   min-height: 46px;
-
   padding: 12px 21px;
 
   border: 0;
@@ -497,7 +445,6 @@ nav a:hover {
   color: #fff;
 
   font-weight: 800;
-
   cursor: pointer;
 }
 
@@ -507,18 +454,14 @@ nav a:hover {
   position: fixed;
   inset: 0;
   z-index: 199;
-
   display: none;
-
   background: rgba(0,0,0,.5);
 }
 
 #cart {
   position: fixed;
-
   top: 0;
   right: -450px;
-
   z-index: 200;
 
   width: min(430px, 94vw);
@@ -527,11 +470,9 @@ nav a:hover {
   padding: 25px;
 
   background: #fff;
-
   box-shadow: -15px 0 50px rgba(0,0,0,.2);
 
   overflow-y: auto;
-
   transition: right .3s;
 }
 
@@ -543,9 +484,7 @@ nav a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   padding-bottom: 15px;
-
   border-bottom: 1px solid #eee;
 }
 
@@ -562,7 +501,6 @@ nav a:hover {
   border-radius: 50%;
 
   background: #eee;
-
   cursor: pointer;
 
   font-size: 20px;
@@ -574,9 +512,7 @@ nav a:hover {
 
 .item {
   padding: 14px 0;
-
   border-bottom: 1px solid #eee;
-
   font-size: 13px;
 }
 
@@ -589,7 +525,6 @@ nav a:hover {
   border-radius: 8px;
 
   object-fit: contain !important;
-
   background: #f5f5f5;
 }
 
@@ -602,7 +537,6 @@ nav a:hover {
   padding: 6px 9px;
 
   background: #eee;
-
   cursor: pointer;
 
   font-size: 11px;
@@ -610,7 +544,6 @@ nav a:hover {
 
 .foot {
   padding-top: 20px;
-
   border-top: 1px solid #eee;
 }
 
@@ -619,12 +552,11 @@ nav a:hover {
   margin-top: 15px;
 }
 
-/* CHECKOUT MODAL */
+/* CHECKOUT */
 
 #modal {
   position: fixed;
   inset: 0;
-
   z-index: 300;
 
   display: none;
@@ -650,7 +582,6 @@ nav a:hover {
   overflow-y: auto;
 
   padding: 30px;
-
   border-radius: 18px;
 
   background: #fff;
@@ -658,7 +589,6 @@ nav a:hover {
 
 .modalBox #x {
   position: absolute;
-
   top: 18px;
   right: 18px;
 }
@@ -669,9 +599,7 @@ nav a:hover {
 
 #form {
   display: grid;
-
   gap: 12px;
-
   margin-top: 20px;
 }
 
@@ -679,7 +607,6 @@ nav a:hover {
 #form select,
 #form textarea {
   width: 100%;
-
   padding: 13px;
 
   border: 1px solid #ddd;
@@ -726,9 +653,7 @@ footer b {
 
   .hero {
     grid-template-columns: 1fr;
-
     padding: 55px 6%;
-
     text-align: center;
   }
 
@@ -744,7 +669,6 @@ footer b {
   .visual strong {
     width: 190px;
     height: 190px;
-
     font-size: 60px;
   }
 
@@ -799,7 +723,6 @@ footer b {
 
   .hero {
     min-height: auto;
-
     padding: 45px 5%;
   }
 
@@ -819,7 +742,6 @@ footer b {
   .visual strong {
     width: 150px;
     height: 150px;
-
     font-size: 45px;
   }
 
@@ -841,7 +763,7 @@ footer b {
     width: 100%;
   }
 
-  /* TWO-COLUMN MOBILE PRODUCTS */
+  /* TWO COLUMN MOBILE STORE */
 
   .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -853,8 +775,12 @@ footer b {
   }
 
   .card .art {
-    height: 165px;
-    padding: 10px;
+    height: 210px;
+    padding: 5px;
+  }
+
+  .card .art img {
+    transform: scale(1.05);
   }
 
   .card .body {
@@ -865,13 +791,11 @@ footer b {
   .card .tag {
     margin-bottom: 7px;
     padding: 3px 7px;
-
     font-size: 8px;
   }
 
   .card h3 {
     min-height: 58px;
-
     font-size: 13px;
     line-height: 1.3;
   }
@@ -883,7 +807,6 @@ footer b {
 
   .card .add {
     min-height: 40px;
-
     font-size: 12px;
   }
 
@@ -911,4 +834,4 @@ footer b {
   .modalBox {
     padding: 25px 18px;
   }
-                   }
+  }
