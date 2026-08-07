@@ -1,7 +1,12 @@
 <!DOCTYPE html><html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>PM Traders | Online Store</title><meta name="description" content="PM Traders — smartphones, human hair, fashion, gadgets and accessories."><style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>PM Traders | Shop Smart. Shop PM Traders.</title><meta name="description" content="PM Traders — smartphones, human hair, fashion, gadgets and accessories. Nationwide delivery across South Africa."><style>
+
+/* =====================================================
+   PM TRADERS — COMPLETE STORE UPGRADE
+===================================================== */
+
 * {
   box-sizing: border-box;
 }
@@ -13,7 +18,7 @@ html {
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: #f4f5f6;
+  background: #f5f5f5;
   color: #111;
 }
 
@@ -28,83 +33,133 @@ button {
   cursor: pointer;
 }
 
-/* TOP BAR */
+a {
+  color: inherit;
+}
+
+/* =====================================================
+   TOP BAR
+===================================================== */
 
 .topbar {
   background: #111;
-  color: white;
+  color: #fff;
   text-align: center;
-  padding: 9px;
+  padding: 10px 15px;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 800;
 }
 
-/* HEADER */
+/* =====================================================
+   HEADER
+===================================================== */
 
 header {
-  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 900;
   min-height: 72px;
   padding: 12px 6%;
+  background: rgba(255,255,255,.97);
+  border-bottom: 1px solid #e5e5e5;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #ddd;
-  gap: 15px;
+  gap: 20px;
 }
 
 .logo {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #111;
   text-decoration: none;
   font-size: 18px;
   font-weight: 900;
 }
 
 .logoBox {
-  width: 43px;
-  height: 43px;
+  width: 44px;
+  height: 44px;
+  border-radius: 11px;
+  background: #111;
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #111;
-  color: white;
-  border-radius: 10px;
+  font-size: 15px;
 }
 
 nav {
   display: flex;
-  gap: 25px;
+  gap: 26px;
 }
 
 nav a {
-  color: #333;
   text-decoration: none;
-  font-weight: 700;
   font-size: 14px;
-}
-
-.cartButton {
-  background: #111;
-  color: white;
-  border: 0;
-  border-radius: 9px;
-  padding: 11px 16px;
   font-weight: 800;
 }
 
-/* HERO */
+nav a:hover {
+  opacity: .55;
+}
+
+.cartButton,
+.mobileMenuButton {
+  border: 0;
+  background: #111;
+  color: #fff;
+  border-radius: 9px;
+  padding: 11px 15px;
+  font-weight: 800;
+}
+
+.mobileMenuButton {
+  display: none;
+}
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+.mobileMenu {
+  display: none;
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
+  z-index: 899;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 15px 5%;
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+
+.mobileMenu.show {
+  display: block;
+}
+
+.mobileMenu a {
+  display: block;
+  padding: 14px 0;
+  border-bottom: 1px solid #eee;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
 
 .hero {
   background: #111;
-  color: white;
-  min-height: 500px;
-  padding: 70px 7%;
+  color: #fff;
+  min-height: 570px;
+  padding: 80px 7%;
   display: grid;
-  grid-template-columns: 1.2fr .8fr;
+  grid-template-columns: 1.15fr .85fr;
   align-items: center;
-  gap: 40px;
+  gap: 50px;
 }
 
 .hero small {
@@ -115,106 +170,172 @@ nav a {
 }
 
 .hero h1 {
-  max-width: 750px;
   margin: 18px 0;
-  font-size: clamp(45px, 7vw, 82px);
-  line-height: .95;
-  letter-spacing: -4px;
+  max-width: 780px;
+  font-size: clamp(48px, 7vw, 88px);
+  line-height: .93;
+  letter-spacing: -5px;
 }
 
 .hero h1 span {
-  color: #aaa;
+  color: #999;
 }
 
 .hero p {
-  max-width: 590px;
+  max-width: 610px;
   color: #ccc;
   font-size: 18px;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
-.shopButton {
+.heroButtons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.shopButton,
+.outlineButton {
   display: inline-block;
-  margin-top: 15px;
-  padding: 14px 23px;
-  background: white;
-  color: #111;
+  padding: 14px 22px;
   border-radius: 9px;
   text-decoration: none;
   font-weight: 900;
 }
 
-.heroVisual {
-  min-height: 320px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.pmCircle {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: white;
+.shopButton {
+  background: #fff;
   color: #111;
-  font-size: 75px;
-  font-weight: 900;
-  box-shadow: 0 20px 70px rgba(255,255,255,.12);
 }
 
-/* CATEGORIES */
+.outlineButton {
+  border: 1px solid #555;
+  color: #fff;
+}
 
-.categories {
-  background: white;
-  padding: 35px 6%;
+.heroVisual {
   display: flex;
   justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
+  align-items: center;
 }
 
-.category {
-  padding: 13px 20px;
+.heroCircle {
+  width: 310px;
+  height: 310px;
+  border-radius: 50%;
+  background: #fff;
+  color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 90px;
+  font-weight: 900;
+  box-shadow: 0 25px 80px rgba(255,255,255,.12);
+}
+
+/* =====================================================
+   TRUST STRIP
+===================================================== */
+
+.trustStrip {
+  background: #fff;
+  padding: 22px 6%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-bottom: 1px solid #ddd;
+}
+
+.trustItem {
+  text-align: center;
+  padding: 8px;
+  border-right: 1px solid #eee;
+}
+
+.trustItem:last-child {
+  border-right: 0;
+}
+
+.trustItem strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.trustItem span {
+  color: #777;
+  font-size: 13px;
+}
+
+/* =====================================================
+   CATEGORIES
+===================================================== */
+
+.categoriesSection {
+  background: #fff;
+  padding: 60px 6%;
+}
+
+.sectionHeading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sectionHeading small {
+  color: #777;
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 900;
+}
+
+.sectionHeading h2 {
+  margin: 8px 0;
+  font-size: 40px;
+  letter-spacing: -2px;
+}
+
+.sectionHeading p {
+  color: #777;
+}
+
+.categoryGrid {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.categoryCard {
   border: 1px solid #ddd;
-  border-radius: 50px;
-  background: white;
-  font-weight: 800;
+  border-radius: 15px;
+  background: #fafafa;
+  padding: 25px 15px;
+  text-align: center;
+  font-weight: 900;
+  transition: .2s;
 }
 
-/* SHOP */
+.categoryCard:hover {
+  transform: translateY(-3px);
+  background: #111;
+  color: #fff;
+}
+
+.categoryIcon {
+  display: block;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+/* =====================================================
+   SHOP
+===================================================== */
 
 .shop {
   max-width: 1500px;
   margin: auto;
   padding: 75px 5%;
 }
-
-.sectionTitle {
-  text-align: center;
-  margin-bottom: 35px;
-}
-
-.sectionTitle small {
-  color: #777;
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: 2px;
-}
-
-.sectionTitle h2 {
-  margin: 8px 0;
-  font-size: 45px;
-  letter-spacing: -2px;
-}
-
-.sectionTitle p {
-  color: #777;
-}
-
-/* FILTERS */
 
 .filters {
   display: flex;
@@ -227,17 +348,19 @@ nav a {
 .filters select {
   height: 48px;
   padding: 0 15px;
-  background: white;
+  background: #fff;
   border: 1px solid #ddd;
   border-radius: 9px;
   outline: none;
 }
 
 .filters input {
-  width: 300px;
+  width: 320px;
 }
 
-/* PRODUCTS */
+/* =====================================================
+   PRODUCT GRID
+===================================================== */
 
 #grid {
   display: grid;
@@ -246,7 +369,8 @@ nav a {
 }
 
 .card {
-  background: white;
+  position: relative;
+  background: #fff;
   border: 1px solid #ddd;
   border-radius: 15px;
   overflow: hidden;
@@ -255,30 +379,44 @@ nav a {
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0,0,0,.10);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,.11);
 }
 
-.card .art {
-  height: 310px;
-  padding: 8px;
+.productImage {
+  height: 290px;
   background: #fafafa;
+  padding: 10px;
+  position: relative;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
-.card .art img {
+.productImage img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-.card .body {
+.badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  background: #111;
+  color: #fff;
+  padding: 7px 10px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.cardBody {
   padding: 18px;
 }
 
-.card .tag {
+.tag {
   display: inline-block;
   padding: 5px 9px;
   background: #eee;
@@ -288,48 +426,105 @@ nav a {
 }
 
 .card h3 {
-  min-height: 45px;
+  min-height: 42px;
+  margin: 12px 0;
   font-size: 16px;
-  margin-bottom: 8px;
 }
 
-.card .price {
+.price {
   font-size: 21px;
   font-weight: 900;
-  margin: 12px 0;
 }
 
-.card .add {
-  width: 100%;
-  padding: 13px;
+.oldPrice {
+  margin-left: 7px;
+  color: #999;
+  font-size: 13px;
+  text-decoration: line-through;
+}
+
+.cardButtons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.addButton,
+.viewButton {
   border: 0;
   border-radius: 8px;
-  background: #111;
-  color: white;
-  font-weight: 800;
+  padding: 12px 7px;
+  font-size: 12px;
+  font-weight: 900;
 }
 
-.card .add:hover {
-  background: #333;
+.addButton {
+  background: #111;
+  color: #fff;
+}
+
+.viewButton {
+  background: #eee;
+  color: #111;
 }
 
 .noProducts {
   grid-column: 1 / -1;
   text-align: center;
-  padding: 50px;
-  background: white;
+  background: #fff;
+  padding: 55px 20px;
   border-radius: 15px;
 }
 
-/* DELIVERY */
+/* =====================================================
+   PROMO
+===================================================== */
+
+.promo {
+  margin: 0 5% 70px;
+  padding: 45px;
+  background: #111;
+  color: #fff;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+
+.promo h2 {
+  margin: 0 0 10px;
+  font-size: 32px;
+}
+
+.promo p {
+  color: #bbb;
+  margin: 0;
+}
+
+.promoButton {
+  white-space: nowrap;
+  padding: 13px 20px;
+  border-radius: 8px;
+  background: #fff;
+  color: #111;
+  text-decoration: none;
+  font-weight: 900;
+}
+
+/* =====================================================
+   DELIVERY
+===================================================== */
 
 .delivery {
   padding: 75px 7%;
   background: #111;
-  color: white;
+  color: #fff;
 }
 
 .delivery h2 {
+  max-width: 700px;
   font-size: 45px;
   letter-spacing: -2px;
 }
@@ -350,14 +545,50 @@ nav a {
 
 .deliveryBox strong {
   display: block;
+  color: #fff;
   margin-bottom: 8px;
-  color: white;
 }
 
-/* CONTACT */
+/* =====================================================
+   WHY PM TRADERS
+===================================================== */
+
+.why {
+  padding: 75px 7%;
+  background: #fff;
+}
+
+.whyGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.whyBox {
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+}
+
+.whyBox span {
+  font-size: 32px;
+}
+
+.whyBox h3 {
+  margin-bottom: 8px;
+}
+
+.whyBox p {
+  color: #777;
+  line-height: 1.6;
+}
+
+/* =====================================================
+   CONTACT
+===================================================== */
 
 .contact {
-  background: white;
+  background: #f5f5f5;
   padding: 75px 7%;
   text-align: center;
 }
@@ -367,30 +598,34 @@ nav a {
   margin-top: 15px;
   padding: 14px 22px;
   background: #111;
-  color: white;
+  color: #fff;
   border-radius: 9px;
   text-decoration: none;
   font-weight: 900;
 }
 
-/* FOOTER */
+/* =====================================================
+   FOOTER
+===================================================== */
 
 footer {
-  padding: 35px 6%;
   background: #080808;
   color: #aaa;
+  padding: 35px 6%;
   display: flex;
   justify-content: space-between;
   gap: 20px;
   flex-wrap: wrap;
 }
 
-/* CART SHADE */
+/* =====================================================
+   CART
+===================================================== */
 
 #shade {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,.55);
+  background: rgba(0,0,0,.6);
   display: none;
   z-index: 999;
 }
@@ -399,15 +634,13 @@ footer {
   display: block;
 }
 
-/* CART */
-
 #cart {
   position: fixed;
   top: 0;
-  right: -450px;
-  width: min(430px, 94vw);
+  right: -470px;
+  width: min(450px, 94vw);
   height: 100vh;
-  background: white;
+  background: #fff;
   z-index: 1000;
   padding: 25px;
   overflow-y: auto;
@@ -420,49 +653,48 @@ footer {
 
 .cartHead {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   border-bottom: 1px solid #ddd;
   padding-bottom: 15px;
 }
 
-#close,
-#x {
-  border: 0;
-  background: #eee;
-  border-radius: 50%;
+.closeButton {
   width: 38px;
   height: 38px;
+  border: 0;
+  border-radius: 50%;
+  background: #eee;
   font-size: 22px;
 }
 
-.item {
+.cartItem {
   padding: 15px 0;
   border-bottom: 1px solid #eee;
 }
 
-.itemTop {
+.cartItemTop {
   display: flex;
   justify-content: space-between;
   gap: 10px;
 }
 
-.itemName {
+.cartItemName {
   font-weight: 800;
 }
 
-.itemPrice {
+.cartItemPrice {
   font-weight: 900;
 }
 
-.qty {
+.quantity {
   display: flex;
   align-items: center;
   gap: 8px;
   margin-top: 10px;
 }
 
-.qty button {
+.quantity button {
   width: 30px;
   height: 30px;
   border: 0;
@@ -470,55 +702,97 @@ footer {
   background: #eee;
 }
 
-.remove {
-  color: #b00020;
+.removeButton {
   border: 0;
   background: transparent;
+  color: #a00000;
+  padding: 7px 0;
   font-size: 12px;
-  margin-top: 8px;
 }
 
-/* MODAL */
+.cartSummary {
+  padding-top: 20px;
+}
 
-#modal {
+.cartTotal {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.fullButton {
+  width: 100%;
+  padding: 14px;
+  border: 0;
+  border-radius: 8px;
+  background: #111;
+  color: #fff;
+  font-weight: 900;
+  margin-top: 12px;
+}
+
+/* =====================================================
+   MODALS
+===================================================== */
+
+.modal {
   position: fixed;
   inset: 0;
   z-index: 1100;
-  background: rgba(0,0,0,.6);
+  background: rgba(0,0,0,.65);
   display: none;
   align-items: center;
   justify-content: center;
   padding: 20px;
 }
 
-#modal.show {
+.modal.show {
   display: flex;
 }
 
 .modalBox {
-  width: min(520px, 100%);
+  position: relative;
+  width: min(550px, 100%);
   max-height: 90vh;
   overflow-y: auto;
-  background: white;
-  border-radius: 15px;
+  background: #fff;
+  border-radius: 16px;
   padding: 30px;
-  position: relative;
 }
 
-#x {
+.modalClose {
   position: absolute;
   right: 20px;
   top: 20px;
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 50%;
+  background: #eee;
+  font-size: 21px;
 }
 
-#form {
+.productModalImage {
+  height: 300px;
+  background: #f7f7f7;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.productModalImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+#checkoutForm {
   display: grid;
   gap: 12px;
 }
 
-#form input,
-#form select,
-#form textarea {
+#checkoutForm input,
+#checkoutForm select,
+#checkoutForm textarea {
   width: 100%;
   padding: 13px;
   border: 1px solid #ddd;
@@ -526,45 +800,51 @@ footer {
   outline: none;
 }
 
-#form textarea {
+#checkoutForm textarea {
   min-height: 100px;
   resize: vertical;
 }
 
-.full {
-  width: 100%;
-  padding: 13px;
-  border: 0;
-  border-radius: 8px;
-  background: #111;
-  color: white;
-  font-weight: 800;
-}
-
 .orderSummary {
-  background: #f4f5f6;
-  padding: 15px;
+  background: #f5f5f5;
   border-radius: 10px;
-  margin: 10px 0;
+  padding: 15px;
 }
 
-.deliveryNotice {
+.deliveryText {
+  color: #777;
   font-size: 13px;
-  color: #666;
 }
 
-/* MOBILE */
+/* =====================================================
+   RESPONSIVE
+===================================================== */
 
-@media(max-width:900px) {
+@media(max-width:1050px) {
+
+  #grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .deliveryGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media(max-width:800px) {
 
   nav {
     display: none;
   }
 
+  .mobileMenuButton {
+    display: block;
+  }
+
   .hero {
     grid-template-columns: 1fr;
     text-align: center;
-    padding: 60px 5%;
   }
 
   .hero p {
@@ -572,20 +852,35 @@ footer {
     margin-right: auto;
   }
 
-  .heroVisual {
-    min-height: 240px;
+  .heroButtons {
+    justify-content: center;
   }
 
-  #grid {
+  .trustStrip {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .deliveryGrid {
+  .trustItem {
+    border-right: 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .categoryGrid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .whyGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .promo {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
 }
 
-@media(max-width:520px) {
+@media(max-width:600px) {
 
   header {
     padding: 10px 4%;
@@ -601,35 +896,40 @@ footer {
   }
 
   .hero {
-    min-height: 580px;
+    min-height: 620px;
+    padding: 60px 5%;
   }
 
   .hero h1 {
-    font-size: 48px;
+    font-size: 49px;
     letter-spacing: -3px;
   }
 
-  .pmCircle {
-    width: 180px;
-    height: 180px;
+  .heroCircle {
+    width: 190px;
+    height: 190px;
     font-size: 55px;
   }
 
-  .categories {
-    padding: 25px 4%;
+  .trustStrip {
+    grid-template-columns: 1fr 1fr;
   }
 
-  .category {
-    font-size: 12px;
-    padding: 10px 14px;
+  .trustItem {
+    padding: 15px 5px;
   }
 
-  .shop {
-    padding: 55px 4%;
+  .categoriesSection,
+  .shop,
+  .why,
+  .delivery,
+  .contact {
+    padding-left: 5%;
+    padding-right: 5%;
   }
 
-  .sectionTitle h2 {
-    font-size: 34px;
+  .sectionHeading h2 {
+    font-size: 33px;
   }
 
   .filters {
@@ -646,11 +946,11 @@ footer {
     gap: 10px;
   }
 
-  .card .art {
-    height: 210px;
+  .productImage {
+    height: 200px;
   }
 
-  .card .body {
+  .cardBody {
     padding: 12px;
   }
 
@@ -658,8 +958,27 @@ footer {
     font-size: 13px;
   }
 
-  .card .price {
+  .price {
     font-size: 17px;
+  }
+
+  .oldPrice {
+    display: block;
+    margin: 5px 0 0;
+  }
+
+  .cardButtons {
+    grid-template-columns: 1fr;
+  }
+
+  .promo {
+    margin-left: 4%;
+    margin-right: 4%;
+    padding: 30px 20px;
+  }
+
+  .promo h2 {
+    font-size: 25px;
   }
 
   .deliveryGrid {
@@ -667,27 +986,46 @@ footer {
   }
 
   .delivery h2 {
-    font-size: 35px;
+    font-size: 34px;
   }
 
   footer {
     text-align: center;
     justify-content: center;
   }
+
 }
-</style></head><body><!-- TOP BAR --><div class="topbar">
-🚚 Nationwide delivery • Free delivery over R1,500
-</div><!-- HEADER --><header><a href="#home" class="logo">
-<span class="logoBox">PM</span>
-<span>PM TRADERS</span>
+
+</style></head><body><!-- =====================================================
+     TOP BAR
+===================================================== --><div class="topbar">
+🚚 Nationwide delivery • 🎁 FREE delivery on orders over R1,500
+</div><!-- =====================================================
+     HEADER
+===================================================== --><header><a href="#home" class="logo">
+  <span class="logoBox">PM</span>
+  <span>PM TRADERS</span>
 </a><nav>
-<a href="#home">Home</a>
+  <a href="#home">Home</a>
+  <a href="#categories">Categories</a>
+  <a href="#shop">Shop</a>
+  <a href="#delivery">Delivery</a>
+  <a href="#contact">Contact</a>
+</nav><div style="display:flex;gap:8px;align-items:center;"><button class="mobileMenuButton" id="menuButton">
+☰
+</button><button class="cartButton" id="cartButton">
+🛒 Cart <span id="cartCount">0</span>
+</button></div></header><!-- =====================================================
+     MOBILE MENU
+===================================================== --><div class="mobileMenu" id="mobileMenu"><a href="#home">Home</a>
+<a href="#categories">Categories</a>
 <a href="#shop">Shop</a>
 <a href="#delivery">Delivery</a>
 <a href="#contact">Contact</a>
-</nav><button id="cartBtn" class="cartButton">
-🛒 Cart <span id="count">0</span>
-</button></header><!-- HERO --><section class="hero" id="home"><div><small>PM TRADERS • ONLINE STORE</small>
+
+</div><!-- =====================================================
+     HERO
+===================================================== --><section class="hero" id="home"><div><small>PM TRADERS • ONLINE STORE</small>
 
 <h1>
 Shop smart.<br>
@@ -695,495 +1033,87 @@ Shop smart.<br>
 </h1><p>
 Quality smartphones, human hair, fashion,
 gadgets and accessories — all in one trusted store.
-</p><a href="#shop" class="shopButton">
+</p><div class="heroButtons"><a class="shopButton" href="#shop">
 Shop now →
-</a></div><div class="heroVisual">
-<div class="pmCircle">
+</a><a class="outlineButton" href="#categories">
+Browse categories
+</a></div></div><div class="heroVisual"><div class="heroCircle">
 PM
-</div>
-</div></section><!-- CATEGORIES --><section class="categories"><div class="category">📱 Tech</div>
-<div class="category">💇 Hair</div>
-<div class="category">👗 Fashion</div>
-<div class="category">🎧 Accessories</div></section><!-- SHOP --><section class="shop" id="shop"><div class="sectionTitle"><small>SHOP PM TRADERS</small>
+</div></div></section><!-- =====================================================
+     TRUST STRIP
+===================================================== --><section class="trustStrip"><div class="trustItem">
+<strong>🚚 Nationwide</strong>
+<span>Delivery across South Africa</span>
+</div><div class="trustItem">
+<strong>🎁 R1,500+</strong>
+<span>Free delivery</span>
+</div><div class="trustItem">
+<strong>📦 Collection</strong>
+<span>Richards Bay & Empangeni</span>
+</div><div class="trustItem">
+<strong>💬 WhatsApp</strong>
+<span>Easy order support</span>
+</div></section><!-- =====================================================
+     CATEGORIES
+===================================================== --><section class="categoriesSection" id="categories"><div class="sectionHeading"><small>SHOP BY CATEGORY</small>
+
+<h2>Find what you need.</h2><p>Browse our main product categories.</p></div><div class="categoryGrid"><button class="categoryCard" onclick="chooseCategory('Tech')">
+<span class="categoryIcon">📱</span>
+Smartphones & Tech
+</button><button class="categoryCard" onclick="chooseCategory('Hair')">
+<span class="categoryIcon">💇</span>
+Human Hair
+</button><button class="categoryCard" onclick="chooseCategory('Fashion')">
+<span class="categoryIcon">👗</span>
+Fashion
+</button><button class="categoryCard" onclick="chooseCategory('Accessories')">
+<span class="categoryIcon">🎧</span>
+Accessories
+</button></div></section><!-- =====================================================
+     SHOP
+===================================================== --><section class="shop" id="shop"><div class="sectionHeading"><small>PM TRADERS SHOP</small>
 
 <h2>Featured Products</h2><p>
-Browse our latest products and add your favourites to your cart.
+Choose your favourite products and add them to your cart.
 </p></div><div class="filters"><input
 id="search"
 type="search"
-placeholder="Search products..."
+placeholder="🔎 Search products..."
 
 «»
 
-<select id="cat">
-<option value="all">All categories</option>
-<option value="Tech">Tech</option>
-<option value="Hair">Hair</option>
-<option value="Fashion">Fashion</option>
-<option value="Accessories">Accessories</option>
-</select></div><div id="grid"></div></section><!-- DELIVERY --><section class="delivery" id="delivery"><small>DELIVERY & COLLECTION</small>
+<select id="category"><option value="all">
+All categories
+</option><option value="Tech">
+📱 Tech
+</option><option value="Hair">
+💇 Hair
+</option><option value="Fashion">
+👗 Fashion
+</option><option value="Accessories">
+🎧 Accessories
+</option></select></div><div id="grid"></div></section><!-- =====================================================
+     PROMO
+===================================================== --><section class="promo"><div><h2>Free delivery when you spend R1,500+</h2><p>
+Shop more and save on delivery with PM Traders.
+</p></div><a href="#shop" class="promoButton">
+Shop now →
+</a></section><!-- =====================================================
+     DELIVERY
+===================================================== --><section class="delivery" id="delivery"><small>DELIVERY & COLLECTION</small>
 
 <h2>
-We make getting your order easy.
-</h2><div class="deliveryGrid"><div class="deliveryBox">
-<strong>📍 Richards Bay</strong>
+Getting your PM Traders order is simple.
+</h2><div class="deliveryGrid"><div class="deliveryBox"><strong>📍 Richards Bay</strong>
+
 R30 delivery around Richards Bay and surrounding areas.
-</div><div class="deliveryBox">
-<strong>🚚 Outside Richards Bay</strong>
+
+</div><div class="deliveryBox"><strong>🚚 Outside Richards Bay</strong>
+
 R60 delivery outside Richards Bay and Empangeni.
-</div><div class="deliveryBox">
-<strong>🎁 Orders over R1,500</strong>
-Enjoy free delivery when your order reaches R1,500 or more.
-</div><div class="deliveryBox">
-<strong>📦 Collection</strong>
-Collection available around Richards Bay and Empangeni.
-</div></div></section><!-- CONTACT --><section class="contact" id="contact"><h2>Need help with your order?</h2><p>
-Chat directly with PM Traders on WhatsApp.
-</p><a
-class="whatsapp"
-href="https://wa.me/27842748559"
-target="_blank"
 
-«»
+</div><div class="deliveryBox"><strong>🎁 R1,500+</strong>
 
-WhatsApp PM Traders →
-</a>
+Free delivery when your order reaches R1,500 or more.
 
-<p style="margin-top:25px;color:#777;">
-📧 Info@PM-Traders.co.za
-</p></section><!-- FOOTER --><footer><strong>PM TRADERS</strong>
-
-<span>
-© 2026 PM Traders • Quality products. Trusted service.
-</span></footer><!-- CART SHADE --><div id="shade"></div><!-- CART --><aside id="cart"><div class="cartHead"><h2>Your Cart</h2><button id="close">
-×
-</button></div><div id="items"></div><div style="margin-top:20px;"><strong>
-Subtotal: <span id="sub">R0</span>
-</strong><button
-id="checkout"
-class="full"
-style="margin-top:15px"
-
-«»
-
-Checkout →
-</button>
-
-</div></aside><!-- CHECKOUT MODAL --><div id="modal"><div class="modalBox"><button id="x">
-×
-</button><h2>Complete your order</h2><p style="color:#777;font-size:14px;">
-Enter your details and your order will be prepared for WhatsApp.
-</p><form id="form"><input
-name="name"
-placeholder="Full name"
-required
-
-«»
-
-<input
-name="phone"
-placeholder="Phone / WhatsApp number"
-required
-
-«»
-
-<input
-name="email"
-type="email"
-placeholder="Email address"
-
-«»
-
-<select
-id="deliveryOpt"
-name="delivery"
-required
-
-«»
-
-<option value="local">
-Richards Bay / surrounding — R30
-</option><option value="outside">
-Outside Richards Bay / Empangeni — R60
-</option><option value="collection">
-Collection — Free
-</option></select><textarea
-name="address"
-placeholder="Delivery address / collection details"
-required
-></textarea><div class="orderSummary"><strong>Order total:</strong>
-<span id="total">R0</span>
-
-<p class="deliveryNotice" id="deliveryText">
-Delivery fee will be calculated automatically.
-</p></div><button class="full" type="submit">
-Place order on WhatsApp →
-</button></form></div></div><script>
-
-/* =========================================
-   PM TRADERS PRODUCTS
-========================================= */
-
-const products = [
-
-  {
-    id: 1,
-    name: "iPhone 13 Pro Max",
-    price: 7500,
-    category: "Tech",
-    image: "images/iphone-13-pro-max.jpg"
-  },
-
-  {
-    id: 2,
-    name: "iPhone 17 Pro Max",
-    price: 24000,
-    category: "Tech",
-    image: "images/iphone-17-pro-max.jpg"
-  },
-
-  {
-    id: 3,
-    name: "8 Inch Weave DD",
-    price: 850,
-    category: "Hair",
-    image: "images/8-inch-weave-dd.jpg"
-  },
-
-  {
-    id: 4,
-    name: "20 Inch Weave Jurly Curls",
-    price: 970,
-    category: "Hair",
-    image: "images/20-inch-weave-jurly-curls.jpg"
-  },
-
-  {
-    id: 5,
-    name: "Fashion Dress",
-    price: 230,
-    category: "Fashion",
-    image: "images/fashion-dress.jpg"
-  },
-
-  {
-    id: 6,
-    name: "Cellphone Accessories",
-    price: 150,
-    category: "Accessories",
-    image: "images/accessories.jpg"
-  }
-
-];
-
-
-/* =========================================
-   CART
-========================================= */
-
-let cart = [];
-
-
-/* =========================================
-   ELEMENTS
-========================================= */
-
-const grid = document.getElementById("grid");
-const search = document.getElementById("search");
-const cat = document.getElementById("cat");
-
-const cartBtn = document.getElementById("cartBtn");
-const cartBox = document.getElementById("cart");
-const closeBtn = document.getElementById("close");
-const shade = document.getElementById("shade");
-
-const itemsBox = document.getElementById("items");
-const count = document.getElementById("count");
-const subtotal = document.getElementById("sub");
-
-const checkout = document.getElementById("checkout");
-
-const modal = document.getElementById("modal");
-const closeModal = document.getElementById("x");
-
-const form = document.getElementById("form");
-const deliveryOpt = document.getElementById("deliveryOpt");
-
-const total = document.getElementById("total");
-const deliveryText = document.getElementById("deliveryText");
-
-
-/* =========================================
-   CURRENCY
-========================================= */
-
-function money(amount) {
-  return "R" + Number(amount).toLocaleString("en-ZA");
-}
-
-
-/* =========================================
-   DISPLAY PRODUCTS
-========================================= */
-
-function displayProducts() {
-
-  const term = search.value.toLowerCase().trim();
-  const category = cat.value;
-
-  const filtered = products.filter(product => {
-
-    const matchesSearch =
-      product.name.toLowerCase().includes(term);
-
-    const matchesCategory =
-      category === "all" ||
-      product.category === category;
-
-    return matchesSearch && matchesCategory;
-
-  });
-
-  grid.innerHTML = "";
-
-  if (filtered.length === 0) {
-
-    grid.innerHTML = `
-      <div class="noProducts">
-        <h3>No products found</h3>
-        <p>Try another search or category.</p>
-      </div>
-    `;
-
-    return;
-  }
-
-  filtered.forEach(product => {
-
-    const card = document.createElement("article");
-
-    card.className = "card";
-
-    card.innerHTML = `
-
-      <div class="art">
-
-        <img
-          src="${product.image}"
-          alt="${product.name}"
-          onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=&quot;font-size:50px;&quot;>📦</div>';"
-        >
-
-      </div>
-
-      <div class="body">
-
-        <span class="tag">
-          ${product.category}
-        </span>
-
-        <h3>
-          ${product.name}
-        </h3>
-
-        <div class="price">
-          ${money(product.price)}
-        </div>
-
-        <button
-          class="add"
-          onclick="addToCart(${product.id})"
-        >
-          Add to Cart
-        </button>
-
-      </div>
-
-    `;
-
-    grid.appendChild(card);
-
-  });
-
-}
-
-
-/* =========================================
-   ADD TO CART
-========================================= */
-
-function addToCart(id) {
-
-  const existing = cart.find(item => item.id === id);
-
-  if (existing) {
-
-    existing.qty++;
-
-  } else {
-
-    const product = products.find(item => item.id === id);
-
-    cart.push({
-      ...product,
-      qty: 1
-    });
-
-  }
-
-  updateCart();
-
-  openCart();
-
-}
-
-
-/* =========================================
-   UPDATE CART
-========================================= */
-
-function updateCart() {
-
-  itemsBox.innerHTML = "";
-
-  let sub = 0;
-  let itemCount = 0;
-
-  cart.forEach(item => {
-
-    sub += item.price * item.qty;
-
-    itemCount += item.qty;
-
-    const div = document.createElement("div");
-
-    div.className = "item";
-
-    div.innerHTML = `
-
-      <div class="itemTop">
-
-        <span class="itemName">
-          ${item.name}
-        </span>
-
-        <span class="itemPrice">
-          ${money(item.price * item.qty)}
-        </span>
-
-      </div>
-
-      <div class="qty">
-
-        <button onclick="changeQty(${item.id}, -1)">
-          −
-        </button>
-
-        <strong>${item.qty}</strong>
-
-        <button onclick="changeQty(${item.id}, 1)">
-          +
-        </button>
-
-      </div>
-
-      <button
-        class="remove"
-        onclick="removeFromCart(${item.id})"
-      >
-        Remove
-      </button>
-
-    `;
-
-    itemsBox.appendChild(div);
-
-  });
-
-  if (cart.length === 0) {
-
-    itemsBox.innerHTML = `
-      <div style="text-align:center;padding:40px 10px;color:#777;">
-        <div style="font-size:45px;">🛒</div>
-        <h3>Your cart is empty</h3>
-        <p>Add products to continue.</p>
-      </div>
-    `;
-
-  }
-
-  count.textContent = itemCount;
-
-  subtotal.textContent = money(sub);
-
-}
-
-
-/* =========================================
-   CHANGE QUANTITY
-========================================= */
-
-function changeQty(id, amount) {
-
-  const item = cart.find(product => product.id === id);
-
-  if (!item) return;
-
-  item.qty += amount;
-
-  if (item.qty <= 0) {
-
-    cart = cart.filter(product => product.id !== id);
-
-  }
-
-  updateCart();
-
-}
-
-
-/* =========================================
-   REMOVE
-========================================= */
-
-function removeFromCart(id) {
-
-  cart = cart.filter(product => product.id !== id);
-
-  updateCart();
-
-}
-
-
-/* =========================================
-   CART OPEN/CLOSE
-========================================= */
-
-function openCart() {
-
-  cartBox.classList.add("open");
-
-  shade.classList.add("show");
-
-}
-
-function closeCart() {
-
-  cartBox.classList.remove("open");
-
-  shade.classList.remove("show");
-
-}
-
-cartBtn.addEventListener("click", openCart);
-
-closeBtn.addEventListener("click", closeCart);
-
-shade.addEventListener("click", closeCart);
-
-
-/* =========================================
-   CHECKOUT
-========================================= */
-
-checkout.addEventListe
+</div><div class=
