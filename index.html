@@ -3,48 +3,62 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#111111">
-<meta name="description" content="PM Traders - Smartphones, human hair, fashion and accessories.">
+
 <title>PM Traders | Online Store</title>
+<meta name="description" content="PM Traders - Smartphones, human hair, fashion, gadgets and accessories. Shop online with nationwide delivery in South Africa.">
 
 <style>
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
+*{
+  box-sizing:border-box;
   margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
   font-family:Arial,Helvetica,sans-serif;
-  background:#f5f5f5;
-  color:#111;
-}
-body.cart-open{overflow:hidden}
-a{text-decoration:none;color:inherit}
-button{font:inherit;cursor:pointer}
-
-.topbar{
-  background:#111;
-  color:#fff;
-  text-align:center;
-  padding:9px 14px;
-  font-size:13px;
+  background:#f6f7fb;
+  color:#171717;
+  line-height:1.5;
 }
 
+button,
+input,
+select{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* HEADER */
 header{
   position:sticky;
   top:0;
   z-index:1000;
-  background:#fff;
-  box-shadow:0 2px 14px rgba(0,0,0,.08);
+  background:#111;
+  color:#fff;
+  box-shadow:0 3px 15px rgba(0,0,0,.15);
 }
 
-.nav{
+.topbar{
   max-width:1200px;
-  min-height:68px;
   margin:auto;
-  padding:12px 18px;
+  min-height:70px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:18px;
+  gap:20px;
+  padding:12px 18px;
 }
 
 .logo{
@@ -53,186 +67,259 @@ header{
   letter-spacing:-1px;
 }
 
-.logo span{color:#e11d48}
+.logo span{
+  color:#f5b400;
+}
 
-.navlinks{
+nav{
   display:flex;
   align-items:center;
   gap:20px;
 }
 
-.navlinks a{
-  font-size:14px;
+nav a{
+  color:#fff;
   font-weight:700;
+  font-size:14px;
 }
 
-.cart-btn{
+nav a:hover{
+  color:#f5b400;
+}
+
+.cart-button{
   border:0;
+  background:#f5b400;
+  color:#111;
+  padding:11px 15px;
+  border-radius:10px;
+  font-weight:900;
+}
+
+.cart-count{
+  display:inline-flex;
+  min-width:22px;
+  height:22px;
+  padding:0 5px;
+  align-items:center;
+  justify-content:center;
   background:#111;
   color:#fff;
-  border-radius:10px;
-  padding:11px 15px;
-  font-weight:800;
+  border-radius:50%;
+  margin-left:4px;
+  font-size:12px;
 }
 
+/* HERO */
 .hero{
-  background:linear-gradient(135deg,#111 0%,#292929 100%);
+  background:
+    radial-gradient(circle at 80% 20%,rgba(245,180,0,.25),transparent 30%),
+    linear-gradient(135deg,#111,#252525);
   color:#fff;
-  padding:75px 18px;
 }
 
 .hero-inner{
   max-width:1200px;
   margin:auto;
-}
-
-.badge{
-  display:inline-block;
-  background:#e11d48;
-  color:#fff;
-  padding:7px 12px;
-  border-radius:30px;
-  font-size:12px;
-  font-weight:800;
-  margin-bottom:15px;
+  padding:70px 18px 75px;
+  display:grid;
+  grid-template-columns:1.3fr .7fr;
+  gap:35px;
+  align-items:center;
 }
 
 .hero h1{
-  max-width:760px;
-  margin:0 0 20px;
-  font-size:clamp(40px,7vw,72px);
-  line-height:.98;
-  letter-spacing:-2px;
+  font-size:clamp(38px,6vw,70px);
+  line-height:1;
+  margin-bottom:20px;
+}
+
+.hero h1 span{
+  color:#f5b400;
 }
 
 .hero p{
   max-width:650px;
-  margin:0;
-  color:#ddd;
   font-size:18px;
-  line-height:1.6;
+  color:#ddd;
+  margin-bottom:28px;
 }
 
 .hero-buttons{
   display:flex;
   flex-wrap:wrap;
   gap:12px;
-  margin-top:27px;
 }
 
 .btn{
-  display:inline-block;
-  padding:14px 20px;
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  border:0;
   border-radius:10px;
-  font-weight:800;
+  padding:13px 20px;
+  font-weight:900;
 }
 
 .btn-primary{
+  background:#f5b400;
+  color:#111;
+}
+
+.btn-secondary{
   background:#fff;
   color:#111;
 }
 
-.btn-whatsapp{
-  background:#25d366;
-  color:#fff;
+.hero-card{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:22px;
+  padding:25px;
 }
 
-section{
+.hero-card h3{
+  margin-bottom:14px;
+}
+
+.hero-card p{
+  font-size:14px;
+  margin-bottom:10px;
+}
+
+/* MAIN */
+.container{
   max-width:1200px;
   margin:auto;
-  padding:55px 18px;
+  padding:45px 18px;
 }
 
 .section-title{
   text-align:center;
-  margin-bottom:30px;
-}
-
-.section-title h2{
-  margin:0 0 8px;
+  margin-bottom:10px;
   font-size:34px;
 }
 
-.section-title p{
-  margin:0;
-  color:#666;
-}
-
-.categories{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:15px;
-}
-
-.category{
-  background:#fff;
-  padding:25px 15px;
-  border-radius:16px;
+.section-subtitle{
   text-align:center;
+  color:#666;
+  margin-bottom:30px;
+}
+
+/* CATEGORY BUTTONS */
+.categories{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+  margin-bottom:35px;
+}
+
+.category-btn{
+  border:1px solid #ddd;
+  background:#fff;
+  padding:10px 17px;
+  border-radius:30px;
   font-weight:800;
-  box-shadow:0 4px 18px rgba(0,0,0,.06);
-  transition:.2s;
 }
 
-.category:hover{
-  transform:translateY(-4px);
+.category-btn.active,
+.category-btn:hover{
+  background:#111;
+  color:#fff;
+  border-color:#111;
 }
 
-.category-icon{
-  font-size:36px;
-  margin-bottom:10px;
+/* SEARCH */
+.search-area{
+  max-width:650px;
+  margin:0 auto 30px;
+  display:flex;
+  gap:10px;
 }
 
+.search-area input{
+  width:100%;
+  border:1px solid #ddd;
+  background:#fff;
+  border-radius:12px;
+  padding:14px 16px;
+  outline:none;
+}
+
+.search-area input:focus{
+  border-color:#111;
+}
+
+/* PRODUCTS */
 .products{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:20px;
 }
 
-.product{
+.product-card{
   background:#fff;
+  border:1px solid #e8e8e8;
   border-radius:17px;
   overflow:hidden;
+  box-shadow:0 5px 18px rgba(0,0,0,.06);
   display:flex;
   flex-direction:column;
-  box-shadow:0 5px 20px rgba(0,0,0,.07);
+  transition:.2s ease;
+}
+
+.product-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 25px rgba(0,0,0,.1);
 }
 
 .product-image{
-  width:100%;
-  height:290px;
-  background:#eee;
   position:relative;
+  height:260px;
+  background:#f0f0f0;
   overflow:hidden;
 }
 
 .product-image img{
-  display:block;
   width:100%;
   height:100%;
+  display:block;
   object-fit:cover;
 }
 
-.product-image.contain img{
-  object-fit:contain;
-  background:#fff;
-}
-
-.image-error{
+.image-fallback{
   width:100%;
   height:100%;
-  display:flex;
+  display:none;
   align-items:center;
   justify-content:center;
   text-align:center;
   padding:20px;
+  background:linear-gradient(135deg,#ececec,#fafafa);
   color:#777;
-  background:#eee;
-  font-weight:700;
+  font-weight:800;
+}
+
+.badge{
+  position:absolute;
+  top:12px;
+  left:12px;
+  z-index:2;
+  background:#111;
+  color:#fff;
+  padding:6px 10px;
+  border-radius:7px;
+  font-size:11px;
+  font-weight:900;
+}
+
+.badge.sale{
+  background:#d71920;
 }
 
 .product-info{
-  padding:16px;
+  padding:17px;
   display:flex;
   flex-direction:column;
   flex:1;
@@ -240,257 +327,317 @@ section{
 
 .product-category{
   color:#777;
-  font-size:11px;
-  font-weight:800;
   text-transform:uppercase;
-  letter-spacing:.5px;
+  font-size:11px;
+  font-weight:900;
+  margin-bottom:5px;
 }
 
-.product h3{
-  margin:7px 0;
+.product-name{
   font-size:17px;
-  line-height:1.3;
+  font-weight:900;
+  margin-bottom:9px;
 }
 
-.product-price{
-  margin:7px 0 14px;
+.product-description{
+  color:#666;
+  font-size:13px;
+  margin-bottom:13px;
+  flex:1;
+}
+
+.price-row{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:14px;
+}
+
+.price{
   font-size:20px;
   font-weight:900;
 }
 
-.contact-price{
-  color:#777;
+.old-price{
+  color:#999;
+  text-decoration:line-through;
+  font-size:13px;
+}
+
+.stock{
+  color:#16833b;
   font-size:12px;
-  font-weight:normal;
+  font-weight:900;
+  margin-bottom:12px;
 }
 
-.product-actions{
-  margin-top:auto;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:8px;
+.stock.out{
+  color:#c62828;
 }
 
-.add-btn,
-.whatsapp-btn{
+.add-cart{
+  width:100%;
   border:0;
-  border-radius:9px;
-  padding:11px 7px;
-  font-weight:800;
-}
-
-.add-btn{
   background:#111;
   color:#fff;
+  padding:12px;
+  border-radius:9px;
+  font-weight:900;
 }
 
-.whatsapp-btn{
-  background:#25d366;
-  color:#fff;
+.add-cart:hover{
+  background:#f5b400;
+  color:#111;
 }
 
+.no-products{
+  grid-column:1/-1;
+  text-align:center;
+  padding:45px;
+  color:#777;
+}
+
+/* INFO */
 .info-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:18px;
+  margin-top:45px;
 }
 
 .info-card{
   background:#fff;
   padding:25px;
-  border-radius:16px;
-  box-shadow:0 4px 18px rgba(0,0,0,.06);
+  border-radius:15px;
+  border:1px solid #e5e5e5;
+  text-align:center;
+}
+
+.info-icon{
+  font-size:35px;
+  margin-bottom:10px;
 }
 
 .info-card h3{
-  margin-top:0;
+  margin-bottom:7px;
 }
 
-.info-card p{
-  color:#666;
-  line-height:1.6;
-}
-
-footer{
-  background:#111;
-  color:#fff;
-  padding:45px 18px;
-}
-
-.footer-inner{
-  max-width:1200px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:2fr 1fr 1fr;
-  gap:30px;
-}
-
-.footer-title{
-  font-size:20px;
-  font-weight:900;
-  margin-bottom:12px;
-}
-
-footer p{
-  color:#bbb;
-  line-height:1.6;
-}
-
-.cart-overlay{
+/* CART DRAWER */
+.overlay{
   position:fixed;
   inset:0;
-  z-index:3000;
-  background:rgba(0,0,0,.6);
-  opacity:0;
-  visibility:hidden;
-  transition:.2s;
+  background:rgba(0,0,0,.55);
+  z-index:1998;
+  display:none;
 }
 
-.cart-overlay.active{
-  opacity:1;
-  visibility:visible;
+.overlay.show{
+  display:block;
 }
 
 .cart{
-  position:absolute;
+  position:fixed;
+  z-index:1999;
   top:0;
-  right:0;
-  width:min(440px,100%);
-  height:100%;
+  right:-450px;
+  width:min(430px,100%);
+  height:100vh;
   background:#fff;
+  transition:.3s ease;
+  display:flex;
+  flex-direction:column;
+  box-shadow:-5px 0 25px rgba(0,0,0,.2);
+}
+
+.cart.open{
+  right:0;
+}
+
+.cart-header{
   padding:20px;
-  overflow-y:auto;
-  transform:translateX(100%);
-  transition:.25s;
-}
-
-.cart-overlay.active .cart{
-  transform:translateX(0);
-}
-
-.cart-head{
+  border-bottom:1px solid #ddd;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding-bottom:15px;
-  border-bottom:1px solid #ddd;
 }
 
-.cart-head h2{
-  margin:0;
+.cart-header h2{
+  font-size:21px;
 }
 
 .close-cart{
-  width:38px;
-  height:38px;
   border:0;
-  border-radius:8px;
   background:#eee;
+  border-radius:50%;
+  width:35px;
+  height:35px;
+  font-size:18px;
+}
+
+.cart-items{
+  flex:1;
+  overflow:auto;
+  padding:15px;
+}
+
+.empty-cart{
+  text-align:center;
+  color:#777;
+  padding:50px 20px;
 }
 
 .cart-item{
-  display:flex;
-  gap:12px;
-  padding:15px 0;
+  display:grid;
+  grid-template-columns:65px 1fr auto;
+  gap:10px;
+  padding:12px 0;
   border-bottom:1px solid #eee;
 }
 
-.cart-item img{
-  width:72px;
-  height:72px;
+.cart-item-image{
+  width:65px;
+  height:65px;
   object-fit:cover;
   border-radius:8px;
   background:#eee;
 }
 
-.cart-item-info{
-  flex:1;
+.cart-item-name{
+  font-weight:900;
+  font-size:13px;
 }
 
-.cart-item-info strong{
-  display:block;
-  margin-bottom:5px;
+.cart-item-price{
+  color:#666;
+  font-size:12px;
 }
 
 .qty{
   display:flex;
   align-items:center;
-  gap:7px;
-  margin-top:8px;
+  gap:6px;
+  margin-top:6px;
 }
 
 .qty button{
-  width:28px;
-  height:28px;
+  width:24px;
+  height:24px;
   border:1px solid #ddd;
   background:#fff;
-  border-radius:6px;
+  border-radius:5px;
 }
 
-.remove{
+.remove-item{
   border:0;
   background:none;
-  color:#e11d48;
-  padding:4px 0;
+  color:#d71920;
   font-size:12px;
+  margin-top:5px;
+}
+
+.cart-footer{
+  padding:20px;
+  border-top:1px solid #ddd;
 }
 
 .cart-total{
   display:flex;
   justify-content:space-between;
-  padding:20px 0;
-  font-size:22px;
+  font-size:20px;
   font-weight:900;
+  margin-bottom:15px;
 }
 
-.checkout{
+.checkout-btn{
   width:100%;
+  background:#25D366;
+  color:#fff;
   border:0;
   border-radius:10px;
-  padding:15px;
-  background:#25d366;
-  color:#fff;
-  font-weight:900;
-}
-
-.empty{
-  text-align:center;
-  color:#777;
-  padding:45px 10px;
-}
-
-.notice{
-  background:#fff4f6;
-  border:1px solid #ffd0da;
-  color:#9f1239;
   padding:14px;
-  border-radius:12px;
-  margin-bottom:25px;
-  font-size:13px;
-  line-height:1.5;
+  font-weight:900;
+  margin-bottom:10px;
 }
 
-@media(max-width:950px){
+.clear-btn{
+  width:100%;
+  background:#eee;
+  border:0;
+  border-radius:10px;
+  padding:11px;
+  font-weight:800;
+}
+
+/* FOOTER */
+footer{
+  background:#111;
+  color:#fff;
+  margin-top:30px;
+}
+
+.footer-inner{
+  max-width:1200px;
+  margin:auto;
+  padding:40px 18px;
+  display:grid;
+  grid-template-columns:1.3fr 1fr 1fr;
+  gap:30px;
+}
+
+footer h3{
+  margin-bottom:12px;
+}
+
+footer p,
+footer a{
+  color:#ccc;
+  font-size:14px;
+}
+
+.footer-bottom{
+  border-top:1px solid #333;
+  text-align:center;
+  padding:18px;
+  color:#aaa;
+  font-size:12px;
+}
+
+/* TOAST */
+.toast{
+  position:fixed;
+  bottom:25px;
+  left:50%;
+  transform:translate(-50%,120px);
+  background:#111;
+  color:#fff;
+  padding:13px 18px;
+  border-radius:10px;
+  z-index:3000;
+  opacity:0;
+  transition:.3s ease;
+  font-weight:800;
+  font-size:14px;
+}
+
+.toast.show{
+  transform:translate(-50%,0);
+  opacity:1;
+}
+
+/* RESPONSIVE */
+@media(max-width:1000px){
   .products{
     grid-template-columns:repeat(3,1fr);
   }
 
-  .categories{
-    grid-template-columns:repeat(2,1fr);
+  .hero-inner{
+    grid-template-columns:1fr;
   }
 }
 
-@media(max-width:700px){
-  .navlinks{
+@media(max-width:720px){
+  nav{
     display:none;
-  }
-
-  .hero{
-    padding:55px 18px;
-  }
-
-  .hero h1{
-    font-size:44px;
   }
 
   .products{
@@ -503,41 +650,50 @@ footer p{
   }
 
   .product-info{
-    padding:12px;
+    padding:13px;
   }
 
-  .product h3{
-    font-size:14px;
+  .product-name{
+    font-size:15px;
   }
 
-  .product-price{
-    font-size:17px;
-  }
-
-  .product-actions{
-    grid-template-columns:1fr;
-  }
-
-  .info-grid{
-    grid-template-columns:1fr;
-  }
-
+  .info-grid,
   .footer-inner{
     grid-template-columns:1fr;
   }
+
+  .hero-inner{
+    padding:50px 18px;
+  }
+
+  .hero h1{
+    font-size:44px;
+  }
 }
 
-@media(max-width:400px){
+@media(max-width:460px){
   .products{
-    grid-template-columns:1fr;
+    grid-template-columns:1fr 1fr;
   }
 
   .product-image{
-    height:280px;
+    height:180px;
   }
 
-  .categories{
-    grid-template-columns:1fr 1fr;
+  .price{
+    font-size:17px;
+  }
+
+  .topbar{
+    padding:10px 12px;
+  }
+
+  .logo{
+    font-size:21px;
+  }
+
+  .cart-button{
+    padding:9px 11px;
   }
 }
 </style>
@@ -545,987 +701,501 @@ footer p{
 
 <body>
 
-<div class="topbar">
-🚚 Nationwide delivery • Free delivery on orders over R1,500
-</div>
-
 <header>
-<div class="nav">
+  <div class="topbar">
+    <a href="#" class="logo">PM <span>TRADERS</span></a>
 
-<a href="#" class="logo">
-PM <span>TRADERS</span>
-</a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#shop">Shop</a>
+      <a href="#categories">Categories</a>
+      <a href="#delivery">Delivery</a>
+    </nav>
 
-<nav class="navlinks">
-<a href="#categories">Categories</a>
-<a href="#products">Products</a>
-<a href="#delivery">Delivery</a>
-<a href="#contact">Contact</a>
-</nav>
-
-<button class="cart-btn" type="button" onclick="openCart()">
-🛒 Cart (<span id="cartCount">0</span>)
-</button>
-
-</div>
+    <button class="cart-button" onclick="openCart()">
+      🛒 Cart
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </div>
 </header>
 
-<main>
+<section class="hero" id="home">
+  <div class="hero-inner">
 
-<section class="hero">
-<div class="hero-inner">
+    <div>
+      <h1>Shop smart.<br><span>Shop PM Traders.</span></h1>
 
-<span class="badge">
-PM TRADERS • ONLINE STORE
-</span>
+      <p>
+        Quality smartphones, human hair, fashion, gadgets and accessories —
+        all in one trusted store.
+      </p>
 
-<h1>
-Shop smart.<br>
-Shop PM Traders.
-</h1>
+      <div class="hero-buttons">
+        <a href="#shop" class="btn btn-primary">Shop Now →</a>
+        <a href="#delivery" class="btn btn-secondary">Delivery Info</a>
+      </div>
+    </div>
 
-<p>
-Quality smartphones, human hair, fashion and accessories —
-all in one trusted store.
-</p>
+    <div class="hero-card">
+      <h3>Why shop with PM Traders?</h3>
+      <p>📦 Nationwide delivery available</p>
+      <p>🚚 Fast local delivery around Richards Bay</p>
+      <p>🛍️ Collection available</p>
+      <p>💬 Easy WhatsApp ordering</p>
+      <p>🎁 Free delivery over R1,500</p>
+    </div>
 
-<div class="hero-buttons">
-
-<a href="#products" class="btn btn-primary">
-Shop Now →
-</a>
-
-<a
-href="https://wa.me/27842748559"
-class="btn btn-whatsapp"
-target="_blank"
-rel="noopener">
-WhatsApp Us
-</a>
-
-</div>
-
-</div>
+  </div>
 </section>
 
+<main id="shop" class="container">
 
-<section id="categories">
+  <h2 class="section-title">Shop PM Traders</h2>
 
-<div class="section-title">
-<h2>Shop by Category</h2>
-<p>Find what you are looking for at PM Traders.</p>
-</div>
+  <p class="section-subtitle">
+    Browse our latest products and add your favourites to your cart.
+  </p>
 
-<div class="categories">
+  <div class="search-area">
+    <input
+      type="search"
+      id="searchInput"
+      placeholder="Search products..."
+      oninput="renderProducts()"
+    >
+  </div>
 
-<a href="#products" class="category">
-<div class="category-icon">📱</div>
-Smartphones
-</a>
+  <div class="categories" id="categories">
 
-<a href="#products" class="category">
-<div class="category-icon">💇</div>
-Human Hair
-</a>
+    <button class="category-btn active"
+      onclick="setCategory('All',this)">
+      All
+    </button>
 
-<a href="#products" class="category">
-<div class="category-icon">👗</div>
-Fashion
-</a>
+    <button class="category-btn"
+      onclick="setCategory('Hair',this)">
+      💇 Hair
+    </button>
 
-<a href="#products" class="category">
-<div class="category-icon">🎧</div>
-Accessories
-</a>
+    <button class="category-btn"
+      onclick="setCategory('Phones',this)">
+      📱 Phones
+    </button>
 
-</div>
+    <button class="category-btn"
+      onclick="setCategory('Fashion',this)">
+      👗 Fashion
+    </button>
 
-</section>
+    <button class="category-btn"
+      onclick="setCategory('Accessories',this)">
+      🎧 Accessories
+    </button>
 
+  </div>
 
-<section id="products">
+  <div class="products" id="products"></div>
 
-<div class="section-title">
-<h2>PM Traders Collection</h2>
-<p>Browse our products and order directly through WhatsApp.</p>
-</div>
+  <div class="info-grid" id="delivery">
 
-<div class="notice">
-<strong>Important:</strong>
-Product photos are loaded from the
-<strong>images</strong> folder in your GitHub repository.
-</div>
+    <div class="info-card">
+      <div class="info-icon">🚚</div>
+      <h3>Delivery</h3>
+      <p>
+        R30 around Richards Bay and surrounding areas.
+        R60 outside Richards Bay and Empangeni.
+      </p>
+    </div>
 
-<div class="products" id="productGrid"></div>
+    <div class="info-card">
+      <div class="info-icon">📦</div>
+      <h3>Nationwide</h3>
+      <p>
+        We deliver across South Africa.
+        Free delivery on orders over R1,500.
+      </p>
+    </div>
 
-</section>
+    <div class="info-card">
+      <div class="info-icon">🤝</div>
+      <h3>Collection</h3>
+      <p>
+        Collection is available around Richards Bay and Empangeni.
+      </p>
+    </div>
 
-
-<section id="delivery">
-
-<div class="section-title">
-<h2>Delivery & Collection</h2>
-<p>Convenient options for PM Traders customers.</p>
-</div>
-
-<div class="info-grid">
-
-<div class="info-card">
-<h3>🚚 Delivery</h3>
-<p>
-Nationwide delivery available.
-R30 around Richards Bay and surrounding areas.
-R60 outside Richards Bay and Empangeni.
-</p>
-</div>
-
-<div class="info-card">
-<h3>📦 Collection</h3>
-<p>
-Collection is available around Richards Bay and Empangeni.
-Contact PM Traders to arrange collection.
-</p>
-</div>
-
-<div class="info-card">
-<h3>🎁 Free Delivery</h3>
-<p>
-Spend R1,500 or more and enjoy free delivery.
-</p>
-</div>
-
-</div>
-
-</section>
+  </div>
 
 </main>
 
+<footer>
+  <div class="footer-inner">
 
-<footer id="contact">
+    <div>
+      <h3>PM Traders</h3>
+      <p>
+        Smartphones, human hair, fashion, gadgets and accessories.
+      </p>
+    </div>
 
-<div class="footer-inner">
+    <div>
+      <h3>Contact</h3>
+      <p>📍 Richards Bay, KwaZulu-Natal</p>
+      <p>
+        📱
+        <a href="tel:+27842748559">
+          +27 84 274 8559
+        </a>
+      </p>
+      <p>
+        ✉️
+        <a href="mailto:Info@PM-Traders.co.za">
+          Info@PM-Traders.co.za
+        </a>
+      </p>
+    </div>
 
-<div>
-<div class="footer-title">PM TRADERS</div>
-<p>
-Smartphones, human hair, fashion and accessories.
-Shop smart. Shop PM Traders.
-</p>
-</div>
+    <div>
+      <h3>Quick Links</h3>
+      <p><a href="#home">Home</a></p>
+      <p><a href="#shop">Shop</a></p>
+      <p><a href="#delivery">Delivery</a></p>
+    </div>
 
-<div>
-<div class="footer-title">Contact</div>
-<p>
-📱 +27 84 274 8559<br>
-✉️ Info@PM-Traders.co.za
-</p>
-</div>
+  </div>
 
-<div>
-<div class="footer-title">Quick Links</div>
-<p>
-<a href="#products">Products</a><br>
-<a href="#categories">Categories</a><br>
-<a href="#delivery">Delivery</a><br>
-<a
-href="https://wa.me/27842748559"
-target="_blank"
-rel="noopener">
-WhatsApp
-</a>
-</p>
-</div>
-
-</div>
-
+  <div class="footer-bottom">
+    © <span id="year"></span> PM Traders. All rights reserved.
+  </div>
 </footer>
 
+<!-- CART -->
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
 
-<div
-class="cart-overlay"
-id="cartOverlay"
-onclick="outsideCart(event)">
+<aside class="cart" id="cart">
 
-<aside class="cart">
+  <div class="cart-header">
+    <h2>Your Cart</h2>
+    <button class="close-cart" onclick="closeCart()">×</button>
+  </div>
 
-<div class="cart-head">
+  <div class="cart-items" id="cartItems">
+    <div class="empty-cart">
+      Your cart is empty.
+    </div>
+  </div>
 
-<h2>Your Cart</h2>
+  <div class="cart-footer">
 
-<button
-class="close-cart"
-type="button"
-onclick="closeCart()">
-✕
-</button>
+    <div class="cart-total">
+      <span>Total</span>
+      <span id="cartTotal">R0</span>
+    </div>
 
-</div>
+    <button class="checkout-btn" onclick="checkoutWhatsApp()">
+      💬 Order via WhatsApp
+    </button>
 
-<div id="cartItems"></div>
+    <button class="clear-btn" onclick="clearCart()">
+      Clear Cart
+    </button>
 
-<div class="cart-total">
-<span>Total</span>
-<span id="cartTotal">R0</span>
-</div>
-
-<button
-class="checkout"
-type="button"
-onclick="checkoutWhatsApp()">
-Complete Order on WhatsApp
-</button>
+  </div>
 
 </aside>
 
-</div>
-
+<div class="toast" id="toast"></div>
 
 <script>
 
-"use strict";
-
-
-/* =========================================
-   PRODUCT DATABASE
-========================================= */
+/* =========================================================
+   PM TRADERS PRODUCT CATALOGUE
+   IMPORTANT:
+   All product images are loaded from ./images/
+   ========================================================= */
 
 const products = [
 
-{
-id:1,
-name:"20 Inch Curly Curls",
-category:"Human Hair",
-price:970,
-image:"images/20 inch Curly Curls.jpeg"
-},
+  {
+    id:1,
+    name:"8 Inch Weave Double Drawn",
+    category:"Hair",
+    price:850,
+    image:"./images/8-inch-weave-double-drawn.jpg",
+    description:"Quality double drawn human hair weave.",
+    stock:true,
+    sale:false
+  },
 
-{
-id:2,
-name:"22 Inch Water Wave Human Hair",
-category:"Human Hair",
-price:null,
-image:"images/22 Inch water wave human hair.webp"
-},
+  {
+    id:2,
+    name:"20 Inch Curly Curls",
+    category:"Hair",
+    price:970,
+    image:"./images/20-inch-curly-curls.jpeg",
+    description:"Beautiful curly curls human hair.",
+    stock:true,
+    sale:false
+  },
 
-{
-id:3,
-name:"8 Inch Super Double Drawn",
-category:"Human Hair",
-price:850,
-image:"images/8 Inch Super Double Drawn.webp"
-},
+  {
+    id:3,
+    name:"22 Inch Water Wave Human Hair",
+    category:"Hair",
+    price:0,
+    image:"./images/22-inch-water-wave-human-hair.webp",
+    description:"Premium water wave human hair.",
+    stock:true,
+    sale:false
+  },
 
-{
-id:4,
-name:"8 Inch SDD Weave",
-category:"Human Hair",
-price:850,
-image:"images/8 inch SDD Weave",
-fallbacks:[
-"images/8 inch SDD Weave.jpg",
-"images/8 inch SDD Weave.jpeg",
-"images/8 inch SDD Weave.webp",
-"images/8 inch SDD Weave.png"
-]
-},
+  {
+    id:4,
+    name:"8 Inch Super Double Drawn",
+    category:"Hair",
+    price:0,
+    image:"./images/8-inch-super-double-drawn.webp",
+    description:"Super double drawn human hair.",
+    stock:true,
+    sale:false
+  },
 
-{
-id:5,
-name:"8 Inch SDD Pixey Curly",
-category:"Human Hair",
-price:null,
-image:"images/8 inch SDD pixey curly.jpg"
-},
+  {
+    id:5,
+    name:"8 Inch SDD Weave",
+    category:"Hair",
+    price:0,
+    image:"./images/8-inch-sdd-weave.webp",
+    description:"Premium SDD weave.",
+    stock:true,
+    sale:false
+  },
 
-{
-id:6,
-name:"Classic Caught",
-category:"Fashion",
-price:null,
-image:"images/Classic Caught.jpg"
-},
+  {
+    id:6,
+    name:"8 Inch SDD Pixie Curly",
+    category:"Hair",
+    price:0,
+    image:"./images/8-inch-sdd-pixie-curly.jpg",
+    description:"Stylish pixie curly SDD weave.",
+    stock:true,
+    sale:false
+  },
 
-{
-id:7,
-name:"Classic Ladies Dress",
-category:"Fashion",
-price:230,
-image:"images/Classic Ladies Dress.jpg"
-},
+  {
+    id:7,
+    name:"iPhone 13 Pro Max",
+    category:"Phones",
+    price:7500,
+    image:"./images/iphone-13-pro-max.jpeg",
+    description:"Premium iPhone 13 Pro Max.",
+    stock:true,
+    sale:false
+  },
 
-{
-id:8,
-name:"Classic Rainbow Nation Dress",
-category:"Fashion",
-price:null,
-image:"images/Classic Rainbow Nation Dress.jpg"
-},
+  {
+    id:8,
+    name:"iPhone 17 Pro Max",
+    category:"Phones",
+    price:24000,
+    image:"./images/iphone-17-pro-max.webp",
+    description:"Premium flagship smartphone.",
+    stock:true,
+    sale:false
+  },
 
-{
-id:9,
-name:"Sky Blue Dress",
-category:"Fashion",
-price:null,
-image:"images/Sky Blue Dress.jpg"
-},
+  {
+    id:9,
+    name:"Classic Ladies Dress",
+    category:"Fashion",
+    price:230,
+    image:"./images/classic-ladies-dress.jpg",
+    description:"Elegant ladies fashion dress.",
+    stock:true,
+    sale:false
+  },
 
-{
-id:10,
-name:"Sleeveless Classic Attire",
-category:"Fashion",
-price:null,
-image:"images/Sleeveless Classic Attire.jpg"
-},
+  {
+    id:10,
+    name:"Classic Caught Dress",
+    category:"Fashion",
+    price:0,
+    image:"./images/classic-caught.jpg",
+    description:"Stylish classic fashion piece.",
+    stock:true,
+    sale:false
+  },
 
-{
-id:11,
-name:"Smart Casual Summer Two Piece",
-category:"Fashion",
-price:null,
-image:"images/Smart Casual Summer Two piece.jpg"
-},
+  {
+    id:11,
+    name:"Classic Rainbow Nation Dress",
+    category:"Fashion",
+    price:0,
+    image:"./images/classic-rainbow-nation-dress.jpg",
+    description:"Beautiful statement fashion dress.",
+    stock:true,
+    sale:false
+  },
 
-{
-id:12,
-name:"Smart Colour Dress",
-category:"Fashion",
-price:null,
-image:"images/Smart Colour Dress.jpg"
-},
+  {
+    id:12,
+    name:"Sky Blue Dress",
+    category:"Fashion",
+    price:0,
+    image:"./images/sky-blue-dress.jpg",
+    description:"Elegant sky blue dress.",
+    stock:true,
+    sale:false
+  },
 
-{
-id:13,
-name:"Smart Colour Full Dress",
-category:"Fashion",
-price:null,
-image:"images/Smart Colour full dress.jpg"
-},
+  {
+    id:13,
+    name:"Sleeveless Classic Attire",
+    category:"Fashion",
+    price:0,
+    image:"./images/sleeveless-classic-attire.jpg",
+    description:"Classic sleeveless fashion.",
+    stock:true,
+    sale:false
+  },
 
-{
-id:14,
-name:"Smart Dress",
-category:"Fashion",
-price:null,
-image:"images/Smart Dress.jpg"
-},
+  {
+    id:14,
+    name:"Smart Casual Summer Two Piece",
+    category:"Fashion",
+    price:0,
+    image:"./images/smart-casual-summer-two-piece.jpg",
+    description:"Smart casual two-piece outfit.",
+    stock:true,
+    sale:false
+  },
 
-{
-id:15,
-name:"iPhone 13 Pro Max",
-category:"Smartphones",
-price:7500,
-image:"images/iPhone 13 Pro Max.jpeg",
-contain:true
-},
+  {
+    id:15,
+    name:"Smart Colour Dress",
+    category:"Fashion",
+    price:0,
+    image:"./images/smart-colour-dress.jpg",
+    description:"Modern smart colour dress.",
+    stock:true,
+    sale:false
+  },
 
-{
-id:16,
-name:"iPhone 17 Pro Max",
-category:"Smartphones",
-price:24000,
-image:"images/iPhone 17 Pro Max.webp",
-contain:true
-}
+  {
+    id:16,
+    name:"Smart Colour Full Dress",
+    category:"Fashion",
+    price:0,
+    image:"./images/smart-colour-full-dress.jpg",
+    description:"Elegant full-length fashion dress.",
+    stock:true,
+    sale:false
+  },
+
+  {
+    id:17,
+    name:"Smart Dress",
+    category:"Fashion",
+    price:0,
+    image:"./images/smart-dress.jpg",
+    description:"Smart everyday fashion dress.",
+    stock:true,
+    sale:false
+  }
 
 ];
 
+/* =========================================================
+   STATE
+   ========================================================= */
 
-/* =========================================
-   CART
-========================================= */
+let selectedCategory = "All";
+let cart = JSON.parse(localStorage.getItem("pmTradersCart") || "[]");
 
-let cart=[];
+/* =========================================================
+   IMAGE FALLBACK
+   ========================================================= */
 
-try{
+function imageError(img){
 
-const saved=localStorage.getItem("pmTradersCart");
+  img.style.display = "none";
 
-if(saved){
+  const fallback = img.parentElement.querySelector(".image-fallback");
 
-const parsed=JSON.parse(saved);
-
-if(Array.isArray(parsed)){
-cart=parsed;
+  if(fallback){
+    fallback.style.display = "flex";
+  }
 }
 
-}
-
-}catch(error){
-
-cart=[];
-
-}
-
+/* =========================================================
+   PRODUCTS
+   ========================================================= */
 
 function money(value){
 
-if(value===null || value===undefined){
-return "Contact for price";
+  if(!value || Number(value) <= 0){
+    return "Price on request";
+  }
+
+  return "R" + Number(value).toLocaleString("en-ZA");
 }
-
-return "R"+Number(value).toLocaleString("en-ZA");
-
-}
-
-
-function saveCart(){
-
-try{
-localStorage.setItem(
-"pmTradersCart",
-JSON.stringify(cart)
-);
-}catch(error){}
-
-updateCart();
-
-}
-
-
-function addToCart(id){
-
-const product=products.find(
-product=>product.id===id
-);
-
-if(!product)return;
-
-const existing=cart.find(
-item=>item.id===id
-);
-
-if(existing){
-
-existing.qty++;
-
-}else{
-
-cart.push({
-
-id:product.id,
-name:product.name,
-price:product.price,
-image:product.image,
-qty:1
-
-});
-
-}
-
-saveCart();
-
-alert(
-product.name+
-" added to your cart."
-);
-
-}
-
-
-function removeFromCart(id){
-
-cart=cart.filter(
-item=>item.id!==id
-);
-
-saveCart();
-
-}
-
-
-function changeQty(id,amount){
-
-const item=cart.find(
-item=>item.id===id
-);
-
-if(!item)return;
-
-item.qty+=amount;
-
-if(item.qty<=0){
-
-removeFromCart(id);
-
-return;
-
-}
-
-saveCart();
-
-}
-
-
-/* =========================================
-   PRODUCT DISPLAY
-========================================= */
 
 function renderProducts(){
 
-const grid=
-document.getElementById("productGrid");
+  const container = document.getElementById("products");
 
-grid.innerHTML=products.map(product=>{
+  const search =
+    document.getElementById("searchInput").value
+    .trim()
+    .toLowerCase();
 
-const contain=
-product.contain
-?" contain"
-:"";
+  const filtered = products.filter(product => {
 
-const fallback=
-product.fallbacks
-?JSON.stringify(product.fallbacks)
-:"";
+    const categoryMatch =
+      selectedCategory === "All" ||
+      product.category === selectedCategory;
 
-return `
+    const searchMatch =
+      !search ||
+      product.name.toLowerCase().includes(search) ||
+      product.category.toLowerCase().includes(search) ||
+      product.description.toLowerCase().includes(search);
 
-<article class="product">
+    return categoryMatch && searchMatch;
+  });
 
-<div class="product-image${contain}">
+  if(!filtered.length){
 
-<img
-src="${escapeHTML(product.image)}"
-alt="${escapeHTML(product.name)}"
-loading="lazy"
-data-fallbacks="${escapeHTML(fallback)}"
-data-fallback-index="0"
-onerror="imageFallback(this)"
->
+    container.innerHTML = `
+      <div class="no-products">
+        <h3>No products found</h3>
+        <p>Try another search or category.</p>
+      </div>
+    `;
 
-</div>
+    return;
+  }
 
-<div class="product-info">
+  container.innerHTML = filtered.map(product => `
 
-<div class="product-category">
-${escapeHTML(product.category)}
-</div>
+    <article class="product-card">
 
-<h3>
-${escapeHTML(product.name)}
-</h3>
+      <div class="product-image">
 
-<div class="product-price">
+        ${product.sale ? `<div class="badge sale">SALE</div>` : ""}
 
-${
-product.price!==null
-?
-money(product.price)
-:
-'<span class="contact-price">Contact for price</span>'
-}
+        <img
+          src="${product.image}"
+          alt="${escapeHTML(product.name)}"
+          loading="lazy"
+          onerror="imageError(this)"
+        >
 
-</div>
+        <div class="image-fallback">
+          📷<br>
+          Image unavailable
+        </div>
 
-<div class="product-actions">
+      </div>
 
-<button
-class="add-btn"
-type="button"
-onclick="addToCart(${product.id})">
-Add to Cart
-</button>
-
-<button
-class="whatsapp-btn"
-type="button"
-onclick="quickOrder(${product.id})">
-WhatsApp
-</button>
-
-</div>
-
-</div>
-
-</article>
-
-`;
-
-}).join("");
-
-}
-
-
-/* =========================================
-   IMAGE ERROR HANDLING
-========================================= */
-
-function imageFallback(img){
-
-let fallbacks=[];
-
-try{
-
-fallbacks=
-JSON.parse(
-img.getAttribute("data-fallbacks") || "[]"
-);
-
-}catch(error){
-
-fallbacks=[];
-
-}
-
-let index=
-Number(
-img.getAttribute("data-fallback-index") || 0
-);
-
-if(index < fallbacks.length){
-
-img.setAttribute(
-"data-fallback-index",
-index+1
-);
-
-img.src=fallbacks[index];
-
-return;
-
-}
-
-const wrapper=img.parentElement;
-
-if(wrapper){
-
-wrapper.innerHTML=`
-
-<div class="image-error">
-
-📷<br><br>
-PM TRADERS<br>
-Image unavailable
-
-</div>
-
-`;
-
-}
-
-}
-
-
-/* =========================================
-   CART DISPLAY
-========================================= */
-
-function updateCart(){
-
-const count=
-cart.reduce(
-(total,item)=>
-total+(Number(item.qty)||0),
-0
-);
-
-document.getElementById(
-"cartCount"
-).textContent=count;
-
-
-const container=
-document.getElementById("cartItems");
-
-
-if(!cart.length){
-
-container.innerHTML=`
-
-<div class="empty">
-
-🛒<br><br>
-
-Your cart is empty.
-
-</div>
-
-`;
-
-}else{
-
-container.innerHTML=
-cart.map(item=>{
-
-const qty=
-Number(item.qty)||1;
-
-const subtotal=
-item.price===null
-?
-"Price on request"
-:
-money(item.price*qty);
-
-return `
-
-<div class="cart-item">
-
-<img
-src="${escapeHTML(item.image)}"
-alt="${escapeHTML(item.name)}"
-onerror="this.style.visibility='hidden'"
->
-
-<div class="cart-item-info">
-
-<strong>
-${escapeHTML(item.name)}
-</strong>
-
-<div>
-${subtotal}
-</div>
-
-<div class="qty">
-
-<button
-type="button"
-onclick="changeQty(${item.id},-1)">
-−
-</button>
-
-<span>
-${qty}
-</span>
-
-<button
-type="button"
-onclick="changeQty(${item.id},1)">
-+
-</button>
-
-</div>
-
-<button
-class="remove"
-type="button"
-onclick="removeFromCart(${item.id})">
-Remove
-</button>
-
-</div>
-
-</div>
-
-`;
-
-}).join("");
-
-}
-
-
-const total=
-cart.reduce(
-(sum,item)=>{
-
-if(item.price===null){
-return sum;
-}
-
-return sum+
-(Number(item.price)||0)*
-(Number(item.qty)||1);
-
-},
-0
-);
-
-document.getElementById(
-"cartTotal"
-).textContent=money(total);
-
-}
-
-
-/* =========================================
-   WHATSAPP ORDER
-========================================= */
-
-function quickOrder(id){
-
-const product=
-products.find(
-product=>product.id===id
-);
-
-if(!product)return;
-
-let message=
-"Hello PM Traders 👋\n\n"+
-"I would like to order:\n"+
-product.name+"\n";
-
-if(product.price!==null){
-
-message+=
-"Price: "+
-money(product.price)+
-"\n";
-
-}
-
-message+=
-"\nPlease confirm availability.";
-
-openWhatsApp(message);
-
-}
-
-
-function checkoutWhatsApp(){
-
-if(!cart.length){
-
-alert("Your cart is empty.");
-
-return;
-
-}
-
-let message=
-"Hello PM Traders 👋\n\n"+
-"I would like to place an order:\n\n";
-
-
-cart.forEach(item=>{
-
-message+=
-"• "+
-item.name+
-" x"+
-(Number(item.qty)||1);
-
-if(item.price!==null){
-
-message+=
-" - "+
-money(
-item.price*
-(Number(item.qty)||1)
-);
-
-}
-
-message+="\n";
-
-});
-
-
-const total=
-cart.reduce(
-(sum,item)=>{
-
-if(item.price===null){
-return sum;
-}
-
-return sum+
-(Number(item.price)||0)*
-(Number(item.qty)||1);
-
-},
-0
-);
-
-
-message+=
-"\nEstimated product total: "+
-money(total)+
-"\n\n"+
-"Please confirm availability, delivery and payment details.";
-
-
-openWhatsApp(message);
-
-}
-
-
-function openWhatsApp(message){
-
-const url=
-"https://wa.me/27842748559?text="+
-encodeURIComponent(message);
-
-window.open(
-url,
-"_blank",
-"noopener"
-);
-
-}
-
-
-/* =========================================
-   CART PANEL
-========================================= */
-
-function openCart(){
-
-document
-.getElementById("cartOverlay")
-.classList.add("active");
-
-document.body.classList.add("cart-open");
-
-updateCart();
-
-}
-
-
-function closeCart(){
-
-document
-.getElementById("cartOverlay")
-.classList.remove("active");
-
-document.body.classList.remove("cart-open");
-
-}
-
-
-function outsideCart(event){
-
-if(
-event.target.id==="cartOverlay"
-){
-
-closeCart();
-
-}
-
-}
-
-
-/* =========================================
-   HTML SAFETY
-========================================= */
-
-function escapeHTML(value){
-
-return String(value)
-
-.replace(/&/g,"&amp;")
-
-.replace(/</g,"&lt;")
-
-.replace(/>/g,"&gt;")
-
-.replace(/"/g,"&quot;")
-
-.replace(/'/g,"&#039;");
-
-}
-
-
-/* =========================================
-   START STORE
-========================================= */
-
-renderProducts();
-
-updateCart();
-
-</script>
-
-</body>
-</html>
+      <div class="pro
