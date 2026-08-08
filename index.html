@@ -1,220 +1,204 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>PM Traders | Online Store</title>
-
-<meta name="description" content="PM Traders - Smartphones, human hair, ladies fashion, gadgets and accessories. Nationwide delivery across South Africa.">
-<meta name="theme-color" content="#111111">
-
-<style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>PM Traders | Online Store</title><meta name="description" content="PM Traders - Smartphones, human hair, ladies fashion, gadgets and accessories. Nationwide delivery across South Africa."><meta name="theme-color" content="#111111"><style>
 *{box-sizing:border-box;margin:0;padding:0}
 
 html{scroll-behavior:smooth}
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#f7f7f7;
-    color:#171717;
-    line-height:1.5;
+font-family:Arial,Helvetica,sans-serif;
+background:#f6f6f6;
+color:#151515;
+line-height:1.5;
+overflow-x:hidden
 }
 
 button,input,select,textarea{font:inherit}
 button{cursor:pointer}
 a{text-decoration:none;color:inherit}
-img{display:block;max-width:100%}
+img{max-width:100%;display:block}
 
 :root{
-    --black:#111;
-    --black2:#202020;
-    --gold:#f5c542;
-    --gold2:#c49a20;
-    --white:#fff;
-    --muted:#777;
-    --border:#e7e7e7;
-    --green:#25d366;
-    --red:#d62828;
-    --cream:#fff8df;
+--black:#111;
+--black2:#222;
+--gold:#f5c542;
+--gold2:#c49a20;
+--white:#fff;
+--muted:#777;
+--border:#e7e7e7;
+--green:#25d366;
+--red:#d62828;
+--cream:#fff8df
 }
 
 /* TOP BAR */
 .topbar{
-    background:#111;
-    color:#fff;
-    text-align:center;
-    padding:9px 15px;
-    font-size:12px;
+background:#111;
+color:#fff;
+text-align:center;
+padding:9px 15px;
+font-size:12px
 }
 
 .topbar b{color:var(--gold)}
 
 /* HEADER */
 header{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    background:#fff;
-    border-bottom:1px solid var(--border);
+position:sticky;
+top:0;
+z-index:1000;
+background:#fff;
+border-bottom:1px solid var(--border)
 }
 
 .nav{
-    max-width:1250px;
-    min-height:72px;
-    margin:auto;
-    padding:10px 20px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:20px;
+max-width:1280px;
+margin:auto;
+min-height:72px;
+padding:10px 20px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px
 }
 
 .logo{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    font-size:21px;
-    font-weight:900;
+display:flex;
+align-items:center;
+gap:10px;
+font-size:21px;
+font-weight:900
 }
 
 .logo-mark{
-    width:43px;
-    height:43px;
-    border-radius:12px;
-    background:#111;
-    color:var(--gold);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    flex-shrink:0;
+width:43px;
+height:43px;
+border-radius:12px;
+background:#111;
+color:var(--gold);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:16px;
+font-weight:900
 }
 
 .logo span{color:var(--gold2)}
 
 .navlinks{
-    display:flex;
-    align-items:center;
-    gap:23px;
+display:flex;
+gap:23px;
+align-items:center
 }
 
 .navlinks a{
-    font-size:14px;
-    font-weight:700;
+font-size:14px;
+font-weight:700
 }
 
 .navlinks a:hover{color:var(--gold2)}
 
 .actions{
-    display:flex;
-    gap:8px;
+display:flex;
+gap:8px;
+align-items:center
 }
 
 .icon{
-    width:42px;
-    height:42px;
-    border:1px solid #ddd;
-    background:#fff;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    position:relative;
+width:42px;
+height:42px;
+border:1px solid #ddd;
+background:#fff;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative
 }
 
 .count{
-    position:absolute;
-    top:-5px;
-    right:-4px;
-    min-width:20px;
-    height:20px;
-    padding:0 5px;
-    border-radius:20px;
-    background:var(--red);
-    color:#fff;
-    font-size:10px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-weight:900;
+position:absolute;
+top:-5px;
+right:-4px;
+min-width:20px;
+height:20px;
+padding:0 5px;
+border-radius:20px;
+background:var(--red);
+color:#fff;
+font-size:10px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:900
 }
 
-/* MOBILE NAV */
-.mobile-menu{
-    display:none;
-    border-top:1px solid var(--border);
-    background:#fff;
-}
-
-.mobile-menu a{
-    display:block;
-    padding:14px 20px;
-    border-bottom:1px solid #eee;
-    font-size:14px;
-    font-weight:700;
+.menu-btn{
+display:none
 }
 
 /* HERO */
 .hero{
-    background:
-    radial-gradient(circle at 85% 20%,rgba(245,197,66,.25),transparent 28%),
-    linear-gradient(120deg,#111,#292929);
-    color:#fff;
+background:
+radial-gradient(circle at 85% 20%,rgba(245,197,66,.24),transparent 28%),
+linear-gradient(120deg,#111,#292929);
+color:#fff
 }
 
 .hero-inner{
-    max-width:1250px;
-    min-height:500px;
-    margin:auto;
-    padding:70px 20px;
-    display:grid;
-    grid-template-columns:1.1fr .9fr;
-    align-items:center;
-    gap:40px;
+max-width:1280px;
+margin:auto;
+min-height:520px;
+padding:75px 20px;
+display:grid;
+grid-template-columns:1.1fr .9fr;
+align-items:center;
+gap:40px
 }
 
 .badge{
-    display:inline-block;
-    padding:8px 13px;
-    border:1px solid rgba(255,255,255,.2);
-    border-radius:30px;
-    background:rgba(255,255,255,.06);
-    font-size:12px;
-    margin-bottom:18px;
+display:inline-block;
+padding:8px 13px;
+border:1px solid rgba(255,255,255,.2);
+border-radius:30px;
+background:rgba(255,255,255,.06);
+font-size:12px;
+margin-bottom:18px
 }
 
 .hero h1{
-    font-size:clamp(45px,6vw,76px);
-    line-height:.98;
-    letter-spacing:-3px;
-    margin-bottom:22px;
+font-size:clamp(45px,6vw,78px);
+line-height:.98;
+letter-spacing:-3px;
+margin-bottom:22px
 }
 
 .hero h1 span{color:var(--gold)}
 
 .hero p{
-    max-width:610px;
-    font-size:17px;
-    color:#d5d5d5;
-    margin-bottom:28px;
+max-width:610px;
+font-size:17px;
+color:#d5d5d5;
+margin-bottom:28px
 }
 
 .hero-buttons{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
+display:flex;
+gap:10px;
+flex-wrap:wrap
 }
 
 .btn{
-    border:0;
-    border-radius:10px;
-    padding:13px 20px;
-    font-weight:800;
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    transition:.2s;
+border:0;
+border-radius:10px;
+padding:13px 20px;
+font-weight:800;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:8px;
+transition:.2s
 }
 
 .btn:hover{transform:translateY(-2px)}
@@ -223,154 +207,154 @@ header{
 .white{background:#fff;color:#111}
 .dark{background:#111;color:#fff}
 .green{background:var(--green);color:#fff}
-.outline{background:#fff;border:1px solid #ddd}
 
 .hero-show{
-    min-height:340px;
-    position:relative;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+min-height:360px;
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative
 }
 
 .hero-phone{
-    width:235px;
-    height:320px;
-    border-radius:28px;
-    overflow:hidden;
-    border:6px solid #333;
-    background:#222;
-    transform:rotate(6deg);
-    box-shadow:0 30px 70px rgba(0,0,0,.45);
+width:235px;
+height:320px;
+border-radius:28px;
+overflow:hidden;
+border:6px solid #333;
+background:#222;
+transform:rotate(6deg);
+box-shadow:0 30px 70px rgba(0,0,0,.45)
 }
 
 .hero-phone img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
+width:100%;
+height:100%;
+object-fit:cover
 }
 
 .hero-hair{
-    position:absolute;
-    left:2%;
-    bottom:5px;
-    width:155px;
-    height:195px;
-    border:5px solid #fff;
-    border-radius:18px;
-    overflow:hidden;
-    transform:rotate(-8deg);
-    box-shadow:0 20px 50px rgba(0,0,0,.4);
+position:absolute;
+left:2%;
+bottom:5px;
+width:155px;
+height:195px;
+border:5px solid #fff;
+border-radius:18px;
+overflow:hidden;
+transform:rotate(-8deg);
+box-shadow:0 20px 50px rgba(0,0,0,.4)
 }
 
 .hero-hair img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
+width:100%;
+height:100%;
+object-fit:cover
 }
 
 /* TRUST */
 .trust{
-    background:#fff;
-    border-bottom:1px solid var(--border);
+background:#fff;
+border-bottom:1px solid var(--border)
 }
 
 .trust-inner{
-    max-width:1250px;
-    margin:auto;
-    padding:18px 20px;
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:15px;
+max-width:1280px;
+margin:auto;
+padding:18px 20px;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px
 }
 
 .trust-item{
-    display:flex;
-    align-items:center;
-    gap:10px;
+display:flex;
+align-items:center;
+gap:10px
 }
 
 .trust-icon{
-    width:43px;
-    height:43px;
-    border-radius:12px;
-    background:#fff7d8;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:20px;
-    flex-shrink:0;
+width:43px;
+height:43px;
+border-radius:12px;
+background:#fff7d8;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:20px;
+flex-shrink:0
 }
 
 .trust-item strong{
-    display:block;
-    font-size:12px;
+display:block;
+font-size:12px
 }
 
 .trust-item small{
-    color:#777;
-    font-size:10px;
+color:#777;
+font-size:10px
 }
 
 /* SECTIONS */
 .section{
-    max-width:1250px;
-    margin:auto;
-    padding:60px 20px;
+max-width:1280px;
+margin:auto;
+padding:60px 20px
 }
 
 .heading{margin-bottom:25px}
 
 .heading h2{
-    font-size:34px;
-    letter-spacing:-1px;
+font-size:34px;
+letter-spacing:-1px
 }
 
 .heading p{
-    color:#777;
-    font-size:13px;
-    margin-top:4px;
+color:#777;
+font-size:13px;
+margin-top:4px
 }
 
-/* CATEGORIES */
+/* CATEGORY */
 .categories{
-    display:grid;
-    grid-template-columns:repeat(5,1fr);
-    gap:13px;
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:13px
 }
 
 .category{
-    background:#fff;
-    border:1px solid var(--border);
-    border-radius:16px;
-    padding:22px 8px;
-    text-align:center;
-    transition:.2s;
+background:#fff;
+border:1px solid var(--border);
+border-radius:16px;
+padding:24px 8px;
+text-align:center;
+transition:.2s
 }
 
 .category:hover{
-    transform:translateY(-4px);
-    border-color:var(--gold);
+transform:translateY(-4px);
+border-color:var(--gold);
+box-shadow:0 10px 25px rgba(0,0,0,.06)
 }
 
 .category .ci{
-    font-size:31px;
-    margin-bottom:8px;
+font-size:31px;
+margin-bottom:8px
 }
 
 .category strong{font-size:12px}
 
 /* PROMO */
 .promo{
-    max-width:1210px;
-    margin:0 auto;
-    border-radius:20px;
-    padding:32px;
-    background:linear-gradient(110deg,#f5c542,#ffe68a);
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:20px;
+max-width:1240px;
+margin:0 auto;
+border-radius:20px;
+padding:34px;
+background:linear-gradient(110deg,#f5c542,#ffe68a);
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px
 }
 
 .promo h2{font-size:30px}
@@ -378,238 +362,226 @@ header{
 
 /* CONTROLS */
 .controls{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-    margin-bottom:24px;
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+margin-bottom:24px
 }
 
 .search{
-    flex:1;
-    min-width:220px;
-    position:relative;
+flex:1;
+min-width:230px;
+position:relative
 }
 
 .search span{
-    position:absolute;
-    left:14px;
-    top:50%;
-    transform:translateY(-50%);
+position:absolute;
+left:14px;
+top:50%;
+transform:translateY(-50%)
 }
 
 .search input{
-    width:100%;
-    padding:13px 15px 13px 40px;
-    border:1px solid #ddd;
-    border-radius:10px;
-    outline:none;
+width:100%;
+padding:14px 15px 14px 40px;
+border:1px solid #ddd;
+border-radius:10px;
+outline:none;
+background:#fff
 }
 
 .filter{
-    padding:13px;
-    min-width:180px;
-    border:1px solid #ddd;
-    border-radius:10px;
-    background:#fff;
-    outline:none;
+padding:14px;
+min-width:190px;
+border:1px solid #ddd;
+border-radius:10px;
+background:#fff;
+outline:none
 }
 
 /* PRODUCTS */
 .products{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:18px;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:18px
 }
 
 .card{
-    background:#fff;
-    border:1px solid var(--border);
-    border-radius:17px;
-    overflow:hidden;
-    transition:.2s;
-    position:relative;
+background:#fff;
+border:1px solid var(--border);
+border-radius:17px;
+overflow:hidden;
+transition:.2s;
+position:relative
 }
 
 .card:hover{
-    transform:translateY(-4px);
-    box-shadow:0 18px 40px rgba(0,0,0,.08);
+transform:translateY(-4px);
+box-shadow:0 18px 40px rgba(0,0,0,.08)
 }
 
 .card-image{
-    height:240px;
-    background:#eee;
-    position:relative;
-    overflow:hidden;
+height:245px;
+background:#eee;
+position:relative;
+overflow:hidden
 }
 
 .card-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:.3s;
+width:100%;
+height:100%;
+object-fit:cover;
+transition:.35s
 }
 
 .card:hover .card-image img{transform:scale(1.04)}
 
 .product-badge{
-    position:absolute;
-    top:11px;
-    left:11px;
-    background:var(--red);
-    color:#fff;
-    padding:5px 8px;
-    border-radius:6px;
-    font-size:9px;
-    font-weight:900;
-    z-index:2;
+position:absolute;
+top:11px;
+left:11px;
+background:var(--red);
+color:#fff;
+padding:5px 8px;
+border-radius:6px;
+font-size:9px;
+font-weight:900;
+z-index:2
 }
 
-.wish{
-    position:absolute;
-    right:10px;
-    top:10px;
-    width:36px;
-    height:36px;
-    border:0;
-    border-radius:50%;
-    background:#fff;
-    z-index:3;
-}
-
-.wish.active{
-    color:var(--red);
+.view{
+position:absolute;
+right:10px;
+top:10px;
+width:35px;
+height:35px;
+border:0;
+border-radius:50%;
+background:#fff;
+z-index:3;
+box-shadow:0 4px 12px rgba(0,0,0,.12)
 }
 
 .info{padding:15px}
 
 .cat{
-    color:#999;
-    font-size:10px;
-    font-weight:800;
-    text-transform:uppercase;
+color:#999;
+font-size:10px;
+font-weight:800;
+text-transform:uppercase
 }
 
 .name{
-    font-size:15px;
-    margin:5px 0 7px;
-    min-height:40px;
+font-size:15px;
+margin:5px 0 7px;
+min-height:42px
 }
 
 .stars{
-    color:#eab300;
-    font-size:12px;
-    margin-bottom:9px;
+color:#eab300;
+font-size:12px;
+margin-bottom:9px
 }
 
 .price-row{
-    display:flex;
-    gap:8px;
-    align-items:center;
-    margin-bottom:12px;
+display:flex;
+gap:8px;
+align-items:center;
+margin-bottom:12px
 }
 
 .price{
-    font-size:18px;
-    font-weight:900;
+font-size:18px;
+font-weight:900
 }
 
 .old{
-    color:#aaa;
-    font-size:11px;
-    text-decoration:line-through;
+color:#aaa;
+font-size:11px;
+text-decoration:line-through
 }
 
 .product-actions{
-    display:grid;
-    grid-template-columns:1fr 43px;
-    gap:7px;
+display:grid;
+grid-template-columns:1fr 43px;
+gap:7px
 }
 
 .add{
-    border:0;
-    background:#111;
-    color:#fff;
-    border-radius:9px;
-    font-weight:800;
-    font-size:12px;
+border:0;
+background:#111;
+color:#fff;
+border-radius:9px;
+font-weight:800;
+font-size:12px;
+padding:11px
 }
 
 .buy{
-    border:1px solid #ddd;
-    background:#fff;
-    border-radius:9px;
-    font-size:17px;
+border:1px solid #ddd;
+background:#fff;
+border-radius:9px;
+font-size:17px
 }
 
 .empty{
-    display:none;
-    text-align:center;
-    background:#fff;
-    border-radius:15px;
-    padding:50px;
-    color:#777;
+display:none;
+text-align:center;
+background:#fff;
+border-radius:15px;
+padding:50px;
+color:#777
 }
 
 /* FEATURED */
-.featured-strip{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
+.feature-strip{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px
 }
 
 .feature-box{
-    min-height:190px;
-    border-radius:18px;
-    padding:25px;
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-end;
-    color:#fff;
-    background:linear-gradient(135deg,#111,#333);
+background:#111;
+color:#fff;
+border-radius:18px;
+padding:28px
 }
 
-.feature-box:nth-child(2){
-    background:linear-gradient(135deg,#6b4b13,#d6a82e);
+.feature-box:nth-child(2){background:#fff;border:1px solid var(--border);color:#111}
+.feature-box:nth-child(3){background:linear-gradient(135deg,#f5c542,#ffe68a);color:#111}
+
+.feature-box .big{
+font-size:30px;
+margin-bottom:12px
 }
 
-.feature-box:nth-child(3){
-    background:linear-gradient(135deg,#272727,#555);
-}
-
-.feature-box h3{
-    font-size:24px;
-    margin-bottom:4px;
-}
-
-.feature-box p{
-    font-size:12px;
-    opacity:.85;
-}
+.feature-box h3{margin-bottom:6px}
+.feature-box p{font-size:13px;color:#777}
 
 /* WHY */
 .why{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px
 }
 
 .why-card{
-    background:#fff;
-    border:1px solid var(--border);
-    border-radius:17px;
-    padding:26px;
+background:#fff;
+border:1px solid var(--border);
+border-radius:17px;
+padding:26px
 }
 
 .why-icon{
-    width:46px;
-    height:46px;
-    border-radius:12px;
-    background:#fff7d8;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:21px;
-    margin-bottom:14px;
+width:46px;
+height:46px;
+border-radius:12px;
+background:#fff7d8;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:21px;
+margin-bottom:14px
 }
 
 .why-card h3{margin-bottom:6px}
@@ -617,648 +589,1506 @@ header{
 
 /* NEWSLETTER */
 .newsletter{
-    background:#111;
-    color:#fff;
-    border-radius:20px;
-    padding:35px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:20px;
+background:#111;
+color:#fff;
+border-radius:20px;
+padding:35px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px
 }
 
 .newsletter p{
-    color:#aaa;
-    font-size:13px;
-    margin-top:4px;
+color:#aaa;
+font-size:13px;
+margin-top:4px
 }
 
 .newsletter-form{
-    display:flex;
-    gap:7px;
-    width:420px;
+display:flex;
+gap:7px;
+width:420px
 }
 
 .newsletter-form input{
-    flex:1;
-    padding:13px;
-    border:0;
-    border-radius:8px;
-    outline:none;
+flex:1;
+padding:13px;
+border:0;
+border-radius:8px;
+outline:none
 }
 
 /* FOOTER */
 footer{
-    background:#111;
-    color:#fff;
+background:#111;
+color:#fff
 }
 
 .footer{
-    max-width:1250px;
-    margin:auto;
-    padding:55px 20px 30px;
-    display:grid;
-    grid-template-columns:1.5fr 1fr 1fr 1fr;
-    gap:35px;
+max-width:1280px;
+margin:auto;
+padding:55px 20px 30px;
+display:grid;
+grid-template-columns:1.5fr 1fr 1fr 1fr;
+gap:35px
 }
 
 .footer p,
 .footer a{
-    display:block;
-    color:#999;
-    font-size:12px;
-    margin-bottom:8px;
+display:block;
+color:#999;
+font-size:12px;
+margin-bottom:8px
 }
 
 .footer h4{
-    color:var(--gold);
-    margin-bottom:13px;
+color:var(--gold);
+margin-bottom:13px
 }
 
 .bottom{
-    border-top:1px solid #292929;
-    text-align:center;
-    padding:17px;
-    font-size:11px;
-    color:#777;
+border-top:1px solid #292929;
+text-align:center;
+padding:17px;
+font-size:11px;
+color:#777
 }
 
 /* WHATSAPP */
 .whatsapp{
-    position:fixed;
-    right:18px;
-    bottom:18px;
-    width:57px;
-    height:57px;
-    border-radius:50%;
-    background:var(--green);
-    color:#fff;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:26px;
-    z-index:1200;
-    box-shadow:0 8px 25px rgba(0,0,0,.25);
+position:fixed;
+right:18px;
+bottom:18px;
+width:57px;
+height:57px;
+border-radius:50%;
+background:var(--green);
+color:#fff;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:26px;
+z-index:1200;
+box-shadow:0 8px 25px rgba(0,0,0,.25)
 }
 
-/* OVERLAY */
+/* CART */
 .overlay{
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.58);
-    z-index:1500;
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.58);
+z-index:1500
 }
 
 .overlay.show{display:block}
 
-/* CART */
 .cart{
-    position:fixed;
-    right:-460px;
-    top:0;
-    height:100%;
-    width:min(460px,100%);
-    background:#fff;
-    z-index:1600;
-    transition:.3s;
-    display:flex;
-    flex-direction:column;
+position:fixed;
+right:-480px;
+top:0;
+height:100%;
+width:min(480px,100%);
+background:#fff;
+z-index:1600;
+transition:.3s;
+display:flex;
+flex-direction:column
 }
 
 .cart.open{right:0}
 
 .cart-head{
-    padding:18px;
-    border-bottom:1px solid #eee;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+padding:18px;
+border-bottom:1px solid #eee;
+display:flex;
+justify-content:space-between;
+align-items:center
 }
 
 .close{
-    width:36px;
-    height:36px;
-    border:0;
-    border-radius:50%;
-    background:#eee;
+width:36px;
+height:36px;
+border:0;
+border-radius:50%;
+background:#eee
 }
 
 .cart-items{
-    flex:1;
-    overflow:auto;
-    padding:15px 20px;
+flex:1;
+overflow:auto;
+padding:15px 20px
 }
 
 .cart-item{
-    display:grid;
-    grid-template-columns:60px 1fr auto;
-    gap:10px;
-    padding:13px 0;
-    border-bottom:1px solid #eee;
+display:grid;
+grid-template-columns:65px 1fr auto;
+gap:10px;
+padding:13px 0;
+border-bottom:1px solid #eee
 }
 
 .cart-img{
-    width:60px;
-    height:60px;
-    border-radius:9px;
-    overflow:hidden;
-    background:#eee;
+width:65px;
+height:65px;
+border-radius:9px;
+overflow:hidden;
+background:#eee
 }
 
 .cart-img img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
+width:100%;
+height:100%;
+object-fit:cover
 }
 
 .cart-item h4{font-size:12px}
-
-.cart-price{
-    font-size:11px;
-    color:#777;
-}
+.cart-price{font-size:11px;color:#777}
 
 .qty{
-    display:flex;
-    gap:6px;
-    align-items:center;
-    margin-top:6px;
+display:flex;
+gap:6px;
+align-items:center;
+margin-top:6px
 }
 
 .qty button{
-    width:24px;
-    height:24px;
-    border:1px solid #ddd;
-    background:#fff;
-    border-radius:5px;
+width:24px;
+height:24px;
+border:1px solid #ddd;
+background:#fff;
+border-radius:5px
 }
 
 .remove{
-    border:0;
-    background:none;
-    color:var(--red);
-    font-size:10px;
-    margin-top:4px;
+border:0;
+background:none;
+color:var(--red);
+font-size:10px;
+margin-top:4px
 }
 
 .cart-foot{
-    padding:18px;
-    border-top:1px solid #eee;
+padding:18px;
+border-top:1px solid #eee
 }
 
 .line{
-    display:flex;
-    justify-content:space-between;
-    font-size:13px;
-    margin-bottom:8px;
+display:flex;
+justify-content:space-between;
+font-size:13px;
+margin-bottom:8px
 }
 
 .total{
-    border-top:1px solid #eee;
-    padding-top:10px;
-    font-size:19px;
-    font-weight:900;
-}
-
-.checkout{
-    width:100%;
-    border:0;
-    border-radius:9px;
-    padding:14px;
-    background:var(--green);
-    color:#fff;
-    font-weight:900;
-    margin-top:10px;
+border-top:1px solid #eee;
+padding-top:10px;
+font-size:19px;
+font-weight:900
 }
 
 .delivery-note{
-    font-size:10px;
-    color:#777;
-    margin-top:7px;
+font-size:10px;
+color:#777;
+margin-top:8px;
+line-height:1.4
 }
 
-/* MODALS */
+.checkout{
+width:100%;
+border:0;
+border-radius:9px;
+padding:14px;
+background:var(--green);
+color:#fff;
+font-weight:900;
+margin-top:10px
+}
+
+.clear-cart{
+width:100%;
+border:1px solid #ddd;
+border-radius:9px;
+padding:10px;
+background:#fff;
+font-weight:700;
+margin-top:7px
+}
+
+/* MODAL */
 .modal{
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.65);
-    z-index:2000;
-    align-items:center;
-    justify-content:center;
-    padding:15px;
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.65);
+z-index:2000;
+align-items:center;
+justify-content:center;
+padding:15px
 }
 
 .modal.show{display:flex}
 
 .modal-box{
-    background:#fff;
-    width:min(760px,100%);
-    max-height:92vh;
-    overflow:auto;
-    border-radius:18px;
-    padding:25px;
-    position:relative;
+background:#fff;
+width:min(760px,100%);
+max-height:92vh;
+overflow:auto;
+border-radius:18px;
+padding:25px;
+position:relative
 }
 
 .modal-close{
-    position:absolute;
-    right:15px;
-    top:15px;
-    width:35px;
-    height:35px;
-    border:0;
-    border-radius:50%;
-    background:#eee;
+position:absolute;
+right:15px;
+top:15px;
+width:35px;
+height:35px;
+border:0;
+border-radius:50%;
+background:#eee;
+z-index:2
 }
 
 .quick-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:25px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:25px
 }
 
 .quick-image{
-    height:400px;
-    background:#eee;
-    border-radius:12px;
-    overflow:hidden;
+height:410px;
+background:#eee;
+border-radius:12px;
+overflow:hidden
 }
 
 .quick-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
+width:100%;
+height:100%;
+object-fit:cover
 }
 
-.quick-info{padding-top:20px}
+.quick-info{
+padding-top:20px
+}
 
 .quick-info h2{
-    font-size:27px;
-    margin:6px 0;
+font-size:27px;
+margin:6px 0
 }
 
 .quick-info p{
-    font-size:13px;
-    color:#777;
-    margin:15px 0;
+font-size:13px;
+color:#777;
+margin:15px 0
 }
 
 .quick-price{
-    font-size:25px;
-    font-weight:900;
-    margin:15px 0;
+font-size:25px;
+font-weight:900;
+margin:12px 0
 }
 
-/* CHECKOUT FORM */
-.form-group{margin-bottom:14px}
-
-.form-group label{
-    display:block;
-    font-size:11px;
-    font-weight:800;
-    margin-bottom:5px;
+.modal-actions{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:8px
 }
-
-.form-group input,
-.form-group textarea,
-.form-group select{
-    width:100%;
-    padding:12px;
-    border:1px solid #ddd;
-    border-radius:8px;
-    outline:none;
-}
-
-.form-group textarea{
-    min-height:75px;
-    resize:vertical;
-}
-
-.delivery-options{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:8px;
-}
-
-.delivery-option{
-    border:1px solid #ddd;
-    border-radius:9px;
-    padding:12px;
-    cursor:pointer;
-}
-
-.delivery-option.active{
-    border-color:#d2aa2e;
-    background:#fff9e5;
-}
-
-.delivery-option strong{
-    display:block;
-    font-size:12px;
-}
-
-.delivery-option small{color:#777}
 
 /* TOAST */
 .toast{
-    position:fixed;
-    left:50%;
-    bottom:25px;
-    transform:translate(-50%,100px);
-    opacity:0;
-    background:#111;
-    color:#fff;
-    padding:12px 18px;
-    border-radius:9px;
-    z-index:3000;
-    font-size:12px;
-    transition:.3s;
+position:fixed;
+left:50%;
+bottom:25px;
+transform:translate(-50%,100px);
+opacity:0;
+background:#111;
+color:#fff;
+padding:12px 18px;
+border-radius:9px;
+z-index:3000;
+font-size:12px;
+transition:.3s
 }
 
 .toast.show{
-    transform:translate(-50%,0);
-    opacity:1;
+transform:translate(-50%,0);
+opacity:1
 }
 
-/* MOBILE BOTTOM */
-.mobile-bottom{
-    display:none;
+/* SEARCH HIGHLIGHT */
+.search-active{
+outline:2px solid var(--gold)
 }
 
-/* RESPONSIVE */
-@media(max-width:1000px){
+/* MOBILE */
+@media(max-width:1050px){
 
-    .navlinks{display:none}
+.navlinks{display:none}
 
-    .hero-inner{
-        grid-template-columns:1fr;
-        text-align:center;
-    }
+.menu-btn{display:flex}
 
-    .hero p{
-        margin-left:auto;
-        margin-right:auto;
-    }
+.hero-inner{
+grid-template-columns:1fr;
+text-align:center
+}
 
-    .hero-buttons{
-        justify-content:center;
-    }
+.hero p{
+margin-left:auto;
+margin-right:auto
+}
 
-    .trust-inner{
-        grid-template-columns:repeat(2,1fr);
-    }
+.hero-buttons{justify-content:center}
 
-    .categories{
-        grid-template-columns:repeat(3,1fr);
-    }
+.trust-inner{
+grid-template-columns:repeat(2,1fr)
+}
 
-    .products{
-        grid-template-columns:repeat(3,1fr);
-    }
+.categories{
+grid-template-columns:repeat(3,1fr)
+}
 
-    .footer{
-        grid-template-columns:repeat(2,1fr);
-    }
+.products{
+grid-template-columns:repeat(3,1fr)
+}
+
+.footer{
+grid-template-columns:repeat(2,1fr)
+}
 }
 
 @media(max-width:700px){
 
-    .nav{
-        padding:9px 13px;
-    }
-
-    .logo{font-size:18px}
-
-    .logo-mark{
-        width:38px;
-        height:38px;
-    }
-
-    .hero-inner{
-        padding:48px 15px;
-    }
-
-    .hero h1{
-        font-size:46px;
-    }
-
-    .hero-show{
-        min-height:280px;
-    }
-
-    .hero-phone{
-        width:190px;
-        height:260px;
-    }
-
-    .hero-hair{
-        width:120px;
-        height:160px;
-    }
-
-    .trust-inner{
-        gap:8px;
-        padding:14px 10px;
-    }
-
-    .trust-item small{display:none}
-
-    .section{
-        padding:45px 14px;
-    }
-
-    .heading h2{
-        font-size:28px;
-    }
-
-    .categories{
-        grid-template-columns:repeat(3,1fr);
-        gap:8px;
-    }
-
-    .category{
-        padding:16px 5px;
-    }
-
-    .promo{
-        margin:0 14px;
-        padding:25px 20px;
-        flex-direction:column;
-        align-items:flex-start;
-    }
-
-    .products{
-        grid-template-columns:repeat(2,1fr);
-        gap:10px;
-    }
-
-    .card-image{
-        height:185px;
-    }
-
-    .info{padding:11px}
-
-    .name{
-        font-size:13px;
-        min-height:48px;
-    }
-
-    .price{font-size:16px}
-
-    .product-actions{
-        grid-template-columns:1fr;
-    }
-
-    .buy{display:none}
-
-    .featured-strip{
-        grid-template-columns:1fr;
-    }
-
-    .why{
-        grid-template-columns:1fr;
-    }
-
-    .newsletter{
-        padding:27px 20px;
-        flex-direction:column;
-        align-items:flex-start;
-    }
-
-    .newsletter-form{
-        width:100%;
-        flex-direction:column;
-    }
-
-    .footer{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .footer-brand{
-        grid-column:1/-1;
-    }
-
-    .quick-grid{
-        grid-template-columns:1fr;
-    }
-
-    .quick-image{
-        height:300px;
-    }
-
-    .quick-info{
-        padding-top:0;
-    }
-
-    .delivery-options{
-        grid-template-columns:1fr;
-    }
-
-    .mobile-bottom{
-        position:fixed;
-        bottom:0;
-        left:0;
-        right:0;
-        height:62px;
-        background:#fff;
-        border-top:1px solid #ddd;
-        z-index:1100;
-        display:grid;
-        grid-template-columns:repeat(4,1fr);
-    }
-
-    .mobile-bottom button{
-        border:0;
-        background:#fff;
-        font-size:10px;
-        font-weight:800;
-    }
-
-    .mobile-bottom span{
-        display:block;
-        font-size:19px;
-        margin-bottom:2px;
-    }
-
-    body{
-        padding-bottom:62px;
-    }
+.nav{
+padding:9px 13px
 }
-</style>
-</head>
 
-<body>
+.logo{
+font-size:18px
+}
 
-<!-- TOP BAR -->
-<div class="topbar">
+.logo-mark{
+width:38px;
+height:38px
+}
+
+.hero-inner{
+padding:48px 15px
+}
+
+.hero h1{
+font-size:46px
+}
+
+.hero-show{
+min-height:280px
+}
+
+.hero-phone{
+width:190px;
+height:260px
+}
+
+.hero-hair{
+width:120px;
+height:160px
+}
+
+.trust-inner{
+gap:8px;
+padding:14px 10px
+}
+
+.trust-item small{display:none}
+
+.section{
+padding:45px 14px
+}
+
+.heading h2{
+font-size:28px
+}
+
+.categories{
+grid-template-columns:repeat(3,1fr);
+gap:8px
+}
+
+.category{
+padding:16px 5px
+}
+
+.promo{
+margin:0 14px;
+padding:25px 20px;
+flex-direction:column;
+align-items:flex-start
+}
+
+.products{
+grid-template-columns:repeat(2,1fr);
+gap:10px
+}
+
+.card-image{
+height:190px
+}
+
+.info{
+padding:11px
+}
+
+.name{
+font-size:13px;
+min-height:48px
+}
+
+.price{
+font-size:16px
+}
+
+.product-actions{
+grid-template-columns:1fr
+}
+
+.buy{display:none}
+
+.feature-strip{
+grid-template-columns:1fr
+}
+
+.why{
+grid-template-columns:1fr
+}
+
+.newsletter{
+padding:27px 20px;
+flex-direction:column;
+align-items:flex-start
+}
+
+.newsletter-form{
+width:100%;
+flex-direction:column
+}
+
+.footer{
+grid-template-columns:1fr 1fr
+}
+
+.footer-brand{
+grid-column:1/-1
+}
+
+.quick-grid{
+grid-template-columns:1fr
+}
+
+.quick-image{
+height:300px
+}
+
+.quick-info{
+padding-top:0
+}
+
+.modal-actions{
+grid-template-columns:1fr
+}
+}
+</style></head><body><div class="topbar">
 🚚 Nationwide delivery • <b>FREE DELIVERY OVER R1,500</b>
-</div>
+</div><header>
+<nav class="nav"><a class="logo" href="#home">
+<div class="logo-mark">PM</div>
+<div>PM <span>TRADERS</span></div>
+</a><div class="navlinks">
+<a href="#home">Home</a>
+<a href="#shop">Shop</a>
+<a href="#categories">Categories</a>
+<a href="#deals">Deals</a>
+<a href="#contact">Contact</a>
+</div><div class="actions"><button class="icon menu-btn" onclick="toggleMobileMenu()">☰</button>
 
-<!-- HEADER -->
-<header>
-<nav class="nav">
-
-<a class="logo" href="#home">
-    <div class="logo-mark">PM</div>
-    <div>PM <span>TRADERS</span></div>
-</a>
-
-<div class="navlinks">
-    <a href="#home">Home</a>
-    <a href="#shop">Shop</a>
-    <a href="#categories">Categories</a>
-    <a href="#deals">Deals</a>
-    <a href="#contact">Contact</a>
-</div>
-
-<div class="actions">
-
-<button class="icon" onclick="toggleMobileMenu()" aria-label="Menu">
-☰
-</button>
-
-<button class="icon" onclick="focusSearch()" aria-label="Search">
+<button class="icon" onclick="goSearch()" aria-label="Search">
 🔍
-</button>
-
-<button class="icon" onclick="openCart()" aria-label="Cart">
+</button><button class="icon" onclick="openCart()" aria-label="Cart">
 🛒
 <span class="count" id="cartCount">0</span>
-</button>
-
+</button></div></nav>
+</header><section class="hero" id="home"><div class="hero-inner"><div><div class="badge">✨ Welcome to PM Traders</div><h1>
+Shop smart.<br>
+Shop <span>PM Traders.</span>
+</h1><p>
+Quality smartphones, human hair, ladies fashion,
+gadgets and accessories — all in one trusted store.
+</p><div class="hero-buttons"><a class="btn primary" href="#shop">
+🛍️ Shop Now
+</a><a class="btn white" href="#categories">
+Explore Categories
+</a></div></div><div class="hero-show"><div class="hero-phone">
+<img
+src="iPhone%2013%20Pro%20Max.jpeg"
+alt="iPhone 13 Pro Max"
+onerror="this.src='images.jpeg'"
+>
+</div><div class="hero-hair">
+<img
+src="8%20Inch%20Super%20Double%20Drawn.webp"
+alt="Human hair"
+onerror="this.src='8%20inch%20SDD%20Weave'"
+>
+</div></div></div></section><section class="trust"><div class="trust-inner"><div class="trust-item">
+<div class="trust-icon">🚚</div>
+<div>
+<strong>Nationwide Delivery</strong>
+<small>Across South Africa</small>
 </div>
-</nav>
-
-<div class="mobile-menu" id="mobileMenu">
-    <a href="#home" onclick="toggleMobileMenu()">Home</a>
-    <a href="#shop" onclick="toggleMobileMenu()">Shop</a>
-    <a href="#categories" onclick="toggleMobileMenu()">Categories</a>
-    <a href="#deals" onclick="toggleMobileMenu()">Deals</a>
-    <a href="#contact" onclick="toggleMobileMenu()">Contact</a>
+</div><div class="trust-item">
+<div class="trust-icon">💬</div>
+<div>
+<strong>WhatsApp Orders</strong>
+<small>Fast & convenient</small>
 </div>
-</header>
+</div><div class="trust-item">
+<div class="trust-icon">📍</div>
+<div>
+<strong>Collection</strong>
+<small>Richards Bay & Empangeni</small>
+</div>
+</div><div class="trust-item">
+<div class="trust-icon">⭐</div>
+<div>
+<strong>Quality Products</strong>
+<small>Shop with confidence</small>
+</div>
+</div></div></section><section class="section" id="categories"><div class="heading">
+<h2>Shop by Category</h2>
+<p>Find what you're looking for.</p>
+</div><div class="categories"><div class="category" onclick="filterCategory('Smartphones')">
+<div class="ci">📱</div>
+<strong>Smartphones</strong>
+</div><div class="category" onclick="filterCategory('Human Hair')">
+<div class="ci">💇</div>
+<strong>Human Hair</strong>
+</div><div class="category" onclick="filterCategory('Fashion')">
+<div class="ci">👗</div>
+<strong>Fashion</strong>
+</div><div class="category" onclick="filterCategory('Accessories')">
+<div class="ci">🔌</div>
+<strong>Accessories</strong>
+</div><div class="category" onclick="filterCategory('Gadgets')">
+<div class="ci">🎧</div>
+<strong>Gadgets</strong>
+</div></div></section><section id="deals"><div class="promo"><div>
+<h2>🔥 PM Traders Deals</h2>
+<p>Shop selected products at great prices while stock lasts.</p>
+</div><a href="#shop" class="btn dark">
+Shop Catalogue →
+</a></div></section><section class="section"><div class="feature-strip"><div class="feature-box">
+<div class="big">📱</div>
+<h3>Latest Smartphones</h3>
+<p>Shop premium smartphone options from the PM Traders catalogue.</p>
+</div><div class="feature-box">
+<div class="big">💇</div>
+<h3>Premium Human Hair</h3>
+<p>Browse different lengths and styles available from our catalogue.</p>
+</div><div class="feature-box">
+<div class="big">👗</div>
+<h3>Ladies Fashion</h3>
+<p>Discover stylish dresses and outfits for different occasions.</p>
+</div></div></section><section class="section" id="shop"><div class="heading">
+<h2>Product Catalogue</h2>
+<p id="resultText">Browse all available PM Traders products.</p>
+</div><div class="controls"><div class="search"><span>🔍</span>
 
-<!-- HERO -->
-<section class="hero" id="home">
+<input
+id="searchInput"
+type="search"
+placeholder="Search products..."
+oninput="renderProducts()"
 
-<div class="hero-inner">
+«»
+
+</div><select
+id="categoryFilter"
+class="filter"
+onchange="renderProducts()"
+
+«»
+
+<option value="All">All Categories</option>
+<option value="Smartphones">Smartphones</option>
+<option value="Human Hair">Human Hair</option>
+<option value="Fashion">Fashion</option>
+<option value="Accessories">Accessories</option>
+<option value="Gadgets">Gadgets</option></select></div><div class="products" id="productGrid"></div><div class="empty" id="emptyState">
+<h3>No products found</h3>
+<p>Try another search or category.</p>
+</div></section><section class="section"><div class="heading">
+<h2>Why PM Traders?</h2>
+<p>Shopping made simple.</p>
+</div><div class="why"><div class="why-card">
+<div class="why-icon">🛍️</div>
+<h3>Wide Selection</h3>
+<p>
+Shop smartphones, human hair, fashion and accessories in one place.
+</p>
+</div><div class="why-card">
+<div class="why-icon">💬</div>
+<h3>Easy WhatsApp Ordering</h3>
+<p>
+Add products to your cart and send your complete order directly to PM Traders.
+</p>
+</div><div class="why-card">
+<div class="why-icon">🚚</div>
+<h3>Convenient Delivery</h3>
+<p>
+Delivery across South Africa with collection available around Richards Bay and Empangeni.
+</p>
+</div></div></section><section class="section"><div class="newsletter"><div>
+<h2>Stay in the PM Traders loop.</h2>
+<p>Get updates about new products and special offers.</p>
+</div><form class="newsletter-form" onsubmit="subscribe(event)"><input
+id="newsletterEmail"
+type="email"
+placeholder="Your email address"
+required
+
+«»
+
+<button class="btn primary">
+Subscribe
+</button></form></div></section><footer id="contact"><div class="footer"><div class="footer-brand"><a class="logo" href="#home">
+<div class="logo-mark">PM</div>
+<div>PM <span>TRADERS</span></div>
+</a><p style="margin-top:12px">
+Quality smartphones, human hair, fashion and accessories — all in one trusted store.
+</p></div><div><h4>Shop</h4><a href="#shop">All Products</a>
+<a href="#categories" onclick="filterCategory('Smartphones')">Smartphones</a>
+<a href="#categories" onclick="filterCategory('Human Hair')">Human Hair</a>
+<a href="#categories" onclick="filterCategory('Fashion')">Fashion</a>
+
+</div><div><h4>Customer Info</h4><a href="#contact">Delivery</a>
+<a href="#contact">Collection</a>
+<a href="#contact">WhatsApp Orders</a>
+<a href="#contact">Contact</a>
+
+</div><div><h4>Contact</h4><p>📍 Richards Bay, KwaZulu-Natal</p><a
+href="https://wa.me/27842748559"
+target="_blank"
+rel="noopener"
+
+«»
+
+💬 +27 84 274 8559
+</a>
+
+<a href="mailto:Info@PM-Traders.co.za">
+✉️ Info@PM-Traders.co.za
+</a><p>🚚 Nationwide delivery</p></div></div><div class="bottom">
+© <span id="year"></span> PM Traders. All Rights Reserved.
+</div></footer><a
+class="whatsapp"
+href="https://wa.me/27842748559"
+target="_blank"
+rel="noopener"
+aria-label="WhatsApp PM Traders"
+
+«»
+
+💬
+</a>
+
+<div class="overlay" id="overlay" onclick="closeCart()"></div><aside class="cart" id="cart"><div class="cart-head"><h2>Your Cart</h2><button class="close" onclick="closeCart()">✕</button>
+
+</div><div class="cart-items" id="cartItems"></div><div class="cart-foot"><div class="line">
+<span>Subtotal</span>
+<strong id="cartSubtotal">R0</strong>
+</div><div class="line">
+<span>Delivery</span>
+<strong id="cartDelivery">R0</strong>
+</div><div class="line total">
+<span>Total</span>
+<strong id="cartTotal">R0</strong>
+</div><div class="delivery-note">
+R30 around Richards Bay and surrounding areas.<br>
+R60 outside Richards Bay and Empangeni.<br>
+FREE delivery for orders over R1,500.
+</div><button class="checkout" onclick="checkoutWhatsApp()">
+💬 Checkout via WhatsApp
+</button><button class="clear-cart" onclick="clearCart()">
+Clear Cart
+</button></div></aside><div class="modal" id="productModal"><div class="modal-box"><button class="modal-close" onclick="closeProduct()">
+✕
+</button><div class="quick-grid"><div class="quick-image">
+<img id="modalImage" src="" alt="">
+</div><div class="quick-info"><div class="cat" id="modalCategory"></div><h2 id="modalName"></h2><div class="stars">★★★★★</div><div class="quick-price" id="modalPrice"></div><p id="modalDescription"></p><div class="modal-actions"><button class="btn dark" id="modalAdd">
+🛒 Add to Cart
+</button><button class="btn green" id="modalBuy">
+💬 Buy Now
+</button></div></div></div></div></div><div class="toast" id="toast"></div><script>
+
+/* =========================================================
+   PM TRADERS PRODUCT CATALOGUE
+   Images match files currently stored in the repository.
+========================================================= */
+
+const PRODUCTS = [
+
+{
+id:1,
+name:"8 Inch Super Double Drawn Human Hair",
+price:850,
+category:"Human Hair",
+image:"8%20Inch%20Super%20Double%20Drawn.webp",
+badge:"POPULAR",
+description:"Premium 8 inch Super Double Drawn human hair weave."
+},
+
+{
+id:2,
+name:"iPhone 13 Pro Max",
+price:7500,
+category:"Smartphones",
+image:"iPhone%2013%20Pro%20Max.jpeg",
+badge:"HOT",
+description:"Premium iPhone 13 Pro Max available from PM Traders."
+},
+
+{
+id:3,
+name:"Classic Ladies Dress",
+price:230,
+category:"Fashion",
+image:"Classic%20Ladies%20Dress.jpg",
+badge:"DEAL",
+description:"Stylish classic ladies dress for everyday and special occasions."
+},
+
+{
+id:4,
+name:"20 Inch Curly Curls Human Hair",
+price:970,
+category:"Human Hair",
+image:"20%20inch%20Curly%20Curls.jpeg",
+badge:"POPULAR",
+description:"20 inch curly curls human hair weave."
+},
+
+{
+id:5,
+name:"iPhone 17 Pro Max",
+price:24000,
+category:"Smartphones",
+image:"iPhone%2017%20Pro%20Max.webp",
+badge:"PREMIUM",
+description:"Premium iPhone 17 Pro Max."
+},
+
+{
+id:6,
+name:"22 Inch Water Wave Human Hair",
+price:null,
+category:"Human Hair",
+image:"22%20Inch%20water%20wave%20human%20hair.webp",
+badge:"NEW",
+description:"Beautiful 22 inch water wave human hair."
+},
+
+{
+id:7,
+name:"8 Inch SDD Weave",
+price:null,
+category:"Human Hair",
+image:"8%20inch%20SDD%20Weave",
+badge:"NEW",
+description:"8 inch Super Double Drawn weave."
+},
+
+{
+id:8,
+name:"8 Inch SDD Pixey Curly",
+price:null,
+category:"Human Hair",
+image:"8%20inch%20SDD%20pixey%20curly.jpg",
+badge:"NEW",
+description:"8 inch SDD Pixey curly human hair."
+},
+
+{
+id:9,
+name:"Classic Caught",
+price:null,
+category:"Fashion",
+image:"Classic%20Caught.jpg",
+badge:"NEW",
+description:"Classic fashion item from PM Traders."
+},
+
+{
+id:10,
+name:"Classic Rainbow Nation Dress",
+price:null,
+category:"Fashion",
+image:"Classic%20Rainbow%20Nation%20Dress.jpg",
+badge:"NEW",
+description:"Classic Rainbow Nation ladies dress."
+},
+
+{
+id:11,
+name:"Sky Blue Dress",
+price:null,
+category:"Fashion",
+image:"Sky%20Blue%20Dress.jpg",
+badge:"NEW",
+description:"Stylish sky blue ladies dress."
+},
+
+{
+id:12,
+name:"Sleeveless Classic Attire",
+price:null,
+category:"Fashion",
+image:"Sleeveless%20Classic%20Attire.jpg",
+badge:"NEW",
+description:"Elegant sleeveless classic attire."
+},
+
+{
+id:13,
+name:"Smart Casual Summer Two Piece",
+price:null,
+category:"Fashion",
+image:"Smart%20Casual%20Summer%20Two%20piece.jpg",
+badge:"NEW",
+description:"Smart casual summer two-piece outfit."
+},
+
+{
+id:14,
+name:"Smart Colour Dress",
+price:null,
+category:"Fashion",
+image:"Smart%20Colour%20Dress.jpg",
+badge:"NEW",
+description:"Smart colour ladies dress."
+},
+
+{
+id:15,
+name:"Smart Colour Full Dress",
+price:null,
+category:"Fashion",
+image:"Smart%20Colour%20full%20dress.jpg",
+badge:"NEW",
+description:"Smart colour full-length ladies dress."
+}
+
+];
+
+/* =========================================================
+   CART
+========================================================= */
+
+let cart=[];
+
+try{
+cart=JSON.parse(localStorage.getItem("pmTradersCart"))||[];
+}catch(e){
+cart=[]
+}
+
+function money(value){
+
+if(value===null || value===undefined){
+return "Price on WhatsApp";
+}
+
+return "R"+Number(value).toLocaleString("en-ZA");
+
+}
+
+function saveCart(){
+
+try{
+localStorage.setItem("pmTradersCart",JSON.stringify(cart));
+}catch(e){}
+
+updateCart();
+
+}
+
+function updateCart(){
+
+const count=cart.reduce((sum,item)=>sum+item.qty,0);
+
+document.getElementById("cartCount").textContent=count;
+
+renderCart();
+
+}
+
+function addToCart(id){
+
+const product=PRODUCTS.find(p=>p.id===id);
+
+if(!product)return;
+
+if(product.price===null){
+
+buyNow(id);
+
+return;
+
+}
+
+const existing=cart.find(item=>item.id===id);
+
+if(existing){
+
+existing.qty++;
+
+}else{
+
+cart.push({
+id:id,
+qty:1
+});
+
+}
+
+saveCart();
+
+showToast(product.name+" added to cart");
+
+}
+
+function removeFromCart(id){
+
+cart=cart.filter(item=>item.id!==id);
+
+saveCart();
+
+}
+
+function changeQty(id,amount){
+
+const item=cart.find(i=>i.id===id);
+
+if(!item)return;
+
+item.qty+=amount;
+
+if(item.qty<=0){
+removeFromCart(id);
+return;
+}
+
+saveCart();
+
+}
+
+function clearCart(){
+
+cart=[];
+
+saveCart();
+
+showToast("Cart cleared");
+
+}
+
+function renderCart(){
+
+const container=document.getElementById("cartItems");
+
+if(!cart.length){
+
+container.innerHTML=`
+<div style="text-align:center;padding:60px 10px;color:#777">
+<div style="font-size:45px;margin-bottom:10px">🛒</div>
+<h3>Your cart is empty</h3>
+<p style="font-size:12px;margin-top:5px">
+Add products from the catalogue.
+</p>
+</div>
+`;
+
+document.getElementById("cartSubtotal").textContent="R0";
+document.getElementById("cartDelivery").textContent="R0";
+document.getElementById("cartTotal").textContent="R0";
+
+return;
+
+}
+
+let subtotal=0;
+
+container.innerHTML=cart.map(item=>{
+
+const product=PRODUCTS.find(p=>p.id===item.id);
+
+if(!product)return "";
+
+subtotal+=product.price*item.qty;
+
+return`
+
+<div class="cart-item">
+
+<div class="cart-img">
+<img src="${product.image}" alt="${product.name}">
+</div>
 
 <div>
 
-<div class="badge">
-✨ Welcome to PM Traders
+<h4>${product.name}</h4>
+
+<div class="cart-price">
+${money(product.price)} × ${item.qty}
 </div>
 
-<h1>
-Shop smart.<br>
-Shop <span>PM Traders.</span>
-</h1>
+<div class="qty">
 
-<p>
-Quality smartphones, human hair, ladies fashion,
-gadgets and accessories — all in one trusted store.
-</p>
+<button onclick="changeQty(${product.id},-1)">−</button>
 
-<div class="hero-buttons
+<strong>${item.qty}</strong>
+
+<button onclick="changeQty(${product.id},1)">+</button>
+
+</div>
+
+<button class="remove" onclick="removeFromCart(${product.id})">
+Remove
+</button>
+
+</div>
+
+<strong>${money(product.price*item.qty)}</strong>
+
+</div>
+
+`;
+
+}).join("");
+
+let delivery=0;
+
+if(subtotal>0 && subtotal<1500){
+
+delivery=60;
+
+}
+
+if(subtotal>=1500){
+
+delivery=0;
+
+}
+
+document.getElementById("cartSubtotal").textContent=money(subtotal);
+
+document.getElementById("cartDelivery").textContent=
+delivery===0 ? "FREE" : money(delivery);
+
+document.getElementById("cartTotal").textContent=
+money(subtotal+delivery);
+
+}
+
+/* =========================================================
+   PRODUCT RENDER
+========================================================= */
+
+function renderProducts(){
+
+const grid=document.getElementById("productGrid");
+
+const search=document.getElementById("searchInput").value.toLowerCase().trim();
+
+const category=document.getElementById("categoryFilter").value;
+
+let filtered=PRODUCTS.filter(product=>{
+
+const matchesSearch=
+product.name.toLowerCase().includes(search) ||
+product.category.toLowerCase().includes(search);
+
+const matchesCategory=
+category==="All" || product.category===category;
+
+return matchesSearch && matchesCategory;
+
+});
+
+grid.innerHTML="";
+
+document.getElementById("emptyState").style.display=
+filtered.length ? "none" : "block";
+
+document.getElementById("resultText").textContent=
+filtered.length+
+(filtered.length===1 ? " product available." : " products available.");
+
+filtered.forEach(product=>{
+
+const card=document.createElement("article");
+
+card.className="card";
+
+card.innerHTML=`
+
+<div class="card-image">
+
+<div class="product-badge">
+${product.badge}
+</div>
+
+<button class="view" onclick="openProduct(${product.id})">
+👁️
+</button>
+
+<img
+src="${product.image}"
+alt="${product.name}"
+loading="lazy"
+onerror="this.onerror=null;this.src='images.jpeg';"
+>
+
+</div>
+
+<div class="info">
+
+<div class="cat">
+${product.category}
+</div>
+
+<div class="name">
+${product.name}
+</div>
+
+<div class="stars">
+★★★★★
+</div>
+
+<div class="price-row">
+
+<div class="price">
+${money(product.price)}
+</div>
+
+</div>
+
+<div class="product-actions">
+
+<button class="add" onclick="addToCart(${product.id})">
+${product.price===null ? "💬 Enquire" : "🛒 Add to Cart"}
+</button>
+
+<button class="buy" onclick="buyNow(${product.id})">
+💬
+</button>
+
+</div>
+
+</div>
+`;
+
+grid.appendChild(card);
+
+});
+
+}
+
+function filterCategory(category){
+
+const select=document.getElementById("categoryFilter");
+
+select.value=category;
+
+document.getElementById("searchInput").value="";
+
+document.getElementById("shop").scrollIntoView({
+behavior:"smooth"
+});
+
+renderProducts();
+
+}
+
+function goSearch(){
+
+document.getElementById("shop").scrollIntoView({
+behavior:"smooth"
+});
+
+setTimeout(()=>{
+document.getElementById("searchInput").focus();
+},500);
+
+}
+
+/* =========================================================
+   PRODUCT MODAL
+========================================================= */
+
+function openProduct(id){
+
+const product=PRODUCTS.find(p=>p.id===id);
+
+if(!product)return;
+
+document.getElementById("modalImage").src=product.image;
+
+document.getElementById("modalImage").alt=product.name;
+
+document.getElementById("modalCategory").textContent=product.category;
+
+document.getElementById("modalName").textContent=product.name;
+
+document.getElementById("modalPrice").textContent=money(product.price);
+
+document.getElementById("modalDescription").textContent=
+product.description;
+
+document.getElementById("modalAdd").onclick=()=>{
+addToCart(product.id);
+closeProduct();
+};
+
+document.getElementById("modalBuy").onclick=()=>{
+buyNow(product.id);
+closeProduct();
+};
+
+document.getElementById("productModal").classList.add("show");
+
+}
+
+function closeProduct(){
+
+document.getElementById("productModal").classList.remove("show");
+
+}
+
+/* =========================================================
+   CART OPEN/CLOSE
+========================================================= */
+
+function openCart(){
+
+document.getElementById("cart").classList.add("open");
+
+document.getElementById("overlay").classList.add("show");
+
+}
+
+function closeCart(){
+
+document.getElementById("cart").classList.remove("open");
+
+document.getElementById("overlay").classList.remove("show");
+
+}
+
+/* =========================================================
+   WHATSAPP
+========================================================= */
+
+const WHATSAPP="27842748559";
+
+function buyNow(id){
+
+const product=PRODUCTS.find(p=>p.id===id);
+
+if(!product)return;
+
+let price=product.price===null
+?"Price enquiry"
+:money(product.price);
+
+const message=
+`Hello PM Traders 👋
+
+I would like to order/enquire about:
+
+Product: ${product.name}
+Category: ${product.category}
+Price: ${price}
+
+Please confirm availability and payment/delivery details.
+
+Thank you.`;
+
+window.open(
+"https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(message),
+"_blank"
+);
+
+}
+
+function checkoutWhatsApp(){
+
+if(!cart.length){
+
+showToast("Your cart is empty");
+
+return;
+
+}
+
+let message=
+"Hello PM Traders 👋%0A%0AI would like to place an order:%0A%0A";
+
+let subtotal=0;
+
+cart.forEach(item=>{
+
+const product=PRODUCTS.find(p=>p.id===item.id);
+
+if(!product)return;
+
+const line=product.price===null
+?"Price enquiry"
+:money(product.price*item.qty);
+
+if(product.price!==null){
+subtotal+=product.price*item.qty;
+}
+
+message+=
+"• "+product.name+
+" x "+item.qty+
+" — "+line+"%0A";
+
+});
+
+let delivery=0;
+
+if(subtotal>0 && subtotal<1500){
+delivery=60;
+}
+
+if(subtotal>=1500){
+delivery=0;
+}
+
+message+=
+"%0ASubtotal: "+money(subtotal)+
+"%0ADelivery: "+
+(delivery===0 ? "FREE" : money(delivery))+
+"%0A%0APlease confirm availability and payment details.";
+
+window.open(
+"https://wa.me/"+WHATSAPP+"?text="+message,
+"_blank"
+);
+
+}
+
+/* =========================================================
+   NEWSLETTER
+========================================================= */
+
+function subscribe(event){
+
+event.preventDefault();
+
+const email=document.getElementById("newsletterEmail").value;
+
+if(!email)return;
+
+showToast("Thank you! You're on the PM Traders list.");
+
+document.getElementById("newsletterEmail").value="";
+
+}
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+function toggleMobileMenu(){
+
+const links=document.querySelector(".navlinks");
+
+if(links.style.display==="flex"){
+
+links.style.display="none";
+
+}else{
+
+links.style.position="absolute";
+links.style.top="72px";
+links.style.left="0";
+links.style.right="0";
+links.style.background="#fff";
+links.style.padding="20px";
+links.style.display="flex";
+links.style.flexDirection="column";
+links.style.borderBottom="1px solid #ddd";
+links.style.zIndex="999";
+
+}
+
+}
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+let toastTimer;
+
+function showToast(message){
+
+const toast=document.getElementById("toast");
+
+toast.textContent=message;
+
+toast.classList.add("show");
+
+clearTimeout(toastTimer);
+
+toastTimer=setTimeout(()=>{
+toast.classList.remove("show");
+},2500);
+
+}
+
+/* =========================================================
+   GENERAL
+========================================================= */
+
+document.getElementById("year").textContent=
+new Date().getFullYear();
+
+renderProducts();
+
+updateCart();
+
+document.addEventListener("keydown",event=>{
+
+if(event.key==="Escape"){
+
+closeProduct();
+closeCart();
+
+}
+
+});
+
+document.getElementById("productModal").addEventListener("click",function(event){
+
+if(event.target===this){
+closeProduct();
+}
+
+});
+
+</script></body>
+</html>
