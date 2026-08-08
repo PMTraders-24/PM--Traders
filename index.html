@@ -1,2234 +1,392 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>PM Traders | Online Store</title><meta name="description" content="PM Traders - Smartphones, human hair, ladies fashion, gadgets and accessories. Nationwide delivery across South Africa.">
-<meta name="theme-color" content="#111111"><style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-font-family:Arial,Helvetica,sans-serif;
-background:#f7f7f7;
-color:#171717;
-line-height:1.5
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PM Traders | Online Store</title>
+
+<meta name="description" content="PM Traders - Smartphones, human hair, ladies fashion, gadgets and accessories. Nationwide delivery across South Africa.">
+
+<meta name="theme-color" content="#111111">
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
-button,input,select,textarea{font:inherit}
-button{cursor:pointer}
-a{text-decoration:none;color:inherit}
-img{max-width:100%;display:block}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f7f7f7;
+    color:#171717;
+    line-height:1.5;
+}
+
+button,
+input,
+select,
+textarea{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
 
 :root{
---black:#111;
---gold:#f5c542;
---gold2:#c49a20;
---white:#fff;
---muted:#777;
---border:#e8e8e8;
---green:#25d366;
---red:#d62828
+    --black:#111111;
+    --black2:#202020;
+    --gold:#f5c542;
+    --gold2:#c49a20;
+    --white:#ffffff;
+    --muted:#777777;
+    --border:#e7e7e7;
+    --green:#25d366;
+    --red:#d62828;
+    --cream:#fff8df;
 }
 
-/* TOP BAR */
+/* =========================
+   TOP BAR
+========================= */
+
 .topbar{
-background:#111;
-color:#fff;
-text-align:center;
-padding:9px 15px;
-font-size:12px
+    background:#111;
+    color:#fff;
+    text-align:center;
+    padding:9px 15px;
+    font-size:12px;
 }
-.topbar b{color:var(--gold)}
 
-/* HEADER */
+.topbar b{
+    color:var(--gold);
+}
+
+/* =========================
+   HEADER
+========================= */
+
 header{
-background:#fff;
-position:sticky;
-top:0;
-z-index:1000;
-border-bottom:1px solid var(--border)
+    background:#fff;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    border-bottom:1px solid var(--border);
 }
 
 .nav{
-max-width:1250px;
-margin:auto;
-min-height:72px;
-padding:10px 20px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:20px
+    max-width:1250px;
+    margin:auto;
+    min-height:72px;
+    padding:10px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
 }
 
 .logo{
-display:flex;
-align-items:center;
-gap:10px;
-font-size:21px;
-font-weight:900
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:21px;
+    font-weight:900;
 }
 
 .logo-mark{
-width:43px;
-height:43px;
-border-radius:12px;
-background:#111;
-color:var(--gold);
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:16px
+    width:43px;
+    height:43px;
+    border-radius:12px;
+    background:#111;
+    color:var(--gold);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:16px;
+    flex-shrink:0;
 }
 
-.logo span{color:var(--gold2)}
+.logo span{
+    color:var(--gold2);
+}
 
 .navlinks{
-display:flex;
-gap:25px;
-align-items:center
+    display:flex;
+    gap:23px;
+    align-items:center;
 }
 
 .navlinks a{
-font-size:14px;
-font-weight:700
+    font-size:14px;
+    font-weight:700;
 }
 
-.navlinks a:hover{color:var(--gold2)}
+.navlinks a:hover{
+    color:var(--gold2);
+}
 
 .actions{
-display:flex;
-gap:8px;
-align-items:center
+    display:flex;
+    gap:8px;
+    align-items:center;
 }
 
 .icon{
-width:42px;
-height:42px;
-border:1px solid #ddd;
-background:#fff;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-position:relative
+    width:42px;
+    height:42px;
+    border:1px solid #ddd;
+    background:#fff;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+
+.icon:hover{
+    background:#f8f8f8;
 }
 
 .count{
-position:absolute;
-top:-5px;
-right:-4px;
-min-width:20px;
-height:20px;
-padding:0 5px;
-border-radius:20px;
-background:var(--red);
-color:#fff;
-font-size:10px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-weight:900
+    position:absolute;
+    top:-5px;
+    right:-4px;
+    min-width:20px;
+    height:20px;
+    padding:0 5px;
+    border-radius:20px;
+    background:var(--red);
+    color:#fff;
+    font-size:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:900;
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
+
 .hero{
-background:
-radial-gradient(circle at 85% 20%,rgba(245,197,66,.25),transparent 28%),
-linear-gradient(120deg,#111,#292929);
-color:#fff
+    background:
+    radial-gradient(circle at 85% 20%,rgba(245,197,66,.25),transparent 28%),
+    linear-gradient(120deg,#111,#292929);
+    color:#fff;
 }
 
 .hero-inner{
-max-width:1250px;
-margin:auto;
-min-height:500px;
-padding:70px 20px;
-display:grid;
-grid-template-columns:1.1fr .9fr;
-align-items:center;
-gap:40px
+    max-width:1250px;
+    margin:auto;
+    min-height:500px;
+    padding:70px 20px;
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    align-items:center;
+    gap:40px;
 }
 
 .badge{
-display:inline-block;
-padding:8px 13px;
-border:1px solid rgba(255,255,255,.2);
-border-radius:30px;
-background:rgba(255,255,255,.06);
-font-size:12px;
-margin-bottom:18px
+    display:inline-block;
+    padding:8px 13px;
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:30px;
+    background:rgba(255,255,255,.06);
+    font-size:12px;
+    margin-bottom:18px;
 }
 
 .hero h1{
-font-size:clamp(45px,6vw,76px);
-line-height:.98;
-letter-spacing:-3px;
-margin-bottom:22px
+    font-size:clamp(45px,6vw,76px);
+    line-height:.98;
+    letter-spacing:-3px;
+    margin-bottom:22px;
 }
 
-.hero h1 span{color:var(--gold)}
+.hero h1 span{
+    color:var(--gold);
+}
 
 .hero p{
-max-width:610px;
-font-size:17px;
-color:#d5d5d5;
-margin-bottom:28px
+    max-width:610px;
+    font-size:17px;
+    color:#d5d5d5;
+    margin-bottom:28px;
 }
 
 .hero-buttons{
-display:flex;
-gap:10px;
-flex-wrap:wrap
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
 }
 
 .btn{
-border:0;
-border-radius:10px;
-padding:13px 20px;
-font-weight:800;
-display:inline-flex;
-align-items:center;
-justify-content:center;
-gap:8px;
-transition:.2s
+    border:0;
+    border-radius:10px;
+    padding:13px 20px;
+    font-weight:800;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    transition:.2s;
 }
 
-.btn:hover{transform:translateY(-2px)}
-.primary{background:var(--gold);color:#111}
-.white{background:#fff;color:#111}
-.dark{background:#111;color:#fff}
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+.primary{
+    background:var(--gold);
+    color:#111;
+}
+
+.white{
+    background:#fff;
+    color:#111;
+}
+
+.dark{
+    background:#111;
+    color:#fff;
+}
 
 .hero-show{
-min-height:340px;
-display:flex;
-align-items:center;
-justify-content:center;
-position:relative
+    min-height:340px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
 }
 
 .hero-phone{
-width:235px;
-height:320px;
-border-radius:28px;
-overflow:hidden;
-border:6px solid #333;
-background:#222;
-transform:rotate(6deg);
-box-shadow:0 30px 70px rgba(0,0,0,.45)
+    width:235px;
+    height:320px;
+    border-radius:28px;
+    overflow:hidden;
+    border:6px solid #333;
+    background:#222;
+    transform:rotate(6deg);
+    box-shadow:0 30px 70px rgba(0,0,0,.45);
 }
 
 .hero-phone img{
-width:100%;
-height:100%;
-object-fit:cover
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
 
 .hero-hair{
-position:absolute;
-left:2%;
-bottom:5px;
-width:155px;
-height:195px;
-border:5px solid #fff;
-border-radius:18px;
-overflow:hidden;
-transform:rotate(-8deg);
-box-shadow:0 20px 50px rgba(0,0,0,.4)
+    position:absolute;
+    left:2%;
+    bottom:5px;
+    width:155px;
+    height:195px;
+    border:5px solid #fff;
+    border-radius:18px;
+    overflow:hidden;
+    transform:rotate(-8deg);
+    box-shadow:0 20px 50px rgba(0,0,0,.4);
 }
 
 .hero-hair img{
-width:100%;
-height:100%;
-object-fit:cover
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
 
-/* TRUST */
+/* =========================
+   TRUST
+========================= */
+
 .trust{
-background:#fff;
-border-bottom:1px solid var(--border)
+    background:#fff;
+    border-bottom:1px solid var(--border);
 }
 
 .trust-inner{
-max-width:1250px;
-margin:auto;
-padding:18px 20px;
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:15px
+    max-width:1250px;
+    margin:auto;
+    padding:18px 20px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
 }
 
 .trust-item{
-display:flex;
-align-items:center;
-gap:10px
+    display:flex;
+    align-items:center;
+    gap:10px;
 }
 
 .trust-icon{
-width:43px;
-height:43px;
-border-radius:12px;
-background:#fff7d8;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:20px
-}
-
-.trust-item strong{display:block;font-size:12px}
-.trust-item small{color:#777;font-size:10px}
-
-/* SECTIONS */
-.section{
-max-width:1250px;
-margin:auto;
-padding:60px 20px
-}
-
-.heading{margin-bottom:25px}
-
-.heading h2{
-font-size:34px;
-letter-spacing:-1px
-}
-
-.heading p{
-color:#777;
-font-size:13px;
-margin-top:4px
-}
-
-/* CATEGORIES */
-.categories{
-display:grid;
-grid-template-columns:repeat(5,1fr);
-gap:13px
-}
-
-.category{
-background:#fff;
-border:1px solid var(--border);
-border-radius:16px;
-padding:22px 8px;
-text-align:center;
-transition:.2s;
-cursor:pointer
-}
-
-.category:hover{
-transform:translateY(-4px);
-border-color:var(--gold)
-}
-
-.category .ci{
-font-size:31px;
-margin-bottom:8px
-}
-
-.category strong{font-size:12px}
-
-/* PROMO */
-.promo{
-max-width:1210px;
-margin:0 auto;
-border-radius:20px;
-padding:32px;
-background:linear-gradient(110deg,#f5c542,#ffe68a);
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:20px
-}
-
-.promo h2{font-size:30px}
-.promo p{font-size:13px;color:#5b4a10}
-
-/* SHOP */
-.controls{
-display:flex;
-gap:10px;
-flex-wrap:wrap;
-margin-bottom:24px
-}
-
-.search{
-flex:1;
-min-width:220px;
-position:relative
-}
-
-.search span{
-position:absolute;
-left:14px;
-top:50%;
-transform:translateY(-50%)
-}
-
-.search input{
-width:100%;
-padding:13px 15px 13px 40px;
-border:1px solid #ddd;
-border-radius:10px;
-outline:none
-}
-
-.filter{
-padding:13px;
-min-width:180px;
-border:1px solid #ddd;
-border-radius:10px;
-background:#fff;
-outline:none
-}
-
-/* PRODUCTS */
-.products{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:18px
-}
-
-.card{
-background:#fff;
-border:1px solid var(--border);
-border-radius:17px;
-overflow:hidden;
-transition:.2s
-}
-
-.card:hover{
-transform:translateY(-4px);
-box-shadow:0 18px 40px rgba(0,0,0,.08)
-}
-
-.card-image{
-height:240px;
-background:#eee;
-position:relative;
-overflow:hidden
-}
-
-.card-image img{
-width:100%;
-height:100%;
-object-fit:cover
-}
-
-.product-badge{
-position:absolute;
-top:11px;
-left:11px;
-background:var(--red);
-color:#fff;
-padding:5px 8px;
-border-radius:6px;
-font-size:9px;
-font-weight:900;
-z-index:2
-}
-
-.view{
-position:absolute;
-right:10px;
-top:10px;
-width:35px;
-height:35px;
-border:0;
-border-radius:50%;
-background:#fff;
-z-index:3
-}
-
-.info{padding:15px}
-
-.cat{
-color:#999;
-font-size:10px;
-font-weight:800;
-text-transform:uppercase
-}
-
-.name{
-font-size:15px;
-margin:5px 0 7px;
-min-height:40px
-}
-
-.stars{
-color:#eab300;
-font-size:12px;
-margin-bottom:9px
-}
-
-.price-row{
-display:flex;
-gap:8px;
-align-items:center;
-margin-bottom:12px
-}
-
-.price{
-font-size:18px;
-font-weight:900
-}
-
-.old{
-color:#aaa;
-font-size:11px;
-text-decoration:line-through
-}
-
-.product-actions{
-display:grid;
-grid-template-columns:1fr 43px;
-gap:7px
-}
-
-.add{
-border:0;
-background:#111;
-color:#fff;
-border-radius:9px;
-font-weight:800;
-font-size:12px;
-padding:11px
-}
-
-.buy{
-border:1px solid #ddd;
-background:#fff;
-border-radius:9px;
-font-size:17px
-}
-
-.empty{
-display:none;
-text-align:center;
-background:#fff;
-border-radius:15px;
-padding:50px;
-color:#777
-}
-
-/* WHY */
-.why{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:18px
-}
-
-.why-card{
-background:#fff;
-border:1px solid var(--border);
-border-radius:17px;
-padding:26px
-}
-
-.why-icon{
-width:46px;
-height:46px;
-border-radius:12px;
-background:#fff7d8;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:21px;
-margin-bottom:14px
-}
-
-.why-card h3{margin-bottom:6px}
-
-.why-card p{
-font-size:13px;
-color:#777
-}
-
-/* NEWSLETTER */
-.newsletter{
-background:#111;
-color:#fff;
-border-radius:20px;
-padding:35px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:20px
-}
-
-.newsletter p{
-color:#aaa;
-font-size:13px;
-margin-top:4px
-}
-
-.newsletter-form{
-display:flex;
-gap:7px;
-width:420px
-}
-
-.newsletter-form input{
-flex:1;
-padding:13px;
-border:0;
-border-radius:8px;
-outline:none
-}
-
-/* FOOTER */
-footer{
-background:#111;
-color:#fff
-}
-
-.footer{
-max-width:1250px;
-margin:auto;
-padding:55px 20px 30px;
-display:grid;
-grid-template-columns:1.5fr 1fr 1fr 1fr;
-gap:35px
-}
-
-.footer p,.footer a{
-display:block;
-color:#999;
-font-size:12px;
-margin-bottom:8px
-}
-
-.footer h4{
-color:var(--gold);
-margin-bottom:13px
-}
-
-.bottom{
-border-top:1px solid #292929;
-text-align:center;
-padding:17px;
-font-size:11px;
-color:#777
-}
-
-/* WHATSAPP */
-.whatsapp{
-position:fixed;
-right:18px;
-bottom:18px;
-width:57px;
-height:57px;
-border-radius:50%;
-background:var(--green);
-color:#fff;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:26px;
-z-index:1200;
-box-shadow:0 8px 25px rgba(0,0,0,.25)
-}
-
-/* CART */
-.overlay{
-display:none;
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.58);
-z-index:1500
-}
-
-.overlay.show{display:block}
-
-.cart{
-position:fixed;
-right:-460px;
-top:0;
-height:100%;
-width:min(460px,100%);
-background:#fff;
-z-index:1600;
-transition:.3s;
-display:flex;
-flex-direction:column
-}
-
-.cart.open{right:0}
-
-.cart-head{
-padding:18px;
-border-bottom:1px solid #eee;
-display:flex;
-justify-content:space-between;
-align-items:center
-}
-
-.close{
-width:36px;
-height:36px;
-border:0;
-border-radius:50%;
-background:#eee
-}
-
-.cart-items{
-flex:1;
-overflow:auto;
-padding:15px 20px
-}
-
-.cart-item{
-display:grid;
-grid-template-columns:60px 1fr auto;
-gap:10px;
-padding:13px 0;
-border-bottom:1px solid #eee
-}
-
-.cart-img{
-width:60px;
-height:60px;
-border-radius:9px;
-overflow:hidden;
-background:#eee
-}
-
-.cart-img img{
-width:100%;
-height:100%;
-object-fit:cover
-}
-
-.cart-item h4{font-size:12px}
-
-.cart-price{
-font-size:11px;
-color:#777
-}
-
-.qty{
-display:flex;
-gap:6px;
-align-items:center;
-margin-top:6px
-}
-
-.qty button{
-width:24px;
-height:24px;
-border:1px solid #ddd;
-background:#fff;
-border-radius:5px
-}
-
-.remove{
-border:0;
-background:none;
-color:var(--red);
-font-size:10px;
-margin-top:4px
-}
-
-.cart-foot{
-padding:18px;
-border-top:1px solid #eee
-}
-
-.line{
-display:flex;
-justify-content:space-between;
-font-size:13px;
-margin-bottom:8px
-}
-
-.total{
-border-top:1px solid #eee;
-padding-top:10px;
-font-size:19px;
-font-weight:900
-}
-
-.checkout{
-width:100%;
-border:0;
-border-radius:9px;
-padding:14px;
-background:var(--green);
-color:#fff;
-font-weight:900;
-margin-top:10px
-}
-
-.clear-cart{
-width:100%;
-border:1px solid #ddd;
-background:#fff;
-border-radius:9px;
-padding:10px;
-font-size:12px;
-font-weight:700;
-margin-top:8px
-}
-
-/* MODAL */
-.modal{
-display:none;
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.65);
-z-index:2000;
-align-items:center;
-justify-content:center;
-padding:15px
-}
-
-.modal.show{display:flex}
-
-.modal-box{
-background:#fff;
-width:min(700px,100%);
-max-height:92vh;
-overflow:auto;
-border-radius:18px;
-padding:25px;
-position:relative
-}
-
-.modal-close{
-position:absolute;
-right:15px;
-top:15px;
-width:35px;
-height:35px;
-border:0;
-border-radius:50%;
-background:#eee
-}
-
-.quick-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:25px
-}
-
-.quick-image{
-height:400px;
-background:#eee;
-border-radius:12px;
-overflow:hidden
-}
-
-.quick-image img{
-width:100%;
-height:100%;
-object-fit:cover
-}
-
-.quick-info{
-padding-top:20px
-}
-
-.quick-info h2{
-font-size:27px;
-margin:6px 0
-}
-
-.quick-info p{
-font-size:13px;
-color:#777;
-margin:15px 0
-}
-
-.form-group{
-margin-bottom:14px
-}
-
-.form-group label{
-display:block;
-font-size:11px;
-font-weight:800;
-margin-bottom:5px
-}
-
-.form-group input,
-.form-group textarea,
-.form-group select{
-width:100%;
-padding:12px;
-border:1px solid #ddd;
-border-radius:8px;
-outline:none
-}
-
-.form-group textarea{
-min-height:75px;
-resize:vertical
-}
-
-.delivery-options{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:8px
-}
-
-.delivery-option{
-border:1px solid #ddd;
-border-radius:9px;
-padding:12px;
-cursor:pointer
-}
-
-.delivery-option.active{
-border-color:#d2aa2e;
-background:#fff9e5
-}
-
-.delivery-option strong{
-display:block;
-font-size:12px
-}
-
-.delivery-option small{
-color:#777
-}
-
-/* TOAST */
-.toast{
-position:fixed;
-left:50%;
-bottom:25px;
-transform:translate(-50%,100px);
-opacity:0;
-background:#111;
-color:#fff;
-padding:12px 18px;
-border-radius:9px;
-z-index:3000;
-font-size:12px;
-transition:.3s
-}
-
-.toast.show{
-transform:translate(-50%,0);
-opacity:1
-}
-
-/* MOBILE */
-@media(max-width:1000px){
-
-.navlinks{display:none}
-
-.hero-inner{
-grid-template-columns:1fr;
-text-align:center
-}
-
-.hero p{
-margin-left:auto;
-margin-right:auto
-}
-
-.hero-buttons{
-justify-content:center
-}
-
-.trust-inner{
-grid-template-columns:repeat(2,1fr)
-}
-
-.categories{
-grid-template-columns:repeat(3,1fr)
-}
-
-.products{
-grid-template-columns:repeat(3,1fr)
-}
-
-.footer{
-grid-template-columns:repeat(2,1fr)
-}
-
-}
-
-@media(max-width:700px){
-
-.nav{
-padding:9px 13px
-}
-
-.logo{
-font-size:18px
-}
-
-.logo-mark{
-width:38px;
-height:38px
-}
-
-.hero-inner{
-padding:48px 15px
-}
-
-.hero h1{
-font-size:46px
-}
-
-.hero-show{
-min-height:280px
-}
-
-.hero-phone{
-width:190px;
-height:260px
-}
-
-.hero-hair{
-width:120px;
-height:160px
-}
-
-.trust-inner{
-gap:8px;
-padding:14px 10px
+    width:43px;
+    height:43px;
+    border-radius:12px;
+    background:#fff7d8;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+    flex-shrink:0;
+}
+
+.trust-item strong{
+    display:block;
+    font-size:12px;
 }
 
 .trust-item small{
-display:none
+    color:#777;
+    font-size:10px;
 }
 
+/* =========================
+   SECTIONS
+========================= */
+
 .section{
-padding:45px 14px
+    max-width:1250px;
+    margin:auto;
+    padding:60px 20px;
+}
+
+.heading{
+    margin-bottom:25px;
 }
 
 .heading h2{
-font-size:28px
+    font-size:34px;
+    letter-spacing:-1px;
 }
+
+.heading p{
+    color:#777;
+    font-size:13px;
+    margin-top:4px;
+}
+
+/* =========================
+   CATEGORIES
+========================= */
 
 .categories{
-grid-template-columns:repeat(3,1fr);
-gap:8px
-}
-
-.category{
-padding:16px 5px
-}
-
-.promo{
-margin:0 14px;
-padding:25px 20px;
-flex-direction:column;
-align-items:flex-start
-}
-
-.products{
-grid-template-columns:repeat(2,1fr);
-gap:10px
-}
-
-.card-image{
-height:185px
-}
-
-.info{
-padding:11px
-}
-
-.name{
-font-size:13px;
-min-height:48px
-}
-
-.price{
-font-size:16px
-}
-
-.product-actions{
-grid-template-columns:1fr
-}
-
-.buy{
-display:none
-}
-
-.why{
-grid-template-columns:1fr
-}
-
-.newsletter{
-padding:27px 20px;
-flex-direction:column;
-align-items:flex-start
-}
-
-.newsletter-form{
-width:100%;
-flex-direction:column
-}
-
-.footer{
-grid-template-columns:1fr 1fr
-}
-
-.footer-brand{
-grid-column:1/-1
-}
-
-.quick-grid{
-grid-template-columns:1fr
-}
-
-.quick-image{
-height:300px
-}
-
-.quick-info{
-padding-top:0
-}
-
-.delivery-options{
-grid-template-columns:1fr
-}
-
-}
-</style></head><body><div class="topbar">
-🚚 Nationwide delivery • <b>FREE DELIVERY OVER R1,500</b>
-</div><header>
-<nav class="nav"><a class="logo" href="#home">
-<div class="logo-mark">PM</div>
-<div>PM <span>TRADERS</span></div>
-</a><div class="navlinks">
-<a href="#home">Home</a>
-<a href="#shop">Shop</a>
-<a href="#categories">Categories</a>
-<a href="#deals">Deals</a>
-<a href="#contact">Contact</a>
-</div><div class="actions"><button class="icon" onclick="goSearch()" aria-label="Search">
-🔍
-</button><button class="icon" onclick="openCart()" aria-label="Cart">
-🛒
-<span class="count" id="cartCount">0</span>
-</button></div>
-</nav>
-</header><section class="hero" id="home"><div class="hero-inner"><div><div class="badge">✨ Welcome to PM Traders</div><h1>
-Shop smart.<br>
-Shop <span>PM Traders.</span>
-</h1><p>
-Quality smartphones, human hair, ladies fashion,
-gadgets and accessories — all in one trusted store.
-</p><div class="hero-buttons"><a class="btn primary" href="#shop">
-🛍️ Shop Now
-</a><a class="btn white" href="#categories">
-Explore Categories
-</a></div></div><div class="hero-show"><div class="hero-phone">
-<img
-src="iPhone%2013%20Pro%20Max.jpeg"
-alt="iPhone 13 Pro Max"
-onerror="this.src='https://via.placeholder.com/500x700?text=iPhone+13+Pro+Max'"
->
-</div><div class="hero-hair">
-<img
-src="8%20Inch%20Super%20Double%20Drawn.webp"
-alt="Human hair"
-onerror="this.src='https://via.placeholder.com/500x600?text=Human+Hair'"
->
-</div></div></div>
-</section><section class="trust"><div class="trust-inner"><div class="trust-item">
-<div class="trust-icon">🚚</div>
-<div>
-<strong>Nationwide Delivery</strong>
-<small>Across South Africa</small>
-</div>
-</div><div class="trust-item">
-<div class="trust-icon">💬</div>
-<div>
-<strong>WhatsApp Orders</strong>
-<small>Fast & convenient</small>
-</div>
-</div><div class="trust-item">
-<div class="trust-icon">📍</div>
-<div>
-<strong>Collection</strong>
-<small>Richards Bay & Empangeni</small>
-</div>
-</div><div class="trust-item">
-<div class="trust-icon">⭐</div>
-<div>
-<strong>Quality Products</strong>
-<small>Shop with confidence</small>
-</div>
-</div></div>
-</section><section class="section" id="categories"><div class="heading">
-<h2>Shop by Category</h2>
-<p>Find what you're looking for.</p>
-</div><div class="categories"><div class="category" onclick="filterCategory('Smartphones')">
-<div class="ci">📱</div>
-<strong>Smartphones</strong>
-</div><div class="category" onclick="filterCategory('Human Hair')">
-<div class="ci">💇</div>
-<strong>Human Hair</strong>
-</div><div class="category" onclick="filterCategory('Fashion')">
-<div class="ci">👗</div>
-<strong>Fashion</strong>
-</div><div class="category" onclick="filterCategory('Accessories')">
-<div class="ci">🔌</div>
-<strong>Accessories</strong>
-</div><div class="category" onclick="filterCategory('Gadgets')">
-<div class="ci">🎧</div>
-<strong>Gadgets</strong>
-</div></div>
-</section><section id="deals"><div class="promo"><div>
-<h2>🔥 PM Traders Deals</h2>
-<p>Shop selected products at great prices while stock lasts.</p>
-</div><a href="#shop" class="btn dark">
-Shop Now →
-</a></div>
-</section><section class="section" id="shop"><div class="heading">
-<h2>Product Catalogue</h2>
-<p>Browse our latest PM Traders products.</p>
-</div><div class="controls"><div class="search"><span>🔍</span>
-
-<input
-id="searchInput"
-type="search"
-placeholder="Search products..."
-oninput="renderProducts()"
-
-«»
-
-</div><select
-id="categoryFilter"
-class="filter"
-onchange="renderProducts()"
-
-«»
-
-<option value="All">All Categories</option>
-<option value="Smartphones">Smartphones</option>
-<option value="Human Hair">Human Hair</option>
-<option value="Fashion">Fashion</option>
-<option value="Accessories">Accessories</option>
-<option value="Gadgets">Gadgets</option></select></div><div class="products" id="productGrid"></div><div class="empty" id="emptyState"><h3>No products found</h3><p>Try another search or category.</p></div></section><section class="section"><div class="heading">
-<h2>Why PM Traders?</h2>
-<p>Shopping made simple.</p>
-</div><div class="why"><div class="why-card">
-<div class="why-icon">🛍️</div>
-<h3>Wide Selection</h3>
-<p>Shop smartphones, human hair, fashion and accessories in one place.</p>
-</div><div class="why-card">
-<div class="why-icon">💬</div>
-<h3>Easy WhatsApp Ordering</h3>
-<p>Add products to your cart and send your complete order directly to PM Traders.</p>
-</div><div class="why-card">
-<div class="why-icon">🚚</div>
-<h3>Convenient Delivery</h3>
-<p>Delivery across South Africa with collection available around Richards Bay and Empangeni.</p>
-</div></div>
-</section><section class="section"><div class="newsletter"><div>
-<h2>Stay in the PM Traders loop.</h2>
-<p>Get updates about new products and special offers.</p>
-</div><form class="newsletter-form" onsubmit="subscribe(event)"><input
-id="newsletterEmail"
-type="email"
-placeholder="Your email address"
-required
-
-«»
-
-<button class="btn primary">
-Subscribe
-</button></form></div>
-</section><footer id="contact"><div class="footer"><div class="footer-brand"><a class="logo" href="#home">
-<div class="logo-mark">PM</div>
-<div>PM <span>TRADERS</span></div>
-</a><p style="margin-top:12px">
-Quality smartphones, human hair, fashion and accessories — all in one trusted store.
-</p></div><div><h4>Shop</h4><a href="#shop">All Products</a>
-<a href="#" onclick="filterCategory('Smartphones');return false">Smartphones</a>
-<a href="#" onclick="filterCategory('Human Hair');return false">Human Hair</a>
-<a href="#" onclick="filterCategory('Fashion');return false">Fashion</a>
-
-</div><div><h4>Customer Info</h4><a href="#contact">Delivery</a>
-<a href="#contact">Collection</a>
-<a href="#contact">WhatsApp Orders</a>
-<a href="#contact">Contact</a>
-
-</div><div><h4>Contact</h4><p>📍 Richards Bay, KwaZulu-Natal</p><a href="https://wa.me/27842748559" target="_blank">
-💬 +27 84 274 8559
-</a><a href="mailto:Info@PM-Traders.co.za">
-✉️ Info@PM-Traders.co.za
-</a><p>🚚 Nationwide delivery</p></div></div><div class="bottom">
-© <span id="year"></span> PM Traders. All Rights Reserved.
-</div></footer><a
-class="whatsapp"
-href="https://wa.me/27842748559"
-target="_blank"
-aria-label="WhatsApp PM Traders"
-
-«»
-
-💬
-</a>
-
-<div class="overlay" id="overlay" onclick="closeCart()"></div><aside class="cart" id="cart"><div class="cart-head"><h2>Your Cart</h2><button class="close" onclick="closeCart()">✕</button>
-
-</div><div class="cart-items" id="cartItems"></div><div class="cart-foot"><div class="line">
-<span>Subtotal</span>
-<strong id="cartSubtotal">R0</strong>
-</div><div class="line">
-<span>Delivery</span>
-<strong id="cartDelivery">R0</strong>
-</div><div class="line total">
-<span>Total</span>
-<strong id="cartTotal">R0</strong>
-</div><button class="checkout" onclick="openCheckout()">
-Checkout via WhatsApp
-</button><button class="clear-cart" onclick="clearCart()">
-Clear Cart
-</button></div>
-</aside><div class="modal" id="productModal"><div class="modal-box"><button class="modal-close" onclick="closeProductModal()">✕</button>
-
-<div class="quick-grid"><div class="quick-image">
-<img id="quickImage" src="" alt="">
-</div><div class="quick-info"><div class="cat" id="quickCategory"></div><h2 id="quickName"></h2><div class="stars">★★★★★</div><div class="price" id="quickPrice"></div><p id="quickDescription"></p><button class="btn dark" id="quickAdd">
-🛒 Add to Cart
-</button></div></div></div>
-</div><div class="modal" id="checkoutModal"><div class="modal-box"><button class="modal-close" onclick="closeCheckout()">✕</button>
-
-<h2 style="margin-bottom:20px">
-Checkout
-</h2><form onsubmit="sendWhatsAppOrder(event)"><div class="form-group"><label>Full Name</label>
-
-<input id="customerName" required placeholder="Your full name"></div><div class="form-group"><label>Phone Number</label>
-
-<input id="customerPhone" required placeholder="Your phone number"></div><div class="form-group"><label>Delivery Method</label>
-
-<div class="delivery-options"><div
-class="delivery-option active"
-id="deliveryOption"
-onclick="selectDelivery('delivery')"
-><strong>🚚 Delivery</strong>
-
-<small>Nationwide delivery</small>
-
-</div><div
-class="delivery-option"
-id="collectionOption"
-onclick="selectDelivery('collection')"
-><strong>📍 Collection</strong>
-
-<small>Richards Bay / Empangeni</small>
-
-</div></div><input type="hidden" id="deliveryMethod" value="delivery"></div><div class="form-group"><label>Delivery Address</label>
-
-<textarea
-id="customerAddress"
-placeholder="Enter your delivery address"
-></textarea></div><div class="form-group"><label>Order Notes</label>
-
-<textarea
-id="orderNotes"
-placeholder="Any additional information?"
-></textarea></div><div style="background:#f7f7f7;padding:15px;border-radius:10px;margin-bottom:15px"><div class="line">
-<span>Subtotal</span>
-<strong id="checkoutSubtotal">R0</strong>
-</div><div class="line">
-<span>Delivery</span>
-<strong id="checkoutDelivery">R0</strong>
-</div><div class="line total">
-<span>Total</span>
-<strong id="checkoutTotal">R0</strong>
-</div></div><button class="checkout" type="submit">
-💬 Send Order on WhatsApp
-</button></form></div>
-</div><div class="toast" id="toast"></div><script>
-
-/* =========================================================
-   PM TRADERS PRODUCT CATALOGUE
-   ========================================================= */
-
-const products = [
-
-{
-id:1,
-name:"iPhone 13 Pro Max",
-category:"Smartphones",
-price:7500,
-oldPrice:8500,
-image:"iPhone%2013%20Pro%20Max.jpeg",
-badge:"FEATURED",
-description:"Premium iPhone 13 Pro Max smartphone."
-},
-
-{
-id:2,
-name:"iPhone 17 Pro Max",
-category:"Smartphones",
-price:24000,
-oldPrice:25000,
-image:"iPhone%2017%20Pro%20Max.jpeg",
-badge:"NEW",
-description:"Latest premium iPhone Pro Max."
-},
-
-{
-id:3,
-name:"8 Inch Super Double Drawn Weave",
-category:"Human Hair",
-price:850,
-oldPrice:950,
-image:"8%20Inch%20Super%20Double%20Drawn.webp",
-badge:"POPULAR",
-description:"Premium 8 inch Super Double Drawn human hair."
-},
-
-{
-id:4,
-name:"20 Inch Weave Jurly Curls",
-category:"Human Hair",
-price:970,
-oldPrice:1100,
-image:"20%20Inch%20Weave%20Jurly%20Curls.jpeg",
-badge:"HOT",
-description:"Beautiful 20 inch curly human hair weave."
-},
-
-{
-id:5,
-name:"Ladies Fashion Dress",
-category:"Fashion",
-price:230,
-oldPrice:299,
-image:"Fashion%20Dress.jpeg",
-badge:"SALE",
-description:"Stylish ladies fashion dress."
-},
-
-{
-id:6,
-name:"Cellphone Accessories",
-category:"Accessories",
-price:150,
-oldPrice:199,
-image:"Cellphone%20Accessories.jpeg",
-badge:"NEW",
-description:"Quality cellphone accessories."
-},
-
-{
-id:7,
-name:"Laptop Accessories",
-category:"Accessories",
-price:250,
-oldPrice:299,
-image:"Laptop%20Accessories.jpeg",
-badge:"",
-description:"Useful accessories for laptops and computers."
-},
-
-{
-id:8,
-name:"Wireless Earbuds",
-category:"Gadgets",
-price:350,
-oldPrice:450,
-image:"Wireless%20Earbuds.jpeg",
-badge:"HOT",
-description:"Wireless earbuds for music and calls."
-}
-
-];
-
-
-/* =========================================================
-   CART
-   ========================================================= */
-
-let cart = JSON.parse(localStorage.getItem("pmTradersCart")) || [];
-
-let selectedDelivery = "delivery";
-
-
-function money(value){
-
-return "R" + Number(value).toLocaleString("en-ZA");
-
-}
-
-
-function saveCart(){
-
-localStorage.setItem(
-"pmTradersCart",
-JSON.stringify(cart)
-);
-
-}
-
-
-function cartCount(){
-
-return cart.reduce(
-(total,item)=>total + item.quantity,
-0
-);
-
-}
-
-
-function subtotal(){
-
-return cart.reduce(
-(total,item)=>total + item.price * item.quantity,
-0
-);
-
-}
-
-
-function deliveryCost(){
-
-if(selectedDelivery === "collection"){
-return 0;
-}
-
-if(subtotal() >= 1500){
-return 0;
-}
-
-if(subtotal() === 0){
-return 0;
-}
-
-/*
-PM Traders delivery:
-R30 around Richards Bay
-R60 outside Richards Bay / Empangeni
-*/
-
-return 60;
-
-}
-
-
-function updateCartCount(){
-
-document.getElementById("cartCount").textContent =
-cartCount();
-
-}
-
-
-function addToCart(id){
-
-const product = products.find(
-p=>p.id === id
-);
-
-if(!product)return;
-
-const existing = cart.find(
-item=>item.id === id
-);
-
-if(existing){
-
-existing.quantity++;
-
-}else{
-
-cart.push({
-id:product.id,
-name:product.name,
-price:product.price,
-image:product.image,
-quantity:1
-});
-
-}
-
-saveCart();
-
-updateCart();
-
-showToast(
-product.name + " added to cart"
-);
-
-}
-
-
-function removeFromCart(id){
-
-cart = cart.filter(
-item=>item.id !== id
-);
-
-saveCart();
-
-updateCart();
-
-}
-
-
-function changeQty(id,change){
-
-const item = cart.find(
-item=>item.id === id
-);
-
-if(!item)return;
-
-item.quantity += change;
-
-if(item.quantity <= 0){
-
-removeFromCart(id);
-
-return;
-
-}
-
-saveCart();
-
-updateCart();
-
-}
-
-
-function clearCart(){
-
-if(cart.length === 0)return;
-
-cart = [];
-
-saveCart();
-
-updateCart();
-
-showToast("Cart cleared");
-
-}
-
-
-function updateCart(){
-
-updateCartCount();
-
-const container =
-document.getElementById("cartItems");
-
-if(cart.length === 0){
-
-container.innerHTML = `
-<div style="text-align:center;padding:50px 10px;color:#777">
-<div style="font-size:45px;margin-bottom:12px">🛒</div>
-<h3>Your cart is empty</h3>
-<p style="font-size:12px;margin-top:5px">
-Add products from the catalogue.
-</p>
-</div>
-`;
-
-}else{
-
-container.innerHTML =
-cart.map(item=>`
-
-<div class="cart-item">
-
-<div class="cart-img">
-
-<img
-src="${item.image}"
-alt="${item.name}"
-onerror="this.src='https://via.placeholder.com/100?text=PM+Traders'"
->
-
-</div>
-
-<div>
-
-<h4>${item.name}</h4>
-
-<div class="cart-price">
-${money(item.price)} each
-</div>
-
-<div class="qty">
-
-<button onclick="changeQty(${item.id},-1)">
-−
-</button>
-
-<strong>${item.quantity}</strong>
-
-<button onclick="changeQty(${item.id},1)">
-+
-</button>
-
-</div>
-
-<button
-class="remove"
-onclick="removeFromCart(${item.id})"
->
-Remove
-</button>
-
-</div>
-
-<strong>
-${money(item.price * item.quantity)}
-</strong>
-
-</div>
-
-`).join("");
-
-}
-
-document.getElementById("cartSubtotal").textContent =
-money(subtotal());
-
-document.getElementById("cartDelivery").textContent =
-deliveryCost() === 0
-? "FREE"
-: money(deliveryCost());
-
-document.getElementById("cartTotal").textContent =
-money(subtotal() + deliveryCost());
-
-}
-
-
-function openCart(){
-
-document.getElementById("cart")
-.classList.add("open");
-
-document.getElementById("overlay")
-.classList.add("show");
-
-updateCart();
-
-}
-
-
-function closeCart(){
-
-document.getElementById("cart")
-.classList.remove("open");
-
-document.getElementById("overlay")
-.classList.remove("show");
-
-}
-
-
-/* =========================================================
-   PRODUCT CATALOGUE
-   ========================================================= */
-
-function renderProducts(){
-
-const grid =
-document.getElementById("productGrid");
-
-const search =
-document.getElementById("searchInput")
-.value
-.toLowerCase()
-.trim();
-
-const category =
-document.getElementById("categoryFilter")
-.value;
-
-const filtered =
-products.filter(product=>{
-
-const matchesSearch =
-product.name
-.toLowerCase()
-.includes(search);
-
-const matchesCategory =
-category === "All" ||
-product.category === category;
-
-return matchesSearch &&
-matchesCategory;
-
-});
-
-grid.innerHTML =
-filtered.map(product=>`
-
-<div class="card">
-
-<div class="card-image">
-
-${product.badge
-? `<div class="product-badge">
-${product.badge}
-</div>`
-: ""}
-
-<button
-class="view"
-onclick="openProduct(${product.id})"
-aria-label="View product"
->
-👁️
-</button>
-
-<img
-src="${product.image}"
-alt="${product.name}"
-loading="lazy"
-onerror="this.src='https://via.placeholder.com/500x500?text=PM+Traders'"
->
-
-</div>
-
-<div class="info">
-
-<div class="cat">
-${product.category}
-</div>
-
-<h3 class="name">
-${product.name}
-</h3>
-
-<div class="stars">
-★★★★★
-</div>
-
-<div class="price-row">
-
-<span class="price">
-${money(product.price)}
-</span>
-
-${product.oldPrice
-? `<span class="old">
-${money(product.oldPrice)}
-</span>`
-: ""}
-
-</div>
-
-<div class="product-actions">
-
-<button
-class="add"
-onclick="addToCart(${product.id})"
->
-🛒 Add to Cart
-</button>
-
-<button
-class="buy"
-onclick="buyNow(${product.id})"
->
-⚡
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-`).join("");
-
-document.getElementById("emptyState").style.display =
-filtered.length ? "none" : "block";
-
-}
-
-
-function filterCategory(category){
-
-document.getElementById("categoryFilter").value =
-category;
-
-document.getElementById("shop")
-.scrollIntoView({
-behavior:"smooth"
-});
-
-renderProducts();
-
-}
-
-
-function goSearch(){
-
-document.getElementById("shop")
-.scrollIntoView({
-behavior:"smooth"
-});
-
-setTimeout(()=>{
-
-document.getElementById("searchInput")
-.focus();
-
-},400);
-
-}
-
-
-/* =========================================================
-   PRODUCT QUICK VIEW
-   ========================================================= */
-
-function openProduct(id){
-
-const product =
-products.find(p=>p.id===id);
-
-if(!product)return;
-
-document.getElementById("quickImage").src =
-product.image;
-
-document.getElementById("quickImage").alt =
-product.name;
-
-document.getElementById("quickCategory").textContent =
-product.category;
-
-document.getElementById("quickName").textContent =
-product.name;
-
-document.getElementById("quickPrice").textContent =
-money(product.price);
-
-document.getElementById("quickDescription").textContent =
-product.description;
-
-document.getElementById("quickAdd").onclick =
-function(){
-
-addToCart(product.id);
-
-closeProductModal();
-
-openCart();
-
-};
-
-document.getElementById("productModal")
-.classList.add("show");
-
-}
-
-
-function closeProductModal(){
-
-document.getElementById("productModal")
-.classList.remove("show");
-
-}
-
-
-/* =========================================================
-   BUY NOW
-   ========================================================= */
-
-function buyNow(id){
-
-addToCart(id);
-
-openCart();
-
-}
-
-
-/* =========================================================
-   CHECKOUT
-   ========================================================= */
-
-function openCheckout(){
-
-if(cart.length === 0){
-
-showToast("Your cart is empty");
-
-return;
-
-}
-
-document.getElementById("checkoutSubtotal")
-.textContent =
-money(subtotal());
-
-document.getElementById("checkoutDelivery")
-.textContent =
-deliveryCost() === 0
-? "FREE"
-: money(deliveryCost());
-
-document.getElementById("checkoutTotal")
-.textContent =
-money(subtotal() + deliveryCost());
-
-closeCart();
-
-document.getElementById("checkoutModal")
-.classList.add("show");
-
-}
-
-
-function closeCheckout(){
-
-document.getElementById("checkoutModal")
-.classList.remove("show");
-
-}
-
-
-function selectDelivery(method){
-
-selectedDelivery = method;
-
-document.getElementById("deliveryMethod")
-.value = method;
-
-document.getElementById("deliveryOption")
-.classList.toggle(
-"active",
-method === "delivery"
-);
-
-document.getElementById("collectionOption")
-.classList.toggle(
-"active",
-method === "collection"
-);
-
-const address =
-document.getElementById("customerAddress");
-
-if(method === "collection"){
-
-address.placeholder =
-"Collection point: Richards Bay or Empangeni";
-
-}else{
-
-address.placeholder =
-"Enter your delivery address";
-
-}
-
-document.getElementById("checkoutDelivery")
-.textContent =
-deliveryCost() === 0
-? "FREE"
-: money(deliveryCost());
-
-document.getElementById("checkoutTotal")
-.textContent =
-money(subtotal() + deliveryCost());
-
-}
-
-
-/* =========================================================
-   WHATSAPP CHECKOUT
-   ========================================================= */
-
-function sendWhatsAppOrder(event){
-
-event.preventDefault();
-
-if(cart.length === 0){
-
-showToast("Your cart is empty");
-
-return;
-
-}
-
-const name =
-document.getElementById("customerName").value.trim();
-
-const phone =
-document.getElementById("customerPhone").value.trim();
-
-const address =
-document.getElementById("customerAddress").value.trim();
-
-const notes =
-document.getElementById("orderNotes").value.trim();
-
-const method =
-selectedDelivery === "collection"
-? "Collection"
-: "Delivery";
-
-let message =
-"PM TRADERS ORDER\n\n";
-
-message +=
-"Customer: " + name + "\n";
-
-message +=
-"Phone: " + phone + "\n";
-
-message +=
-"Method: " + method + "\n";
-
-if(address){
-
-message +=
-"Address/Collection: " + address + "\n";
-
-}
-
-message += "\nORDER ITEMS:\n";
-
-cart.forEach(item=>{
-
-message +=
-"- " +
-item.name +
-" x" +
-item.quantity +
-" = " +
-money(item.price * item.quantity) +
-"\n";
-
-});
-
-message +=
-"\nSubtotal: " +
-money(subtotal());
-
-message +=
-"\nDelivery: " +
-(
-deliveryCost() === 0
-? "FREE"
-: money(deliveryCost())
-);
-
-message +=
-"\nTOTAL: " +
-money(subtotal() + deliveryCost());
-
-if(notes){
-
-message +=
-"\n\nNotes: " +
-notes;
-
-}
-
-message +=
-"\n\nThank you for shopping with PM Traders.";
-
-const whatsappURL =
-"https://wa.me/27842748559?text=" +
-encodeURIComponent(message);
-
-window.open(
-whatsappURL,
-"_blank"
-);
-
-}
-
-
-/* =========================================================
-   NEWSLETTER
-   ========================================================= */
-
-function subscribe(event){
-
-event.preventDefault();
-
-const email =
-document.getElementById("newsletterEmail")
-.value.trim();
-
-if(!email)return;
-
-showToast(
-"Thank you! You're subscribed."
-);
-
-document.getElementById("newsletterEmail")
-.value = "";
-
-}
-
-
-/* =========================================================
-   TOAST
-   ========================================================= */
-
-let toastTimer;
-
-function showToast(message){
-
-const toast =
-document.getElementById("toast");
-
-toast.textContent = message;
-
-toast.classList.add("show");
-
-clearTimeout(toastTimer);
-
-toastTimer =
-setTimeout(()=>{
-
-toast.classList.remove("show");
-
-},2500);
-
-}
-
-
-/* =========================================================
-   MODAL CLICK OUTSIDE
-   ========================================================= */
-
-document.getElementById("productModal")
-.addEventListener("click",function(event){
-
-if(event.target === this){
-
-closeProductModal();
-
-}
-
-});
-
-
-document.getElementById("checkoutModal")
-.addEventListener("click",function(event){
-
-if(event.target === this){
-
-closeCheckout();
-
-}
-
-});
-
-
-/* =========================================================
-   INITIALISE
-   ========================================================= */
-
-document.getElementById("year").textContent =
-new Date().getFullYear();
-
-renderProducts();
-
-updateCart();
-
-</script></body>
-</html>
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:13px;
