@@ -1,57 +1,1174 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PM Traders</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: Arial, sans-serif;
-  background: #111;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PM Traders | Online Store</title>
+
+<meta name="description" content="PM Traders - Smartphones, human hair, ladies fashion, gadgets and accessories. Shop online across South Africa.">
+<meta name="theme-color" content="#111111">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+html{scroll-behavior:smooth}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f6f6f6;
+    color:#171717;
+    line-height:1.5;
 }
 
-.box {
-  width: 90%;
-  max-width: 600px;
-  padding: 40px 25px;
-  border: 1px solid #333;
-  border-radius: 20px;
-  background: #1b1b1b;
-  box-shadow: 0 20px 60px rgba(0,0,0,.4);
+button,input,select{font:inherit}
+
+a{text-decoration:none;color:inherit}
+
+.container{
+    width:min(1200px,92%);
+    margin:auto;
 }
 
-h1 {
-  font-size: 42px;
-  margin: 0 0 10px;
+/* TOP BAR */
+.topbar{
+    background:#111;
+    color:#fff;
+    text-align:center;
+    padding:8px 15px;
+    font-size:13px;
 }
 
-p {
-  color: #ccc;
-  font-size: 18px;
-  line-height: 1.6;
+/* HEADER */
+header{
+    background:#fff;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 12px rgba(0,0,0,.08);
 }
 
-.status {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 12px 20px;
-  border-radius: 50px;
-  background: #16803c;
-  font-weight: bold;
+.nav{
+    min-height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
 }
 
-  </style>
-</head><body>  <div class="box">
-    <h1>PM TRADERS</h1>
-    <p>Your GitHub Pages website is working.</p>
-    <div class="status">✓ WEBSITE LIVE</div>
-  </div></body>
-</html>
+.logo{
+    font-size:25px;
+    font-weight:900;
+    letter-spacing:-1px;
+}
+
+.logo span{color:#d4a017}
+
+nav{
+    display:flex;
+    gap:25px;
+    align-items:center;
+}
+
+nav a{
+    font-size:14px;
+    font-weight:700;
+}
+
+nav a:hover{color:#d4a017}
+
+.cart-btn{
+    border:0;
+    background:#111;
+    color:#fff;
+    padding:11px 16px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:700;
+}
+
+.cart-count{
+    background:#d4a017;
+    color:#111;
+    padding:2px 7px;
+    border-radius:20px;
+    margin-left:4px;
+}
+
+.menu-btn{
+    display:none;
+    background:none;
+    border:0;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* HERO */
+.hero{
+    background:
+      linear-gradient(90deg,rgba(0,0,0,.84),rgba(0,0,0,.42)),
+      url("https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1800&q=85")
+      center/cover;
+    min-height:520px;
+    display:flex;
+    align-items:center;
+    color:#fff;
+}
+
+.hero-content{max-width:680px}
+
+.badge{
+    display:inline-block;
+    background:#d4a017;
+    color:#111;
+    padding:7px 13px;
+    border-radius:30px;
+    font-size:12px;
+    font-weight:900;
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-size:clamp(42px,7vw,78px);
+    line-height:.98;
+    margin-bottom:20px;
+}
+
+.hero h1 span{color:#d4a017}
+
+.hero p{
+    font-size:18px;
+    max-width:600px;
+    color:#eee;
+}
+
+.hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 22px;
+    border-radius:8px;
+    border:0;
+    cursor:pointer;
+    font-weight:800;
+}
+
+.btn-gold{
+    background:#d4a017;
+    color:#111;
+}
+
+.btn-light{
+    background:#fff;
+    color:#111;
+}
+
+/* BENEFITS */
+.benefits{
+    background:#fff;
+    padding:25px 0;
+    border-bottom:1px solid #eee;
+}
+
+.benefit-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.benefit{
+    display:flex;
+    gap:12px;
+    align-items:center;
+}
+
+.benefit-icon{font-size:28px}
+
+.benefit strong{
+    display:block;
+    font-size:14px;
+}
+
+.benefit small{
+    color:#777;
+    font-size:12px;
+}
+
+/* SECTION */
+section{padding:65px 0}
+
+.section-head{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.section-head h2{
+    font-size:34px;
+    margin-bottom:7px;
+}
+
+.section-head p{color:#777}
+
+/* CATEGORIES */
+.categories{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:15px;
+}
+
+.category{
+    border:0;
+    border-radius:14px;
+    padding:28px 12px;
+    background:#fff;
+    cursor:pointer;
+    text-align:center;
+    box-shadow:0 3px 15px rgba(0,0,0,.06);
+    transition:.2s;
+}
+
+.category:hover{
+    transform:translateY(-4px);
+    box-shadow:0 8px 25px rgba(0,0,0,.12);
+}
+
+.category .icon{
+    font-size:38px;
+    display:block;
+    margin-bottom:8px;
+}
+
+.category strong{font-size:14px}
+
+/* TOOLBAR */
+.toolbar{
+    background:#fff;
+    border-radius:14px;
+    padding:15px;
+    display:flex;
+    gap:12px;
+    margin-bottom:25px;
+    flex-wrap:wrap;
+}
+
+.search{
+    flex:1;
+    min-width:220px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    padding:12px 14px;
+    outline:none;
+}
+
+.search:focus{border-color:#d4a017}
+
+.filter{
+    border:1px solid #ddd;
+    border-radius:8px;
+    padding:12px;
+    background:#fff;
+}
+
+/* PRODUCTS */
+.products{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.product{
+    background:#fff;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 3px 15px rgba(0,0,0,.06);
+    position:relative;
+    transition:.2s;
+}
+
+.product:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+}
+
+.product-img{
+    height:235px;
+    width:100%;
+    object-fit:cover;
+    background:#eee;
+}
+
+.product-body{padding:16px}
+
+.product-category{
+    color:#888;
+    font-size:11px;
+    font-weight:700;
+    text-transform:uppercase;
+}
+
+.product h3{
+    font-size:17px;
+    margin:5px 0 8px;
+}
+
+.price{
+    font-size:21px;
+    font-weight:900;
+}
+
+.old-price{
+    color:#999;
+    text-decoration:line-through;
+    font-size:13px;
+    margin-left:6px;
+}
+
+.sale{
+    position:absolute;
+    top:12px;
+    left:12px;
+    background:#c62828;
+    color:#fff;
+    font-size:11px;
+    font-weight:900;
+    padding:6px 9px;
+    border-radius:20px;
+}
+
+.stock{
+    font-size:12px;
+    margin:8px 0 13px;
+    font-weight:700;
+}
+
+.in-stock{color:#16833a}
+
+.out-stock{color:#c62828}
+
+.add-btn{
+    width:100%;
+    background:#111;
+    color:#fff;
+    border:0;
+    padding:12px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:800;
+}
+
+.add-btn:hover{background:#d4a017;color:#111}
+
+.add-btn:disabled{
+    background:#ccc;
+    cursor:not-allowed;
+}
+
+/* DEAL */
+.deal{
+    background:#111;
+    color:#fff;
+    border-radius:20px;
+    padding:45px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:25px;
+}
+
+.deal h2{
+    font-size:35px;
+    margin-bottom:8px;
+}
+
+.deal p{color:#ccc}
+
+/* INFO */
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.info-card{
+    background:#fff;
+    border-radius:15px;
+    padding:28px;
+    box-shadow:0 3px 15px rgba(0,0,0,.05);
+}
+
+.info-card h3{
+    margin-bottom:8px;
+}
+
+.info-card p{
+    color:#666;
+    font-size:14px;
+}
+
+/* FOOTER */
+footer{
+    background:#111;
+    color:#fff;
+    padding:50px 0 25px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:40px;
+}
+
+footer h3{
+    margin-bottom:12px;
+}
+
+footer p,footer li{
+    color:#aaa;
+    font-size:14px;
+}
+
+footer ul{
+    list-style:none;
+}
+
+footer li{margin:7px 0}
+
+.footer-bottom{
+    border-top:1px solid #333;
+    margin-top:35px;
+    padding-top:20px;
+    text-align:center;
+    color:#777;
+    font-size:12px;
+}
+
+/* CART */
+.overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    z-index:2000;
+}
+
+.overlay.active{display:block}
+
+.cart{
+    position:fixed;
+    right:-450px;
+    top:0;
+    height:100%;
+    width:min(430px,94%);
+    background:#fff;
+    z-index:2001;
+    transition:.3s;
+    display:flex;
+    flex-direction:column;
+}
+
+.cart.active{right:0}
+
+.cart-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px;
+    border-bottom:1px solid #eee;
+}
+
+.close{
+    border:0;
+    background:none;
+    font-size:25px;
+    cursor:pointer;
+}
+
+.cart-items{
+    flex:1;
+    overflow:auto;
+    padding:15px 20px;
+}
+
+.cart-item{
+    display:grid;
+    grid-template-columns:65px 1fr auto;
+    gap:10px;
+    align-items:center;
+    border-bottom:1px solid #eee;
+    padding:12px 0;
+}
+
+.cart-item img{
+    width:65px;
+    height:65px;
+    object-fit:cover;
+    border-radius:8px;
+}
+
+.cart-item h4{font-size:13px}
+
+.cart-item small{color:#777}
+
+.remove{
+    border:0;
+    background:none;
+    color:#c62828;
+    cursor:pointer;
+    font-size:12px;
+}
+
+.cart-footer{
+    border-top:1px solid #eee;
+    padding:20px;
+}
+
+.total{
+    display:flex;
+    justify-content:space-between;
+    font-size:20px;
+    font-weight:900;
+    margin-bottom:15px;
+}
+
+.checkout{
+    width:100%;
+    padding:14px;
+    border:0;
+    border-radius:8px;
+    background:#16833a;
+    color:#fff;
+    font-weight:900;
+    cursor:pointer;
+}
+
+.clear{
+    width:100%;
+    padding:10px;
+    margin-top:8px;
+    background:#eee;
+    border:0;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+/* CHECKOUT */
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:3000;
+    background:rgba(0,0,0,.65);
+    align-items:center;
+    justify-content:center;
+    padding:15px;
+}
+
+.modal.active{display:flex}
+
+.modal-box{
+    width:min(560px,100%);
+    max-height:90vh;
+    overflow:auto;
+    background:#fff;
+    border-radius:15px;
+    padding:25px;
+}
+
+.modal-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.form-group{margin-bottom:14px}
+
+.form-group label{
+    display:block;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    width:100%;
+    border:1px solid #ddd;
+    border-radius:8px;
+    padding:11px;
+    outline:none;
+}
+
+.form-group textarea{
+    min-height:75px;
+    resize:vertical;
+}
+
+.checkout-summary{
+    background:#f6f6f6;
+    padding:15px;
+    border-radius:10px;
+    margin:15px 0;
+}
+
+.checkout-summary div{
+    display:flex;
+    justify-content:space-between;
+    margin:5px 0;
+}
+
+/* EMPTY */
+.empty{
+    grid-column:1/-1;
+    text-align:center;
+    background:#fff;
+    padding:50px 20px;
+    border-radius:15px;
+    color:#777;
+}
+
+/* WHATSAPP */
+.whatsapp{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    z-index:1500;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#25D366;
+    color:#fff;
+    font-size:28px;
+    box-shadow:0 5px 20px rgba(0,0,0,.25);
+}
+
+/* MOBILE */
+@media(max-width:900px){
+    .products{grid-template-columns:repeat(3,1fr)}
+    .categories{grid-template-columns:repeat(3,1fr)}
+    .benefit-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:700px){
+
+    nav{
+        display:none;
+        position:absolute;
+        left:0;
+        right:0;
+        top:72px;
+        background:#fff;
+        flex-direction:column;
+        align-items:stretch;
+        padding:20px;
+        box-shadow:0 10px 20px rgba(0,0,0,.1);
+    }
+
+    nav.open{display:flex}
+
+    nav a{text-align:center;padding:8px}
+
+    .menu-btn{display:block}
+
+    .nav{
+        gap:8px;
+    }
+
+    .hero{
+        min-height:500px;
+    }
+
+    .hero h1{font-size:48px}
+
+    .benefit-grid,
+    .info-grid,
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .categories{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .products{
+        grid-template-columns:repeat(2,1fr);
+        gap:12px;
+    }
+
+    .product-img{height:180px}
+
+    .product-body{padding:12px}
+
+    .product h3{font-size:14px}
+
+    .price{font-size:17px}
+
+    .deal{
+        padding:28px 20px;
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    section{padding:45px 0}
+}
+
+@media(max-width:430px){
+    .products{grid-template-columns:1fr 1fr}
+
+    .product-img{height:155px}
+
+    .toolbar{
+        flex-direction:column;
+    }
+
+    .search,.filter{
+        width:100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+🚚 Nationwide delivery • Free delivery on orders over R1,500
+</div>
+
+<header>
+<div class="container nav">
+
+<a href="#" class="logo">PM <span>TRADERS</span></a>
+
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+<nav id="nav">
+<a href="#home" onclick="closeMenu()">Home</a>
+<a href="#categories" onclick="closeMenu()">Categories</a>
+<a href="#shop" onclick="closeMenu()">Shop</a>
+<a href="#deals" onclick="closeMenu()">Deals</a>
+<a href="#contact" onclick="closeMenu()">Contact</a>
+</nav>
+
+<button class="cart-btn" onclick="openCart()">
+🛒 Cart <span class="cart-count" id="cartCount">0</span>
+</button>
+
+</div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="home">
+<div class="container hero-content">
+
+<span class="badge">PM TRADERS • ONLINE STORE</span>
+
+<h1>
+Shop smart.<br>
+<span>Shop PM Traders.</span>
+</h1>
+
+<p>
+Quality smartphones, human hair, ladies fashion, gadgets and accessories — all in one trusted store.
+</p>
+
+<div class="hero-buttons">
+<a href="#shop" class="btn btn-gold">Shop Now →</a>
+<a href="https://wa.me/27842748559" class="btn btn-light" target="_blank">💬 WhatsApp Us</a>
+</div>
+
+</div>
+</section>
+
+<!-- BENEFITS -->
+<div class="benefits">
+<div class="container benefit-grid">
+
+<div class="benefit">
+<div class="benefit-icon">🚚</div>
+<div>
+<strong>Nationwide Delivery</strong>
+<small>We deliver across South Africa</small>
+</div>
+</div>
+
+<div class="benefit">
+<div class="benefit-icon">📦</div>
+<div>
+<strong>Collection Available</strong>
+<small>Richards Bay & Empangeni</small>
+</div>
+</div>
+
+<div class="benefit">
+<div class="benefit-icon">💬</div>
+<div>
+<strong>WhatsApp Ordering</strong>
+<small>Easy & convenient ordering</small>
+</div>
+</div>
+
+<div class="benefit">
+<div class="benefit-icon">💰</div>
+<div>
+<strong>Free Delivery</strong>
+<small>Orders over R1,500</small>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- CATEGORIES -->
+<section id="categories">
+<div class="container">
+
+<div class="section-head">
+<h2>Shop by Category</h2>
+<p>Find what you're looking for quickly.</p>
+</div>
+
+<div class="categories">
+
+<button class="category" onclick="filterCategory('Tech')">
+<span class="icon">📱</span>
+<strong>Smartphones & Tech</strong>
+</button>
+
+<button class="category" onclick="filterCategory('Hair')">
+<span class="icon">💇🏽‍♀️</span>
+<strong>Human Hair</strong>
+</button>
+
+<button class="category" onclick="filterCategory('Fashion')">
+<span class="icon">👗</span>
+<strong>Ladies Fashion</strong>
+</button>
+
+<button class="category" onclick="filterCategory('Accessories')">
+<span class="icon">🎧</span>
+<strong>Accessories</strong>
+</button>
+
+<button class="category" onclick="filterCategory('All')">
+<span class="icon">🛍️</span>
+<strong>View All</strong>
+</button>
+
+</div>
+</div>
+</section>
+
+<!-- SHOP -->
+<section id="shop">
+<div class="container">
+
+<div class="section-head">
+<h2>Our Products</h2>
+<p>Browse our latest products and add your favourites to your cart.</p>
+</div>
+
+<div class="toolbar">
+
+<input
+id="search"
+class="search"
+type="search"
+placeholder="🔎 Search products..."
+oninput="renderProducts()">
+
+<select id="categoryFilter" class="filter" onchange="renderProducts()">
+<option value="All">All Categories</option>
+<option value="Tech">Smartphones & Tech</option>
+<option value="Hair">Human Hair</option>
+<option value="Fashion">Ladies Fashion</option>
+<option value="Accessories">Accessories</option>
+</select>
+
+<select id="sort" class="filter" onchange="renderProducts()">
+<option value="featured">Sort: Featured</option>
+<option value="low">Price: Low to High</option>
+<option value="high">Price: High to Low</option>
+<option value="name">Name A-Z</option>
+</select>
+
+</div>
+
+<div class="products" id="productGrid"></div>
+
+</div>
+</section>
+
+<!-- DEAL -->
+<section id="deals">
+<div class="container">
+
+<div class="deal">
+
+<div>
+<h2>🔥 PM Traders Deals</h2>
+<p>Check out selected products and special offers.</p>
+</div>
+
+<a href="#shop" class="btn btn-gold">Shop Deals</a>
+
+</div>
+
+</div>
+</section>
+
+<!-- INFO -->
+<section>
+<div class="container">
+
+<div class="section-head">
+<h2>Shop With Confidence</h2>
+<p>PM Traders makes shopping simple.</p>
+</div>
+
+<div class="info-grid">
+
+<div class="info-card">
+<h3>🚚 Delivery</h3>
+<p>
+R30 around Richards Bay and surrounding areas.
+R60 outside Richards Bay and Empangeni.
+Free delivery on orders above R1,500.
+</p>
+</div>
+
+<div class="info-card">
+<h3>📍 Collection</h3>
+<p>
+Collection is available around Richards Bay and Empangeni.
+Contact us on WhatsApp after placing your order.
+</p>
+</div>
+
+<div class="info-card">
+<h3>💬 Need Help?</h3>
+<p>
+Chat directly with PM Traders on WhatsApp for product availability, orders, delivery questions and support.
+</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer id="contact">
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+<h3>PM TRADERS</h3>
+<p>
+Your online destination for smartphones, human hair, ladies fashion, gadgets and accessories.
+</p>
+<br>
+<p>📍 Richards Bay, KwaZulu-Natal</p>
+<p>📱 +27 84 274 8559</p>
+<p>✉️ Info@PM-Traders.co.za</p>
+</div>
+
+<div>
+<h3>Shop</h3>
+<ul>
+<li><a href="#shop">All Products</a></li>
+<li><a href="#categories">Categories</a></li>
+<li><a href="#deals">Deals</a></li>
+</ul>
+</div>
+
+<div>
+<h3>Customer Service</h3>
+<ul>
+<li><a href="https://wa.me/27842748559" target="_blank">WhatsApp Us</a></li>
+<li><a href="#contact">Delivery Information</a></li>
+<li><a href="#contact">Collection</a></li>
+</ul>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© <span id="year"></span> PM Traders. All rights reserved.
+</div>
+
+</div>
+</footer>
+
+<!-- WHATSAPP -->
+<a class="whatsapp"
+href="https://wa.me/27842748559"
+target="_blank"
+aria-label="WhatsApp PM Traders">
+💬
+</a>
+
+<!-- CART OVERLAY -->
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+
+<aside class="cart" id="cart">
+
+<div class="cart-header">
+<h2>Your Cart</h2>
+<button class="close" onclick="closeCart()">×</button>
+</div>
+
+<div class="cart-items" id="cartItems"></div>
+
+<div class="cart-footer">
+
+<div class="total">
+<span>Total</span>
+<span id="cartTotal">R0</span>
+</div>
+
+<button class="checkout" onclick="openCheckout()">
+Proceed to WhatsApp Checkout
+</button>
+
+<button class="clear" onclick="clearCart()">
+Clear Cart
+</button>
+
+</div>
+
+</aside>
+
+<!-- CHECKOUT MODAL -->
+<div class="modal" id="checkoutModal">
+
+<div class="modal-box">
+
+<div class="modal-header">
+<h2>Checkout</h2>
+<button class="close" onclick="closeCheckout()">×</button>
+</div>
+
+<div class="form-group">
+<label>Full Name *</label>
+<input id="customerName" type="text" placeholder="Your full name">
+</div>
+
+<div class="form-group">
+<label>Phone Number *</label>
+<input id="customerPhone" type="tel" placeholder="Your phone number">
+</div>
+
+<div class="form-group">
+<label>Order Type *</label>
+
+<select id="deliveryType" onchange="updateCheckoutTotal()">
+<option value="delivery">Delivery</option>
+<option value="collection">Collection</option>
+</select>
+
+</div>
+
+<div class="form-group">
+<label>Delivery Area / Address</label>
+<textarea id="customerAddress" placeholder="Enter delivery address or area"></textarea>
+</div>
+
+<div class="form-group">
+<label>Payment Method</label>
+
+<select id="paymentMethod">
+<option>Payment details to be confirmed on WhatsApp</option>
+<option>EFT / Bank Transfer</option>
+<option>Cash on Collection</option>
+</select>
+
+</div>
+
+<div class="checkout-summary">
+
+<div>
+<span>Products</span>
+<strong id="summaryProducts">R0</strong>
+</div>
+
+<div>
+<span>Delivery</span>
+<strong id="summaryDelivery">R0</strong>
+</div>
+
+<hr style="margin:10px 0;border:0;border-top:1px solid #ddd">
+
+<div>
+<strong>Total</strong>
+<strong id="summaryTotal">R0</strong>
+</div>
+
+</div>
+
+<button class="checkout" onclick="sendWhatsAppOrder()">
+📲 Send Order via WhatsApp
+</button>
+
+</div>
+</div>
+
+<script>
+
+/* ==========================
+   PM TRADERS PRODUCT DATABASE
+   ========================== */
+
+const products = [
+
+{
+id:1,
+name:"iPhone 13 Pro Max",
+category:"Tech",
+price:7500,
+oldPrice:null,
+stock:3,
+image:"https://images.unsplash.com/photo-1592286927505-2fd0c0e2c5c1?auto=format&fit=crop&w=800&q=85"
+},
+
+{
+id:2,
+name:"iPhone 17 Pro Max",
+category:"Tech",
+price:24000,
+oldPrice:null,
+stock:2,
+image:"https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=800&q=85"
+},
+
+{
+id:3,
+name:"8 Inch Weave DD",
+category:"Hair",
+price:850,
+oldPrice:null,
+stock:5,
+image:"https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=85"
+},
+
+{
+id:4,
+name:"20 Inch Weave Jurly Curls",
+category:"Hair",
+price:970,
+oldPrice:null,
+stock:5,
+image:
