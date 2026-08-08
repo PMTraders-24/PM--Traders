@@ -316,4 +316,865 @@ footer{
 }
 
 .footer-inner{
-  max-width:1200
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:30px;
+}
+
+footer p{
+  color:#bbb;
+  line-height:1.6;
+}
+
+.footer-title{
+  font-size:20px;
+  font-weight:900;
+  margin-bottom:12px;
+}
+
+.cart-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.55);
+  z-index:2000;
+  display:none;
+}
+
+.cart-overlay.active{
+  display:block;
+}
+
+.cart{
+  position:absolute;
+  right:0;
+  top:0;
+  height:100%;
+  width:min(440px,100%);
+  background:#fff;
+  padding:20px;
+  overflow:auto;
+}
+
+.cart-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid #ddd;
+  padding-bottom:15px;
+}
+
+.close-cart{
+  border:0;
+  background:#eee;
+  border-radius:8px;
+  width:38px;
+  height:38px;
+}
+
+.cart-item{
+  display:flex;
+  gap:12px;
+  padding:15px 0;
+  border-bottom:1px solid #eee;
+}
+
+.cart-item img{
+  width:70px;
+  height:70px;
+  object-fit:cover;
+  border-radius:8px;
+  background:#eee;
+}
+
+.cart-item-info{
+  flex:1;
+}
+
+.cart-item-info strong{
+  display:block;
+  margin-bottom:5px;
+}
+
+.qty{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  margin-top:7px;
+}
+
+.qty button{
+  width:27px;
+  height:27px;
+  border:1px solid #ddd;
+  background:#fff;
+  border-radius:6px;
+}
+
+.remove{
+  color:#e11d48;
+  border:0;
+  background:none;
+  font-size:12px;
+  padding:0;
+}
+
+.cart-total{
+  font-size:22px;
+  font-weight:900;
+  display:flex;
+  justify-content:space-between;
+  padding:20px 0;
+}
+
+.checkout{
+  width:100%;
+  border:0;
+  padding:15px;
+  background:#25d366;
+  color:#fff;
+  border-radius:10px;
+  font-weight:900;
+}
+
+.empty{
+  text-align:center;
+  color:#777;
+  padding:40px 10px;
+}
+
+.notice{
+  background:#fff4f6;
+  border:1px solid #ffd0da;
+  color:#9f1239;
+  padding:14px;
+  border-radius:12px;
+  margin-bottom:25px;
+  font-size:13px;
+  line-height:1.5;
+}
+
+@media(max-width:900px){
+  .products{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .categories{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .footer-inner{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+@media(max-width:650px){
+  .nav{
+    min-height:60px;
+  }
+
+  .navlinks{
+    display:none;
+  }
+
+  .hero{
+    padding:50px 18px;
+  }
+
+  .hero h1{
+    font-size:42px;
+  }
+
+  .products{
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+  }
+
+  .product-image{
+    height:210px;
+  }
+
+  .product-info{
+    padding:12px;
+  }
+
+  .product h3{
+    font-size:14px;
+  }
+
+  .product-price{
+    font-size:17px;
+  }
+
+  .product-actions{
+    grid-template-columns:1fr;
+  }
+
+  .info-grid{
+    grid-template-columns:1fr;
+  }
+
+  .footer-inner{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:390px){
+  .products{
+    grid-template-columns:1fr;
+  }
+
+  .product-image{
+    height:270px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  🚚 Nationwide delivery • Free delivery on orders over R1,500
+</div>
+
+<header>
+  <div class="nav">
+    <a href="#" class="logo">PM <span>TRADERS</span></a>
+
+    <nav class="navlinks">
+      <a href="#categories">Categories</a>
+      <a href="#products">Products</a>
+      <a href="#delivery">Delivery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="cart-btn" onclick="openCart()">
+      🛒 Cart (<span id="cartCount">0</span>)
+    </button>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="hero-inner">
+    <span class="badge">PM TRADERS • ONLINE STORE</span>
+
+    <h1>Shop smart.<br>Shop PM Traders.</h1>
+
+    <p>
+      Quality smartphones, human hair, fashion and accessories —
+      all in one trusted store.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#products" class="btn btn-primary">Shop Now →</a>
+      <a href="https://wa.me/27842748559" class="btn btn-dark" target="_blank">
+        WhatsApp Us
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="categories">
+  <div class="section-title">
+    <h2>Shop by Category</h2>
+    <p>Find what you are looking for at PM Traders.</p>
+  </div>
+
+  <div class="categories">
+    <a href="#products" class="category">
+      <div class="category-icon">📱</div>
+      Smartphones
+    </a>
+
+    <a href="#products" class="category">
+      <div class="category-icon">💇</div>
+      Human Hair
+    </a>
+
+    <a href="#products" class="category">
+      <div class="category-icon">👗</div>
+      Fashion
+    </a>
+
+    <a href="#products" class="category">
+      <div class="category-icon">🎧</div>
+      Accessories
+    </a>
+  </div>
+</section>
+
+<section id="products">
+
+  <div class="section-title">
+    <h2>PM Traders Collection</h2>
+    <p>Browse our available products.</p>
+  </div>
+
+  <div class="notice">
+    <strong>Image setup:</strong>
+    Your original product photos must be inside the repository's
+    <strong>images</strong> folder. Do not change their filenames.
+  </div>
+
+  <div class="products" id="productGrid"></div>
+
+</section>
+
+<section id="delivery">
+
+  <div class="section-title">
+    <h2>Delivery & Collection</h2>
+    <p>Convenient options for PM Traders customers.</p>
+  </div>
+
+  <div class="info-grid">
+
+    <div class="info-card">
+      <h3>🚚 Delivery</h3>
+      <p>
+        Nationwide delivery available.
+        Delivery is R30 around Richards Bay and surrounding areas,
+        and R60 outside Richards Bay and Empangeni.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>📦 Collection</h3>
+      <p>
+        Collection is available around Richards Bay and Empangeni.
+        Contact PM Traders to arrange collection.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>🎁 Free Delivery</h3>
+      <p>
+        Spend R1,500 or more and enjoy free delivery.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer id="contact">
+  <div class="footer-inner">
+
+    <div>
+      <div class="footer-title">PM TRADERS</div>
+      <p>
+        Smartphones, human hair, fashion and accessories.
+        Shop smart. Shop PM Traders.
+      </p>
+    </div>
+
+    <div>
+      <div class="footer-title">Contact</div>
+      <p>
+        📱 +27 84 274 8559<br>
+        ✉️ Info@PM-Traders.co.za
+      </p>
+    </div>
+
+    <div>
+      <div class="footer-title">Quick Links</div>
+      <p>
+        <a href="#products">Products</a><br>
+        <a href="#categories">Categories</a><br>
+        <a href="#delivery">Delivery</a><br>
+        <a href="https://wa.me/27842748559" target="_blank">WhatsApp</a>
+      </p>
+    </div>
+
+  </div>
+</footer>
+
+<div class="cart-overlay" id="cartOverlay" onclick="outsideCart(event)">
+  <aside class="cart">
+
+    <div class="cart-head">
+      <h2>Your Cart</h2>
+      <button class="close-cart" onclick="closeCart()">✕</button>
+    </div>
+
+    <div id="cartItems"></div>
+
+    <div class="cart-total">
+      <span>Total</span>
+      <span id="cartTotal">R0</span>
+    </div>
+
+    <button class="checkout" onclick="checkoutWhatsApp()">
+      Complete Order on WhatsApp
+    </button>
+
+  </aside>
+</div>
+
+<script>
+/*
+=========================================================
+PM TRADERS PRODUCT DATA
+=========================================================
+*/
+
+const products = [
+
+  {
+    id:1,
+    name:"20 Inch Curly Curls",
+    category:"Human Hair",
+    price:970,
+    image:"images/20 inch Curly Curls.jpeg"
+  },
+
+  {
+    id:2,
+    name:"22 Inch Water Wave Human Hair",
+    category:"Human Hair",
+    price:null,
+    image:"images/22 Inch water wave human hair.webp"
+  },
+
+  {
+    id:3,
+    name:"8 Inch Super Double Drawn",
+    category:"Human Hair",
+    price:850,
+    image:"images/8 Inch Super Double Drawn.webp"
+  },
+
+  {
+    id:4,
+    name:"8 Inch SDD Weave",
+    category:"Human Hair",
+    price:850,
+    image:"images/8 inch SDD Weave",
+    fallbacks:[
+      "images/8 inch SDD Weave.jpg",
+      "images/8 inch SDD Weave.jpeg",
+      "images/8 inch SDD Weave.webp",
+      "images/8 inch SDD Weave.png"
+    ]
+  },
+
+  {
+    id:5,
+    name:"8 Inch SDD Pixey Curly",
+    category:"Human Hair",
+    price:null,
+    image:"images/8 inch SDD pixey curly.jpg"
+  },
+
+  {
+    id:6,
+    name:"Classic Caught",
+    category:"Fashion",
+    price:null,
+    image:"images/Classic Caught.jpg"
+  },
+
+  {
+    id:7,
+    name:"Classic Ladies Dress",
+    category:"Fashion",
+    price:230,
+    image:"images/Classic Ladies Dress.jpg"
+  },
+
+  {
+    id:8,
+    name:"Classic Rainbow Nation Dress",
+    category:"Fashion",
+    price:null,
+    image:"images/Classic Rainbow Nation Dress.jpg"
+  },
+
+  {
+    id:9,
+    name:"Sky Blue Dress",
+    category:"Fashion",
+    price:null,
+    image:"images/Sky Blue Dress.jpg"
+  },
+
+  {
+    id:10,
+    name:"Sleeveless Classic Attire",
+    category:"Fashion",
+    price:null,
+    image:"images/Sleeveless Classic Attire.jpg"
+  },
+
+  {
+    id:11,
+    name:"Smart Casual Summer Two Piece",
+    category:"Fashion",
+    price:null,
+    image:"images/Smart Casual Summer Two piece.jpg"
+  },
+
+  {
+    id:12,
+    name:"Smart Colour Dress",
+    category:"Fashion",
+    price:null,
+    image:"images/Smart Colour Dress.jpg"
+  },
+
+  {
+    id:13,
+    name:"Smart Colour Full Dress",
+    category:"Fashion",
+    price:null,
+    image:"images/Smart Colour full dress.jpg"
+  },
+
+  {
+    id:14,
+    name:"Smart Dress",
+    category:"Fashion",
+    price:null,
+    image:"images/Smart Dress.jpg"
+  },
+
+  {
+    id:15,
+    name:"iPhone 13 Pro Max",
+    category:"Smartphones",
+    price:7500,
+    image:"images/iPhone 13 Pro Max.jpeg",
+    contain:true
+  },
+
+  {
+    id:16,
+    name:"iPhone 17 Pro Max",
+    category:"Smartphones",
+    price:24000,
+    image:"images/iPhone 17 Pro Max.webp",
+    contain:true
+  }
+
+];
+
+
+/*
+=========================================================
+CART
+=========================================================
+*/
+
+let cart = JSON.parse(localStorage.getItem("pmTradersCart") || "[]");
+
+function money(value){
+  if(value === null || value === undefined){
+    return "Contact for price";
+  }
+
+  return "R" + Number(value).toLocaleString("en-ZA");
+}
+
+function saveCart(){
+  localStorage.setItem("pmTradersCart", JSON.stringify(cart));
+  updateCart();
+}
+
+function addToCart(id){
+
+  const product = products.find(p => p.id === id);
+
+  if(!product) return;
+
+  const existing = cart.find(item => item.id === id);
+
+  if(existing){
+    existing.qty++;
+  }else{
+    cart.push({
+      id:product.id,
+      name:product.name,
+      price:product.price,
+      image:product.image,
+      qty:1
+    });
+  }
+
+  saveCart();
+
+  alert(product.name + " added to your cart.");
+}
+
+function removeFromCart(id){
+
+  cart = cart.filter(item => item.id !== id);
+
+  saveCart();
+}
+
+function changeQty(id, amount){
+
+  const item = cart.find(item => item.id === id);
+
+  if(!item) return;
+
+  item.qty += amount;
+
+  if(item.qty <= 0){
+    removeFromCart(id);
+    return;
+  }
+
+  saveCart();
+}
+
+function updateCart(){
+
+  const count = cart.reduce((total,item) => total + item.qty,0);
+
+  document.getElementById("cartCount").textContent = count;
+
+  const container = document.getElementById("cartItems");
+
+  if(cart.length === 0){
+
+    container.innerHTML = `
+      <div class="empty">
+        🛒<br><br>
+        Your cart is empty.
+      </div>
+    `;
+
+  }else{
+
+    container.innerHTML = cart.map(item => {
+
+      const subtotal =
+        item.price === null
+        ? "Price on request"
+        : money(item.price * item.qty);
+
+      return `
+        <div class="cart-item">
+
+          <img
+            src="${item.image}"
+            alt="${escapeHTML(item.name)}"
+            onerror="this.style.visibility='hidden'"
+          >
+
+          <div class="cart-item-info">
+
+            <strong>${escapeHTML(item.name)}</strong>
+
+            <div>${subtotal}</div>
+
+            <div class="qty">
+              <button onclick="changeQty(${item.id},-1)">−</button>
+              <span>${item.qty}</span>
+              <button onclick="changeQty(${item.id},1)">+</button>
+            </div>
+
+            <button class="remove"
+              onclick="removeFromCart(${item.id})">
+              Remove
+            </button>
+
+          </div>
+
+        </div>
+      `;
+
+    }).join("");
+  }
+
+  const total = cart.reduce((sum,item) => {
+
+    if(item.price === null) return sum;
+
+    return sum + (item.price * item.qty);
+
+  },0);
+
+  document.getElementById("cartTotal").textContent = money(total);
+}
+
+
+/*
+=========================================================
+PRODUCT DISPLAY
+=========================================================
+*/
+
+function renderProducts(){
+
+  const grid = document.getElementById("productGrid");
+
+  grid.innerHTML = products.map(product => {
+
+    const containClass = product.contain ? "contain" : "";
+
+    const fallbackData =
+      product.fallbacks
+      ? `data-fallbacks='${JSON.stringify(product.fallbacks)}'`
+      : "";
+
+    return `
+
+      <article class="product">
+
+        <div class="product-image ${containClass}">
+
+          <img
+            src="${product.image}"
+            alt="${escapeHTML(product.name)}"
+            loading="lazy"
+            ${fallbackData}
+            onerror="imageFallback(this)"
+          >
+
+        </div>
+
+        <div class="product-info">
+
+          <div class="product-category">
+            ${escapeHTML(product.category)}
+          </div>
+
+          <h3>
+            ${escapeHTML(product.name)}
+          </h3>
+
+          <div class="product-price">
+            ${
+              product.price !== null
+              ? money(product.price)
+              : `<span class="price-note">Contact for price</span>`
+            }
+          </div>
+
+          <div class="product-actions">
+
+            <button
+              class="add-btn"
+              onclick="addToCart(${product.id})">
+              Add to Cart
+            </button>
+
+            <button
+              class="order-btn"
+              onclick="quickOrder(${product.id})">
+              WhatsApp
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    `;
+
+  }).join("");
+}
+
+
+/*
+=========================================================
+IMAGE FALLBACK
+=========================================================
+*/
+
+function imageFallback(img){
+
+  let fallbacks = [];
+
+  try{
+    fallbacks = JSON.parse(img.dataset.fallbacks || "[]");
+  }catch(e){
+    fallbacks = [];
+  }
+
+  const currentIndex = Number(img.dataset.fallbackIndex || 0);
+
+  if(currentIndex < fallbacks.length){
+
+    img.dataset.fallbackIndex = currentIndex + 1;
+
+    img.src = fallbacks[currentIndex];
+
+    return;
+  }
+
+  /*
+    Do NOT display a random external photo.
+    If the original image cannot be found,
+    show a clean placeholder instead.
+  */
+
+  img.onerror = null;
+
+  img.src =
+    "data:image/svg+xml;charset=UTF-8," +
+    encodeURIComponent(`
+      <svg xmlns="http://www.w3.org/2000/svg"
+           width="800"
+           height="800"
+           viewBox="0 0 800 800">
+        <rect width="800" height="800" fill="#eeeeee"/>
+        <text x="400" y="370"
+              text-anchor="middle"
+              font-family="Arial"
+              font-size="34"
+              fill="#777">
+          PM TRADERS
+        </text>
+        <text x="400" y="420"
+              text-anchor="middle"
+              font-family="Arial"
+              font-size="22"
+              fill="#999">
+          Image unavailable
+        </text>
+      </svg>
+    `);
+}
+
+
+/*
+=========================================================
+WHATSAPP
+=========================================================
+*/
+
+function quickOrder(id){
+
+  const product = products.find(p => p.id === id);
+
+  if(!product) return;
+
+  let message =
+    "Hello PM Traders 👋%0A%0A" +
+    "I would like to order:%0A" +
+    product.name + "%0A";
+
+  if(product.price !== null){
+    message += "Price: " + money(product.price) + "%0A";
+  }
+
+  message += "%0APlease confirm availability.";
+
+  window.open(
+    "https://wa.me/27842748559?text=" + message,
+    "_blank"
+  );
+}
+
+function checkoutWhatsApp(){
+
+  if(cart.length === 0){
+    ale
