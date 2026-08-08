@@ -1204,3 +1204,1389 @@ footer{
     .categories{
         grid-template-columns:repeat(3,1fr);
         gap:8px;
+    }
+
+    .category{
+        padding:17px 5px;
+    }
+
+    .category-icon{
+        font-size:27px;
+    }
+
+    .category strong{
+        font-size:11px;
+    }
+
+    .promo{
+        margin:0 15px;
+        padding:25px 20px;
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .promo h2{
+        font-size:25px;
+    }
+
+    .products{
+        grid-template-columns:repeat(2,1fr);
+        gap:10px;
+    }
+
+    .product-image{
+        height:175px;
+    }
+
+    .product-image .emoji{
+        font-size:55px;
+    }
+
+    .product-info{
+        padding:12px;
+    }
+
+    .product-name{
+        font-size:14px;
+    }
+
+    .price{
+        font-size:16px;
+    }
+
+    .old-price{
+        font-size:11px;
+    }
+
+    .product-actions{
+        grid-template-columns:1fr;
+    }
+
+    .buy-now{
+        display:none;
+    }
+
+    .why-grid,
+    .reviews{
+        grid-template-columns:1fr;
+    }
+
+    .newsletter{
+        border-radius:16px;
+        padding:28px 20px;
+    }
+
+    .newsletter h2{
+        font-size:24px;
+    }
+
+    .newsletter-form{
+        flex-direction:column;
+    }
+
+    .footer-main{
+        grid-template-columns:1fr 1fr;
+        gap:25px;
+        padding:45px 20px 30px;
+    }
+
+    .footer-brand{
+        grid-column:1/-1;
+    }
+
+    .whatsapp{
+        width:53px;
+        height:53px;
+        right:15px;
+        bottom:15px;
+    }
+
+    .delivery-options{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:420px){
+
+    .products{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .product-image{
+        height:155px;
+    }
+
+    .categories{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .hero h1{
+        font-size:41px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================================================
+     TOP BAR
+========================================================= -->
+
+<div class="top-bar">
+    🚚 Nationwide delivery available • <strong>FREE DELIVERY on orders over R1,500</strong>
+</div>
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header>
+    <nav class="navbar">
+
+        <a href="#" class="logo">
+            <div class="logo-mark">PM</div>
+            <div class="logo-text">PM <span>TRADERS</span></div>
+        </a>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#shop">Shop</a>
+            <a href="#categories">Categories</a>
+            <a href="#deals">Deals</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <div class="nav-actions">
+
+            <button class="icon-btn mobile-menu" onclick="scrollToShop()" aria-label="Shop">
+                ☰
+            </button>
+
+            <button class="icon-btn" onclick="focusSearch()" aria-label="Search">
+                🔍
+            </button>
+
+            <button class="icon-btn" onclick="openCart()" aria-label="Shopping cart">
+                🛒
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+
+        </div>
+
+    </nav>
+</header>
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-inner">
+
+        <div>
+
+            <div class="hero-badge">
+                ✨ Welcome to PM Traders
+            </div>
+
+            <h1>
+                Shop smart.<br>
+                Shop <span>PM Traders.</span>
+            </h1>
+
+            <p>
+                Quality smartphones, human hair, fashion,
+                gadgets and accessories — all in one trusted store.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#shop" class="btn btn-primary">
+                    🛍️ Shop Now
+                </a>
+
+                <a href="#categories" class="btn btn-light">
+                    Explore Categories
+                </a>
+            </div>
+
+        </div>
+
+        <div class="hero-showcase">
+
+            <div class="hero-card">
+                📱
+            </div>
+
+            <div class="hero-card second">
+                💇
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     TRUST BAR
+========================================================= -->
+
+<section class="trust-bar">
+
+    <div class="trust-inner">
+
+        <div class="trust-item">
+            <div class="trust-icon">🚚</div>
+            <div>
+                <strong>Nationwide Delivery</strong>
+                <span>We deliver across SA</span>
+            </div>
+        </div>
+
+        <div class="trust-item">
+            <div class="trust-icon">💬</div>
+            <div>
+                <strong>WhatsApp Ordering</strong>
+                <span>Easy & convenient</span>
+            </div>
+        </div>
+
+        <div class="trust-item">
+            <div class="trust-icon">📍</div>
+            <div>
+                <strong>Collection Available</strong>
+                <span>Richards Bay & Empangeni</span>
+            </div>
+        </div>
+
+        <div class="trust-item">
+            <div class="trust-icon">⭐</div>
+            <div>
+                <strong>Quality Products</strong>
+                <span>Shop with confidence</span>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     CATEGORIES
+========================================================= -->
+
+<section class="section" id="categories">
+
+    <div class="section-header">
+
+        <div>
+            <h2 class="section-title">Shop by Category</h2>
+            <p class="section-subtitle">
+                Find what you're looking for quickly.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="categories">
+
+        <div class="category" onclick="filterCategory('Smartphones')">
+            <div class="category-icon">📱</div>
+            <strong>Smartphones</strong>
+        </div>
+
+        <div class="category" onclick="filterCategory('Human Hair')">
+            <div class="category-icon">💇</div>
+            <strong>Human Hair</strong>
+        </div>
+
+        <div class="category" onclick="filterCategory('Fashion')">
+            <div class="category-icon">👗</div>
+            <strong>Fashion</strong>
+        </div>
+
+        <div class="category" onclick="filterCategory('Gadgets')">
+            <div class="category-icon">🎧</div>
+            <strong>Gadgets</strong>
+        </div>
+
+        <div class="category" onclick="filterCategory('Accessories')">
+            <div class="category-icon">🔌</div>
+            <strong>Accessories</strong>
+        </div>
+
+        <div class="category" onclick="showDeals()">
+            <div class="category-icon">🔥</div>
+            <strong>Deals</strong>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     PROMOTION
+========================================================= -->
+
+<section id="deals">
+
+    <div class="promo">
+
+        <div>
+            <h2>🔥 PM Traders Deals</h2>
+            <p>
+                Grab selected products at special prices while stock lasts.
+            </p>
+        </div>
+
+        <a href="#shop" class="btn btn-primary">
+            Shop Deals →
+        </a>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     SHOP
+========================================================= -->
+
+<section class="section" id="shop">
+
+    <div class="section-header">
+
+        <div>
+            <h2 class="section-title">Featured Products</h2>
+            <p class="section-subtitle">
+                Browse our latest products and add your favourites to your cart.
+            </p>
+        </div>
+
+        <a href="#shop" class="view-all">
+            View all products
+        </a>
+
+    </div>
+
+    <div class="shop-controls">
+
+        <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search products..."
+                oninput="renderProducts()"
+            >
+        </div>
+
+        <select
+            class="filter-select"
+            id="categoryFilter"
+            onchange="renderProducts()"
+        >
+            <option value="All">All Categories</option>
+            <option value="Smartphones">Smartphones</option>
+            <option value="Human Hair">Human Hair</option>
+            <option value="Fashion">Fashion</option>
+            <option value="Gadgets">Gadgets</option>
+            <option value="Accessories">Accessories</option>
+        </select>
+
+    </div>
+
+    <div class="products" id="productGrid"></div>
+
+    <div class="empty-state" id="emptyState">
+        <h3>No products found</h3>
+        <p>Try another search or category.</p>
+    </div>
+
+</section>
+
+<!-- =========================================================
+     WHY PM TRADERS
+========================================================= -->
+
+<section class="section">
+
+    <div class="section-header">
+
+        <div>
+            <h2 class="section-title">Why Shop PM Traders?</h2>
+            <p class="section-subtitle">
+                We're making online shopping simple and convenient.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="why-grid">
+
+        <div class="why-card">
+
+            <div class="why-card-icon">🛍️</div>
+
+            <h3>One Store, Many Choices</h3>
+
+            <p>
+                Shop smartphones, hair, fashion, gadgets and accessories
+                without having to search multiple stores.
+            </p>
+
+        </div>
+
+        <div class="why-card">
+
+            <div class="why-card-icon">💬</div>
+
+            <h3>Easy WhatsApp Ordering</h3>
+
+            <p>
+                Choose your products, add them to your cart and send
+                your order directly to PM Traders via WhatsApp.
+            </p>
+
+        </div>
+
+        <div class="why-card">
+
+            <div class="why-card-icon">🚚</div>
+
+            <h3>Convenient Delivery</h3>
+
+            <p>
+                Delivery is available nationwide, with collection options
+                around Richards Bay and Empangeni.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     REVIEWS
+========================================================= -->
+
+<section class="section">
+
+    <div class="section-header">
+
+        <div>
+            <h2 class="section-title">What Customers Say</h2>
+            <p class="section-subtitle">
+                Your trust is important to us.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="reviews">
+
+        <div class="review">
+
+            <div class="review-stars">★★★★★</div>
+
+            <p>
+                “Great service and easy ordering. I could place my order
+                directly through WhatsApp.”
+            </p>
+
+            <strong>PM Traders Customer</strong>
+
+        </div>
+
+        <div class="review">
+
+            <div class="review-stars">★★★★★</div>
+
+            <p>
+                “The website makes it easy to see the products and prices.
+                Very convenient.”
+            </p>
+
+            <strong>PM Traders Customer</strong>
+
+        </div>
+
+        <div class="review">
+
+            <div class="review-stars">★★★★★</div>
+
+            <p>
+                “I like that there is an option for collection as well
+                as delivery.”
+            </p>
+
+            <strong>PM Traders Customer</strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     NEWSLETTER
+========================================================= -->
+
+<section class="section">
+
+    <div class="newsletter">
+
+        <div>
+
+            <h2>Stay in the PM Traders loop.</h2>
+
+            <p>
+                Get notified about new products and special deals.
+            </p>
+
+        </div>
+
+        <form
+            class="newsletter-form"
+            onsubmit="subscribeNewsletter(event)"
+        >
+
+            <input
+                type="email"
+                id="newsletterEmail"
+                placeholder="Enter your email"
+                required
+            >
+
+            <button class="btn btn-primary" type="submit">
+                Subscribe
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer id="contact">
+
+    <div class="footer-main">
+
+        <div class="footer-brand">
+
+            <a href="#" class="logo">
+                <div class="logo-mark">PM</div>
+                <div class="logo-text">
+                    PM <span>TRADERS</span>
+                </div>
+            </a>
+
+            <p>
+                Quality smartphones, human hair, fashion, gadgets
+                and accessories — all in one trusted store.
+            </p>
+
+        </div>
+
+        <div class="footer-col">
+
+            <h4>Shop</h4>
+
+            <a href="#shop">All Products</a>
+            <a href="#categories">Smartphones</a>
+            <a href="#categories">Human Hair</a>
+            <a href="#categories">Fashion</a>
+            <a href="#categories">Accessories</a>
+
+        </div>
+
+        <div class="footer-col">
+
+            <h4>Customer Info</h4>
+
+            <a href="#contact">Delivery Information</a>
+            <a href="#contact">Collection</a>
+            <a href="#contact">WhatsApp Orders</a>
+            <a href="#contact">Contact Us</a>
+
+        </div>
+
+        <div class="footer-col">
+
+            <h4>Contact</h4>
+
+            <p>📍 Richards Bay, KwaZulu-Natal</p>
+
+            <a href="https://wa.me/27842748559" target="_blank">
+                💬 +27 84 274 8559
+            </a>
+
+            <a href="mailto:Info@PM-Traders.co.za">
+                ✉️ Info@PM-Traders.co.za
+            </a>
+
+            <p>🚚 Nationwide delivery</p>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        © <span id="year"></span> PM Traders. All Rights Reserved.
+
+    </div>
+
+</footer>
+
+<!-- =========================================================
+     FLOATING WHATSAPP
+========================================================= -->
+
+<a
+    class="whatsapp"
+    href="https://wa.me/27842748559"
+    target="_blank"
+    aria-label="Chat with PM Traders on WhatsApp"
+>
+    💬
+</a>
+
+<!-- =========================================================
+     OVERLAY
+========================================================= -->
+
+<div
+    class="overlay"
+    id="overlay"
+    onclick="closeCart()"
+></div>
+
+<!-- =========================================================
+     CART DRAWER
+========================================================= -->
+
+<aside class="cart-drawer" id="cartDrawer">
+
+    <div class="cart-header">
+
+        <h2>Your Cart</h2>
+
+        <button
+            class="close-cart"
+            onclick="closeCart()"
+        >
+            ✕
+        </button>
+
+    </div>
+
+    <div class="cart-items" id="cartItems"></div>
+
+    <div class="cart-footer">
+
+        <div class="summary-line">
+            <span>Subtotal</span>
+            <strong id="cartSubtotal">R0</strong>
+        </div>
+
+        <div class="summary-line">
+            <span>Delivery</span>
+            <strong id="cartDelivery">R0</strong>
+        </div>
+
+        <div class="summary-line summary-total">
+            <span>Total</span>
+            <strong id="cartTotal">R0</strong>
+        </div>
+
+        <button
+            class="checkout-btn"
+            onclick="openCheckout()"
+        >
+            💬 Checkout via WhatsApp
+        </button>
+
+    </div>
+
+</aside>
+
+<!-- =========================================================
+     CHECKOUT MODAL
+========================================================= -->
+
+<div class="modal" id="checkoutModal">
+
+    <div class="modal-box">
+
+        <button
+            class="modal-close"
+            onclick="closeCheckout()"
+        >
+            ✕
+        </button>
+
+        <h2 style="margin-bottom:5px;">
+            Complete Your Order
+        </h2>
+
+        <p style="color:#777;font-size:13px;margin-bottom:20px;">
+            Enter your details before sending your order to WhatsApp.
+        </p>
+
+        <div class="form-group">
+
+            <label>Your Name</label>
+
+            <input
+                type="text"
+                id="customerName"
+                placeholder="Full name"
+            >
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Phone Number</label>
+
+            <input
+                type="tel"
+                id="customerPhone"
+                placeholder="e.g. 084 123 4567"
+            >
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Order Method</label>
+
+            <div class="delivery-options">
+
+                <div
+                    class="delivery-option active"
+                    id="deliveryOption"
+                    onclick="selectOrderMethod('delivery')"
+                >
+
+                    <strong>🚚 Delivery</strong>
+
+                    <span>
+                        Nationwide delivery
+                    </span>
+
+                </div>
+
+                <div
+                    class="delivery-option"
+                    id="collectionOption"
+                    onclick="selectOrderMethod('collection')"
+                >
+
+                    <strong>📍 Collection</strong>
+
+                    <span>
+                        Richards Bay / Empangeni
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div
+            class="form-group"
+            id="addressGroup"
+        >
+
+            <label>Delivery Address</label>
+
+            <textarea
+                id="customerAddress"
+                placeholder="Enter your delivery address"
+            ></textarea>
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Additional Message</label>
+
+            <textarea
+                id="customerMessage"
+                placeholder="Optional message"
+            ></textarea>
+
+        </div>
+
+        <div
+            style="
+                background:#f8f8f8;
+                padding:15px;
+                border-radius:10px;
+                margin-bottom:15px;
+            "
+        >
+
+            <div class="summary-line">
+                <span>Subtotal</span>
+                <strong id="checkoutSubtotal">R0</strong>
+            </div>
+
+            <div class="summary-line">
+                <span>Delivery</span>
+                <strong id="checkoutDelivery">R0</strong>
+            </div>
+
+            <div class="summary-line summary-total">
+                <span>Total</span>
+                <strong id="checkoutTotal">R0</strong>
+            </div>
+
+        </div>
+
+        <button
+            class="checkout-btn"
+            onclick="sendWhatsAppOrder()"
+        >
+            💬 Send Order on WhatsApp
+        </button>
+
+    </div>
+
+</div>
+
+<!-- =========================================================
+     TOAST
+========================================================= -->
+
+<div class="toast" id="toast"></div>
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+/* =========================================================
+   PM TRADERS PRODUCTS
+========================================================= */
+
+const products = [
+
+    {
+        id:1,
+        name:"iPhone 13 Pro Max",
+        category:"Smartphones",
+        price:7500,
+        oldPrice:7999,
+        emoji:"📱",
+        badge:"POPULAR",
+        rating:5
+    },
+
+    {
+        id:2,
+        name:"iPhone 17 Pro Max",
+        category:"Smartphones",
+        price:24000,
+        oldPrice:24999,
+        emoji:"📱",
+        badge:"NEW",
+        rating:5
+    },
+
+    {
+        id:3,
+        name:"8 Inch Weave DD",
+        category:"Human Hair",
+        price:850,
+        oldPrice:950,
+        emoji:"💇",
+        badge:"DEAL",
+        rating:5
+    },
+
+    {
+        id:4,
+        name:"20 Inch Weave Jurly Curls",
+        category:"Human Hair",
+        price:970,
+        oldPrice:1100,
+        emoji:"💇",
+        badge:"POPULAR",
+        rating:5
+    },
+
+    {
+        id:5,
+        name:"Ladies Fashion Dress",
+        category:"Fashion",
+        price:230,
+        oldPrice:299,
+        emoji:"👗",
+        badge:"SALE",
+        rating:5
+    },
+
+    {
+        id:6,
+        name:"Premium Phone Accessories",
+        category:"Accessories",
+        price:199,
+        oldPrice:249,
+        emoji:"🔌",
+        badge:"DEAL",
+        rating:4
+    },
+
+    {
+        id:7,
+        name:"Wireless Bluetooth Earbuds",
+        category:"Gadgets",
+        price:350,
+        oldPrice:450,
+        emoji:"🎧",
+        badge:"NEW",
+        rating:5
+    },
+
+    {
+        id:8,
+        name:"Fast Charging Cable",
+        category:"Accessories",
+        price:120,
+        oldPrice:160,
+        emoji:"🔌",
+        badge:"SALE",
+        rating:4
+    }
+
+];
+
+/* =========================================================
+   CART
+========================================================= */
+
+let cart = JSON.parse(
+    localStorage.getItem("pmTradersCart")
+) || [];
+
+let orderMethod = "delivery";
+
+/* =========================================================
+   FORMAT MONEY
+========================================================= */
+
+function money(value){
+
+    return "R" + Number(value).toLocaleString(
+        "en-ZA",
+        {
+            maximumFractionDigits:0
+        }
+    );
+
+}
+
+/* =========================================================
+   SAVE CART
+========================================================= */
+
+function saveCart(){
+
+    localStorage.setItem(
+        "pmTradersCart",
+        JSON.stringify(cart)
+    );
+
+}
+
+/* =========================================================
+   RENDER PRODUCTS
+========================================================= */
+
+function renderProducts(){
+
+    const grid =
+        document.getElementById("productGrid");
+
+    const empty =
+        document.getElementById("emptyState");
+
+    const search =
+        document.getElementById("searchInput")
+        .value
+        .toLowerCase()
+        .trim();
+
+    const category =
+        document.getElementById("categoryFilter").value;
+
+    let filtered = products.filter(product => {
+
+        const matchesSearch =
+            product.name
+            .toLowerCase()
+            .includes(search) ||
+            product.category
+            .toLowerCase()
+            .includes(search);
+
+        const matchesCategory =
+            category === "All" ||
+            product.category === category;
+
+        return matchesSearch && matchesCategory;
+
+    });
+
+    grid.innerHTML = "";
+
+    if(filtered.length === 0){
+
+        empty.style.display = "block";
+
+        return;
+
+    }
+
+    empty.style.display = "none";
+
+    filtered.forEach(product => {
+
+        const card =
+            document.createElement("div");
+
+        card.className = "product-card";
+
+        card.innerHTML = `
+
+            <div class="product-image">
+
+                <div class="product-badge">
+                    ${product.badge}
+                </div>
+
+                <div class="emoji">
+                    ${product.emoji}
+                </div>
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-category">
+                    ${product.category}
+                </div>
+
+                <h3 class="product-name">
+                    ${product.name}
+                </h3>
+
+                <div class="rating">
+                    <span>
+                        ${"★".repeat(product.rating)}
+                    </span>
+                    (${product.rating}.0)
+                </div>
+
+                <div class="price-row">
+
+                    <div class="price">
+                        ${money(product.price)}
+                    </div>
+
+                    <div class="old-price">
+                        ${money(product.oldPrice)}
+                    </div>
+
+                </div>
+
+                <div class="product-actions">
+
+                    <button
+                        class="add-cart"
+                        onclick="addToCart(${product.id})"
+                    >
+                        Add to Cart
+                    </button>
+
+                    <button
+                        class="buy-now"
+                        onclick="buyNow(${product.id})"
+                    >
+                        ⚡
+                    </button>
+
+                </div>
+
+            </div>
+        `;
+
+        grid.appendChild(card);
+
+    });
+
+}
+
+/* =========================================================
+   ADD TO CART
+========================================================= */
+
+function addToCart(id){
+
+    const product =
+        products.find(p => p.id === id);
+
+    if(!product) return;
+
+    const existing =
+        cart.find(item => item.id === id);
+
+    if(existing){
+
+        existing.quantity++;
+
+    }else{
+
+        cart.push({
+            ...product,
+            quantity:1
+        });
+
+    }
+
+    saveCart();
+    updateCart();
+
+    showToast(
+        product.name + " added to cart"
+    );
+
+}
+
+/* =========================================================
+   BUY NOW
+========================================================= */
+
+function buyNow(id){
+
+    addToCart(id);
+    openCheckout();
+
+}
+
+/* =========================================================
+   REMOVE FROM CART
+========================================================= */
+
+function removeFromCart(id){
+
+    cart =
+        cart.filter(item => item.id !== id);
+
+    saveCart();
+    updateCart();
+
+}
+
+/* =========================================================
+   CHANGE QUANTITY
+========================================================= */
+
+function changeQuantity(id, change){
+
+    const item =
+        cart.find(item => item.id === id);
+
+    if(!item) return;
+
+    item.quantity += change;
+
+    if(item.quantity <= 0){
+
+        removeFromCart(id);
+
+        return;
+
+    }
+
+    saveCart();
+    updateCart();
+
+}
+
+/* =========================================================
+   CART TOTALS
+========================================================= */
+
+function getSubtotal(){
+
+    return cart.reduce(
+        (total,item) =>
+            total + item.price * item.quantity,
+        0
+    );
+
+}
+
+function getDelivery(){
+
+    const subtotal = getSubtotal();
+
+    if(orderMethod === "collection"){
+
+        return 0;
+
+    }
+
+    if(subtotal === 0){
+
+        return 0;
+
+    }
+
+    if(subtotal >= 1500){
+
+        return 0;
+
+    }
+
+    return 60;
+
+}
+
+/* =========================================================
+   UPDATE CART
+========================================================= */
+
+function updateCart(){
+
+    const cartCount =
+        document.getElementById("cartCount");
+
+    const cartItems =
+        document.getElementById("cartItems");
+
+    const subtotal =
+        getSubtotal();
+
+    const delivery =
+        getDelivery();
+
+    const total =
+        subtotal + delivery;
+
+    const itemCount =
+        cart.reduce(
+            (sum,item) =>
+                sum + item.quantity,
+            0
+        );
+
+    cartCount.textContent =
+        itemCount;
+
+    cartItems.innerHTML = "";
+
+    if(cart.length === 0){
+
+        cartItems.innerHTML = `
+
+            <div style="
+                text-align:center;
+                padding:60px 10px;
+                color:#777;
+            ">
+
+                <div style="font-size:45px;">
+                    🛒
+                </div>
+
+                <h3>Your cart is empty</h3>
+
+                <p style="font-size:13px;">
+                    Add some products to get started.
+                </p>
+
+            </div>
+
+        `;
+
+    }else{
+
+        cart.forEach(item => {
+
+            const row =
+                document.createElement("div");
+
+            row.className = "cart-item";
+
+            row.innerHTML = `
+
+                <div class="cart-item-image">
+                    ${item.emoji}
+                </div>
+
+                <div>
+
+                    <h4>
+                        ${item.name}
+                    </h4>
+
+                    <div class="cart-item-price">
+                        ${money(item.price)}
+                    </div>
+
+                    <div class="qty-controls">
+
+                        <button
+                            onclick="changeQuantity(${item.id},-1)"
+                        >
+                            −
+                        </button>
+
+                        <strong>
+                            ${item.quantity}
+                        </strong>
+
+                        <button
+                            onclick="changeQuantity(${item.id},1)"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                    <button
+                        class="remove-item"
+                        onclick="removeFromCart(${item.id})"
+                    >
+                        Remove
+                    </button>
+
+                </div>
+
+                <strong>
+                    ${money(item.price * item.quantity)}
+                </strong>
+
+            `;
+
+            cartItems.appendChild(row);
+
+        });
+
+    }
+
+    document.getElementById("cartSubtotal")
+        .textContent = money
