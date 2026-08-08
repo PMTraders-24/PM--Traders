@@ -2,60 +2,49 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#111111">
 <meta name="description" content="PM Traders - Smartphones, human hair, fashion and accessories.">
 <title>PM Traders | Online Store</title>
 
 <style>
 *{box-sizing:border-box}
-
-html{
-  scroll-behavior:smooth;
-}
-
+html{scroll-behavior:smooth}
 body{
   margin:0;
   font-family:Arial,Helvetica,sans-serif;
   background:#f5f5f5;
   color:#111;
 }
-
-a{
-  color:inherit;
-  text-decoration:none;
-}
-
-button{
-  font:inherit;
-  cursor:pointer;
-}
+body.cart-open{overflow:hidden}
+a{text-decoration:none;color:inherit}
+button{font:inherit;cursor:pointer}
 
 .topbar{
   background:#111;
   color:#fff;
-  padding:9px 15px;
   text-align:center;
+  padding:9px 14px;
   font-size:13px;
 }
 
 header{
-  background:#fff;
   position:sticky;
   top:0;
   z-index:1000;
-  box-shadow:0 2px 12px rgba(0,0,0,.08);
+  background:#fff;
+  box-shadow:0 2px 14px rgba(0,0,0,.08);
 }
 
 .nav{
   max-width:1200px;
+  min-height:68px;
   margin:auto;
-  min-height:70px;
+  padding:12px 18px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:20px;
-  padding:12px 18px;
+  gap:18px;
 }
 
 .logo{
@@ -64,34 +53,32 @@ header{
   letter-spacing:-1px;
 }
 
-.logo span{
-  color:#e11d48;
-}
+.logo span{color:#e11d48}
 
 .navlinks{
   display:flex;
-  gap:22px;
   align-items:center;
+  gap:20px;
 }
 
 .navlinks a{
-  font-weight:700;
   font-size:14px;
+  font-weight:700;
 }
 
 .cart-btn{
   border:0;
   background:#111;
   color:#fff;
-  padding:11px 15px;
   border-radius:10px;
+  padding:11px 15px;
   font-weight:800;
 }
 
 .hero{
-  background:linear-gradient(135deg,#111,#292929);
+  background:linear-gradient(135deg,#111 0%,#292929 100%);
   color:#fff;
-  padding:70px 18px;
+  padding:75px 18px;
 }
 
 .hero-inner{
@@ -102,22 +89,25 @@ header{
 .badge{
   display:inline-block;
   background:#e11d48;
+  color:#fff;
   padding:7px 12px;
   border-radius:30px;
   font-size:12px;
   font-weight:800;
-  margin-bottom:14px;
+  margin-bottom:15px;
 }
 
 .hero h1{
-  font-size:clamp(38px,7vw,70px);
-  line-height:.98;
+  max-width:760px;
   margin:0 0 20px;
-  max-width:750px;
+  font-size:clamp(40px,7vw,72px);
+  line-height:.98;
+  letter-spacing:-2px;
 }
 
 .hero p{
   max-width:650px;
+  margin:0;
   color:#ddd;
   font-size:18px;
   line-height:1.6;
@@ -127,7 +117,7 @@ header{
   display:flex;
   flex-wrap:wrap;
   gap:12px;
-  margin-top:25px;
+  margin-top:27px;
 }
 
 .btn{
@@ -135,7 +125,6 @@ header{
   padding:14px 20px;
   border-radius:10px;
   font-weight:800;
-  border:0;
 }
 
 .btn-primary{
@@ -143,8 +132,8 @@ header{
   color:#111;
 }
 
-.btn-dark{
-  background:#e11d48;
+.btn-whatsapp{
+  background:#25d366;
   color:#fff;
 }
 
@@ -177,11 +166,11 @@ section{
 
 .category{
   background:#fff;
-  border-radius:16px;
   padding:25px 15px;
+  border-radius:16px;
   text-align:center;
-  box-shadow:0 4px 18px rgba(0,0,0,.06);
   font-weight:800;
+  box-shadow:0 4px 18px rgba(0,0,0,.06);
   transition:.2s;
 }
 
@@ -190,7 +179,7 @@ section{
 }
 
 .category-icon{
-  font-size:35px;
+  font-size:36px;
   margin-bottom:10px;
 }
 
@@ -204,29 +193,42 @@ section{
   background:#fff;
   border-radius:17px;
   overflow:hidden;
-  box-shadow:0 5px 20px rgba(0,0,0,.07);
   display:flex;
   flex-direction:column;
+  box-shadow:0 5px 20px rgba(0,0,0,.07);
 }
 
 .product-image{
-  position:relative;
   width:100%;
   height:290px;
   background:#eee;
+  position:relative;
   overflow:hidden;
 }
 
 .product-image img{
+  display:block;
   width:100%;
   height:100%;
-  display:block;
   object-fit:cover;
 }
 
 .product-image.contain img{
   object-fit:contain;
   background:#fff;
+}
+
+.image-error{
+  width:100%;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:20px;
+  color:#777;
+  background:#eee;
+  font-weight:700;
 }
 
 .product-info{
@@ -237,10 +239,10 @@ section{
 }
 
 .product-category{
-  font-size:11px;
-  text-transform:uppercase;
   color:#777;
+  font-size:11px;
   font-weight:800;
+  text-transform:uppercase;
   letter-spacing:.5px;
 }
 
@@ -251,26 +253,26 @@ section{
 }
 
 .product-price{
+  margin:7px 0 14px;
   font-size:20px;
   font-weight:900;
-  margin:7px 0 14px;
 }
 
-.price-note{
+.contact-price{
   color:#777;
   font-size:12px;
   font-weight:normal;
 }
 
 .product-actions{
+  margin-top:auto;
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:8px;
-  margin-top:auto;
 }
 
 .add-btn,
-.order-btn{
+.whatsapp-btn{
   border:0;
   border-radius:9px;
   padding:11px 7px;
@@ -282,7 +284,7 @@ section{
   color:#fff;
 }
 
-.order-btn{
+.whatsapp-btn{
   background:#25d366;
   color:#fff;
 }
@@ -323,54 +325,67 @@ footer{
   gap:30px;
 }
 
-footer p{
-  color:#bbb;
-  line-height:1.6;
-}
-
 .footer-title{
   font-size:20px;
   font-weight:900;
   margin-bottom:12px;
 }
 
+footer p{
+  color:#bbb;
+  line-height:1.6;
+}
+
 .cart-overlay{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,.55);
-  z-index:2000;
-  display:none;
+  z-index:3000;
+  background:rgba(0,0,0,.6);
+  opacity:0;
+  visibility:hidden;
+  transition:.2s;
 }
 
 .cart-overlay.active{
-  display:block;
+  opacity:1;
+  visibility:visible;
 }
 
 .cart{
   position:absolute;
-  right:0;
   top:0;
-  height:100%;
+  right:0;
   width:min(440px,100%);
+  height:100%;
   background:#fff;
   padding:20px;
-  overflow:auto;
+  overflow-y:auto;
+  transform:translateX(100%);
+  transition:.25s;
+}
+
+.cart-overlay.active .cart{
+  transform:translateX(0);
 }
 
 .cart-head{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  border-bottom:1px solid #ddd;
   padding-bottom:15px;
+  border-bottom:1px solid #ddd;
+}
+
+.cart-head h2{
+  margin:0;
 }
 
 .close-cart{
-  border:0;
-  background:#eee;
-  border-radius:8px;
   width:38px;
   height:38px;
+  border:0;
+  border-radius:8px;
+  background:#eee;
 }
 
 .cart-item{
@@ -381,8 +396,8 @@ footer p{
 }
 
 .cart-item img{
-  width:70px;
-  height:70px;
+  width:72px;
+  height:72px;
   object-fit:cover;
   border-radius:8px;
   background:#eee;
@@ -401,47 +416,47 @@ footer p{
   display:flex;
   align-items:center;
   gap:7px;
-  margin-top:7px;
+  margin-top:8px;
 }
 
 .qty button{
-  width:27px;
-  height:27px;
+  width:28px;
+  height:28px;
   border:1px solid #ddd;
   background:#fff;
   border-radius:6px;
 }
 
 .remove{
-  color:#e11d48;
   border:0;
   background:none;
+  color:#e11d48;
+  padding:4px 0;
   font-size:12px;
-  padding:0;
 }
 
 .cart-total{
-  font-size:22px;
-  font-weight:900;
   display:flex;
   justify-content:space-between;
   padding:20px 0;
+  font-size:22px;
+  font-weight:900;
 }
 
 .checkout{
   width:100%;
   border:0;
+  border-radius:10px;
   padding:15px;
   background:#25d366;
   color:#fff;
-  border-radius:10px;
   font-weight:900;
 }
 
 .empty{
   text-align:center;
   color:#777;
-  padding:40px 10px;
+  padding:45px 10px;
 }
 
 .notice{
@@ -455,7 +470,7 @@ footer p{
   line-height:1.5;
 }
 
-@media(max-width:900px){
+@media(max-width:950px){
   .products{
     grid-template-columns:repeat(3,1fr);
   }
@@ -463,27 +478,19 @@ footer p{
   .categories{
     grid-template-columns:repeat(2,1fr);
   }
-
-  .footer-inner{
-    grid-template-columns:1fr 1fr;
-  }
 }
 
-@media(max-width:650px){
-  .nav{
-    min-height:60px;
-  }
-
+@media(max-width:700px){
   .navlinks{
     display:none;
   }
 
   .hero{
-    padding:50px 18px;
+    padding:55px 18px;
   }
 
   .hero h1{
-    font-size:42px;
+    font-size:44px;
   }
 
   .products{
@@ -492,7 +499,7 @@ footer p{
   }
 
   .product-image{
-    height:210px;
+    height:220px;
   }
 
   .product-info{
@@ -520,13 +527,17 @@ footer p{
   }
 }
 
-@media(max-width:390px){
+@media(max-width:400px){
   .products{
     grid-template-columns:1fr;
   }
 
   .product-image{
-    height:270px;
+    height:280px;
+  }
+
+  .categories{
+    grid-template-columns:1fr 1fr;
   }
 }
 </style>
@@ -535,646 +546,986 @@ footer p{
 <body>
 
 <div class="topbar">
-  🚚 Nationwide delivery • Free delivery on orders over R1,500
+🚚 Nationwide delivery • Free delivery on orders over R1,500
 </div>
 
 <header>
-  <div class="nav">
-    <a href="#" class="logo">PM <span>TRADERS</span></a>
+<div class="nav">
 
-    <nav class="navlinks">
-      <a href="#categories">Categories</a>
-      <a href="#products">Products</a>
-      <a href="#delivery">Delivery</a>
-      <a href="#contact">Contact</a>
-    </nav>
+<a href="#" class="logo">
+PM <span>TRADERS</span>
+</a>
 
-    <button class="cart-btn" onclick="openCart()">
-      🛒 Cart (<span id="cartCount">0</span>)
-    </button>
-  </div>
+<nav class="navlinks">
+<a href="#categories">Categories</a>
+<a href="#products">Products</a>
+<a href="#delivery">Delivery</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<button class="cart-btn" type="button" onclick="openCart()">
+🛒 Cart (<span id="cartCount">0</span>)
+</button>
+
+</div>
 </header>
 
 <main>
 
 <section class="hero">
-  <div class="hero-inner">
-    <span class="badge">PM TRADERS • ONLINE STORE</span>
+<div class="hero-inner">
 
-    <h1>Shop smart.<br>Shop PM Traders.</h1>
+<span class="badge">
+PM TRADERS • ONLINE STORE
+</span>
 
-    <p>
-      Quality smartphones, human hair, fashion and accessories —
-      all in one trusted store.
-    </p>
+<h1>
+Shop smart.<br>
+Shop PM Traders.
+</h1>
 
-    <div class="hero-buttons">
-      <a href="#products" class="btn btn-primary">Shop Now →</a>
-      <a href="https://wa.me/27842748559" class="btn btn-dark" target="_blank">
-        WhatsApp Us
-      </a>
-    </div>
-  </div>
+<p>
+Quality smartphones, human hair, fashion and accessories —
+all in one trusted store.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#products" class="btn btn-primary">
+Shop Now →
+</a>
+
+<a
+href="https://wa.me/27842748559"
+class="btn btn-whatsapp"
+target="_blank"
+rel="noopener">
+WhatsApp Us
+</a>
+
+</div>
+
+</div>
 </section>
+
 
 <section id="categories">
-  <div class="section-title">
-    <h2>Shop by Category</h2>
-    <p>Find what you are looking for at PM Traders.</p>
-  </div>
 
-  <div class="categories">
-    <a href="#products" class="category">
-      <div class="category-icon">📱</div>
-      Smartphones
-    </a>
+<div class="section-title">
+<h2>Shop by Category</h2>
+<p>Find what you are looking for at PM Traders.</p>
+</div>
 
-    <a href="#products" class="category">
-      <div class="category-icon">💇</div>
-      Human Hair
-    </a>
+<div class="categories">
 
-    <a href="#products" class="category">
-      <div class="category-icon">👗</div>
-      Fashion
-    </a>
+<a href="#products" class="category">
+<div class="category-icon">📱</div>
+Smartphones
+</a>
 
-    <a href="#products" class="category">
-      <div class="category-icon">🎧</div>
-      Accessories
-    </a>
-  </div>
+<a href="#products" class="category">
+<div class="category-icon">💇</div>
+Human Hair
+</a>
+
+<a href="#products" class="category">
+<div class="category-icon">👗</div>
+Fashion
+</a>
+
+<a href="#products" class="category">
+<div class="category-icon">🎧</div>
+Accessories
+</a>
+
+</div>
+
 </section>
+
 
 <section id="products">
 
-  <div class="section-title">
-    <h2>PM Traders Collection</h2>
-    <p>Browse our available products.</p>
-  </div>
+<div class="section-title">
+<h2>PM Traders Collection</h2>
+<p>Browse our products and order directly through WhatsApp.</p>
+</div>
 
-  <div class="notice">
-    <strong>Image setup:</strong>
-    Your original product photos must be inside the repository's
-    <strong>images</strong> folder. Do not change their filenames.
-  </div>
+<div class="notice">
+<strong>Important:</strong>
+Product photos are loaded from the
+<strong>images</strong> folder in your GitHub repository.
+</div>
 
-  <div class="products" id="productGrid"></div>
+<div class="products" id="productGrid"></div>
 
 </section>
 
+
 <section id="delivery">
 
-  <div class="section-title">
-    <h2>Delivery & Collection</h2>
-    <p>Convenient options for PM Traders customers.</p>
-  </div>
+<div class="section-title">
+<h2>Delivery & Collection</h2>
+<p>Convenient options for PM Traders customers.</p>
+</div>
 
-  <div class="info-grid">
+<div class="info-grid">
 
-    <div class="info-card">
-      <h3>🚚 Delivery</h3>
-      <p>
-        Nationwide delivery available.
-        Delivery is R30 around Richards Bay and surrounding areas,
-        and R60 outside Richards Bay and Empangeni.
-      </p>
-    </div>
+<div class="info-card">
+<h3>🚚 Delivery</h3>
+<p>
+Nationwide delivery available.
+R30 around Richards Bay and surrounding areas.
+R60 outside Richards Bay and Empangeni.
+</p>
+</div>
 
-    <div class="info-card">
-      <h3>📦 Collection</h3>
-      <p>
-        Collection is available around Richards Bay and Empangeni.
-        Contact PM Traders to arrange collection.
-      </p>
-    </div>
+<div class="info-card">
+<h3>📦 Collection</h3>
+<p>
+Collection is available around Richards Bay and Empangeni.
+Contact PM Traders to arrange collection.
+</p>
+</div>
 
-    <div class="info-card">
-      <h3>🎁 Free Delivery</h3>
-      <p>
-        Spend R1,500 or more and enjoy free delivery.
-      </p>
-    </div>
+<div class="info-card">
+<h3>🎁 Free Delivery</h3>
+<p>
+Spend R1,500 or more and enjoy free delivery.
+</p>
+</div>
 
-  </div>
+</div>
+
 </section>
 
 </main>
 
+
 <footer id="contact">
-  <div class="footer-inner">
 
-    <div>
-      <div class="footer-title">PM TRADERS</div>
-      <p>
-        Smartphones, human hair, fashion and accessories.
-        Shop smart. Shop PM Traders.
-      </p>
-    </div>
+<div class="footer-inner">
 
-    <div>
-      <div class="footer-title">Contact</div>
-      <p>
-        📱 +27 84 274 8559<br>
-        ✉️ Info@PM-Traders.co.za
-      </p>
-    </div>
-
-    <div>
-      <div class="footer-title">Quick Links</div>
-      <p>
-        <a href="#products">Products</a><br>
-        <a href="#categories">Categories</a><br>
-        <a href="#delivery">Delivery</a><br>
-        <a href="https://wa.me/27842748559" target="_blank">WhatsApp</a>
-      </p>
-    </div>
-
-  </div>
-</footer>
-
-<div class="cart-overlay" id="cartOverlay" onclick="outsideCart(event)">
-  <aside class="cart">
-
-    <div class="cart-head">
-      <h2>Your Cart</h2>
-      <button class="close-cart" onclick="closeCart()">✕</button>
-    </div>
-
-    <div id="cartItems"></div>
-
-    <div class="cart-total">
-      <span>Total</span>
-      <span id="cartTotal">R0</span>
-    </div>
-
-    <button class="checkout" onclick="checkoutWhatsApp()">
-      Complete Order on WhatsApp
-    </button>
-
-  </aside>
+<div>
+<div class="footer-title">PM TRADERS</div>
+<p>
+Smartphones, human hair, fashion and accessories.
+Shop smart. Shop PM Traders.
+</p>
 </div>
 
+<div>
+<div class="footer-title">Contact</div>
+<p>
+📱 +27 84 274 8559<br>
+✉️ Info@PM-Traders.co.za
+</p>
+</div>
+
+<div>
+<div class="footer-title">Quick Links</div>
+<p>
+<a href="#products">Products</a><br>
+<a href="#categories">Categories</a><br>
+<a href="#delivery">Delivery</a><br>
+<a
+href="https://wa.me/27842748559"
+target="_blank"
+rel="noopener">
+WhatsApp
+</a>
+</p>
+</div>
+
+</div>
+
+</footer>
+
+
+<div
+class="cart-overlay"
+id="cartOverlay"
+onclick="outsideCart(event)">
+
+<aside class="cart">
+
+<div class="cart-head">
+
+<h2>Your Cart</h2>
+
+<button
+class="close-cart"
+type="button"
+onclick="closeCart()">
+✕
+</button>
+
+</div>
+
+<div id="cartItems"></div>
+
+<div class="cart-total">
+<span>Total</span>
+<span id="cartTotal">R0</span>
+</div>
+
+<button
+class="checkout"
+type="button"
+onclick="checkoutWhatsApp()">
+Complete Order on WhatsApp
+</button>
+
+</aside>
+
+</div>
+
+
 <script>
-/*
-=========================================================
-PM TRADERS PRODUCT DATA
-=========================================================
-*/
+
+"use strict";
+
+
+/* =========================================
+   PRODUCT DATABASE
+========================================= */
 
 const products = [
 
-  {
-    id:1,
-    name:"20 Inch Curly Curls",
-    category:"Human Hair",
-    price:970,
-    image:"images/20 inch Curly Curls.jpeg"
-  },
+{
+id:1,
+name:"20 Inch Curly Curls",
+category:"Human Hair",
+price:970,
+image:"images/20 inch Curly Curls.jpeg"
+},
 
-  {
-    id:2,
-    name:"22 Inch Water Wave Human Hair",
-    category:"Human Hair",
-    price:null,
-    image:"images/22 Inch water wave human hair.webp"
-  },
+{
+id:2,
+name:"22 Inch Water Wave Human Hair",
+category:"Human Hair",
+price:null,
+image:"images/22 Inch water wave human hair.webp"
+},
 
-  {
-    id:3,
-    name:"8 Inch Super Double Drawn",
-    category:"Human Hair",
-    price:850,
-    image:"images/8 Inch Super Double Drawn.webp"
-  },
+{
+id:3,
+name:"8 Inch Super Double Drawn",
+category:"Human Hair",
+price:850,
+image:"images/8 Inch Super Double Drawn.webp"
+},
 
-  {
-    id:4,
-    name:"8 Inch SDD Weave",
-    category:"Human Hair",
-    price:850,
-    image:"images/8 inch SDD Weave",
-    fallbacks:[
-      "images/8 inch SDD Weave.jpg",
-      "images/8 inch SDD Weave.jpeg",
-      "images/8 inch SDD Weave.webp",
-      "images/8 inch SDD Weave.png"
-    ]
-  },
+{
+id:4,
+name:"8 Inch SDD Weave",
+category:"Human Hair",
+price:850,
+image:"images/8 inch SDD Weave",
+fallbacks:[
+"images/8 inch SDD Weave.jpg",
+"images/8 inch SDD Weave.jpeg",
+"images/8 inch SDD Weave.webp",
+"images/8 inch SDD Weave.png"
+]
+},
 
-  {
-    id:5,
-    name:"8 Inch SDD Pixey Curly",
-    category:"Human Hair",
-    price:null,
-    image:"images/8 inch SDD pixey curly.jpg"
-  },
+{
+id:5,
+name:"8 Inch SDD Pixey Curly",
+category:"Human Hair",
+price:null,
+image:"images/8 inch SDD pixey curly.jpg"
+},
 
-  {
-    id:6,
-    name:"Classic Caught",
-    category:"Fashion",
-    price:null,
-    image:"images/Classic Caught.jpg"
-  },
+{
+id:6,
+name:"Classic Caught",
+category:"Fashion",
+price:null,
+image:"images/Classic Caught.jpg"
+},
 
-  {
-    id:7,
-    name:"Classic Ladies Dress",
-    category:"Fashion",
-    price:230,
-    image:"images/Classic Ladies Dress.jpg"
-  },
+{
+id:7,
+name:"Classic Ladies Dress",
+category:"Fashion",
+price:230,
+image:"images/Classic Ladies Dress.jpg"
+},
 
-  {
-    id:8,
-    name:"Classic Rainbow Nation Dress",
-    category:"Fashion",
-    price:null,
-    image:"images/Classic Rainbow Nation Dress.jpg"
-  },
+{
+id:8,
+name:"Classic Rainbow Nation Dress",
+category:"Fashion",
+price:null,
+image:"images/Classic Rainbow Nation Dress.jpg"
+},
 
-  {
-    id:9,
-    name:"Sky Blue Dress",
-    category:"Fashion",
-    price:null,
-    image:"images/Sky Blue Dress.jpg"
-  },
+{
+id:9,
+name:"Sky Blue Dress",
+category:"Fashion",
+price:null,
+image:"images/Sky Blue Dress.jpg"
+},
 
-  {
-    id:10,
-    name:"Sleeveless Classic Attire",
-    category:"Fashion",
-    price:null,
-    image:"images/Sleeveless Classic Attire.jpg"
-  },
+{
+id:10,
+name:"Sleeveless Classic Attire",
+category:"Fashion",
+price:null,
+image:"images/Sleeveless Classic Attire.jpg"
+},
 
-  {
-    id:11,
-    name:"Smart Casual Summer Two Piece",
-    category:"Fashion",
-    price:null,
-    image:"images/Smart Casual Summer Two piece.jpg"
-  },
+{
+id:11,
+name:"Smart Casual Summer Two Piece",
+category:"Fashion",
+price:null,
+image:"images/Smart Casual Summer Two piece.jpg"
+},
 
-  {
-    id:12,
-    name:"Smart Colour Dress",
-    category:"Fashion",
-    price:null,
-    image:"images/Smart Colour Dress.jpg"
-  },
+{
+id:12,
+name:"Smart Colour Dress",
+category:"Fashion",
+price:null,
+image:"images/Smart Colour Dress.jpg"
+},
 
-  {
-    id:13,
-    name:"Smart Colour Full Dress",
-    category:"Fashion",
-    price:null,
-    image:"images/Smart Colour full dress.jpg"
-  },
+{
+id:13,
+name:"Smart Colour Full Dress",
+category:"Fashion",
+price:null,
+image:"images/Smart Colour full dress.jpg"
+},
 
-  {
-    id:14,
-    name:"Smart Dress",
-    category:"Fashion",
-    price:null,
-    image:"images/Smart Dress.jpg"
-  },
+{
+id:14,
+name:"Smart Dress",
+category:"Fashion",
+price:null,
+image:"images/Smart Dress.jpg"
+},
 
-  {
-    id:15,
-    name:"iPhone 13 Pro Max",
-    category:"Smartphones",
-    price:7500,
-    image:"images/iPhone 13 Pro Max.jpeg",
-    contain:true
-  },
+{
+id:15,
+name:"iPhone 13 Pro Max",
+category:"Smartphones",
+price:7500,
+image:"images/iPhone 13 Pro Max.jpeg",
+contain:true
+},
 
-  {
-    id:16,
-    name:"iPhone 17 Pro Max",
-    category:"Smartphones",
-    price:24000,
-    image:"images/iPhone 17 Pro Max.webp",
-    contain:true
-  }
+{
+id:16,
+name:"iPhone 17 Pro Max",
+category:"Smartphones",
+price:24000,
+image:"images/iPhone 17 Pro Max.webp",
+contain:true
+}
 
 ];
 
 
-/*
-=========================================================
-CART
-=========================================================
-*/
+/* =========================================
+   CART
+========================================= */
 
-let cart = JSON.parse(localStorage.getItem("pmTradersCart") || "[]");
+let cart=[];
+
+try{
+
+const saved=localStorage.getItem("pmTradersCart");
+
+if(saved){
+
+const parsed=JSON.parse(saved);
+
+if(Array.isArray(parsed)){
+cart=parsed;
+}
+
+}
+
+}catch(error){
+
+cart=[];
+
+}
+
 
 function money(value){
-  if(value === null || value === undefined){
-    return "Contact for price";
-  }
 
-  return "R" + Number(value).toLocaleString("en-ZA");
+if(value===null || value===undefined){
+return "Contact for price";
 }
+
+return "R"+Number(value).toLocaleString("en-ZA");
+
+}
+
 
 function saveCart(){
-  localStorage.setItem("pmTradersCart", JSON.stringify(cart));
-  updateCart();
+
+try{
+localStorage.setItem(
+"pmTradersCart",
+JSON.stringify(cart)
+);
+}catch(error){}
+
+updateCart();
+
 }
+
 
 function addToCart(id){
 
-  const product = products.find(p => p.id === id);
+const product=products.find(
+product=>product.id===id
+);
 
-  if(!product) return;
+if(!product)return;
 
-  const existing = cart.find(item => item.id === id);
+const existing=cart.find(
+item=>item.id===id
+);
 
-  if(existing){
-    existing.qty++;
-  }else{
-    cart.push({
-      id:product.id,
-      name:product.name,
-      price:product.price,
-      image:product.image,
-      qty:1
-    });
-  }
+if(existing){
 
-  saveCart();
+existing.qty++;
 
-  alert(product.name + " added to your cart.");
+}else{
+
+cart.push({
+
+id:product.id,
+name:product.name,
+price:product.price,
+image:product.image,
+qty:1
+
+});
+
 }
+
+saveCart();
+
+alert(
+product.name+
+" added to your cart."
+);
+
+}
+
 
 function removeFromCart(id){
 
-  cart = cart.filter(item => item.id !== id);
+cart=cart.filter(
+item=>item.id!==id
+);
 
-  saveCart();
-}
+saveCart();
 
-function changeQty(id, amount){
-
-  const item = cart.find(item => item.id === id);
-
-  if(!item) return;
-
-  item.qty += amount;
-
-  if(item.qty <= 0){
-    removeFromCart(id);
-    return;
-  }
-
-  saveCart();
-}
-
-function updateCart(){
-
-  const count = cart.reduce((total,item) => total + item.qty,0);
-
-  document.getElementById("cartCount").textContent = count;
-
-  const container = document.getElementById("cartItems");
-
-  if(cart.length === 0){
-
-    container.innerHTML = `
-      <div class="empty">
-        🛒<br><br>
-        Your cart is empty.
-      </div>
-    `;
-
-  }else{
-
-    container.innerHTML = cart.map(item => {
-
-      const subtotal =
-        item.price === null
-        ? "Price on request"
-        : money(item.price * item.qty);
-
-      return `
-        <div class="cart-item">
-
-          <img
-            src="${item.image}"
-            alt="${escapeHTML(item.name)}"
-            onerror="this.style.visibility='hidden'"
-          >
-
-          <div class="cart-item-info">
-
-            <strong>${escapeHTML(item.name)}</strong>
-
-            <div>${subtotal}</div>
-
-            <div class="qty">
-              <button onclick="changeQty(${item.id},-1)">−</button>
-              <span>${item.qty}</span>
-              <button onclick="changeQty(${item.id},1)">+</button>
-            </div>
-
-            <button class="remove"
-              onclick="removeFromCart(${item.id})">
-              Remove
-            </button>
-
-          </div>
-
-        </div>
-      `;
-
-    }).join("");
-  }
-
-  const total = cart.reduce((sum,item) => {
-
-    if(item.price === null) return sum;
-
-    return sum + (item.price * item.qty);
-
-  },0);
-
-  document.getElementById("cartTotal").textContent = money(total);
 }
 
 
-/*
-=========================================================
-PRODUCT DISPLAY
-=========================================================
-*/
+function changeQty(id,amount){
+
+const item=cart.find(
+item=>item.id===id
+);
+
+if(!item)return;
+
+item.qty+=amount;
+
+if(item.qty<=0){
+
+removeFromCart(id);
+
+return;
+
+}
+
+saveCart();
+
+}
+
+
+/* =========================================
+   PRODUCT DISPLAY
+========================================= */
 
 function renderProducts(){
 
-  const grid = document.getElementById("productGrid");
+const grid=
+document.getElementById("productGrid");
 
-  grid.innerHTML = products.map(product => {
+grid.innerHTML=products.map(product=>{
 
-    const containClass = product.contain ? "contain" : "";
+const contain=
+product.contain
+?" contain"
+:"";
 
-    const fallbackData =
-      product.fallbacks
-      ? `data-fallbacks='${JSON.stringify(product.fallbacks)}'`
-      : "";
+const fallback=
+product.fallbacks
+?JSON.stringify(product.fallbacks)
+:"";
 
-    return `
+return `
 
-      <article class="product">
+<article class="product">
 
-        <div class="product-image ${containClass}">
+<div class="product-image${contain}">
 
-          <img
-            src="${product.image}"
-            alt="${escapeHTML(product.name)}"
-            loading="lazy"
-            ${fallbackData}
-            onerror="imageFallback(this)"
-          >
+<img
+src="${escapeHTML(product.image)}"
+alt="${escapeHTML(product.name)}"
+loading="lazy"
+data-fallbacks="${escapeHTML(fallback)}"
+data-fallback-index="0"
+onerror="imageFallback(this)"
+>
 
-        </div>
+</div>
 
-        <div class="product-info">
+<div class="product-info">
 
-          <div class="product-category">
-            ${escapeHTML(product.category)}
-          </div>
+<div class="product-category">
+${escapeHTML(product.category)}
+</div>
 
-          <h3>
-            ${escapeHTML(product.name)}
-          </h3>
+<h3>
+${escapeHTML(product.name)}
+</h3>
 
-          <div class="product-price">
-            ${
-              product.price !== null
-              ? money(product.price)
-              : `<span class="price-note">Contact for price</span>`
-            }
-          </div>
+<div class="product-price">
 
-          <div class="product-actions">
+${
+product.price!==null
+?
+money(product.price)
+:
+'<span class="contact-price">Contact for price</span>'
+}
 
-            <button
-              class="add-btn"
-              onclick="addToCart(${product.id})">
-              Add to Cart
-            </button>
+</div>
 
-            <button
-              class="order-btn"
-              onclick="quickOrder(${product.id})">
-              WhatsApp
-            </button>
+<div class="product-actions">
 
-          </div>
+<button
+class="add-btn"
+type="button"
+onclick="addToCart(${product.id})">
+Add to Cart
+</button>
 
-        </div>
+<button
+class="whatsapp-btn"
+type="button"
+onclick="quickOrder(${product.id})">
+WhatsApp
+</button>
 
-      </article>
+</div>
 
-    `;
+</div>
 
-  }).join("");
+</article>
+
+`;
+
+}).join("");
+
 }
 
 
-/*
-=========================================================
-IMAGE FALLBACK
-=========================================================
-*/
+/* =========================================
+   IMAGE ERROR HANDLING
+========================================= */
 
 function imageFallback(img){
 
-  let fallbacks = [];
+let fallbacks=[];
 
-  try{
-    fallbacks = JSON.parse(img.dataset.fallbacks || "[]");
-  }catch(e){
-    fallbacks = [];
-  }
+try{
 
-  const currentIndex = Number(img.dataset.fallbackIndex || 0);
+fallbacks=
+JSON.parse(
+img.getAttribute("data-fallbacks") || "[]"
+);
 
-  if(currentIndex < fallbacks.length){
+}catch(error){
 
-    img.dataset.fallbackIndex = currentIndex + 1;
+fallbacks=[];
 
-    img.src = fallbacks[currentIndex];
+}
 
-    return;
-  }
+let index=
+Number(
+img.getAttribute("data-fallback-index") || 0
+);
 
-  /*
-    Do NOT display a random external photo.
-    If the original image cannot be found,
-    show a clean placeholder instead.
-  */
+if(index < fallbacks.length){
 
-  img.onerror = null;
+img.setAttribute(
+"data-fallback-index",
+index+1
+);
 
-  img.src =
-    "data:image/svg+xml;charset=UTF-8," +
-    encodeURIComponent(`
-      <svg xmlns="http://www.w3.org/2000/svg"
-           width="800"
-           height="800"
-           viewBox="0 0 800 800">
-        <rect width="800" height="800" fill="#eeeeee"/>
-        <text x="400" y="370"
-              text-anchor="middle"
-              font-family="Arial"
-              font-size="34"
-              fill="#777">
-          PM TRADERS
-        </text>
-        <text x="400" y="420"
-              text-anchor="middle"
-              font-family="Arial"
-              font-size="22"
-              fill="#999">
-          Image unavailable
-        </text>
-      </svg>
-    `);
+img.src=fallbacks[index];
+
+return;
+
+}
+
+const wrapper=img.parentElement;
+
+if(wrapper){
+
+wrapper.innerHTML=`
+
+<div class="image-error">
+
+📷<br><br>
+PM TRADERS<br>
+Image unavailable
+
+</div>
+
+`;
+
+}
+
 }
 
 
-/*
-=========================================================
-WHATSAPP
-=========================================================
-*/
+/* =========================================
+   CART DISPLAY
+========================================= */
+
+function updateCart(){
+
+const count=
+cart.reduce(
+(total,item)=>
+total+(Number(item.qty)||0),
+0
+);
+
+document.getElementById(
+"cartCount"
+).textContent=count;
+
+
+const container=
+document.getElementById("cartItems");
+
+
+if(!cart.length){
+
+container.innerHTML=`
+
+<div class="empty">
+
+🛒<br><br>
+
+Your cart is empty.
+
+</div>
+
+`;
+
+}else{
+
+container.innerHTML=
+cart.map(item=>{
+
+const qty=
+Number(item.qty)||1;
+
+const subtotal=
+item.price===null
+?
+"Price on request"
+:
+money(item.price*qty);
+
+return `
+
+<div class="cart-item">
+
+<img
+src="${escapeHTML(item.image)}"
+alt="${escapeHTML(item.name)}"
+onerror="this.style.visibility='hidden'"
+>
+
+<div class="cart-item-info">
+
+<strong>
+${escapeHTML(item.name)}
+</strong>
+
+<div>
+${subtotal}
+</div>
+
+<div class="qty">
+
+<button
+type="button"
+onclick="changeQty(${item.id},-1)">
+−
+</button>
+
+<span>
+${qty}
+</span>
+
+<button
+type="button"
+onclick="changeQty(${item.id},1)">
++
+</button>
+
+</div>
+
+<button
+class="remove"
+type="button"
+onclick="removeFromCart(${item.id})">
+Remove
+</button>
+
+</div>
+
+</div>
+
+`;
+
+}).join("");
+
+}
+
+
+const total=
+cart.reduce(
+(sum,item)=>{
+
+if(item.price===null){
+return sum;
+}
+
+return sum+
+(Number(item.price)||0)*
+(Number(item.qty)||1);
+
+},
+0
+);
+
+document.getElementById(
+"cartTotal"
+).textContent=money(total);
+
+}
+
+
+/* =========================================
+   WHATSAPP ORDER
+========================================= */
 
 function quickOrder(id){
 
-  const product = products.find(p => p.id === id);
+const product=
+products.find(
+product=>product.id===id
+);
 
-  if(!product) return;
+if(!product)return;
 
-  let message =
-    "Hello PM Traders 👋%0A%0A" +
-    "I would like to order:%0A" +
-    product.name + "%0A";
+let message=
+"Hello PM Traders 👋\n\n"+
+"I would like to order:\n"+
+product.name+"\n";
 
-  if(product.price !== null){
-    message += "Price: " + money(product.price) + "%0A";
-  }
+if(product.price!==null){
 
-  message += "%0APlease confirm availability.";
+message+=
+"Price: "+
+money(product.price)+
+"\n";
 
-  window.open(
-    "https://wa.me/27842748559?text=" + message,
-    "_blank"
-  );
 }
+
+message+=
+"\nPlease confirm availability.";
+
+openWhatsApp(message);
+
+}
+
 
 function checkoutWhatsApp(){
 
-  if(cart.length === 0){
-    ale
+if(!cart.length){
+
+alert("Your cart is empty.");
+
+return;
+
+}
+
+let message=
+"Hello PM Traders 👋\n\n"+
+"I would like to place an order:\n\n";
+
+
+cart.forEach(item=>{
+
+message+=
+"• "+
+item.name+
+" x"+
+(Number(item.qty)||1);
+
+if(item.price!==null){
+
+message+=
+" - "+
+money(
+item.price*
+(Number(item.qty)||1)
+);
+
+}
+
+message+="\n";
+
+});
+
+
+const total=
+cart.reduce(
+(sum,item)=>{
+
+if(item.price===null){
+return sum;
+}
+
+return sum+
+(Number(item.price)||0)*
+(Number(item.qty)||1);
+
+},
+0
+);
+
+
+message+=
+"\nEstimated product total: "+
+money(total)+
+"\n\n"+
+"Please confirm availability, delivery and payment details.";
+
+
+openWhatsApp(message);
+
+}
+
+
+function openWhatsApp(message){
+
+const url=
+"https://wa.me/27842748559?text="+
+encodeURIComponent(message);
+
+window.open(
+url,
+"_blank",
+"noopener"
+);
+
+}
+
+
+/* =========================================
+   CART PANEL
+========================================= */
+
+function openCart(){
+
+document
+.getElementById("cartOverlay")
+.classList.add("active");
+
+document.body.classList.add("cart-open");
+
+updateCart();
+
+}
+
+
+function closeCart(){
+
+document
+.getElementById("cartOverlay")
+.classList.remove("active");
+
+document.body.classList.remove("cart-open");
+
+}
+
+
+function outsideCart(event){
+
+if(
+event.target.id==="cartOverlay"
+){
+
+closeCart();
+
+}
+
+}
+
+
+/* =========================================
+   HTML SAFETY
+========================================= */
+
+function escapeHTML(value){
+
+return String(value)
+
+.replace(/&/g,"&amp;")
+
+.replace(/</g,"&lt;")
+
+.replace(/>/g,"&gt;")
+
+.replace(/"/g,"&quot;")
+
+.replace(/'/g,"&#039;");
+
+}
+
+
+/* =========================================
+   START STORE
+========================================= */
+
+renderProducts();
+
+updateCart();
+
+</script>
+
+</body>
+</html>
