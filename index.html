@@ -1,128 +1,340 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>PM Traders | Online Store</title>
 <meta name="description" content="PM Traders - Smartphones, human hair, fashion and accessories.">
+
 <style>
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f5f5f5;color:#111}
-button,input,select{font:inherit}
+button,input,select,textarea{font:inherit}
 button{cursor:pointer}
-a{text-decoration:none}.topbar{background:#111;color:#fff;text-align:center;padding:10px;font-size:12px;font-weight:800}
+a{text-decoration:none}
 
-header{background:#fff;padding:12px 5%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ddd;position:sticky;top:0;z-index:100}
-.logo{display:flex;align-items:center;gap:10px;color:#111;font-weight:900;font-size:18px}
-.logoBox{width:43px;height:43px;background:#111;color:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center}
+.topbar{
+background:#111;color:#fff;text-align:center;padding:10px;
+font-size:12px;font-weight:800
+}
+
+header{
+background:#fff;padding:12px 5%;display:flex;align-items:center;
+justify-content:space-between;border-bottom:1px solid #ddd;
+position:sticky;top:0;z-index:100
+}
+
+.logo{
+display:flex;align-items:center;gap:10px;color:#111;
+font-weight:900;font-size:18px
+}
+
+.logoBox{
+width:43px;height:43px;background:#111;color:#fff;
+border-radius:10px;display:flex;align-items:center;
+justify-content:center
+}
+
 .nav{display:flex;gap:20px}
 .nav a{color:#222;font-weight:700;font-size:14px}
-.cartBtn{background:#111;color:#fff;border:0;border-radius:9px;padding:12px 15px;font-weight:800}
 
-.hero{background:#111;color:#fff;padding:70px 7%;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:40px}
+.cartBtn{
+background:#111;color:#fff;border:0;border-radius:9px;
+padding:12px 15px;font-weight:800
+}
+
+.hero{
+background:#111;color:#fff;padding:70px 7%;
+display:grid;grid-template-columns:1.2fr .8fr;
+align-items:center;gap:40px
+}
+
 .hero small{color:#aaa;font-weight:900;letter-spacing:2px}
-.hero h1{font-size:clamp(45px,7vw,80px);line-height:.95;letter-spacing:-4px;margin:18px 0}
+
+.hero h1{
+font-size:clamp(45px,7vw,80px);line-height:.95;
+letter-spacing:-4px;margin:18px 0
+}
+
 .hero h1 span{color:#aaa}
 .hero p{color:#ccc;font-size:18px;line-height:1.6;max-width:600px}
+
 .heroBtns{display:flex;gap:10px;flex-wrap:wrap}
-.whiteBtn,.outlineBtn{padding:14px 22px;border-radius:9px;font-weight:900}
+
+.whiteBtn,.outlineBtn{
+display:inline-block;padding:14px 22px;border-radius:9px;font-weight:900
+}
+
 .whiteBtn{background:#fff;color:#111}
 .outlineBtn{border:1px solid #555;color:#fff}
-.pmCircle{width:260px;height:260px;border-radius:50%;background:#fff;color:#111;display:flex;align-items:center;justify-content:center;font-size:75px;font-weight:900;margin:auto}
 
-.trust{background:#fff;display:grid;grid-template-columns:repeat(4,1fr);padding:20px 5%}
+.pmCircle{
+width:260px;height:260px;border-radius:50%;background:#fff;
+color:#111;display:flex;align-items:center;justify-content:center;
+font-size:75px;font-weight:900;margin:auto
+}
+
+.trust{
+background:#fff;display:grid;grid-template-columns:repeat(4,1fr);
+padding:20px 5%
+}
+
 .trust div{text-align:center;padding:12px;border-right:1px solid #eee}
 .trust div:last-child{border:0}
 .trust strong{display:block;margin-bottom:5px}
 .trust span{font-size:13px;color:#777}
 
 section{scroll-margin-top:75px}
+
 .section{padding:65px 5%}
+
 .sectionTitle{text-align:center;margin-bottom:35px}
 .sectionTitle small{color:#777;font-weight:900;letter-spacing:2px;font-size:11px}
 .sectionTitle h2{font-size:40px;margin:8px 0}
 .sectionTitle p{color:#777}
 
-.categoryGrid{max-width:1100px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
-.category{border:1px solid #ddd;background:#fff;border-radius:15px;padding:25px 10px;font-weight:900}
+.categoryGrid{
+max-width:1100px;margin:auto;
+display:grid;grid-template-columns:repeat(4,1fr);gap:15px
+}
+
+.category{
+border:1px solid #ddd;background:#fff;border-radius:15px;
+padding:25px 10px;font-weight:900
+}
+
 .categoryIcon{display:block;font-size:35px;margin-bottom:10px}
 
 .shop{padding:65px 5%;max-width:1500px;margin:auto}
-.filters{display:flex;justify-content:center;gap:10px;margin-bottom:35px}
-.filters input,.filters select{height:48px;padding:0 14px;border:1px solid #ddd;border-radius:9px;background:#fff}
+
+.filters{
+display:flex;justify-content:center;gap:10px;margin-bottom:35px
+}
+
+.filters input,.filters select{
+height:48px;padding:0 14px;border:1px solid #ddd;
+border-radius:9px;background:#fff
+}
+
 .filters input{width:330px}
 
-#productGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
-.product{background:#fff;border:1px solid #ddd;border-radius:15px;overflow:hidden;box-shadow:0 5px 20px rgba(0,0,0,.06)}
-.productImg{height:290px;background:#fafafa;padding:10px;display:flex;align-items:center;justify-content:center}
-.productImg img{width:100%;height:100%;object-fit:contain}
+#productGrid{
+display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px
+}
+
+.product{
+background:#fff;border:1px solid #ddd;border-radius:15px;
+overflow:hidden;box-shadow:0 5px 20px rgba(0,0,0,.06)
+}
+
+.productImg{
+height:290px;background:#fafafa;padding:10px;
+display:flex;align-items:center;justify-content:center
+}
+
+.productImg img{
+width:100%;height:100%;object-fit:contain
+}
+
 .productInfo{padding:16px}
 .tag{font-size:10px;background:#eee;padding:5px 8px;border-radius:20px;font-weight:900}
 .productInfo h3{font-size:16px;min-height:40px}
 .price{font-size:21px;font-weight:900}
-.productActions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:15px}
-.productActions button{border:0;border-radius:8px;padding:12px 5px;font-weight:900;font-size:12px}
+
+.productActions{
+display:grid;grid-template-columns:1fr 1fr;
+gap:8px;margin-top:15px
+}
+
+.productActions button{
+border:0;border-radius:8px;padding:12px 5px;
+font-weight:900;font-size:12px
+}
+
 .viewBtn{background:#eee}
 .addBtn{background:#111;color:#fff}
 
-.promo{margin:0 5% 65px;background:#111;color:#fff;padding:35px;border-radius:16px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.promo{
+margin:0 5% 65px;background:#111;color:#fff;padding:35px;
+border-radius:16px;display:flex;align-items:center;
+justify-content:space-between;gap:20px
+}
+
 .promo h2{margin:0}
 .promo p{color:#bbb}
 
-.delivery{background:#111;color:#fff;padding:65px 7%}
-.deliveryGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
-.deliveryBox{background:#181818;border:1px solid #333;border-radius:12px;padding:25px;color:#ccc}
-.deliveryBox strong{display:block;color:#fff;margin-bottom:8px}
+.delivery{
+background:#111;color:#fff;padding:65px 7%
+}
+
+.deliveryGrid{
+display:grid;grid-template-columns:repeat(4,1fr);gap:15px
+}
+
+.deliveryBox{
+background:#181818;border:1px solid #333;border-radius:12px;
+padding:25px;color:#ccc
+}
+
+.deliveryBox strong{
+display:block;color:#fff;margin-bottom:8px
+}
 
 .why{background:#fff;padding:65px 7%}
-.whyGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.whyBox{border:1px solid #ddd;border-radius:15px;padding:25px}
+
+.whyGrid{
+display:grid;grid-template-columns:repeat(3,1fr);gap:20px
+}
+
+.whyBox{
+border:1px solid #ddd;border-radius:15px;padding:25px
+}
+
 .whyBox span{font-size:32px}
 .whyBox p{color:#777;line-height:1.6}
 
 .contact{text-align:center;padding:65px 5%}
-.whatsappBtn{display:inline-block;background:#111;color:#fff;padding:15px 22px;border-radius:9px;font-weight:900}
 
-footer{background:#080808;color:#aaa;padding:35px 5%;display:flex;justify-content:space-between;flex-wrap:wrap;gap:15px}
+.whatsappBtn{
+display:inline-block;background:#111;color:#fff;
+padding:15px 22px;border-radius:9px;font-weight:900
+}
+
+footer{
+background:#080808;color:#aaa;padding:35px 5%;
+display:flex;justify-content:space-between;
+flex-wrap:wrap;gap:15px
+}
 
 /* CART */
-#overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);display:none;z-index:500}
+#overlay{
+position:fixed;inset:0;background:rgba(0,0,0,.65);
+display:none;z-index:500
+}
+
 #overlay.show{display:block}
-#cart{position:fixed;right:-450px;top:0;width:min(430px,94vw);height:100vh;background:#fff;z-index:600;padding:22px;overflow-y:auto;transition:.3s}
+
+#cart{
+position:fixed;right:-450px;top:0;width:min(430px,94vw);
+height:100vh;background:#fff;z-index:600;padding:22px;
+overflow-y:auto;transition:.3s
+}
+
 #cart.open{right:0}
-.cartHeader{display:flex;justify-content:space-between;border-bottom:1px solid #ddd;padding-bottom:15px}
-.close{border:0;border-radius:50%;width:38px;height:38px;font-size:20px}
-.cartItem{padding:15px 0;border-bottom:1px solid #eee}
-.cartItemTop{display:flex;justify-content:space-between;gap:10px}
-.qty{display:flex;align-items:center;gap:8px;margin-top:10px}
-.qty button{width:30px;height:30px;border:0;background:#eee;border-radius:6px}
-.remove{border:0;background:none;color:#a00000;font-size:12px;margin-top:5px}
-.checkoutBtn{width:100%;border:0;background:#111;color:#fff;padding:14px;border-radius:8px;font-weight:900;margin-top:15px}
 
-/* MODAL */
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:800;display:none;align-items:center;justify-content:center;padding:15px}
+.cartHeader{
+display:flex;justify-content:space-between;
+border-bottom:1px solid #ddd;padding-bottom:15px
+}
+
+.close{
+border:0;border-radius:50%;width:38px;height:38px;font-size:20px
+}
+
+.cartItem{
+padding:15px 0;border-bottom:1px solid #eee
+}
+
+.cartItemTop{
+display:flex;justify-content:space-between;gap:10px
+}
+
+.qty{
+display:flex;align-items:center;gap:8px;margin-top:10px
+}
+
+.qty button{
+width:30px;height:30px;border:0;background:#eee;border-radius:6px
+}
+
+.remove{
+border:0;background:none;color:#a00000;
+font-size:12px;margin-top:5px
+}
+
+.checkoutBtn{
+width:100%;border:0;background:#111;color:#fff;
+padding:14px;border-radius:8px;font-weight:900;margin-top:15px
+}
+
+/* MODALS */
+.modal{
+position:fixed;inset:0;background:rgba(0,0,0,.75);
+z-index:800;display:none;align-items:center;
+justify-content:center;padding:15px
+}
+
 .modal.show{display:flex}
-.modalBox{width:min(680px,100%);max-height:94vh;overflow-y:auto;background:#fff;border-radius:15px;padding:22px;position:relative}
-.modalClose{position:absolute;right:15px;top:15px;border:0;border-radius:50%;width:38px;height:38px;font-size:20px;z-index:5}
 
-.galleryMain{height:420px;background:#f7f7f7;border-radius:12px;margin-top:45px;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.galleryMain img{width:100%;height:100%;object-fit:contain}
-.galleryControls{display:flex;justify-content:space-between;gap:10px;margin-top:10px}
-.galleryControls button{background:#111;color:#fff;border:0;border-radius:8px;padding:11px 18px;font-weight:900}
-.thumbs{display:flex;gap:8px;overflow-x:auto;padding:12px 0}
-.thumb{width:70px;height:70px;min-width:70px;border:2px solid #ddd;border-radius:8px;padding:2px;background:#fff}
+.modalBox{
+width:min(680px,100%);max-height:94vh;overflow-y:auto;
+background:#fff;border-radius:15px;padding:22px;position:relative
+}
+
+.modalClose{
+position:absolute;right:15px;top:15px;border:0;
+border-radius:50%;width:38px;height:38px;font-size:20px;z-index:5
+}
+
+.galleryMain{
+height:420px;background:#f7f7f7;border-radius:12px;
+margin-top:45px;display:flex;align-items:center;
+justify-content:center;overflow:hidden
+}
+
+.galleryMain img{
+width:100%;height:100%;object-fit:contain
+}
+
+.galleryControls{
+display:flex;justify-content:space-between;gap:10px;margin-top:10px
+}
+
+.galleryControls button{
+background:#111;color:#fff;border:0;border-radius:8px;
+padding:11px 18px;font-weight:900
+}
+
+.thumbs{
+display:flex;gap:8px;overflow-x:auto;padding:12px 0
+}
+
+.thumb{
+width:70px;height:70px;min-width:70px;
+border:2px solid #ddd;border-radius:8px;
+padding:2px;background:#fff
+}
+
 .thumb.active{border-color:#111}
-.thumb img{width:100%;height:100%;object-fit:contain}
 
-.checkoutForm{display:grid;gap:12px;margin-top:20px}
-.checkoutForm input,.checkoutForm select,.checkoutForm textarea{width:100%;padding:13px;border:1px solid #ddd;border-radius:8px}
+.thumb img{
+width:100%;height:100%;object-fit:contain
+}
+
+.checkoutForm{
+display:grid;gap:12px;margin-top:20px
+}
+
+.checkoutForm input,
+.checkoutForm select,
+.checkoutForm textarea{
+width:100%;padding:13px;
+border:1px solid #ddd;border-radius:8px
+}
+
 .checkoutForm textarea{min-height:90px}
-.summary{background:#f5f5f5;padding:15px;border-radius:10px;margin-top:15px}
+
+.summary{
+background:#f5f5f5;padding:15px;
+border-radius:10px;margin-top:15px
+}
 
 @media(max-width:1050px){
 #productGrid{grid-template-columns:repeat(3,1fr)}
 .deliveryGrid{grid-template-columns:repeat(2,1fr)}
 }
+
 @media(max-width:800px){
 .nav{display:none}
 .hero{grid-template-columns:1fr;text-align:center}
@@ -133,6 +345,7 @@ footer{background:#080808;color:#aaa;padding:35px 5%;display:flex;justify-conten
 .whyGrid{grid-template-columns:1fr}
 .promo{flex-direction:column;align-items:flex-start}
 }
+
 @media(max-width:600px){
 .hero{padding:55px 5%}
 .hero h1{font-size:48px}
@@ -151,53 +364,129 @@ footer{background:#080808;color:#aaa;padding:35px 5%;display:flex;justify-conten
 footer{text-align:center;justify-content:center}
 }
 </style>
+</head>
 
-</head><body><div class="topbar">🚚 Nationwide delivery • 🎁 FREE delivery on orders over R1,500</div><header>
+<body>
+
+<div class="topbar">
+🚚 Nationwide delivery • 🎁 FREE delivery on orders over R1,500
+</div>
+
+<header>
 <a href="#home" class="logo">
 <span class="logoBox">PM</span>
 <span>PM TRADERS</span>
-</a><nav class="nav">
+</a>
+
+<nav class="nav">
 <a href="#home">Home</a>
 <a href="#categories">Categories</a>
 <a href="#shop">Shop</a>
 <a href="#delivery">Delivery</a>
 <a href="#contact">Contact</a>
-</nav><button class="cartBtn" id="openCartBtn">🛒 Cart <span id="cartCount">0</span></button>
+</nav>
 
-</header><section class="hero" id="home">
+<button class="cartBtn" id="openCartBtn">
+🛒 Cart <span id="cartCount">0</span>
+</button>
+</header>
+
+<section class="hero" id="home">
 <div>
 <small>PM TRADERS • ONLINE STORE</small>
-<h1>Shop smart.<br><span>Shop PM Traders.</span></h1>
-<p>Quality smartphones, human hair, fashion, gadgets and accessories — all in one trusted store.</p>
+
+<h1>
+Shop smart.<br>
+<span>Shop PM Traders.</span>
+</h1>
+
+<p>
+Quality smartphones, human hair, fashion,
+gadgets and accessories — all in one trusted store.
+</p>
+
 <div class="heroBtns">
 <a href="#shop" class="whiteBtn">Shop now →</a>
 <a href="#categories" class="outlineBtn">Browse categories</a>
 </div>
 </div>
-<div><div class="pmCircle">PM</div></div>
-</section><div class="trust">
-<div><strong>🚚 Nationwide</strong><span>Delivery across South Africa</span></div>
-<div><strong>🎁 R1,500+</strong><span>Free delivery</span></div>
-<div><strong>📦 Collection</strong><span>Richards Bay & Empangeni</span></div>
-<div><strong>💬 WhatsApp</strong><span>Easy order support</span></div>
-</div><section class="section" id="categories">
+
+<div>
+<div class="pmCircle">PM</div>
+</div>
+</section>
+
+<div class="trust">
+<div>
+<strong>🚚 Nationwide</strong>
+<span>Delivery across South Africa</span>
+</div>
+
+<div>
+<strong>🎁 R1,500+</strong>
+<span>Free delivery</span>
+</div>
+
+<div>
+<strong>📦 Collection</strong>
+<span>Richards Bay & Empangeni</span>
+</div>
+
+<div>
+<strong>💬 WhatsApp</strong>
+<span>Easy order support</span>
+</div>
+</div>
+
+<section class="section" id="categories">
+
 <div class="sectionTitle">
 <small>SHOP BY CATEGORY</small>
 <h2>Find what you need.</h2>
 <p>Browse our main product categories.</p>
-</div><div class="categoryGrid">
-<button class="category" data-category="Tech"><span class="categoryIcon">📱</span>Smartphones & Tech</button>
-<button class="category" data-category="Hair"><span class="categoryIcon">💇</span>Human Hair</button>
-<button class="category" data-category="Fashion"><span class="categoryIcon">👗</span>Fashion</button>
-<button class="category" data-category="Accessories"><span class="categoryIcon">🎧</span>Accessories</button>
 </div>
-</section><section class="shop" id="shop">
+
+<div class="categoryGrid">
+
+<button class="category" data-category="Tech">
+<span class="categoryIcon">📱</span>
+Smartphones & Tech
+</button>
+
+<button class="category" data-category="Hair">
+<span class="categoryIcon">💇</span>
+Human Hair
+</button>
+
+<button class="category" data-category="Fashion">
+<span class="categoryIcon">👗</span>
+Fashion
+</button>
+
+<button class="category" data-category="Accessories">
+<span class="categoryIcon">🎧</span>
+Accessories
+</button>
+
+</div>
+</section>
+
+<section class="shop" id="shop">
+
 <div class="sectionTitle">
 <small>PM TRADERS SHOP</small>
 <h2>Featured Products</h2>
 <p>Choose your favourite products and add them to your cart.</p>
-</div><div class="filters">
-<input id="search" type="search" placeholder="🔎 Search products...">
+</div>
+
+<div class="filters">
+
+<input
+id="search"
+type="search"
+placeholder="🔎 Search products..."
+>
+
 <select id="categoryFilter">
 <option value="all">All categories</option>
 <option value="Tech">📱 Tech</option>
@@ -205,361 +494,619 @@ footer{text-align:center;justify-content:center}
 <option value="Fashion">👗 Fashion</option>
 <option value="Accessories">🎧 Accessories</option>
 </select>
-</div><div id="productGrid"></div>
-</section><div class="promo">
+
+</div>
+
+<div id="productGrid"></div>
+
+</section>
+
+<div class="promo">
 <div>
 <h2>Free delivery when you spend R1,500+</h2>
 <p>Shop more and save on delivery with PM Traders.</p>
 </div>
+
 <a href="#shop" class="whiteBtn">Shop now →</a>
-</div><section class="delivery" id="delivery">
-<small>DELIVERY & COLLECTION</small>
-<h2>Getting your PM Traders order is simple.</h2>
-<div class="deliveryGrid">
-<div class="deliveryBox"><strong>📍 Richards Bay</strong>R30 delivery around Richards Bay and surrounding areas.</div>
-<div class="deliveryBox"><strong>🚚 Outside Richards Bay</strong>R60 delivery outside Richards Bay and Empangeni.</div>
-<div class="deliveryBox"><strong>🎁 R1,500+</strong>Free delivery when your order reaches R1,500 or more.</div>
-<div class="deliveryBox"><strong>📦 Collection</strong>Collection available around Richards Bay and Empangeni.</div>
 </div>
-</section><section class="why">
+
+<section class="delivery" id="delivery">
+
+<small>DELIVERY & COLLECTION</small>
+
+<h2>Getting your PM Traders order is simple.</h2>
+
+<div class="deliveryGrid">
+
+<div class="deliveryBox">
+<strong>📍 Richards Bay</strong>
+R30 delivery around Richards Bay and surrounding areas.
+</div>
+
+<div class="deliveryBox">
+<strong>🚚 Outside Richards Bay</strong>
+R60 delivery outside Richards Bay and Empangeni.
+</div>
+
+<div class="deliveryBox">
+<strong>🎁 R1,500+</strong>
+Free delivery when your order reaches R1,500 or more.
+</div>
+
+<div class="deliveryBox">
+<strong>📦 Collection</strong>
+Collection available around Richards Bay and Empangeni.
+</div>
+
+</div>
+</section>
+
+<section class="why">
+
 <div class="sectionTitle">
 <small>WHY PM TRADERS?</small>
 <h2>Shop with confidence.</h2>
 </div>
+
 <div class="whyGrid">
-<div class="whyBox"><span>🛍️</span><h3>Quality Products</h3><p>Smartphones, hair, fashion and accessories in one convenient store.</p></div>
-<div class="whyBox"><span>🚚</span><h3>Easy Delivery</h3><p>Choose delivery or collection depending on what works best for you.</p></div>
-<div class="whyBox"><span>💬</span><h3>WhatsApp Support</h3><p>Place your order directly through WhatsApp and communicate with PM Traders easily.</p></div>
+
+<div class="whyBox">
+<span>🛍️</span>
+<h3>Quality Products</h3>
+<p>Smartphones, hair, fashion and accessories in one convenient store.</p>
 </div>
-</section><section class="contact" id="contact">
+
+<div class="whyBox">
+<span>🚚</span>
+<h3>Easy Delivery</h3>
+<p>Choose delivery or collection depending on what works best for you.</p>
+</div>
+
+<div class="whyBox">
+<span>💬</span>
+<h3>WhatsApp Support</h3>
+<p>Place your order directly through WhatsApp and communicate with PM Traders easily.</p>
+</div>
+
+</div>
+</section>
+
+<section class="contact" id="contact">
+
 <div class="sectionTitle">
+
 <small>CONTACT PM TRADERS</small>
+
 <h2>Need help with your order?</h2>
+
 <p>Chat directly with PM Traders on WhatsApp.</p>
-<a class="whatsappBtn" href="https://wa.me/27842748559" target="_blank">💬 WhatsApp PM Traders →</a>
+
+<a
+class="whatsappBtn"
+href="https://wa.me/27842748559"
+target="_blank"
+rel="noopener"
+>
+💬 WhatsApp PM Traders →
+</a>
+
 <p>📧 Info@PM-Traders.co.za</p>
+
 </div>
-</section><footer>
+</section>
+
+<footer>
 <strong>PM TRADERS</strong>
 <span>© 2026 PM Traders • Quality products. Trusted service.</span>
-</footer><div id="overlay"></div><aside id="cart">
+</footer>
+
+<!-- CART -->
+
+<div id="overlay"></div>
+
+<aside id="cart">
+
 <div class="cartHeader">
 <h2>Your Cart</h2>
 <button class="close" id="closeCartBtn">×</button>
-</div><div id="cartItems"></div><div style="padding-top:20px">
-<strong>Subtotal: <span id="cartSubtotal">R0</span></strong>
-<button class="checkoutBtn" id="checkoutBtn">Checkout →</button>
 </div>
-</aside><div class="modal" id="galleryModal">
+
+<div id="cartItems"></div>
+
+<div style="padding-top:20px">
+
+<strong>
+Subtotal:
+<span id="cartSubtotal">R0</span>
+</strong>
+
+<button class="checkoutBtn" id="checkoutBtn">
+Checkout →
+</button>
+
+</div>
+
+</aside>
+
+<!-- PRODUCT GALLERY -->
+
+<div class="modal" id="galleryModal">
+
 <div class="modalBox">
-<button class="modalClose" id="closeGallery">×</button><div class="galleryMain">
+
+<button class="modalClose" id="closeGallery">×</button>
+
+<div class="galleryMain">
 <img id="galleryImage" src="" alt="">
-</div><div class="galleryControls">
+</div>
+
+<div class="galleryControls">
 <button id="previousBtn">← Previous</button>
 <button id="nextBtn">Next →</button>
-</div><div class="thumbs" id="thumbnails"></div><h2 id="galleryName"></h2>
+</div>
+
+<div class="thumbs" id="thumbnails"></div>
+
+<h2 id="galleryName"></h2>
 <p id="galleryCategory"></p>
-<h2 id="galleryPrice"></h2><button class="checkoutBtn" id="galleryAdd">Add to Cart →</button>
+<h2 id="galleryPrice"></h2>
+
+<button class="checkoutBtn" id="galleryAdd">
+Add to Cart →
+</button>
 
 </div>
-</div><div class="modal" id="checkoutModal">
+</div>
+
+<!-- CHECKOUT -->
+
+<div class="modal" id="checkoutModal">
+
 <div class="modalBox">
-<button class="modalClose" id="closeCheckout">×</button><h2>Complete your order</h2><div class="summary">
-<strong>Order total: <span id="checkoutTotal">R0</span></strong>
-</div><form class="checkoutForm" id="checkoutForm">
-<input id="customerName" required placeholder="Full name">
-<input id="customerPhone" required placeholder="WhatsApp / phone number">
-<input id="customerEmail" type="email" placeholder="Email address"><select id="deliveryMethod" required>
-<option value="">Choose delivery method</option>
-<option value="Richards Bay delivery - R30">Richards Bay delivery - R30</option>
-<option value="Outside Richards Bay / Empangeni - R60">Outside Richards Bay / Empangeni - R60</option>
-<option value="Free delivery - order R1,500+">Free delivery - order R1,500+</option>
-<option value="Collection - Richards Bay / Empangeni">Collection - Richards Bay / Empangeni</option>
-</select><textarea id="customerAddress" placeholder="Delivery address / collection details"></textarea><button type="submit" class="checkoutBtn">💬 Order on WhatsApp</button>
+
+<button class="modalClose" id="closeCheckout">×</button>
+
+<h2>Complete your order</h2>
+
+<div class="summary">
+<strong>
+Order total:
+<span id="checkoutTotal">R0</span>
+</strong>
+</div>
+
+<form class="checkoutForm" id="checkoutForm">
+
+<input
+id="customerName"
+required
+placeholder="Full name"
+>
+
+<input
+id="customerPhone"
+required
+placeholder="WhatsApp / phone number"
+>
+
+<input
+id="customerEmail"
+type="email"
+placeholder="Email address"
+>
+
+<select id="deliveryMethod" required>
+
+<option value="">
+Choose delivery method
+</option>
+
+<option value="Richards Bay delivery - R30">
+Richards Bay delivery - R30
+</option>
+
+<option value="Outside Richards Bay / Empangeni - R60">
+Outside Richards Bay / Empangeni - R60
+</option>
+
+<option value="Free delivery - order R1,500+">
+Free delivery - order R1,500+
+</option>
+
+<option value="Collection - Richards Bay / Empangeni">
+Collection - Richards Bay / Empangeni
+</option>
+
+</select>
+
+<textarea
+id="customerAddress"
+placeholder="Delivery address / collection details"
+></textarea>
+
+<button type="submit" class="checkoutBtn">
+💬 Order on WhatsApp
+</button>
 
 </form>
+
 </div>
-</div><script>
-/* ================================
-   PM TRADERS STORE SYSTEM
-   ================================ */
+</div>
 
-const GITHUB="https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/";
+<script>
 
-const products=[
+/* ==========================================
+   PM TRADERS - COMPLETE STORE SYSTEM
+   ========================================== */
+
+const GITHUB =
+"https://raw.githubusercontent.com/PMTraders-24/PM--Traders/main/";
+
+/* PRODUCTS */
+
+const products = [
+
 {
 id:1,
 name:"iPhone 13 Pro Max",
 price:7500,
 category:"Tech",
-images:["iPhone%2013%20Pro%20Max.jpeg"]
+images:[
+"iPhone%2013%20Pro%20Max.jpeg"
+]
 },
+
 {
 id:2,
 name:"iPhone 17 Pro Max",
 price:24000,
 category:"Tech",
-images:["iPhone%2017%20Pro%20Max.webp"]
+images:[
+"iPhone%2017%20Pro%20Max.webp"
+]
 },
+
 {
 id:3,
 name:"20 Inch Curly Curls",
 price:970,
 category:"Hair",
-images:["20%20inch%20Curly%20Curls.jpeg"]
+images:[
+"20%20inch%20Curly%20Curls.jpeg"
+]
 },
+
 {
 id:4,
 name:"8 Inch SDD Weave",
 price:850,
 category:"Hair",
-images:["8%20Inch%20Super%20Double%20Drawn.webp","8%20inch%20SDD%20pixey%20curly.jpg"]
+images:[
+"8%20Inch%20Super%20Double%20Drawn.webp",
+"8%20inch%20SDD%20Weave",
+"8%20inch%20SDD%20pixey%20curly.jpg"
+]
 },
+
 {
 id:5,
 name:"Classic Caught",
 price:230,
 category:"Fashion",
-images:["Classic%20Caught.jpg"]
+images:[
+"Classic%20Caught.jpg"
+]
 },
+
 {
 id:6,
 name:"Classic Ladies Dress",
 price:230,
 category:"Fashion",
-images:["Classic%20Ladies%20Dress.jpg"]
+images:[
+"Classic%20Ladies%20Dress.jpg"
+]
 },
+
 {
 id:7,
 name:"Classic Rainbow Nation Dress",
 price:230,
 category:"Fashion",
-images:["Classic%20Rainbow%20Nation%20Dress.jpg"]
+images:[
+"Classic%20Rainbow%20Nation%20Dress.jpg"
+]
 },
+
 {
 id:8,
 name:"Sky Blue Dress",
 price:230,
 category:"Fashion",
-images:["Sky%20Blue%20Dress.jpg"]
+images:[
+"Sky%20Blue%20Dress.jpg"
+]
 },
+
 {
 id:9,
 name:"Sleeveless Classic Attire",
 price:230,
 category:"Fashion",
-images:["Sleeveless%20Classic%20Attire.jpg"]
+images:[
+"Sleeveless%20Classic%20Attire.jpg"
+]
 },
+
 {
 id:10,
 name:"Smart Casual Summer Two Piece",
 price:230,
 category:"Fashion",
-images:["Smart%20Casual%20Summer%20Two%20piece.jpg"]
+images:[
+"Smart%20Casual%20Summer%20Two%20piece.jpg"
+]
 },
+
 {
 id:11,
 name:"Smart Colour Dress",
 price:230,
 category:"Fashion",
-images:["Smart%20Colour%20Dress.jpg"]
+images:[
+"Smart%20Colour%20Dress.jpg"
+]
 },
+
 {
 id:12,
 name:"Smart Colour Full Dress",
 price:230,
 category:"Fashion",
-images:["Smart%20Colour%20full%20dress.jpg"]
+images:[
+"Smart%20Colour%20full%20dress.jpg"
+]
 },
+
 {
 id:13,
 name:"Smart Dress",
 price:230,
 category:"Fashion",
-images:["Smart%20Dress.jpg"]
+images:[
+"Smart%20Dress.jpg"
+]
 },
+
 {
 id:14,
 name:"Cellphone Accessories",
 price:150,
 category:"Accessories",
-images:["images.jpeg","images%20(1).jpeg"]
+images:[
+"images.jpeg",
+"images%20(1).jpeg"
+]
 }
+
 ];
 
-let cart=[];
-let currentProduct=null;
-let currentImage=0;
+/* STORE STATE */
 
-/* ---------- HELPERS ---------- */
+let cart = [];
+let currentProduct = null;
+let currentImage = 0;
+
+/* HELPERS */
 
 function money(amount){
-return "R"+Number(amount).toLocaleString("en-ZA");
+return "R" + Number(amount).toLocaleString("en-ZA");
 }
 
 function imageUrl(file){
-return GITHUB+file;
+return GITHUB + file;
 }
 
-/* ---------- PRODUCTS ---------- */
+/* PRODUCTS */
 
 function renderProducts(){
-const grid=document.getElementById("productGrid");
-const search=document.getElementById("search").value.toLowerCase().trim();
-const category=document.getElementById("categoryFilter").value;
 
-grid.innerHTML="";
+const grid = document.getElementById("productGrid");
 
-const filtered=products.filter(p=>{
-const matchSearch=p.name.toLowerCase().includes(search);
-const matchCategory=category==="all" || p.category===category;
-return matchSearch && matchCategory;
+const search =
+document.getElementById("search").value
+.toLowerCase()
+.trim();
+
+const category =
+document.getElementById("categoryFilter").value;
+
+grid.innerHTML = "";
+
+const filtered = products.filter(function(product){
+
+const searchMatch =
+product.name.toLowerCase().includes(search);
+
+const categoryMatch =
+category === "all" ||
+product.category === category;
+
+return searchMatch && categoryMatch;
+
 });
 
-if(filtered.length===0){
-grid.innerHTML="<p style='grid-column:1/-1;text-align:center;padding:40px'>No products found.</p>";
+if(filtered.length === 0){
+
+grid.innerHTML =
+"<p style='grid-column:1/-1;text-align:center;padding:40px'>No products found.</p>";
+
 return;
 }
 
-filtered.forEach(p=>{
-const card=document.createElement("article");
-card.className="product";
+filtered.forEach(function(product){
 
-card.innerHTML=`
+const card = document.createElement("article");
+
+card.className = "product";
+
+card.innerHTML = `
+
 <div class="productImg">
-<img src="${imageUrl(p.images[0])}" alt="${p.name}">
+
+<img
+src="${imageUrl(product.images[0])}"
+alt="${product.name}"
+onerror="this.style.display='none';this.parentElement.innerHTML='<div style=&quot;font-size:60px&quot;>📦</div>';"
+>
+
 </div>
 
 <div class="productInfo">
-<span class="tag">${p.category.toUpperCase()}</span>
-<h3>${p.name}</h3>
-<div class="price">${money(p.price)}</div>
+
+<span class="tag">
+${product.category.toUpperCase()}
+</span>
+
+<h3>${product.name}</h3>
+
+<div class="price">
+${money(product.price)}
+</div>
 
 <div class="productActions">
-<button class="viewBtn" data-view="${p.id}">View</button>
-<button class="addBtn" data-add="${p.id}">Add to Cart</button>
+
+<button
+class="viewBtn"
+data-view="${product.id}"
+>
+👁 View
+</button>
+
+<button
+class="addBtn"
+data-add="${product.id}"
+>
+🛒 Add to Cart
+</button>
+
 </div>
+
 </div>
+
 `;
 
 grid.appendChild(card);
+
 });
+
 }
 
-/* ---------- FILTERS ---------- */
+/* FILTERS */
 
-document.getElementById("search").addEventListener("input",renderProducts);
+document
+.getElementById("search")
+.addEventListener("input", renderProducts);
 
-document.getElementById("categoryFilter").addEventListener("change",renderProducts);
+document
+.getElementById("categoryFilter")
+.addEventListener("change", renderProducts);
 
-document.querySelectorAll(".category").forEach(btn=>{
-btn.addEventListener("click",()=>{
-document.getElementById("categoryFilter").value=btn.dataset.category;
+document
+.querySelectorAll(".category")
+.forEach(function(button){
+
+button.addEventListener("click",function(){
+
+document.getElementById("categoryFilter").value =
+button.dataset.category;
+
 renderProducts();
-document.getElementById("shop").scrollIntoView({behavior:"smooth"});
+
+document
+.getElementById("shop")
+.scrollIntoView({behavior:"smooth"});
+
 });
+
 });
 
-/* ---------- PRODUCT BUTTONS ---------- */
+/* PRODUCT BUTTONS */
 
-document.getElementById("productGrid").addEventListener("click",function(e){
+document
+.getElementById("productGrid")
+.addEventListener("click",function(event){
 
-const view=e.target.closest("[data-view]");
-const add=e.target.closest("[data-add]");
+const viewButton =
+event.target.closest("[data-view]");
 
-if(view){
-const product=products.find(p=>p.id==view.dataset.view);
+const addButton =
+event.target.closest("[data-add]");
+
+if(viewButton){
+
+const product =
+products.find(function(p){
+return p.id == viewButton.dataset.view;
+});
+
+if(product){
 openGallery(product);
 }
 
-if(add){
-const product=products.find(p=>p.id==add.dataset.add);
+}
+
+if(addButton){
+
+const product =
+products.find(function(p){
+return p.id == addButton.dataset.add;
+});
+
+if(product){
 addToCart(product);
 }
 
+}
+
 });
 
-/* ---------- CART ---------- */
+/* CART STORAGE */
 
 function saveCart(){
-localStorage.setItem("pmTradersCart",JSON.stringify(cart));
+
+try{
+localStorage.setItem(
+"pmTradersCart",
+JSON.stringify(cart)
+);
+}catch(error){}
+
 }
 
 function loadCart(){
+
 try{
-const saved=localStorage.getItem("pmTradersCart");
-if(saved) cart=JSON.parse(saved);
-}catch(e){
-cart=[];
+
+const saved =
+localStorage.getItem("pmTradersCart");
+
+if(saved){
+cart = JSON.parse(saved);
 }
+
+}catch(error){
+
+cart = [];
+
+}
+
 renderCart();
+
 }
+
+/* ADD TO CART */
 
 function addToCart(product){
-const existing=cart.find(item=>item.id===product.id);
 
-if(existing){
-existing.qty++;
-}else{
-cart.push({
-id:product.id,
-name:product.name,
-price:product.price,
-qty:1
-});
-}
-
-saveCart();
-renderCart();
-openCart();
-
-}
-
-function renderCart(){
-
-const box=document.getElementById("cartItems");
-
-let total=0;
-let count=0;
-
-box.innerHTML="";
-
-if(cart.length===0){
-box.innerHTML="<p style='color:#777;text-align:center;padding:30px 0'>Your cart is empty.</p>";
-}else{
-
-cart.forEach(item=>{
-
-total+=item.price*item.qty;
-count+=item.qty;
-
-const div=document.createElement("div");
-div.className="cartItem";
-
-div.innerHTML=`
-<div class="cartItemTop">
-<div><strong>${item.name}</strong></div>
-<strong>${money(item.price*item.qty)}</strong>
-</div>
-
-<div class="qty">
-<button data-minus="${item.id}">−</button>
-<strong>${item.qty}</strong>
-<button data-plus="${item.id}">+</button>
-</div>
-
-<button class="remove" data-remove="${item.id}">Remove</button>
-`;
-
-box.appendChild(div);
-
-});
-
-}
-
-document.getElementById("cartCount").textContent=count;
-document.getElementById("cartSubtotal").textContent=money(total);
-
-}
-
-document.getE
+const existin
